@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-ocean: #0077b6;
+  --color-firozi: #00CED1;
+  --color-snow: #FFFFFF;
+  --color-emerald: #1b4332;
+  --color-ink: #081c15;
+
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-snow text-ink font-sans overflow-x-hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.glass-card {
+  @apply bg-white/40 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.party-gradient {
+  background: linear-gradient(135deg, var(--color-ocean) 0%, var(--color-firozi) 100%);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(0, 206, 209, 0.4);
+}
+
+.whatsapp-sticky {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 50;
+  @apply bg-[#25D366] text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110 active:scale-95 flex items-center justify-center;
+  animation: whatsapp-pulse 2s infinite;
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* Custom scrollbar for party vibes */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-snow;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-ocean/30 rounded-full hover:bg-ocean/50 transition-colors;
+}
