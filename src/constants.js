@@ -21,6 +21,12 @@ import perfumeBar1 from './assets/stations/perfume_bar_1.jpg';
 import perfumeBar2 from './assets/stations/perfume_bar_2.jpg';
 import perfumeBar4 from './assets/stations/perfume_bar_4.jpg';
 
+import creativeSunglasses1 from './assets/stations/creative_sunglasses_1.png';
+import creativeSunglasses2 from './assets/stations/creative_sunglasses_2.png';
+import creativeSunglasses3 from './assets/stations/creative_sunglasses_3.png';
+import creativeSunglasses4 from './assets/stations/creative_sunglasses_4.png';
+import creativeSunglasses5 from './assets/stations/creative_sunglasses_5.png';
+
 export const STATIONS = [
   {
     id: 'attar-bar',
@@ -120,7 +126,8 @@ export const STATIONS = [
     nameHi: 'रचनात्मक धूप का चश्मा',
     description: 'Decorated and funky eyewear for the party vibe.',
     descriptionHi: 'पार्टी वाइब के लिए सजे हुए और फंकी आईवियर।',
-    image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&q=80&w=800',
+    image: creativeSunglasses1,
+    gallery: [creativeSunglasses1, creativeSunglasses2, creativeSunglasses3, creativeSunglasses4, creativeSunglasses5],
     category: 'lifestyle',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-sunglasses-34493-large.mp4',
     popularFor: ['wedding']
