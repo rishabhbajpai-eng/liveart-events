@@ -1,0 +1,141 @@
+"PSPath","PSParentPath","PSChildName","PSDrive","PSProvider","PSIsContainer","Mode","VersionInfo","BaseName","Target","LinkType","Name","Length","DirectoryName","Directory","IsReadOnly","Exists","FullName","Extension","CreationTime","CreationTimeUtc","LastAccessTime","LastAccessTimeUtc","LastWriteTime","LastWriteTimeUtc","Attributes"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads\GitHubDesktopSetup-x64.exe","Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads","GitHubDesktopSetup-x64.exe","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\Rishabh\Downloads\GitHubDesktopSetup-x64.exe
+InternalName:     Setup.exe
+OriginalFilename: Setup.exe
+FileVersion:      3.5.6
+FileDescription:  Simple collaboration from your desktop
+Product:          Simple collaboration from your desktop
+ProductVersion:   3.5.6
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         English (United States)
+","GitHubDesktopSetup-x64","System.Collections.Generic.List`1[System.String]",,"GitHubDesktopSetup-x64.exe","187968472","C:\Users\Rishabh\Downloads","C:\Users\Rishabh\Downloads","False","True","C:\Users\Rishabh\Downloads\GitHubDesktopSetup-x64.exe",".exe","19-03-2026 04:11:57","18-03-2026 22:41:57","19-03-2026 04:12:16","18-03-2026 22:42:16","19-03-2026 04:12:08","18-03-2026 22:42:08","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads\VSCodeUserSetup-x64-1.112.0.exe","Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads","VSCodeUserSetup-x64-1.112.0.exe","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\Rishabh\Downloads\VSCodeUserSetup-x64-1.112.0.exe
+InternalName:     
+OriginalFilename:                                                   
+FileVersion:      1.112.0             
+FileDescription:  Visual Studio Code Setup                                    
+Product:          Visual Studio Code                                          
+ProductVersion:   1.112.0                                           
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         Language Neutral
+","VSCodeUserSetup-x64-1.112.0","System.Collections.Generic.List`1[System.String]",,"VSCodeUserSetup-x64-1.112.0.exe","131713688","C:\Users\Rishabh\Downloads","C:\Users\Rishabh\Downloads","False","True","C:\Users\Rishabh\Downloads\VSCodeUserSetup-x64-1.112.0.exe",".exe","19-03-2026 03:57:35","18-03-2026 22:27:35","19-03-2026 03:57:50","18-03-2026 22:27:50","19-03-2026 03:57:43","18-03-2026 22:27:43","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads\Gemini_Generated_Image_2vmkjx2vmkjx2vmk.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads","Gemini_Generated_Image_2vmkjx2vmkjx2vmk.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\Rishabh\Downloads\Gemini_Generated_Image_2vmkjx2vmkjx2vmk.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","Gemini_Generated_Image_2vmkjx2vmkjx2vmk","System.Collections.Generic.List`1[System.String]",,"Gemini_Generated_Image_2vmkjx2vmkjx2vmk.png","2432987","C:\Users\Rishabh\Downloads","C:\Users\Rishabh\Downloads","False","True","C:\Users\Rishabh\Downloads\Gemini_Generated_Image_2vmkjx2vmkjx2vmk.png",".png","19-03-2026 02:51:17","18-03-2026 21:21:17","19-03-2026 04:22:51","18-03-2026 22:52:51","19-03-2026 02:51:17","18-03-2026 21:21:17","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads\Gemini_Generated_Image_zaz8s3zaz8s3zaz8.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads","Gemini_Generated_Image_zaz8s3zaz8s3zaz8.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\Rishabh\Downloads\Gemini_Generated_Image_zaz8s3zaz8s3zaz8.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","Gemini_Generated_Image_zaz8s3zaz8s3zaz8","System.Collections.Generic.List`1[System.String]",,"Gemini_Generated_Image_zaz8s3zaz8s3zaz8.png","8110361","C:\Users\Rishabh\Downloads","C:\Users\Rishabh\Downloads","False","True","C:\Users\Rishabh\Downloads\Gemini_Generated_Image_zaz8s3zaz8s3zaz8.png",".png","19-03-2026 02:51:14","18-03-2026 21:21:14","19-03-2026 04:22:59","18-03-2026 22:52:59","19-03-2026 02:51:14","18-03-2026 21:21:14","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads\Gemini_Generated_Image_qtyykvqtyykvqtyy.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads","Gemini_Generated_Image_qtyykvqtyykvqtyy.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\Rishabh\Downloads\Gemini_Generated_Image_qtyykvqtyykvqtyy.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","Gemini_Generated_Image_qtyykvqtyykvqtyy","System.Collections.Generic.List`1[System.String]",,"Gemini_Generated_Image_qtyykvqtyykvqtyy.png","2140006","C:\Users\Rishabh\Downloads","C:\Users\Rishabh\Downloads","False","True","C:\Users\Rishabh\Downloads\Gemini_Generated_Image_qtyykvqtyykvqtyy.png",".png","19-03-2026 02:50:47","18-03-2026 21:20:47","19-03-2026 04:22:59","18-03-2026 22:52:59","19-03-2026 02:50:47","18-03-2026 21:20:47","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads\Gemini_Generated_Image_dzkh7adzkh7adzkh.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads","Gemini_Generated_Image_dzkh7adzkh7adzkh.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\Rishabh\Downloads\Gemini_Generated_Image_dzkh7adzkh7adzkh.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","Gemini_Generated_Image_dzkh7adzkh7adzkh","System.Collections.Generic.List`1[System.String]",,"Gemini_Generated_Image_dzkh7adzkh7adzkh.png","2134237","C:\Users\Rishabh\Downloads","C:\Users\Rishabh\Downloads","False","True","C:\Users\Rishabh\Downloads\Gemini_Generated_Image_dzkh7adzkh7adzkh.png",".png","19-03-2026 02:50:42","18-03-2026 21:20:42","19-03-2026 04:22:59","18-03-2026 22:52:59","19-03-2026 02:50:42","18-03-2026 21:20:42","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads\Gemini_Generated_Image_fgs4lafgs4lafgs4.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads","Gemini_Generated_Image_fgs4lafgs4lafgs4.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\Rishabh\Downloads\Gemini_Generated_Image_fgs4lafgs4lafgs4.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","Gemini_Generated_Image_fgs4lafgs4lafgs4","System.Collections.Generic.List`1[System.String]",,"Gemini_Generated_Image_fgs4lafgs4lafgs4.png","9883285","C:\Users\Rishabh\Downloads","C:\Users\Rishabh\Downloads","False","True","C:\Users\Rishabh\Downloads\Gemini_Generated_Image_fgs4lafgs4lafgs4.png",".png","19-03-2026 02:50:34","18-03-2026 21:20:34","19-03-2026 04:23:11","18-03-2026 22:53:11","19-03-2026 02:50:35","18-03-2026 21:20:35","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads\Gemini_Generated_Image_xypdpyxypdpyxypd.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads","Gemini_Generated_Image_xypdpyxypdpyxypd.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\Rishabh\Downloads\Gemini_Generated_Image_xypdpyxypdpyxypd.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","Gemini_Generated_Image_xypdpyxypdpyxypd","System.Collections.Generic.List`1[System.String]",,"Gemini_Generated_Image_xypdpyxypdpyxypd.png","2320752","C:\Users\Rishabh\Downloads","C:\Users\Rishabh\Downloads","False","True","C:\Users\Rishabh\Downloads\Gemini_Generated_Image_xypdpyxypdpyxypd.png",".png","19-03-2026 00:14:38","18-03-2026 18:44:38","19-03-2026 03:28:41","18-03-2026 21:58:41","19-03-2026 00:14:39","18-03-2026 18:44:39","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads\Gemini_Generated_Image_vid71pvid71pvid7.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads","Gemini_Generated_Image_vid71pvid71pvid7.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\Rishabh\Downloads\Gemini_Generated_Image_vid71pvid71pvid7.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","Gemini_Generated_Image_vid71pvid71pvid7","System.Collections.Generic.List`1[System.String]",,"Gemini_Generated_Image_vid71pvid71pvid7.png","2494209","C:\Users\Rishabh\Downloads","C:\Users\Rishabh\Downloads","False","True","C:\Users\Rishabh\Downloads\Gemini_Generated_Image_vid71pvid71pvid7.png",".png","19-03-2026 00:14:25","18-03-2026 18:44:25","19-03-2026 03:28:41","18-03-2026 21:58:41","19-03-2026 00:14:25","18-03-2026 18:44:25","Archive"
+"Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads\Gemini_Generated_Image_qyahexqyahexqyah.png","Microsoft.PowerShell.Core\FileSystem::C:\Users\Rishabh\Downloads","Gemini_Generated_Image_qyahexqyahexqyah.png","C","Microsoft.PowerShell.Core\FileSystem","False","-a----","File:             C:\Users\Rishabh\Downloads\Gemini_Generated_Image_qyahexqyahexqyah.png
+InternalName:     
+OriginalFilename: 
+FileVersion:      
+FileDescription:  
+Product:          
+ProductVersion:   
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         
+","Gemini_Generated_Image_qyahexqyahexqyah","System.Collections.Generic.List`1[System.String]",,"Gemini_Generated_Image_qyahexqyahexqyah.png","2130166","C:\Users\Rishabh\Downloads","C:\Users\Rishabh\Downloads","False","True","C:\Users\Rishabh\Downloads\Gemini_Generated_Image_qyahexqyahexqyah.png",".png","19-03-2026 00:14:17","18-03-2026 18:44:17","19-03-2026 03:28:41","18-03-2026 21:58:41","19-03-2026 00:14:19","18-03-2026 18:44:19","Archive"
