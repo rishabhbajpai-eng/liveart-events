@@ -19,8 +19,6 @@ export const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-snow/90 backdrop-blur-xl border-b-2 border-transparent overflow-hidden">
-      {/* Animated Bottom Border */}
-      <div className="absolute bottom-0 left-0 w-full h-[2px] party-gradient animate-pulse"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
@@ -127,9 +125,6 @@ export const Footer = () => {
   const { t } = useLanguage();
   return (
     <footer className="bg-ink text-snow py-20 px-4 relative overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-ocean/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16 relative z-10">
         <div className="space-y-6">

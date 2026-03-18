@@ -8,7 +8,7 @@ const Stations = ({ selectedOccasion }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="pt-20"
+      className="pt-20 relative"
     >
       <StationCatalogue key={selectedOccasion} selectedOccasion={selectedOccasion} />
     </motion.div>

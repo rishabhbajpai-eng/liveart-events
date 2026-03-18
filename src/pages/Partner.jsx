@@ -9,11 +9,11 @@ const Partner = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="pt-20"
+      className="pt-20 relative"
     >
       <section id="partner" className="py-20 lg:py-32 bg-snow relative overflow-hidden min-h-screen flex items-center">
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <div className="w-24 lg:w-32 h-24 lg:h-32 bg-firozi rounded-full flex items-center justify-center mx-auto mb-8 lg:mb-12 shadow-2xl animate-float">
+          <div className="w-24 lg:w-32 h-24 lg:h-32 bg-snow/10 border border-snow/20 rounded-full flex items-center justify-center mx-auto mb-8 lg:mb-12 shadow-2xl animate-float">
             <span className="text-4xl lg:text-5xl">🤝</span>
           </div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-display text-ink mb-6 lg:mb-8 leading-tight">

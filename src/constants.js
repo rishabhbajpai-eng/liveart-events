@@ -1,5 +1,25 @@
-import attarBarImg from './assets/stations/attar_bar.png';
+import attarBar1 from './assets/stations/attar_bar_1.jpg';
+import attarBar2 from './assets/stations/attar_bar_2.jpg';
+import attarBar3 from './assets/stations/attar_bar_3.jpg';
+import floral1 from './assets/stations/floral_1.jpg';
+import floral2 from './assets/stations/floral_2.jpg';
+import floral3 from './assets/stations/floral_3.jpg';
+import floral5 from './assets/stations/floral_5.jpg';
+import bangle2 from './assets/stations/bangle_2.png';
+import jute1 from './assets/stations/jute_1.jpg';
+import jute4 from './assets/stations/jute_4.jpg';
 import floralJewelleryImg from './assets/stations/floral_jewellery.png';
+import floral4 from './assets/stations/floral_4.jpg';
+import bangle1 from './assets/stations/bangle_1.png';
+import bangle3 from './assets/stations/bangle_3.png';
+import jute2 from './assets/stations/jute_2.jpg';
+import jute3 from './assets/stations/jute_3.jpg';
+import perfumeBar3 from './assets/stations/perfume_bar_3.jpg';
+import perfumeBar5 from './assets/stations/perfume_bar_5.jpg';
+import jute5 from './assets/stations/jute_5.jpg';
+import perfumeBar1 from './assets/stations/perfume_bar_1.jpg';
+import perfumeBar2 from './assets/stations/perfume_bar_2.jpg';
+import perfumeBar4 from './assets/stations/perfume_bar_4.jpg';
 
 export const STATIONS = [
   {
@@ -8,7 +28,8 @@ export const STATIONS = [
     nameHi: 'अत्तर बार',
     description: 'Traditional concentrated oil perfumes in ornate bottles.',
     descriptionHi: 'अलंकृत बोतलों में पारंपरिक केंद्रित तेल इत्र।',
-    image: attarBarImg,
+    image: attarBar1,
+    gallery: [attarBar1, attarBar2, attarBar3],
     category: 'lifestyle',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-perfume-bottle-on-a-table-34490-large.mp4',
     popularFor: ['wedding', 'anniversary']
@@ -19,7 +40,8 @@ export const STATIONS = [
     nameHi: 'फूलों के गहने',
     description: 'Fresh flower accessories handcrafted for guests.',
     descriptionHi: 'मेहमानों के लिए हस्तनिर्मित ताजे फूलों के सामान।',
-    image: floralJewelleryImg,
+    image: floral1,
+    gallery: [floral1, floral2, floral3, floral4, floral5, floralJewelleryImg],
     category: 'craft',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-woman-making-a-flower-crown-34487-large.mp4',
     popularFor: ['wedding']
@@ -30,7 +52,7 @@ export const STATIONS = [
     nameHi: 'फोटो फ्रिज चुंबक',
     description: 'Instant photo magnets as personalized souvenirs.',
     descriptionHi: 'व्यक्तिगत स्मृति चिन्ह के रूप में त्वरित फोटो मैग्नेट।',
-    image: 'https://images.unsplash.com/photo-1586115633005-728b70ae8658?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&q=80&w=800',
     category: 'lifestyle',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hands-holding-a-polaroid-photo-34488-large.mp4',
     popularFor: ['wedding', 'birthday']
@@ -41,7 +63,8 @@ export const STATIONS = [
     nameHi: 'जूट बैग ब्लॉक प्रिंटिंग',
     description: 'DIY traditional block printing on eco-friendly bags.',
     descriptionHi: 'पर्यावरण के अनुकूल बैग पर DIY पारंपरिक ब्लॉक प्रिंटिंग।',
-    image: 'https://images.unsplash.com/photo-1590736962231-50798d19760a?auto=format&fit=crop&q=80&w=800',
+    image: jute1,
+    gallery: [jute1, jute2, jute3, jute4, jute5],
     category: 'craft',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-artist-painting-on-a-canvas-with-a-brush-34489-large.mp4',
     popularFor: ['wedding']
@@ -52,9 +75,11 @@ export const STATIONS = [
     nameHi: 'परफ्यूम बार',
     description: 'Custom fragrance blending station for unique scents.',
     descriptionHi: 'अद्वितीय सुगंधों के लिए कस्टम सुगंध सम्मिश्रण स्टेशन।',
-    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=800',
+    image: perfumeBar1,
+    gallery: [perfumeBar1, perfumeBar2, perfumeBar3, perfumeBar4, perfumeBar5],
     category: 'lifestyle',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-perfume-bottle-on-a-table-34490-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-perfume-bottle-on-a-table-34490-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'pocket-perfume-photo',
@@ -64,7 +89,8 @@ export const STATIONS = [
     descriptionHi: 'आपकी तस्वीर के साथ व्यक्तिगत पॉकेट परफ्यूम।',
     image: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=800',
     category: 'lifestyle',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-perfume-bottle-on-a-table-34490-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-perfume-bottle-on-a-table-34490-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'charm-stall',
@@ -74,7 +100,8 @@ export const STATIONS = [
     descriptionHi: 'कस्टम चार्म कंगन और व्यक्तिगत सामान।',
     image: 'https://images.unsplash.com/photo-1611591437281-460bfbe157a8?auto=format&fit=crop&q=80&w=800',
     category: 'lifestyle',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-a-bracelet-34491-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-a-bracelet-34491-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'potli-stall',
@@ -84,7 +111,8 @@ export const STATIONS = [
     descriptionHi: 'मेहमानों के लिए पारंपरिक कढ़ाई वाली पोटली बैग।',
     image: 'https://images.unsplash.com/photo-1595981267035-7b04ca84a810?auto=format&fit=crop&q=80&w=800',
     category: 'lifestyle',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-holding-a-small-bag-34492-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-holding-a-small-bag-34492-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'creative-sunglasses',
@@ -94,7 +122,8 @@ export const STATIONS = [
     descriptionHi: 'पार्टी वाइब के लिए सजे हुए और फंकी आईवियर।',
     image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&q=80&w=800',
     category: 'lifestyle',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-sunglasses-34493-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-sunglasses-34493-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'jhumka-stall',
@@ -104,7 +133,8 @@ export const STATIONS = [
     descriptionHi: 'विभिन्न शैलियों में उत्तम पारंपरिक झुमके।',
     image: 'https://images.unsplash.com/photo-1630019017537-073c9222f73b?auto=format&fit=crop&q=80&w=800',
     category: 'lifestyle',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-earrings-34494-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-earrings-34494-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'aroma-candle',
@@ -114,7 +144,8 @@ export const STATIONS = [
     descriptionHi: 'कस्टम सुगंध के साथ हाथ से डाली गई सुगंधित मोमबत्तियाँ।',
     image: 'https://images.unsplash.com/photo-1602874801007-bd458bb1b8b6?auto=format&fit=crop&q=80&w=800',
     category: 'craft',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-burning-candle-on-a-table-34495-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-burning-candle-on-a-table-34495-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'solid-perfume',
@@ -124,7 +155,8 @@ export const STATIONS = [
     descriptionHi: 'यात्रा के अनुकूल मोम-आधारित केंद्रित इत्र।',
     image: 'https://images.unsplash.com/photo-1615485240384-552e40079c44?auto=format&fit=crop&q=80&w=800',
     category: 'lifestyle',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-perfume-bottle-on-a-table-34490-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-perfume-bottle-on-a-table-34490-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: '90s-candy',
@@ -134,7 +166,8 @@ export const STATIONS = [
     descriptionHi: 'यादों की मीठी यात्रा के लिए रेट्रो ट्रीट्स।',
     image: 'https://images.unsplash.com/photo-1533910534207-90f2753f9440?auto=format&fit=crop&q=80&w=800',
     category: 'food',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-candies-on-a-table-34496-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-candies-on-a-table-34496-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'mehendi',
@@ -144,7 +177,8 @@ export const STATIONS = [
     descriptionHi: 'हाथों के लिए पारंपरिक जटिल मेहंदी कला।',
     image: 'https://images.unsplash.com/photo-1563223552-30d01fda3ead?auto=format&fit=crop&q=80&w=800',
     category: 'beauty',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-henna-tattoo-on-a-womans-hand-34497-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-henna-tattoo-on-a-womans-hand-34497-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'thappa-mehendi',
@@ -154,7 +188,8 @@ export const STATIONS = [
     descriptionHi: 'त्वरित ब्लॉक-प्रिंट शैली पारंपरिक मेहंदी।',
     image: 'https://images.unsplash.com/photo-1563223552-30d01fda3ead?auto=format&fit=crop&q=80&w=800',
     category: 'beauty',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-henna-tattoo-on-a-womans-hand-34497-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-henna-tattoo-on-a-womans-hand-34497-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'tattoo-mehendi',
@@ -164,7 +199,8 @@ export const STATIONS = [
     descriptionHi: 'आधुनिक मेहंदी डिजाइन और समकालीन पैटर्न।',
     image: 'https://images.unsplash.com/photo-1563223552-30d01fda3ead?auto=format&fit=crop&q=80&w=800',
     category: 'beauty',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-henna-tattoo-on-a-womans-hand-34497-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-henna-tattoo-on-a-womans-hand-34497-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'tarot-card',
@@ -174,7 +210,8 @@ export const STATIONS = [
     descriptionHi: 'रहस्यमय भविष्य की अंतर्दृष्टि और आध्यात्मिक मार्गदर्शन।',
     image: 'https://images.unsplash.com/photo-1591084728795-1149f32d9866?auto=format&fit=crop&q=80&w=800',
     category: 'entertainment',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-tarot-cards-on-a-table-34498-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-tarot-cards-on-a-table-34498-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'churan-mukhwas',
@@ -184,7 +221,8 @@ export const STATIONS = [
     descriptionHi: 'पारंपरिक पाचक व्यंजन और माउथ फ्रेशनर।',
     image: 'https://images.unsplash.com/photo-1589113331515-9d8821614b30?auto=format&fit=crop&q=80&w=800',
     category: 'food',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-candies-on-a-table-34496-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-candies-on-a-table-34496-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'jutti-stall',
@@ -194,7 +232,8 @@ export const STATIONS = [
     descriptionHi: 'पारंपरिक हस्तनिर्मित जातीय जूते।',
     image: 'https://images.unsplash.com/photo-1519750783826-e2420f4d687f?auto=format&fit=crop&q=80&w=800',
     category: 'lifestyle',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-holding-a-small-bag-34492-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-holding-a-small-bag-34492-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'bangle-stall',
@@ -202,9 +241,11 @@ export const STATIONS = [
     nameHi: 'चूड़ी स्टॉल',
     description: 'Vibrant glass and metal bangles for all ages.',
     descriptionHi: 'सभी उम्र के लिए जीवंत कांच और धातु की चूड़ियाँ।',
-    image: 'https://images.unsplash.com/photo-1595981267035-7b04ca84a810?auto=format&fit=crop&q=80&w=800',
+    image: bangle1,
     category: 'lifestyle',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-a-bracelet-34491-large.mp4'
+    gallery: [bangle1, bangle2, bangle3],
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-a-bracelet-34491-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'nail-art',
@@ -214,7 +255,8 @@ export const STATIONS = [
     descriptionHi: 'पेशेवर नेल स्टाइलिंग और रचनात्मक सजावट।',
     image: 'https://images.unsplash.com/photo-1629191060043-759c31340787?auto=format&fit=crop&q=80&w=800',
     category: 'beauty',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-painting-her-nails-34499-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-painting-her-nails-34499-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'maang-tika',
@@ -224,7 +266,8 @@ export const STATIONS = [
     descriptionHi: 'पारंपरिक लुक के लिए सुरुचिपूर्ण माथे के गहने।',
     image: 'https://images.unsplash.com/photo-1630019017537-073c9222f73b?auto=format&fit=crop&q=80&w=800',
     category: 'lifestyle',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-earrings-34494-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-earrings-34494-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'foot-massage-spa',
@@ -234,7 +277,8 @@ export const STATIONS = [
     descriptionHi: 'थके हुए मेहमानों के लिए आरामदायक मैनुअल फुट थेरेपी।',
     image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=800',
     category: 'wellness',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-getting-a-foot-massage-34500-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-getting-a-foot-massage-34500-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'live-caricature',
@@ -244,7 +288,8 @@ export const STATIONS = [
     descriptionHi: 'मिनटों में मेहमानों के मजेदार हाथ से बने चित्र।',
     image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=800',
     category: 'entertainment',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-artist-painting-on-a-canvas-with-a-brush-34489-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-artist-painting-on-a-canvas-with-a-brush-34489-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'hair-do',
@@ -254,7 +299,8 @@ export const STATIONS = [
     descriptionHi: 'त्वरित पार्टी हेयरस्टाइलिंग और बाल सामान।',
     image: 'https://images.unsplash.com/photo-1522336572018-3baf8dec989a?auto=format&fit=crop&q=80&w=800',
     category: 'beauty',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-getting-her-hair-done-34501-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-getting-her-hair-done-34501-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'glitter-tattoo',
@@ -264,7 +310,8 @@ export const STATIONS = [
     descriptionHi: 'सभी उम्र के लिए शानदार अस्थायी बॉडी आर्ट।',
     image: 'https://images.unsplash.com/photo-1590246144822-8745415b9dce?auto=format&fit=crop&q=80&w=800',
     category: 'beauty',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-henna-tattoo-on-a-womans-hand-34497-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-henna-tattoo-on-a-womans-hand-34497-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'makeup-station',
@@ -274,7 +321,8 @@ export const STATIONS = [
     descriptionHi: 'त्वरित टच-अप और ग्लैमरस पार्टी मेकअप।',
     image: 'https://images.unsplash.com/photo-1522335228445-9f6f2b04c1ce?auto=format&fit=crop&q=80&w=800',
     category: 'beauty',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-getting-her-makeup-done-34502-large.mp4'
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-getting-her-makeup-done-34502-large.mp4',
+    popularFor: ['wedding']
   },
   {
     id: 'robotics-foot-massage',
@@ -284,7 +332,297 @@ export const STATIONS = [
     descriptionHi: 'आपके पैरों के लिए हाई-टेक स्वचालित विश्राम।',
     image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=800',
     category: 'wellness',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-getting-a-foot-massage-34500-large.mp4'
+    popularFor: ['wedding']
+  },
+  {
+    id: 'gel-candle-making',
+    name: 'Gel Candle Making',
+    nameHi: 'जेल मोमबत्ती बनाना',
+    description: 'Create beautiful transparent gel candles with colorful fillings.',
+    descriptionHi: 'रंगीन फिलिंग्स के साथ सुंदर पारदर्शी जेल मोमबत्तियाँ बनाएँ।',
+    image: 'https://images.unsplash.com/photo-1483120611881-427773229b13?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'airclay-mirror',
+    name: 'Airclay Mirror',
+    nameHi: 'एयरक्ले मिरर',
+    description: 'Decorate mirrors with lightweight, air-drying colorful clay.',
+    descriptionHi: 'हल्की, हवा में सूखने वाली रंगीन मिट्टी से दर्पणों को सजाएं।',
+    image: 'https://images.unsplash.com/photo-1544031656-66eb9b4d003b?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'marshmallow-candy',
+    name: 'Marshmallow Candy',
+    nameHi: 'मार्शमैलो कैंडी',
+    description: 'Sweet, fluffy marshmallows in various shapes and flavors.',
+    descriptionHi: 'विभिन्न आकारों और स्वादों में मीठे, फूले हुए मार्शमैलो।',
+    image: 'https://images.unsplash.com/photo-1594950195709-a14f66c242d7?auto=format&fit=crop&q=80&w=800',
+    category: 'food',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'soap-making',
+    name: 'Soap Making',
+    nameHi: 'साबुन बनाना',
+    description: 'Craft your own scented and colorful handmade soaps.',
+    descriptionHi: 'अपने स्वयं के सुगंधित और रंगीन हस्तनिर्मित साबुन बनाएं।',
+    image: 'https://images.unsplash.com/photo-1600857062241-98e5dba7f214?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'pet-adoption',
+    name: 'Pet Adoption',
+    nameHi: 'पालतू जानवर गोद लेना',
+    description: 'A fun "adopt a plushie" station for kids to take home a toy friend.',
+    descriptionHi: 'बच्चों के लिए एक खिलौना दोस्त घर ले जाने के लिए एक मजेदार "प्लशी गोद लें" स्टेशन।',
+    image: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=800',
+    category: 'entertainment',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'create-your-sunglass',
+    name: 'Create Your Sunglass',
+    nameHi: 'अपना धूप का चश्मा बनाएं',
+    description: 'Design and decorate funky sunglasses with gems and stickers.',
+    descriptionHi: 'रत्नों और स्टिकर के साथ फंकी धूप के चश्मे डिजाइन और सजाएं।',
+    image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'crayon-making',
+    name: 'Crayon Making',
+    nameHi: 'क्रेयॉन बनाना',
+    description: 'Melt and mold colorful wax into fun unique crayon shapes.',
+    descriptionHi: 'रंगीन मोम को पिघलाकर मजेदार अनोखे क्रेयॉन आकार दें।',
+    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'lighting-jar',
+    name: 'Lighting Jar',
+    nameHi: 'लाइटिंग जार',
+    description: 'Create magical glowing mason jars with fairy lights.',
+    descriptionHi: 'फेयरी लाइट के साथ जादुई चमकदार मेसन जार बनाएं।',
+    image: 'https://images.unsplash.com/photo-1557367184-663fca4b8b81?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'pottery-plant',
+    name: 'Pottery Plant',
+    nameHi: 'मिट्टी के बर्तन का पौधा',
+    description: 'Paint your own pots and plant a seedling to take home.',
+    descriptionHi: 'अपने स्वयं के बर्तनों को पेंट करें और घर ले जाने के लिए एक पौधा लगाएं।',
+    image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'spin-art',
+    name: 'Spin Art',
+    nameHi: 'स्पिन आर्ट',
+    description: 'Create dynamic splatter art using a rotating canvas.',
+    descriptionHi: 'घूर्णन कैनवास का उपयोग करके गतिशील स्पैटर कला बनाएं।',
+    image: 'https://images.unsplash.com/photo-1541119638723-c51cbe2262aa?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'money-bank',
+    name: 'Money Bank',
+    nameHi: 'मनी बैंक',
+    description: 'Personalize and decorate your own piggy banks or saving jars.',
+    descriptionHi: 'अपने स्वयं के गुल्लक या बचत जार को व्यक्तिगत और सजाएं।',
+    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'mug-art',
+    name: 'Mug Art',
+    nameHi: 'मग आर्ट',
+    description: 'Hand-paint your own ceramic mugs with colorful designs.',
+    descriptionHi: 'रंगीन डिजाइनों के साथ अपने स्वयं के सिरेमिक मग पेंट करें।',
+    image: 'https://images.unsplash.com/photo-1574633216393-02f66458cd11?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'mystery-animal',
+    name: 'Mystery Animal',
+    nameHi: 'मिस्ट्री एनिमल',
+    description: 'Fun animal-themed guessing games and educational activities.',
+    descriptionHi: 'मजेदार पशु-थीम वाले अनुमान लगाने के खेल और शैक्षिक गतिविधियाँ।',
+    image: 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&q=80&w=800',
+    category: 'entertainment',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'slime-making',
+    name: 'Slime Making',
+    nameHi: 'स्लाइम बनाना',
+    description: 'Mix and customize your own colorful and glittery slime.',
+    descriptionHi: 'अपने स्वयं के रंगीन और चमकदार स्लाइम को मिलाएं और कस्टमाइज़ करें।',
+    image: 'https://images.unsplash.com/photo-1624467008803-0130932d90d7?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'name-plates',
+    name: 'Name Plates',
+    nameHi: 'नेम प्लेट्स',
+    description: 'Design and paint custom wooden or ceramic door name plates.',
+    descriptionHi: 'कस्टम लकड़ी या सिरेमिक दरवाजे के नेम प्लेट डिजाइन और पेंट करें।',
+    image: 'https://images.unsplash.com/photo-1516641396056-0ce60a85d49f?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'princess-mirror',
+    name: 'Princess Mirror',
+    nameHi: 'प्रिंसेस मिरर',
+    description: 'Gilded and jeweled mirrors for every little princess.',
+    descriptionHi: 'हर छोटी राजकुमारी के लिए सोने और रत्नों से जड़ित दर्पण।',
+    image: 'https://images.unsplash.com/photo-1583912267550-d44d7a125e71?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'princess-garden',
+    name: 'Princess Garden',
+    nameHi: 'प्रिंसेस गार्डन',
+    description: 'Create a mini fairy garden with flowers and magical figurines.',
+    descriptionHi: 'फूलों और जादुई मूर्तियों के साथ एक छोटा फेयरी गार्डन बनाएं।',
+    image: 'https://images.unsplash.com/photo-1558905619-15d312948ce6?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'dream-catcher',
+    name: 'Dream Catcher',
+    nameHi: 'ड्रीम कैचर',
+    description: 'Weave colorful threads and feathers to make your own protector.',
+    descriptionHi: 'अपना खुद का रक्षक बनाने के लिए रंगीन धागे और पंख बुनें।',
+    image: 'https://images.unsplash.com/photo-1549413216-566ca69c3a38?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'face-tattoo',
+    name: 'Face Tattoo',
+    nameHi: 'फेस टैटू',
+    description: 'Beautiful hand-painted face art designs for kids.',
+    descriptionHi: 'बच्चों के लिए सुंदर हाथ से पेंट किए गए फेस आर्ट डिज़ाइन।',
+    image: 'https://images.unsplash.com/photo-1506863530036-1efeddceb993?auto=format&fit=crop&q=80&w=800',
+    category: 'entertainment',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'jujube-candy',
+    name: 'Jujube Candy',
+    nameHi: 'जुजुब कैंडी',
+    description: 'Sweet and chewy traditional fruit candies.',
+    descriptionHi: 'मीठी और चबाने योग्य पारंपरिक फल कैंडी।',
+    image: 'https://images.unsplash.com/photo-1581798459219-318e76aecc7b?auto=format&fit=crop&q=80&w=800',
+    category: 'food',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'cotton-candy',
+    name: 'Cotton Candy',
+    nameHi: 'बुढ़िया के बाल',
+    description: 'Fluffy clouds of sugar spun into sweet treats.',
+    descriptionHi: 'चीनी के फूले हुए बादल मीठे व्यंजनों में बदल गए।',
+    image: 'https://images.unsplash.com/photo-1572913013824-33b8a913697e?auto=format&fit=crop&q=80&w=800',
+    category: 'food',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'popcorn',
+    name: 'Popcorn',
+    nameHi: 'पॉपकॉर्न',
+    description: 'Freshly popped, warm and buttery popcorn station.',
+    descriptionHi: 'ताजा पॉप, गर्म और मक्खन जैसा पॉपकॉर्न स्टेशन।',
+    image: 'https://images.unsplash.com/photo-1585647348423-228bf2f470d9?auto=format&fit=crop&q=80&w=800',
+    category: 'food',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'kinect-gaming',
+    name: 'Kinect Gaming',
+    nameHi: 'काइनेक्ट गेमिंग',
+    description: 'Interactive motion-controlled video games for active play.',
+    descriptionHi: 'सक्रिय खेल के लिए इंटरैक्टिव मोशन-कंट्रोल वीडियो गेम।',
+    image: 'https://images.unsplash.com/photo-1605899002131-0421e67cc084?auto=format&fit=crop&q=80&w=800',
+    category: 'gaming',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'teddy-art',
+    name: 'Teddy Art',
+    nameHi: 'टेडी आर्ट',
+    description: 'Decorate and accessorize your own stuffed teddy bear.',
+    descriptionHi: 'अपने स्वयं के भरे हुए टेडी बियर को सजाएं और एक्सेसराइज़ करें।',
+    image: 'https://images.unsplash.com/photo-1559454403-b8fb88521f11?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'lego-jars',
+    name: 'Lego Jars',
+    nameHi: 'लेगो जार',
+    description: 'Build creative Lego models inside personalized glass jars.',
+    descriptionHi: 'व्यक्तिगत ग्लास जार के अंदर रचनात्मक लेगो मॉडल बनाएं।',
+    image: 'https://images.unsplash.com/photo-1585366119957-e556f4d2b27a?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'kite-making',
+    name: 'Kite Making',
+    nameHi: 'पतंग बनाना',
+    description: 'Traditional kite crafting with colorful paper and bamboo.',
+    descriptionHi: 'रंगीन कागज और बांस के साथ पारंपरिक पतंग बनाना।',
+    image: 'https://images.unsplash.com/photo-1596720426673-e48356972740?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'creative-head-bands',
+    name: 'Creative Head Bands',
+    nameHi: 'क्रिएटिव हेड बैंड्स',
+    description: 'Design stylish and fun headbands with ribbons and flowers.',
+    descriptionHi: 'रिबन और फूलों के साथ स्टाइलिश और मजेदार हेडबैंड डिजाइन करें।',
+    image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'origami',
+    name: 'Origami',
+    nameHi: 'ओरिगामी',
+    description: 'The ancient art of Japanese paper folding.',
+    descriptionHi: 'जापानी पेपर फोल्डिंग की प्राचीन कला।',
+    image: 'https://images.unsplash.com/photo-1676378419612-4f3583274291?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
+  },
+  {
+    id: 'solar-lamp',
+    name: 'Solar Lamp',
+    nameHi: 'सौर लैंप',
+    description: 'Assemble and decorate functional eco-friendly solar lamps.',
+    descriptionHi: 'कार्यात्मक पर्यावरण के अनुकूल सौर लैंप इकट्ठा करें और सजाएं।',
+    image: 'https://images.unsplash.com/photo-1590424753046-58bf99192404?auto=format&fit=crop&q=80&w=800',
+    category: 'craft',
+    popularFor: ['birthday']
   }
 ];
 
@@ -293,7 +631,7 @@ export const PACKAGES = [
     id: 'starter',
     name: 'Starter Spark',
     nameHi: 'स्टार्टर स्पार्क',
-    basePrice: 8000,
+    basePrice: 10000,
     stationsCount: 1,
     guestsCount: 30,
     durationHours: 2
@@ -332,7 +670,8 @@ export const OCCASIONS = [
       { id: 'sangeet', name: 'Sangeet', nameHi: 'संगीत' },
       { id: 'reception', name: 'Reception', nameHi: 'रिसेप्शन' },
       { id: 'mehendi-event', name: 'Mehendi', nameHi: 'मेहंदी' }
-    ]
+    ],
+    popularFor: ['wedding']
   },
   { id: 'birthday', name: 'Kids Birthday', nameHi: 'बच्चों का जन्मदिन', slug: 'birthday', image: 'https://images.unsplash.com/photo-1530103043960-ef38714abb15?auto=format&fit=crop&q=80&w=800', description: 'Creative crafts to keep the little ones busy.' },
   { id: 'anniversary', name: 'Anniversary', nameHi: 'सालगिरह', slug: 'anniversary', image: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=800', description: 'Celebrate love with handmade memories.' }

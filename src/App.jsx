@@ -1,7 +1,8 @@
-import { LanguageProvider } from './context/LanguageContext';
+import { LanguageProvider } from './context/LanguageProvider';
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar, Footer, WhatsAppButton } from './components/Layout';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Stations from './pages/Stations';
 import Packages from './pages/Packages';
@@ -20,13 +21,14 @@ export default function App() {
 }
 
 function AppContent() {
-  const [selectedOccasion, setSelectedOccasion] = useState('wedding');
+  const [selectedOccasion, setSelectedOccasion] = useState(null);
 
   return (
     <div className="min-h-screen flex flex-col">
+      <ScrollToTop />
       <Navbar />
       
-      <main className="flex-grow">
+      <main className="flex-grow relative">
         <AnimatePresence mode="wait">
           <Routes>
             <Route 

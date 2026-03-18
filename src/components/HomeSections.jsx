@@ -14,8 +14,6 @@ export const Hero = () => {
     offset: ["start start", "end start"]
   });
 
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, 300]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
   const opacity = useTransform(scrollYProgress, [0, 1], [0.8, 0.4]);
 
@@ -33,27 +31,6 @@ export const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent"></div>
       </motion.div>
 
-      {/* Animated Orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
-        <motion.div 
-          style={{ y: y1 }}
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.2, 0.1]
-          }}
-          transition={{ duration: 15, repeat: Infinity }}
-          className="absolute top-0 right-0 w-[600px] h-[600px] bg-firozi rounded-full blur-[120px]"
-        />
-        <motion.div 
-          style={{ y: y2 }}
-          animate={{ 
-            scale: [1, 1.3, 1],
-            opacity: [0.1, 0.15, 0.1]
-          }}
-          transition={{ duration: 20, repeat: Infinity, delay: 2 }}
-          className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-ocean rounded-full blur-[100px]"
-        />
-      </div>
 
       <div className="relative z-20 max-w-7xl mx-auto px-4 w-full pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -74,8 +51,8 @@ export const Hero = () => {
             </div>
 
             <h1 className="text-6xl sm:text-8xl lg:text-[10rem] font-display leading-[0.85] mb-8 tracking-tighter drop-shadow-[0_4px_15px_rgba(0,0,0,0.6)]">
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-snow via-snow to-firozi/50">{t('Live', 'लाइव')}</span> <br />
-              <span className="text-firozi italic drop-shadow-[0_0_20px_rgba(0,206,209,0.5)]">{t('Art', 'कला')}</span> <br />
+              <span className="text-snow">{t('Live', 'लाइव')}</span> <br />
+              <span className="text-snow italic">{t('Art', 'कला')}</span> <br />
               <span className="text-snow/30">{t('Moments', 'क्षण')}</span>
             </h1>
 
@@ -255,7 +232,7 @@ export const OccasionSelector = ({ onSelect, activeOccasion }) => {
                 {occasion.subEvents && (
                   <div className="flex flex-wrap gap-2 mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0">
                     {occasion.subEvents.map(sub => (
-                      <span key={sub.id} className="px-3 py-1 bg-firozi/20 border border-firozi/30 rounded-full text-[10px] font-black uppercase tracking-widest text-firozi">
+                      <span key={sub.id} className="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-[10px] font-black uppercase tracking-widest text-snow">
                         {t(sub.name, sub.nameHi)}
                       </span>
                     ))}
@@ -278,12 +255,28 @@ export const StationCatalogue = ({ selectedOccasion }) => {
   const { t } = useLanguage();
   const [expandedId, setExpandedId] = useState(null);
   const [videoModal, setVideoModal] = useState({ isOpen: false, url: '', title: '' });
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const occasionName = OCCASIONS.find(o => o.id === selectedOccasion)?.name || 'Celebration';
-  const occasionNameHi = OCCASIONS.find(o => o.id === selectedOccasion)?.nameHi || 'उत्सव';
+  const occasionName = OCCASIONS.find(o => o.id === selectedOccasion)?.name || '';
+  const occasionNameHi = OCCASIONS.find(o => o.id === selectedOccasion)?.nameHi || '';
 
-  // Show all stations if no filters are available
-  const filteredStations = STATIONS;
+  // Derive unique categories from all stations
+  const categories = ['all', ...Array.from(new Set(STATIONS.map(s => s.category)))];
+
+  // Show all stations by default; filter by occasion if set, then by selected category
+  const occasionFiltered = selectedOccasion
+    ? STATIONS.filter(s => s.popularFor?.includes(selectedOccasion))
+    : STATIONS;
+
+  const filteredStations = (activeCategory === 'all'
+    ? occasionFiltered
+    : occasionFiltered.filter(s => s.category === activeCategory)
+  ).filter(s => {
+    if (!searchQuery.trim()) return true;
+    const q = searchQuery.toLowerCase();
+    return s.name.toLowerCase().includes(q) || (s.nameHi && s.nameHi.includes(searchQuery));
+  });
 
   const toggleExpand = (id) => {
     setExpandedId(expandedId === id ? null : id);
@@ -299,7 +292,9 @@ export const StationCatalogue = ({ selectedOccasion }) => {
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
           <div className="max-w-2xl">
             <span className="text-ocean font-black tracking-[0.3em] text-xs uppercase mb-4 block">
-              {t(`${occasionName} Activity Stations`, `${occasionNameHi} गतिविधि स्टेशन्स`)}
+              {occasionName
+                ? t(`${occasionName} Activity Stations`, `${occasionNameHi} गतिविधि स्टेशन्स`)
+                : t('All Activity Stations', 'सभी गतिविधि स्टेशन्स')}
             </span>
             <h2 className="text-5xl md:text-8xl font-display text-ink leading-none">
               {t('Interactive', 'इंटरैक्टिव')} <br />
@@ -307,8 +302,56 @@ export const StationCatalogue = ({ selectedOccasion }) => {
             </h2>
           </div>
           <p className="text-ink/60 text-lg max-w-sm">
-            {t(`Curated DIY experiences specifically for your ${occasionName.toLowerCase()}.`, `आपके ${occasionNameHi} के लिए विशेष रूप से तैयार किए गए DIY अनुभव।`)}
+            {occasionName
+              ? t(`Curated DIY experiences specifically for your ${occasionName.toLowerCase()}.`, `आपके ${occasionNameHi} के लिए विशेष रूप से तैयार किए गए DIY अनुभव।`)
+              : t('Explore our complete collection of DIY activity stations for every celebration.', 'हर उत्सव के लिए हमारे DIY गतिविधि स्टेशनों का पूरा संग्रह देखें।')}
           </p>
+        </div>
+
+        {/* Search Bar */}
+        <div className="relative mb-8">
+          <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none">
+            <svg className="w-5 h-5 text-ink/30" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+            </svg>
+          </div>
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={e => { setSearchQuery(e.target.value); setExpandedId(null); }}
+            placeholder={t('Search activities...', 'गतिविधि खोजें...')}
+            className="w-full pl-14 pr-12 py-4 rounded-2xl border-2 border-ink/8 bg-ink/[0.02] text-ink placeholder-ink/30 font-medium text-base focus:outline-none focus:border-ocean/50 focus:bg-white transition-all duration-300"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery('')}
+              className="absolute inset-y-0 right-4 flex items-center text-ink/30 hover:text-ink/60 transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          )}
+        </div>
+
+        {/* Category Filter Chips */}
+        <div className="flex flex-wrap gap-3 mb-12">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => { setActiveCategory(cat); setExpandedId(null); }}
+              className={`px-5 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300 border-2 ${
+                activeCategory === cat
+                  ? 'bg-ocean text-snow border-ocean shadow-lg scale-105'
+                  : 'bg-white text-ink/60 border-ink/10 hover:border-ocean/40 hover:text-ocean'
+              }`}
+            >
+              {cat === 'all' ? t('All', 'सभी') : t(cat.charAt(0).toUpperCase() + cat.slice(1), cat)}
+            </button>
+          ))}
+          <span className="ml-auto self-center text-ink/40 text-xs font-black uppercase tracking-widest">
+            {filteredStations.length} {t('stations', 'स्टेशन')}
+          </span>
         </div>
 
         <motion.div 
@@ -328,7 +371,7 @@ export const StationCatalogue = ({ selectedOccasion }) => {
                   whileHover={!isExpanded ? { 
                     y: -10, 
                     scale: 1.02,
-                    boxShadow: "0 30px 60px -12px rgba(0, 119, 182, 0.3)"
+                    boxShadow: "0 30px 60px -12px rgba(0, 0, 0, 0.2)"
                   } : {}}
                   transition={{ 
                     duration: 0.4,
@@ -336,16 +379,40 @@ export const StationCatalogue = ({ selectedOccasion }) => {
                   }}
                   className={`group bg-snow rounded-[50px] overflow-hidden border border-ocean/5 shadow-lg transition-all duration-500 flex flex-col ${isExpanded ? 'lg:col-span-2 lg:row-span-2 z-20' : ''}`}
                 >
-                <div className={`overflow-hidden relative ${isExpanded ? 'h-64 lg:h-96' : 'aspect-[4/3]'}`}>
-                  <img src={station.image} alt={station.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                  <div className="absolute top-6 right-6 flex gap-2">
+                <div className={`overflow-hidden relative ${isExpanded ? 'h-auto min-h-[300px]' : 'aspect-[4/3]'}`}>
+                  {!isExpanded ? (
+                    <img src={station.image} alt={station.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  ) : (
+                    <div className="p-4 lg:p-8">
+                      {station.gallery ? (
+                        <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide no-scrollbar snap-x">
+                          {station.gallery.map((img, idx) => (
+                            <motion.div 
+                              key={idx}
+                              initial={{ opacity: 0, x: 20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: idx * 0.1 }}
+                              className="relative min-w-[280px] lg:min-w-[400px] aspect-video rounded-3xl overflow-hidden shadow-xl snap-center bg-ink/5 flex items-center justify-center p-2"
+                            >
+                              <img src={img} alt={`${station.name} ${idx + 1}`} className="w-full h-full object-contain hover:scale-105 transition-transform duration-500" />
+                            </motion.div>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="bg-ink/5 rounded-[30px] overflow-hidden p-4 flex items-center justify-center h-64 lg:h-96">
+                          <img src={station.image} alt={station.name} className="w-full h-full object-contain" />
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  <div className="absolute top-6 right-6 flex gap-2 z-10">
                     <span className="bg-white/90 backdrop-blur-md text-ink px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
                       {station.category}
                     </span>
                     {isExpanded && (
                       <button 
                         onClick={(e) => { e.stopPropagation(); toggleExpand(null); }}
-                        className="bg-ink text-snow p-2 rounded-full hover:bg-ink/80 transition-colors"
+                        className="bg-ink text-snow p-2 rounded-full hover:bg-ink/80 transition-colors shadow-lg"
                       >
                         <X size={16} />
                       </button>
@@ -377,8 +444,7 @@ export const StationCatalogue = ({ selectedOccasion }) => {
                         exit={{ opacity: 0, height: 0 }}
                         className="mb-8 border-t border-ink/5 pt-8"
                       >
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                          <div>
+                        <div>
                             <h4 className="text-sm font-black uppercase tracking-widest text-ocean mb-4 flex items-center gap-2">
                               <Sparkles size={16} />
                               {t('What\'s Included', 'क्या शामिल है')}
@@ -397,22 +463,7 @@ export const StationCatalogue = ({ selectedOccasion }) => {
                               ))}
                             </ul>
                           </div>
-                          <div>
-                            <h4 className="text-sm font-black uppercase tracking-widest text-ocean mb-4 flex items-center gap-2">
-                              <PlayCircle size={16} />
-                              {t('How it works', 'यह कैसे काम करता है')}
-                            </h4>
-                            <div 
-                              onClick={() => openVideo(station.videoUrl, station.name)}
-                              className="aspect-video bg-ink/5 rounded-2xl flex items-center justify-center group/video cursor-pointer border-2 border-dashed border-ink/10 hover:border-ocean/30 transition-colors"
-                            >
-                              <div className="text-center">
-                                <PlayCircle size={48} className="text-ocean/40 group-hover/video:text-ocean transition-colors mx-auto mb-2" />
-                                <span className="text-[10px] font-black uppercase tracking-tighter text-ink/40 group-hover/video:text-ocean/60">{t('Watch Demo', 'डेमो देखें')}</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+
                       </motion.div>
                     )}
                   </AnimatePresence>

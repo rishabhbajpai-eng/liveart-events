@@ -56,11 +56,6 @@ Please confirm availability!`;
 
   return (
     <section id="packages" className="py-20 lg:py-32 bg-ink text-snow relative overflow-hidden">
-      {/* Background Glows */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-1/4 -left-1/4 w-64 lg:w-96 h-64 lg:h-96 bg-ocean/20 blur-[80px] lg:blur-[100px] rounded-full"></div>
-        <div className="absolute bottom-1/4 -right-1/4 w-64 lg:w-96 h-64 lg:h-96 bg-firozi/20 blur-[80px] lg:blur-[100px] rounded-full"></div>
-      </div>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-12 lg:mb-20">
@@ -99,7 +94,7 @@ Please confirm availability!`;
                     onClick={() => setSelectedPackage(pkg)}
                     className={`relative p-6 lg:p-8 rounded-[32px] lg:rounded-[40px] border-2 text-left transition-all duration-500 ${
                       selectedPackage.id === pkg.id 
-                      ? 'border-firozi bg-firozi/10 shadow-[0_20px_40px_rgba(0,206,209,0.15)]' 
+                      ? 'border-snow bg-snow/10 shadow-[0_20px_40px_rgba(255,255,255,0.05)]' 
                       : 'border-snow/10 hover:border-snow/30 bg-snow/5'
                     }`}
                   >
@@ -143,7 +138,7 @@ Please confirm availability!`;
                     onClick={() => handleStationToggle(station.id)}
                     className={`group relative aspect-square rounded-[24px] lg:rounded-[32px] overflow-hidden border-4 transition-all duration-500 ${
                       selectedStations.includes(station.id)
-                      ? 'border-firozi shadow-[0_0_30px_rgba(0,206,209,0.3)]'
+                      ? 'border-snow shadow-[0_0_30px_rgba(255,255,255,0.1)]'
                       : 'border-transparent opacity-60 hover:opacity-100'
                     }`}
                   >
@@ -156,10 +151,10 @@ Please confirm availability!`;
                       <motion.div 
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        className="absolute inset-0 bg-firozi/20 flex items-center justify-center"
+                        className="absolute inset-0 bg-snow/10 flex items-center justify-center"
                       >
-                        <div className="bg-firozi text-ink p-2 lg:p-3 rounded-full shadow-2xl">
-                          <Check size={20} lg:size={24} />
+                        <div className="bg-snow text-ink p-2 lg:p-3 rounded-full shadow-2xl">
+                          <Check size={20} />
                         </div>
                       </motion.div>
                     )}

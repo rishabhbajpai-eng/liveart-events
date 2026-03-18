@@ -13,6 +13,10 @@
 }
 
 @layer base {
+  html, body, #root {
+    @apply relative;
+  }
+
   body {
     @apply bg-snow text-ink font-sans overflow-x-hidden;
   }
@@ -44,9 +48,6 @@
   background: linear-gradient(135deg, var(--color-ocean) 0%, var(--color-firozi) 100%);
 }
 
-.text-glow {
-  text-shadow: 0 0 20px rgba(0, 206, 209, 0.4);
-}
 
 .whatsapp-sticky {
   position: fixed;
@@ -77,5 +78,5 @@
   @apply bg-snow;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-ocean/30 rounded-full hover:bg-ocean/50 transition-colors;
+  @apply bg-ink/20 rounded-full hover:bg-ink/40 transition-colors;
 }

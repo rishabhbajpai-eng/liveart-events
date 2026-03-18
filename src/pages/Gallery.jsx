@@ -10,7 +10,7 @@ const Gallery = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="pt-20"
+      className="pt-20 relative"
     >
       <section id="gallery" className="py-20 lg:py-32 bg-ink overflow-hidden relative min-h-screen">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
@@ -32,14 +32,14 @@ const Gallery = () => {
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             {[
-              'https://images.unsplash.com/photo-1516939884455-1445c8652f83',
-              'https://images.unsplash.com/photo-1519741497674-611481863552',
-              'https://images.unsplash.com/photo-1533910534207-90f2753f9440',
-              'https://images.unsplash.com/photo-1513151233558-d860c5398176',
               'https://images.unsplash.com/photo-1511795409834-ef04bbd61622',
+              'https://images.unsplash.com/photo-1519741497674-611481863552',
+              'https://images.unsplash.com/photo-1519225421980-715cb0215aed',
+              'https://images.unsplash.com/photo-1513151233558-d860c5398176',
+              'https://images.unsplash.com/photo-1519225421980-715cb0215aed',
               'https://images.unsplash.com/photo-1594122230689-45899d9e6f69',
               'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539',
-              'https://images.unsplash.com/photo-1596435707124-3313901f8277'
+              'https://images.unsplash.com/photo-1520854221256-17451cc331bf'
             ].map((url, i) => (
               <motion.div 
                 key={i} 
