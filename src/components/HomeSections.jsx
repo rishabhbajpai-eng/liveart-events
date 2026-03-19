@@ -1,9 +1,9 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import haldiHero from '../assets/haldi-hero.png';
 import { useLanguage } from '../context/LanguageContext';
 import { OCCASIONS, STATIONS } from '../constants';
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
-import { ArrowRight, Users, Sparkles, X, CheckCircle2, PlayCircle } from 'lucide-react';
+import { ArrowRight, Users, Sparkles, X, CheckCircle2, PlayCircle, Star, Clock, BadgeIndianRupee, Tag } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 
 export const Hero = () => {
@@ -251,6 +251,178 @@ export const OccasionSelector = ({ onSelect, activeOccasion }) => {
   );
 };
 
+// Highlight chip variants per category
+const chipConfig = {
+  lifestyle: { label: 'Includes premium materials', color: 'bg-amber-50 text-amber-700 border-amber-200' },
+  craft: { label: 'Includes all craft supplies', color: 'bg-emerald-50 text-emerald-700 border-emerald-200' },
+  food: { label: 'Fresh ingredients daily', color: 'bg-rose-50 text-rose-700 border-rose-200' },
+  beauty: { label: 'Professional artist included', color: 'bg-purple-50 text-purple-700 border-purple-200' },
+  wellness: { label: 'Expert therapist included', color: 'bg-teal-50 text-teal-700 border-teal-200' },
+  entertainment: { label: 'Interactive experience', color: 'bg-blue-50 text-blue-700 border-blue-200' },
+  gaming: { label: 'All equipment provided', color: 'bg-indigo-50 text-indigo-700 border-indigo-200' },
+};
+
+const StationCard = ({ station, t, isExpanded, toggleExpand, openVideo, idx }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const chip = chipConfig[station.category] || { label: 'Premium experience', color: 'bg-gray-50 text-gray-700 border-gray-200' };
+
+  useEffect(() => {
+    let interval;
+    if (station.gallery && station.gallery.length > 1 && !isExpanded) {
+      interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % station.gallery.length);
+      }, 3000);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [station.gallery, isExpanded]);
+
+  const displayImage = station.gallery && station.gallery.length > 0 && !isExpanded
+    ? station.gallery[currentImageIndex]
+    : station.image;
+
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+      transition={{ duration: 0.4, delay: idx < 8 ? idx * 0.05 : 0 }}
+      className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow duration-300"
+    >
+      <div className="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden group cursor-pointer" onClick={() => toggleExpand(station.id)}>
+        <motion.img
+          key={displayImage}
+          initial={{ opacity: 0.8 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          src={displayImage}
+          alt={station.name}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
+
+        <div className="absolute top-4 left-4">
+          <span className="bg-white/95 backdrop-blur-md text-gray-900 px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest shadow-lg">
+            {station.category}
+          </span>
+        </div>
+
+        {station.videoUrl && (
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
+            <button
+              onClick={(e) => { e.stopPropagation(); openVideo(station.videoUrl, station.name); }}
+              className="bg-white/90 backdrop-blur-md text-gray-900 px-5 py-2.5 rounded-full font-bold text-sm tracking-wide flex items-center gap-2 transform hover:scale-105 transition-all shadow-xl"
+            >
+              <PlayCircle size={18} className="text-teal-600" />
+              {t('Watch Demo', 'डेमो')}
+            </button>
+          </div>
+        )}
+      </div>
+
+      <div className="p-5 lg:p-6" onClick={() => toggleExpand(station.id)}>
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="text-xl lg:text-2xl font-black text-gray-900 leading-tight">
+            {t(station.name, station.nameHi)}
+          </h3>
+        </div>
+
+        <p className="text-sm lg:text-base text-gray-500 line-clamp-2 mb-4">
+          {t(station.description, station.descriptionHi)}
+        </p>
+
+        <div className="flex items-center gap-4 py-3 border-y border-gray-100 mb-4 bg-gray-50/50 -mx-5 px-5 lg:-mx-6 lg:px-6">
+          <div className="flex items-center gap-2">
+            <Clock size={16} className="text-teal-600" />
+            <span className="text-xs lg:text-sm font-semibold text-gray-700">2-4 hrs</span>
+          </div>
+          <div className="w-1 h-1 rounded-full bg-gray-300" />
+          <div className="flex items-center gap-2">
+            <Users size={16} className="text-teal-600" />
+            <span className="text-xs lg:text-sm font-semibold text-gray-700">30+ Guests</span>
+          </div>
+          <div className="w-1 h-1 rounded-full bg-gray-300" />
+          <div className="flex items-center gap-2">
+            <BadgeIndianRupee size={16} className="text-teal-600" />
+            <span className="text-xs lg:text-sm font-semibold text-gray-700">Priced per guest</span>
+          </div>
+        </div>
+
+        <div className="mb-2">
+          <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold border ${chip.color}`}>
+            <Tag size={12} />
+            {t(chip.label, chip.label)}
+          </span>
+        </div>
+
+        <AnimatePresence>
+          {isExpanded && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="overflow-hidden mt-4"
+            >
+              <div className="pt-4 border-t border-gray-100">
+                <h4 className="text-sm font-black uppercase tracking-widest text-teal-600 mb-3 flex items-center gap-2">
+                  <Sparkles size={16} />
+                  {t("What's Included", 'क्या शामिल है')}
+                </h4>
+                <ul className="space-y-3 mb-6">
+                  {[
+                    t('Premium raw materials', 'प्रीमियम कच्चा माल'),
+                    t('Expert facilitator', 'विशेषज्ञ सूत्रधार'),
+                    t('Custom packaging', 'कस्टम पैकेजिंग'),
+                    t('Setup & Cleanup', 'सेटअप और सफाई')
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-gray-700 text-sm font-medium">
+                      <CheckCircle2 size={18} className="text-green-500 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                {station.gallery && (
+                  <div className="mb-4">
+                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">{t('Gallery', 'गैलरी')}</h4>
+                    <div className="flex gap-3 overflow-x-auto pb-2 no-scrollbar snap-x">
+                      {station.gallery.map((img, imgIdx) => (
+                        <div key={imgIdx} className="min-w-[120px] h-[90px] rounded-2xl overflow-hidden shrink-0 snap-start bg-gray-100 shadow-sm">
+                          <img src={img} alt="" className="w-full h-full object-cover" />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="flex items-center justify-between pt-4 mt-2 border-t border-gray-100">
+                   <button 
+                     onClick={(e) => { e.stopPropagation(); toggleExpand(null); }}
+                     className="text-gray-500 hover:text-gray-900 font-bold text-sm tracking-wide transition-colors"
+                   >
+                     {t('Close Details', 'विवरण बंद करें')}
+                   </button>
+                   {station.videoUrl && (
+                    <button
+                      onClick={(e) => { e.stopPropagation(); openVideo(station.videoUrl, station.name); }}
+                      className="text-teal-600 font-bold flex items-center gap-1.5 hover:text-teal-700 transition-colors"
+                    >
+                      <PlayCircle size={18} />
+                      {t('Demo', 'डेमो')}
+                    </button>
+                   )}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </motion.div>
+  );
+};
+
 export const StationCatalogue = ({ selectedOccasion }) => {
   const { t } = useLanguage();
   const [expandedId, setExpandedId] = useState(null);
@@ -287,212 +459,89 @@ export const StationCatalogue = ({ selectedOccasion }) => {
   };
 
   return (
-    <section id="stations" className="py-32 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
-          <div className="max-w-2xl">
-            <span className="text-ocean font-black tracking-[0.3em] text-xs uppercase mb-4 block">
-              {occasionName
-                ? t(`${occasionName} Activity Stations`, `${occasionNameHi} गतिविधि स्टेशन्स`)
-                : t('All Activity Stations', 'सभी गतिविधि स्टेशन्स')}
-            </span>
-            <h2 className="text-5xl md:text-8xl font-display text-ink leading-none">
-              {t('Interactive', 'इंटरैक्टिव')} <br />
-              <span className="text-ocean italic">{t('Stations', 'स्टेशन्स')}</span>
-            </h2>
+    <section id="stations" className="bg-white relative">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 py-8 lg:py-16">
+        {/* Header - Zomato Style App Header */}
+        <div className="mb-8">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight">
+                {occasionName
+                  ? t(`${occasionName} Stations`, `${occasionNameHi} स्टेशन्स`)
+                  : t('Activity Stations', 'गतिविधि स्टेशन्स')}
+              </h2>
+              <p className="text-gray-500 font-medium mt-1">
+                {filteredStations.length} {t('experiences available', 'अनुभव उपलब्ध')}
+              </p>
+            </div>
           </div>
-          <p className="text-ink/60 text-lg max-w-sm">
-            {occasionName
-              ? t(`Curated DIY experiences specifically for your ${occasionName.toLowerCase()}.`, `आपके ${occasionNameHi} के लिए विशेष रूप से तैयार किए गए DIY अनुभव।`)
-              : t('Explore our complete collection of DIY activity stations for every celebration.', 'हर उत्सव के लिए हमारे DIY गतिविधि स्टेशनों का पूरा संग्रह देखें।')}
-          </p>
+
+          {/* Search Bar */}
+          <div className="relative mb-6">
+            <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+              <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+              </svg>
+            </div>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={e => { setSearchQuery(e.target.value); setExpandedId(null); }}
+              placeholder={t('Search activities...', 'गतिविधि खोजें...')}
+              className="w-full pl-12 pr-12 py-3.5 rounded-2xl border border-gray-200 bg-gray-50 text-gray-900 placeholder-gray-400 font-medium focus:outline-none focus:border-teal-500 focus:bg-white transition-all shadow-sm"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute inset-y-0 right-4 flex items-center text-gray-400 hover:text-gray-600 transition-colors"
+              >
+                <X size={20} />
+              </button>
+            )}
+          </div>
+
+          {/* Filter Pill Tabs (Zomato Style Horizons) */}
+          <div className="flex gap-3 overflow-x-auto pb-4 no-scrollbar -mx-4 px-4 lg:mx-0 lg:px-0">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => { setActiveCategory(cat); setExpandedId(null); }}
+                className={`flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 border ${
+                  activeCategory === cat
+                    ? 'bg-teal-600 text-white border-teal-600 shadow-md transform scale-105'
+                    : 'bg-white text-gray-600 border-gray-200 hover:border-teal-400 hover:text-teal-700 hover:bg-teal-50'
+                }`}
+              >
+                {cat === 'all' ? t('ALL', 'सभी') : cat}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Search Bar */}
-        <div className="relative mb-8">
-          <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none">
-            <svg className="w-5 h-5 text-ink/30" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
-            </svg>
-          </div>
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={e => { setSearchQuery(e.target.value); setExpandedId(null); }}
-            placeholder={t('Search activities...', 'गतिविधि खोजें...')}
-            className="w-full pl-14 pr-12 py-4 rounded-2xl border-2 border-ink/8 bg-ink/[0.02] text-ink placeholder-ink/30 font-medium text-base focus:outline-none focus:border-ocean/50 focus:bg-white transition-all duration-300"
-          />
-          {searchQuery && (
-            <button
-              onClick={() => setSearchQuery('')}
-              className="absolute inset-y-0 right-4 flex items-center text-ink/30 hover:text-ink/60 transition-colors"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+        {/* Card List - Stacked vertically like Zomato feed */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <AnimatePresence mode="popLayout">
+            {filteredStations.map((station, idx) => (
+              <StationCard
+                key={station.id}
+                station={station}
+                t={t}
+                isExpanded={expandedId === station.id}
+                toggleExpand={toggleExpand}
+                openVideo={openVideo}
+                idx={idx}
+              />
+            ))}
+          </AnimatePresence>
+
+          {filteredStations.length === 0 && (
+            <div className="col-span-full py-20 text-center">
+               <div className="text-6xl mb-4 opacity-50">🍽️</div>
+               <h3 className="text-xl font-bold text-gray-900 mb-2">{t('No matching experiences found', 'कोई मेल खाने वाला अनुभव नहीं मिला')}</h3>
+               <p className="text-gray-500">{t('Try adjusting your search or filters.', 'अपनी खोज या फ़िल्टर समायोजित करने का प्रयास करें।')}</p>
+            </div>
           )}
         </div>
-
-        {/* Category Filter Chips */}
-        <div className="flex flex-wrap gap-3 mb-12">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => { setActiveCategory(cat); setExpandedId(null); }}
-              className={`px-5 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300 border-2 ${
-                activeCategory === cat
-                  ? 'bg-ocean text-snow border-ocean shadow-lg scale-105'
-                  : 'bg-white text-ink/60 border-ink/10 hover:border-ocean/40 hover:text-ocean'
-              }`}
-            >
-              {cat === 'all' ? t('All', 'सभी') : t(cat.charAt(0).toUpperCase() + cat.slice(1), cat)}
-            </button>
-          ))}
-          <span className="ml-auto self-center text-ink/40 text-xs font-black uppercase tracking-widest">
-            {filteredStations.length} {t('stations', 'स्टेशन')}
-          </span>
-        </div>
-
-        <motion.div 
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredStations.map((station) => {
-              const isExpanded = expandedId === station.id;
-              return (
-                <motion.div 
-                  key={station.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  whileHover={!isExpanded ? { 
-                    y: -10, 
-                    scale: 1.02,
-                    boxShadow: "0 30px 60px -12px rgba(0, 0, 0, 0.2)"
-                  } : {}}
-                  transition={{ 
-                    duration: 0.4,
-                    layout: { duration: 0.4, type: "spring", stiffness: 100 },
-                  }}
-                  className={`group bg-snow rounded-[50px] overflow-hidden border border-ocean/5 shadow-lg transition-all duration-500 flex flex-col ${isExpanded ? 'lg:col-span-2 lg:row-span-2 z-20' : ''}`}
-                >
-                <div className={`overflow-hidden relative ${isExpanded ? 'h-auto min-h-[300px]' : 'aspect-[4/3]'}`}>
-                  {!isExpanded ? (
-                    <img src={station.image} alt={station.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                  ) : (
-                    <div className="p-4 lg:p-8">
-                      {station.gallery ? (
-                        <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide no-scrollbar snap-x">
-                          {station.gallery.map((img, idx) => (
-                            <motion.div 
-                              key={idx}
-                              initial={{ opacity: 0, x: 20 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: idx * 0.1 }}
-                              className="relative min-w-[280px] lg:min-w-[400px] aspect-video rounded-3xl overflow-hidden shadow-xl snap-center bg-ink/5 flex items-center justify-center p-2"
-                            >
-                              <img src={img} alt={`${station.name} ${idx + 1}`} className="w-full h-full object-contain hover:scale-105 transition-transform duration-500" />
-                            </motion.div>
-                          ))}
-                        </div>
-                      ) : (
-                        <div className="bg-ink/5 rounded-[30px] overflow-hidden p-4 flex items-center justify-center h-64 lg:h-96">
-                          <img src={station.image} alt={station.name} className="w-full h-full object-contain" />
-                        </div>
-                      )}
-                    </div>
-                  )}
-                  <div className="absolute top-6 right-6 flex gap-2 z-10">
-                    <span className="bg-white/90 backdrop-blur-md text-ink px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
-                      {station.category}
-                    </span>
-                    {isExpanded && (
-                      <button 
-                        onClick={(e) => { e.stopPropagation(); toggleExpand(null); }}
-                        className="bg-ink text-snow p-2 rounded-full hover:bg-ink/80 transition-colors shadow-lg"
-                      >
-                        <X size={16} />
-                      </button>
-                    )}
-                  </div>
-                  {!isExpanded && (
-                    <div className="absolute inset-0 bg-ink/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <button 
-                        onClick={(e) => { e.stopPropagation(); openVideo(station.videoUrl, station.name); }}
-                        className="bg-snow text-ink px-6 py-3 rounded-full font-black text-xs uppercase tracking-widest flex items-center gap-2 hover:scale-110 transition-transform"
-                      >
-                        <PlayCircle size={18} />
-                        {t('Watch Demo', 'डेमो देखें')}
-                      </button>
-                    </div>
-                  )}
-                </div>
-                <div className="p-10 flex-grow flex flex-col">
-                  <h3 className="text-3xl font-display text-ink mb-4">{t(station.name, station.nameHi)}</h3>
-                  <p className="text-ink/60 text-base leading-relaxed mb-8">
-                    {t(station.description, station.descriptionHi)}
-                  </p>
-                  
-                  <AnimatePresence>
-                    {isExpanded && (
-                      <motion.div 
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="mb-8 border-t border-ink/5 pt-8"
-                      >
-                        <div>
-                            <h4 className="text-sm font-black uppercase tracking-widest text-ocean mb-4 flex items-center gap-2">
-                              <Sparkles size={16} />
-                              {t('What\'s Included', 'क्या शामिल है')}
-                            </h4>
-                            <ul className="space-y-3">
-                              {[
-                                t('Premium raw materials', 'प्रीमियम कच्चा माल'),
-                                t('Expert facilitator', 'विशेषज्ञ सूत्रधार'),
-                                t('Custom packaging', 'कस्टम पैकेजिंग'),
-                                t('Setup & Cleanup', 'सेटअप और सफाई')
-                              ].map((item, i) => (
-                                <li key={i} className="flex items-center gap-3 text-ink/70 text-sm">
-                                  <CheckCircle2 size={16} className="text-emerald" />
-                                  {item}
-                                  </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-
-                  <div className="mt-auto flex items-center justify-between">
-                    <motion.button 
-                      onClick={() => toggleExpand(station.id)}
-                      whileHover={{ x: 10 }}
-                      className="flex items-center gap-3 text-ocean font-black text-sm uppercase tracking-widest"
-                    >
-                      {isExpanded ? t('Show Less', 'कम दिखाएं') : t('See Details', 'विवरण देखें')}
-                      <ArrowRight size={18} className={isExpanded ? 'rotate-180' : ''} />
-                    </motion.button>
-                    {!isExpanded && (
-                      <button 
-                        onClick={() => openVideo(station.videoUrl, station.name)}
-                        className="text-ink/40 hover:text-ocean transition-colors"
-                        title={t('Watch Demo', 'डेमो देखें')}
-                      >
-                        <PlayCircle size={24} />
-                      </button>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
-          </AnimatePresence>
-        </motion.div>
       </div>
 
       {/* Video Modal */}
@@ -505,22 +554,22 @@ export const StationCatalogue = ({ selectedOccasion }) => {
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 lg:p-10"
           >
             <div 
-              className="absolute inset-0 bg-ink/95 backdrop-blur-xl"
+              className="absolute inset-0 bg-gray-900/95 backdrop-blur-md"
               onClick={() => setVideoModal({ ...videoModal, isOpen: false })}
             ></div>
             <motion.div 
-              initial={{ scale: 0.9, y: 20 }}
+              initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
-              className="relative w-full max-w-5xl bg-snow rounded-[40px] lg:rounded-[60px] overflow-hidden shadow-2xl"
+              exit={{ scale: 0.95, y: 20 }}
+              className="relative w-full max-w-4xl bg-white rounded-3xl overflow-hidden shadow-2xl"
             >
-              <div className="p-6 lg:p-10 flex justify-between items-center border-b border-ink/5">
-                <h3 className="text-2xl lg:text-4xl font-display text-ink">{t(videoModal.title, videoModal.title)} - {t('Demo', 'डेमो')}</h3>
+              <div className="p-5 lg:p-6 flex justify-between items-center border-b border-gray-100">
+                <h3 className="text-xl lg:text-2xl font-black text-gray-900">{t(videoModal.title, videoModal.title)} - {t('Demo', 'डेमो')}</h3>
                 <button 
                   onClick={() => setVideoModal({ ...videoModal, isOpen: false })}
-                  className="w-10 h-10 lg:w-12 lg:h-12 bg-ink text-snow rounded-full flex items-center justify-center hover:bg-ink/80 transition-colors"
+                  className="w-10 h-10 bg-gray-100 text-gray-600 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
                 >
-                  <X size={24} />
+                  <X size={20} />
                 </button>
               </div>
               <div className="aspect-video bg-black">
@@ -531,14 +580,14 @@ export const StationCatalogue = ({ selectedOccasion }) => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div className="p-6 lg:p-10 bg-ocean text-snow flex flex-col lg:flex-row justify-between items-center gap-6">
-                <p className="text-lg lg:text-xl font-medium text-center lg:text-left">
+              <div className="p-6 bg-teal-600 text-white flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p className="font-semibold text-center sm:text-left">
                   {t('Love this station? Add it to your custom package!', 'यह स्टेशन पसंद आया? इसे अपने कस्टम पैकेज में जोड़ें!')}
                 </p>
                 <a 
                   href="#packages" 
                   onClick={() => setVideoModal({ ...videoModal, isOpen: false })}
-                  className="bg-snow text-ocean px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm hover:scale-105 transition-transform"
+                  className="bg-white text-teal-700 px-6 py-3 rounded-xl font-bold uppercase tracking-wider text-sm hover:scale-105 transition-transform"
                 >
                   {t('Build Package', 'पैकेज बनाएं')}
                 </a>
