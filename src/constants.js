@@ -26,6 +26,15 @@ import creativeSunglasses2 from './assets/stations/creative_sunglasses_2.png';
 import creativeSunglasses3 from './assets/stations/creative_sunglasses_3.png';
 import creativeSunglasses4 from './assets/stations/creative_sunglasses_4.png';
 import creativeSunglasses5 from './assets/stations/creative_sunglasses_5.png';
+import jhumka1 from './assets/stations/jhumka_1.jpg';
+import jhumka2 from './assets/stations/jhumka_2.jpg';
+import jhumka3 from './assets/stations/jhumka_3.jpg';
+import jhumka4 from './assets/stations/jhumka_4.jpg';
+import solidPerfume1 from './assets/stations/solid_perfume_1.jpg';
+import solidPerfume2 from './assets/stations/solid_perfume_2.jpg';
+import solidPerfume3 from './assets/stations/solid_perfume_3.png';
+import solidPerfume4 from './assets/stations/solid_perfume_4.jpg';
+import solidPerfume5 from './assets/stations/solid_perfume_5.jpg';
 
 export const STATIONS = [
   {
@@ -47,7 +56,7 @@ export const STATIONS = [
     description: 'Fresh flower accessories handcrafted for guests.',
     descriptionHi: 'मेहमानों के लिए हस्तनिर्मित ताजे फूलों के सामान।',
     image: floral1,
-    gallery: [floral1, floral2, floral3, floral4, floral5, floralJewelleryImg],
+    gallery: [floral1, floral2, floral3, floral4, floral5],
     category: 'craft',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-woman-making-a-flower-crown-34487-large.mp4',
     popularFor: ['wedding']
@@ -138,7 +147,8 @@ export const STATIONS = [
     nameHi: 'झुमका स्टॉल',
     description: 'Exquisite traditional earrings in various styles.',
     descriptionHi: 'विभिन्न शैलियों में उत्तम पारंपरिक झुमके।',
-    image: 'https://images.unsplash.com/photo-1630019017537-073c9222f73b?auto=format&fit=crop&q=80&w=800',
+    image: jhumka1,
+    gallery: [jhumka1, jhumka2, jhumka3, jhumka4],
     category: 'lifestyle',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-earrings-34494-large.mp4',
     popularFor: ['wedding']
@@ -160,7 +170,8 @@ export const STATIONS = [
     nameHi: 'सॉलिड परफ्यूम बार',
     description: 'Travel-friendly wax-based concentrated perfumes.',
     descriptionHi: 'यात्रा के अनुकूल मोम-आधारित केंद्रित इत्र।',
-    image: 'https://images.unsplash.com/photo-1615485240384-552e40079c44?auto=format&fit=crop&q=80&w=800',
+    image: solidPerfume1,
+    gallery: [solidPerfume1, solidPerfume2, solidPerfume3, solidPerfume4, solidPerfume5],
     category: 'lifestyle',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-perfume-bottle-on-a-table-34490-large.mp4',
     popularFor: ['wedding']
@@ -665,12 +676,12 @@ export const PACKAGES = [
 ];
 
 export const OCCASIONS = [
-  { 
-    id: 'wedding', 
-    name: 'Wedding', 
-    nameHi: 'शादी', 
-    slug: 'wedding', 
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800', 
+  {
+    id: 'wedding',
+    name: 'Wedding',
+    nameHi: 'शादी',
+    slug: 'wedding',
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800',
     description: 'Premium souvenir stations for your guests.',
     subEvents: [
       { id: 'haldi', name: 'Haldi', nameHi: 'हल्दी' },
