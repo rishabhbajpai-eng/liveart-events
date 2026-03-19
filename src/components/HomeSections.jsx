@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import haldiHero from '../assets/haldi-hero.png';
 import { useLanguage } from '../context/LanguageContext';
 import { OCCASIONS, STATIONS } from '../constants';
-import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
+import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'motion/react';
 import { ArrowRight, Users, Sparkles, X, CheckCircle2, PlayCircle, Star, Clock, BadgeIndianRupee, Tag } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -264,11 +264,13 @@ const chipConfig = {
 
 const StationCard = ({ station, t, isExpanded, toggleExpand, openVideo, idx }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const cardRef = useRef(null);
+  const isInView = useInView(cardRef, { margin: "0px 0px -100px 0px" });
   const chip = chipConfig[station.category] || { label: 'Premium experience', color: 'bg-gray-50 text-gray-700 border-gray-200' };
 
   useEffect(() => {
     let interval;
-    if (station.gallery && station.gallery.length > 1 && !isExpanded) {
+    if (station.gallery && station.gallery.length > 1 && !isExpanded && isInView) {
       interval = setInterval(() => {
         setCurrentImageIndex((prev) => (prev + 1) % station.gallery.length);
       }, 3000);
@@ -276,7 +278,7 @@ const StationCard = ({ station, t, isExpanded, toggleExpand, openVideo, idx }) =
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [station.gallery, isExpanded]);
+  }, [station.gallery, isExpanded, isInView]);
 
   const displayImage = station.gallery && station.gallery.length > 0 && !isExpanded
     ? station.gallery[currentImageIndex]
@@ -284,6 +286,7 @@ const StationCard = ({ station, t, isExpanded, toggleExpand, openVideo, idx }) =
 
   return (
     <motion.div
+      ref={cardRef}
       layout
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
