@@ -292,15 +292,18 @@ const StationCard = ({ station, t, isExpanded, toggleExpand, openVideo, idx }) =
       className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow duration-300"
     >
       <div className="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden group cursor-pointer" onClick={() => toggleExpand(station.id)}>
-        <motion.img
-          key={displayImage}
-          initial={{ opacity: 0.8 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
-          src={displayImage}
-          alt={station.name}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-        />
+        <AnimatePresence>
+          <motion.img
+            key={displayImage}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            src={displayImage}
+            alt={station.name}
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+          />
+        </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
 
         <div className="absolute top-4 left-4">
