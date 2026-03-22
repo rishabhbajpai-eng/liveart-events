@@ -35,6 +35,22 @@ import solidPerfume2 from './assets/stations/solid_perfume_2.jpg';
 import solidPerfume3 from './assets/stations/solid_perfume_3.png';
 import solidPerfume4 from './assets/stations/solid_perfume_4.jpg';
 import solidPerfume5 from './assets/stations/solid_perfume_5.jpg';
+import charmStall1 from './assets/stations/charm_stall_1.jpg';
+import charmStall2 from './assets/stations/charm_stall_2.jpg';
+import charmStall3 from './assets/stations/charm_stall_3.jpg';
+import charmStall4 from './assets/stations/charm_stall_4.jpg';
+import potli1 from './assets/stations/potli_1.jpg';
+import potli2 from './assets/stations/potli_2.jpg';
+import potli3 from './assets/stations/potli_3.jpg';
+import potli4 from './assets/stations/potli_4.jpg';
+import aromaCandle1 from './assets/stations/aroma_candle_1.jpg';
+import aromaCandle2 from './assets/stations/aroma_candle_2.jpg';
+import aromaCandle3 from './assets/stations/aroma_candle_3.jpg';
+import candy1 from './assets/stations/candy_1.jpg';
+import candy2 from './assets/stations/candy_2.jpg';
+import candy3 from './assets/stations/candy_3.jpg';
+import candy4 from './assets/stations/candy_4.jpg';
+import candy5 from './assets/stations/candy_5.jpg';
 
 export const STATIONS = [
   {
@@ -113,7 +129,8 @@ export const STATIONS = [
     nameHi: 'चार्म स्टॉल',
     description: 'Custom charm bracelets and personalized accessories.',
     descriptionHi: 'कस्टम चार्म कंगन और व्यक्तिगत सामान।',
-    image: 'https://images.unsplash.com/photo-1611591437281-460bfbe157a8?auto=format&fit=crop&q=80&w=800',
+    image: charmStall1,
+    gallery: [charmStall1, charmStall2, charmStall3, charmStall4],
     category: 'lifestyle',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-a-bracelet-34491-large.mp4',
     popularFor: ['wedding']
@@ -124,7 +141,8 @@ export const STATIONS = [
     nameHi: 'पोटली स्टॉल',
     description: 'Traditional embroidered potli bags for guests.',
     descriptionHi: 'मेहमानों के लिए पारंपरिक कढ़ाई वाली पोटली बैग।',
-    image: 'https://images.unsplash.com/photo-1595981267035-7b04ca84a810?auto=format&fit=crop&q=80&w=800',
+    image: potli1,
+    gallery: [potli1, potli2, potli3, potli4],
     category: 'lifestyle',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-holding-a-small-bag-34492-large.mp4',
     popularFor: ['wedding']
@@ -159,7 +177,8 @@ export const STATIONS = [
     nameHi: 'सुगंधित मोमबत्ती बनाना',
     description: 'Hand-poured scented candles with custom aromas.',
     descriptionHi: 'कस्टम सुगंध के साथ हाथ से डाली गई सुगंधित मोमबत्तियाँ।',
-    image: 'https://images.unsplash.com/photo-1602874801007-bd458bb1b8b6?auto=format&fit=crop&q=80&w=800',
+    image: aromaCandle1,
+    gallery: [aromaCandle1, aromaCandle2, aromaCandle3],
     category: 'craft',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-burning-candle-on-a-table-34495-large.mp4',
     popularFor: ['wedding']
@@ -182,7 +201,8 @@ export const STATIONS = [
     nameHi: '90 के दशक की कैंडी',
     description: 'Retro treats for a sweet trip down memory lane.',
     descriptionHi: 'यादों की मीठी यात्रा के लिए रेट्रो ट्रीट्स।',
-    image: 'https://images.unsplash.com/photo-1533910534207-90f2753f9440?auto=format&fit=crop&q=80&w=800',
+    image: candy1,
+    gallery: [candy1, candy2, candy3, candy4, candy5],
     category: 'food',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-candies-on-a-table-34496-large.mp4',
     popularFor: ['wedding']
