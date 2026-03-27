@@ -51,6 +51,27 @@ import candy2 from './assets/stations/candy_2.jpg';
 import candy3 from './assets/stations/candy_3.jpg';
 import candy4 from './assets/stations/candy_4.jpg';
 import candy5 from './assets/stations/candy_5.jpg';
+import tarotCard1 from './assets/stations/tarot_card_1.jpg';
+import tarotCard2 from './assets/stations/tarot_card_2.jpg';
+import tarotCard3 from './assets/stations/tarot_card_3.jpg';
+import mehendi1 from './assets/stations/mehendi_1.jpg';
+import mehendi2 from './assets/stations/mehendi_2.jpg';
+import mehendi3 from './assets/stations/mehendi_3.jpg';
+import mehendi4 from './assets/stations/mehendi_4.jpg';
+import mehendi5 from './assets/stations/mehendi_5.jpg';
+import churan1 from './assets/stations/churan_1.jpg';
+import churan2 from './assets/stations/churan_2.jpg';
+import churan3 from './assets/stations/churan_3.jpg';
+import churan4 from './assets/stations/churan_4.jpg';
+import jutti1 from './assets/stations/jutti_1.jpg';
+import jutti2 from './assets/stations/jutti_2.jpg';
+import jutti3 from './assets/stations/jutti_3.jpg';
+import jutti4 from './assets/stations/jutti_4.jpg';
+import nailArt1 from './assets/stations/nail_art_1.jpg';
+import nailArt2 from './assets/stations/nail_art_2.jpg';
+import nailArt3 from './assets/stations/nail_art_3.jpg';
+import nailArt4 from './assets/stations/nail_art_4.jpg';
+import nailArt5 from './assets/stations/nail_art_5.jpg';
 
 export const STATIONS = [
   {
@@ -213,7 +234,8 @@ export const STATIONS = [
     nameHi: 'मेहंदी',
     description: 'Traditional intricate henna art for hands.',
     descriptionHi: 'हाथों के लिए पारंपरिक जटिल मेहंदी कला।',
-    image: 'https://images.unsplash.com/photo-1563223552-30d01fda3ead?auto=format&fit=crop&q=80&w=800',
+    image: mehendi1,
+    gallery: [mehendi1, mehendi2, mehendi3, mehendi4, mehendi5],
     category: 'beauty',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-henna-tattoo-on-a-womans-hand-34497-large.mp4',
     popularFor: ['wedding']
@@ -246,7 +268,8 @@ export const STATIONS = [
     nameHi: 'टैरो कार्ड रीडिंग',
     description: 'Mystical future insights and spiritual guidance.',
     descriptionHi: 'रहस्यमय भविष्य की अंतर्दृष्टि और आध्यात्मिक मार्गदर्शन।',
-    image: 'https://images.unsplash.com/photo-1591084728795-1149f32d9866?auto=format&fit=crop&q=80&w=800',
+    image: tarotCard1,
+    gallery: [tarotCard1, tarotCard2, tarotCard3],
     category: 'entertainment',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-tarot-cards-on-a-table-34498-large.mp4',
     popularFor: ['wedding']
@@ -257,7 +280,8 @@ export const STATIONS = [
     nameHi: 'चूर्ण और मुखवास',
     description: 'Traditional digestive treats and mouth fresheners.',
     descriptionHi: 'पारंपरिक पाचक व्यंजन और माउथ फ्रेशनर।',
-    image: 'https://images.unsplash.com/photo-1589113331515-9d8821614b30?auto=format&fit=crop&q=80&w=800',
+    image: churan1,
+    gallery: [churan1, churan2, churan3, churan4],
     category: 'food',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-candies-on-a-table-34496-large.mp4',
     popularFor: ['wedding']
@@ -268,7 +292,8 @@ export const STATIONS = [
     nameHi: 'जूती स्टॉल',
     description: 'Traditional handcrafted ethnic footwear.',
     descriptionHi: 'पारंपरिक हस्तनिर्मित जातीय जूते।',
-    image: 'https://images.unsplash.com/photo-1519750783826-e2420f4d687f?auto=format&fit=crop&q=80&w=800',
+    image: jutti1,
+    gallery: [jutti1, jutti2, jutti3, jutti4],
     category: 'lifestyle',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-holding-a-small-bag-34492-large.mp4',
     popularFor: ['wedding']
@@ -291,7 +316,8 @@ export const STATIONS = [
     nameHi: 'नेल आर्ट',
     description: 'Professional nail styling and creative decor.',
     descriptionHi: 'पेशेवर नेल स्टाइलिंग और रचनात्मक सजावट।',
-    image: 'https://images.unsplash.com/photo-1629191060043-759c31340787?auto=format&fit=crop&q=80&w=800',
+    image: nailArt1,
+    gallery: [nailArt1, nailArt2, nailArt3, nailArt4, nailArt5],
     category: 'beauty',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-painting-her-nails-34499-large.mp4',
     popularFor: ['wedding']
