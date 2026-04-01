@@ -26,6 +26,21 @@ import creativeSunglasses2 from './assets/stations/creative_sunglasses_2.png';
 import creativeSunglasses3 from './assets/stations/creative_sunglasses_3.png';
 import creativeSunglasses4 from './assets/stations/creative_sunglasses_4.png';
 import creativeSunglasses5 from './assets/stations/creative_sunglasses_5.png';
+import createYourSunglass1 from './assets/stations/create_your_sunglass_1.jpg';
+import createYourSunglass2 from './assets/stations/create_your_sunglass_2.jpg';
+import createYourSunglass3 from './assets/stations/create_your_sunglass_3.jpg';
+import createYourSunglass4 from './assets/stations/create_your_sunglass_4.jpg';
+import createYourSunglass5 from './assets/stations/create_your_sunglass_5.jpg';
+import lightingJar1 from './assets/stations/lighting_jar_1.jpg';
+import lightingJar2 from './assets/stations/lighting_jar_2.jpg';
+import lightingJar3 from './assets/stations/lighting_jar_3.jpg';
+import lightingJar4 from './assets/stations/lighting_jar_4.jpg';
+import lightingJar5 from './assets/stations/lighting_jar_5.jpg';
+import potteryPlant1 from './assets/stations/pottery_plant_1.jpg';
+import potteryPlant2 from './assets/stations/pottery_plant_2.jpg';
+import potteryPlant3 from './assets/stations/pottery_plant_3.jpg';
+import potteryPlant4 from './assets/stations/pottery_plant_4.jpg';
+import potteryPlant5 from './assets/stations/pottery_plant_5.jpg';
 import jhumka1 from './assets/stations/jhumka_1.jpg';
 import jhumka2 from './assets/stations/jhumka_2.jpg';
 import jhumka3 from './assets/stations/jhumka_3.jpg';
@@ -72,6 +87,17 @@ import nailArt2 from './assets/stations/nail_art_2.jpg';
 import nailArt3 from './assets/stations/nail_art_3.jpg';
 import nailArt4 from './assets/stations/nail_art_4.jpg';
 import nailArt5 from './assets/stations/nail_art_5.jpg';
+import gelCandle1 from './assets/stations/gel_candle_1.jpg';
+import gelCandle2 from './assets/stations/gel_candle_2.jpg';
+import gelCandle3 from './assets/stations/gel_candle_3.png';
+import gelCandle4 from './assets/stations/gel_candle_4.jpg';
+import airclayMirror1 from './assets/stations/airclay_mirror_1.jpg';
+import airclayMirror2 from './assets/stations/airclay_mirror_2.jpg';
+import airclayMirror3 from './assets/stations/airclay_mirror_3.jpg';
+import airclayMirror4 from './assets/stations/airclay_mirror_4.jpg';
+import soapMaking1 from './assets/stations/soap_making_1.jpg';
+import soapMaking2 from './assets/stations/soap_making_2.jpg';
+import soapMaking3 from './assets/stations/soap_making_3.jpg';
 
 export const STATIONS = [
   {
@@ -404,7 +430,8 @@ export const STATIONS = [
     nameHi: 'जेल मोमबत्ती बनाना',
     description: 'Create beautiful transparent gel candles with colorful fillings.',
     descriptionHi: 'रंगीन फिलिंग्स के साथ सुंदर पारदर्शी जेल मोमबत्तियाँ बनाएँ।',
-    image: 'https://images.unsplash.com/photo-1483120611881-427773229b13?auto=format&fit=crop&q=80&w=800',
+    image: gelCandle1,
+    gallery: [gelCandle1, gelCandle2, gelCandle3, gelCandle4],
     category: 'craft',
     popularFor: ['birthday']
   },
@@ -414,7 +441,8 @@ export const STATIONS = [
     nameHi: 'एयरक्ले मिरर',
     description: 'Decorate mirrors with lightweight, air-drying colorful clay.',
     descriptionHi: 'हल्की, हवा में सूखने वाली रंगीन मिट्टी से दर्पणों को सजाएं।',
-    image: 'https://images.unsplash.com/photo-1544031656-66eb9b4d003b?auto=format&fit=crop&q=80&w=800',
+    image: airclayMirror1,
+    gallery: [airclayMirror1, airclayMirror2, airclayMirror3, airclayMirror4],
     category: 'craft',
     popularFor: ['birthday']
   },
@@ -434,7 +462,8 @@ export const STATIONS = [
     nameHi: 'साबुन बनाना',
     description: 'Craft your own scented and colorful handmade soaps.',
     descriptionHi: 'अपने स्वयं के सुगंधित और रंगीन हस्तनिर्मित साबुन बनाएं।',
-    image: 'https://images.unsplash.com/photo-1600857062241-98e5dba7f214?auto=format&fit=crop&q=80&w=800',
+    image: soapMaking1,
+    gallery: [soapMaking1, soapMaking2, soapMaking3],
     category: 'craft',
     popularFor: ['birthday']
   },
@@ -454,7 +483,8 @@ export const STATIONS = [
     nameHi: 'अपना धूप का चश्मा बनाएं',
     description: 'Design and decorate funky sunglasses with gems and stickers.',
     descriptionHi: 'रत्नों और स्टिकर के साथ फंकी धूप के चश्मे डिजाइन और सजाएं।',
-    image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&q=80&w=800',
+    image: createYourSunglass1,
+    gallery: [createYourSunglass1, createYourSunglass2, createYourSunglass3, createYourSunglass4, createYourSunglass5],
     category: 'craft',
     popularFor: ['birthday']
   },
@@ -474,7 +504,8 @@ export const STATIONS = [
     nameHi: 'लाइटिंग जार',
     description: 'Create magical glowing mason jars with fairy lights.',
     descriptionHi: 'फेयरी लाइट के साथ जादुई चमकदार मेसन जार बनाएं।',
-    image: 'https://images.unsplash.com/photo-1557367184-663fca4b8b81?auto=format&fit=crop&q=80&w=800',
+    image: lightingJar1,
+    gallery: [lightingJar1, lightingJar2, lightingJar3, lightingJar4, lightingJar5],
     category: 'craft',
     popularFor: ['birthday']
   },
@@ -484,7 +515,8 @@ export const STATIONS = [
     nameHi: 'मिट्टी के बर्तन का पौधा',
     description: 'Paint your own pots and plant a seedling to take home.',
     descriptionHi: 'अपने स्वयं के बर्तनों को पेंट करें और घर ले जाने के लिए एक पौधा लगाएं।',
-    image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&q=80&w=800',
+    image: potteryPlant1,
+    gallery: [potteryPlant1, potteryPlant2, potteryPlant3, potteryPlant4, potteryPlant5],
     category: 'craft',
     popularFor: ['birthday']
   },
