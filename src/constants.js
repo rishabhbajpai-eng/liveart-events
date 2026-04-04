@@ -21,16 +21,7 @@ import perfumeBar1 from './assets/stations/perfume_bar_1.jpg';
 import perfumeBar2 from './assets/stations/perfume_bar_2.jpg';
 import perfumeBar4 from './assets/stations/perfume_bar_4.jpg';
 
-import creativeSunglasses1 from './assets/stations/creative_sunglasses_1.png';
-import creativeSunglasses2 from './assets/stations/creative_sunglasses_2.png';
-import creativeSunglasses3 from './assets/stations/creative_sunglasses_3.png';
-import creativeSunglasses4 from './assets/stations/creative_sunglasses_4.png';
-import creativeSunglasses5 from './assets/stations/creative_sunglasses_5.png';
-import createYourSunglass1 from './assets/stations/create_your_sunglass_1.jpg';
-import createYourSunglass2 from './assets/stations/create_your_sunglass_2.jpg';
-import createYourSunglass3 from './assets/stations/create_your_sunglass_3.jpg';
-import createYourSunglass4 from './assets/stations/create_your_sunglass_4.jpg';
-import createYourSunglass5 from './assets/stations/create_your_sunglass_5.jpg';
+
 import lightingJar1 from './assets/stations/lighting_jar_1.jpg';
 import lightingJar2 from './assets/stations/lighting_jar_2.jpg';
 import lightingJar3 from './assets/stations/lighting_jar_3.jpg';
@@ -98,6 +89,41 @@ import airclayMirror4 from './assets/stations/airclay_mirror_4.jpg';
 import soapMaking1 from './assets/stations/soap_making_1.jpg';
 import soapMaking2 from './assets/stations/soap_making_2.jpg';
 import soapMaking3 from './assets/stations/soap_making_3.jpg';
+import sunglasses1 from './assets/stations/sunglasses_1.png';
+import sunglasses2 from './assets/stations/sunglasses_2.jpg';
+import sunglasses3 from './assets/stations/sunglasses_3.jpg';
+import sunglasses4 from './assets/stations/sunglasses_4.jpg';
+import moneyBank1 from './assets/stations/money_bank_1.jpg';
+import moneyBank2 from './assets/stations/money_bank_2.jpg';
+import moneyBank3 from './assets/stations/money_bank_3.jpg';
+import moneyBank4 from './assets/stations/money_bank_4.jpg';
+import mugArt1 from './assets/stations/mug_art_1.jpg';
+import mugArt2 from './assets/stations/mug_art_2.jpg';
+import mugArt3 from './assets/stations/mug_art_3.jpg';
+import mugArt4 from './assets/stations/mug_art_4.jpg';
+import mysteryAnimal1 from './assets/stations/mystery_animal_1.jpg';
+import mysteryAnimal2 from './assets/stations/mystery_animal_2.jpg';
+import mysteryAnimal3 from './assets/stations/mystery_animal_3.jpg';
+import mysteryAnimal4 from './assets/stations/mystery_animal_4.jpg';
+import slimeMaking1 from './assets/stations/slime_making_1.jpg';
+import slimeMaking2 from './assets/stations/slime_making_2.jpg';
+import slimeMaking3 from './assets/stations/slime_making_3.jpg';
+import slimeMaking4 from './assets/stations/slime_making_4.jpg';
+import namePlates1 from './assets/stations/name_plates_1.jpg';
+import namePlates2 from './assets/stations/name_plates_2.jpg';
+import namePlates3 from './assets/stations/name_plates_3.jpg';
+import namePlates4 from './assets/stations/name_plates_4.jpg';
+import spinArt1 from './assets/stations/spin_art_1.jpg';
+
+
+
+
+
+
+import spinArt2 from './assets/stations/spin_art_2.jpg';
+import spinArt3 from './assets/stations/spin_art_3.jpg';
+import spinArt4 from './assets/stations/spin_art_4.jpg';
+
 
 export const STATIONS = [
   {
@@ -200,8 +226,7 @@ export const STATIONS = [
     nameHi: 'रचनात्मक धूप का चश्मा',
     description: 'Decorated and funky eyewear for the party vibe.',
     descriptionHi: 'पार्टी वाइब के लिए सजे हुए और फंकी आईवियर।',
-    image: creativeSunglasses1,
-    gallery: [creativeSunglasses1, creativeSunglasses2, creativeSunglasses3, creativeSunglasses4, creativeSunglasses5],
+    image: 'https://images.unsplash.com/photo-1511499767350-a1590fdb7351?auto=format&fit=crop&q=80&w=800',
     category: 'lifestyle',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-sunglasses-34493-large.mp4',
     popularFor: ['wedding']
@@ -483,8 +508,8 @@ export const STATIONS = [
     nameHi: 'अपना धूप का चश्मा बनाएं',
     description: 'Design and decorate funky sunglasses with gems and stickers.',
     descriptionHi: 'रत्नों और स्टिकर के साथ फंकी धूप के चश्मे डिजाइन और सजाएं।',
-    image: createYourSunglass1,
-    gallery: [createYourSunglass1, createYourSunglass2, createYourSunglass3, createYourSunglass4, createYourSunglass5],
+    image: sunglasses1,
+    gallery: [sunglasses1, sunglasses2, sunglasses3, sunglasses4],
     category: 'craft',
     popularFor: ['birthday']
   },
@@ -526,7 +551,8 @@ export const STATIONS = [
     nameHi: 'स्पिन आर्ट',
     description: 'Create dynamic splatter art using a rotating canvas.',
     descriptionHi: 'घूर्णन कैनवास का उपयोग करके गतिशील स्पैटर कला बनाएं।',
-    image: 'https://images.unsplash.com/photo-1541119638723-c51cbe2262aa?auto=format&fit=crop&q=80&w=800',
+    image: spinArt1,
+    gallery: [spinArt1, spinArt2, spinArt3, spinArt4],
     category: 'craft',
     popularFor: ['birthday']
   },
@@ -536,7 +562,8 @@ export const STATIONS = [
     nameHi: 'मनी बैंक',
     description: 'Personalize and decorate your own piggy banks or saving jars.',
     descriptionHi: 'अपने स्वयं के गुल्लक या बचत जार को व्यक्तिगत और सजाएं।',
-    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=800',
+    image: moneyBank1,
+    gallery: [moneyBank1, moneyBank2, moneyBank3, moneyBank4],
     category: 'craft',
     popularFor: ['birthday']
   },
@@ -546,7 +573,8 @@ export const STATIONS = [
     nameHi: 'मग आर्ट',
     description: 'Hand-paint your own ceramic mugs with colorful designs.',
     descriptionHi: 'रंगीन डिजाइनों के साथ अपने स्वयं के सिरेमिक मग पेंट करें।',
-    image: 'https://images.unsplash.com/photo-1574633216393-02f66458cd11?auto=format&fit=crop&q=80&w=800',
+    image: mugArt1,
+    gallery: [mugArt1, mugArt2, mugArt3, mugArt4],
     category: 'craft',
     popularFor: ['birthday']
   },
@@ -556,7 +584,8 @@ export const STATIONS = [
     nameHi: 'मिस्ट्री एनिमल',
     description: 'Fun animal-themed guessing games and educational activities.',
     descriptionHi: 'मजेदार पशु-थीम वाले अनुमान लगाने के खेल और शैक्षिक गतिविधियाँ।',
-    image: 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&q=80&w=800',
+    image: mysteryAnimal1,
+    gallery: [mysteryAnimal1, mysteryAnimal2, mysteryAnimal3, mysteryAnimal4],
     category: 'entertainment',
     popularFor: ['birthday']
   },
@@ -566,7 +595,8 @@ export const STATIONS = [
     nameHi: 'स्लाइम बनाना',
     description: 'Mix and customize your own colorful and glittery slime.',
     descriptionHi: 'अपने स्वयं के रंगीन और चमकदार स्लाइम को मिलाएं और कस्टमाइज़ करें।',
-    image: 'https://images.unsplash.com/photo-1624467008803-0130932d90d7?auto=format&fit=crop&q=80&w=800',
+    image: slimeMaking1,
+    gallery: [slimeMaking1, slimeMaking2, slimeMaking3, slimeMaking4],
     category: 'craft',
     popularFor: ['birthday']
   },
@@ -576,7 +606,8 @@ export const STATIONS = [
     nameHi: 'नेम प्लेट्स',
     description: 'Design and paint custom wooden or ceramic door name plates.',
     descriptionHi: 'कस्टम लकड़ी या सिरेमिक दरवाजे के नेम प्लेट डिजाइन और पेंट करें।',
-    image: 'https://images.unsplash.com/photo-1516641396056-0ce60a85d49f?auto=format&fit=crop&q=80&w=800',
+    image: namePlates1,
+    gallery: [namePlates1, namePlates2, namePlates3, namePlates4],
     category: 'craft',
     popularFor: ['birthday']
   },
