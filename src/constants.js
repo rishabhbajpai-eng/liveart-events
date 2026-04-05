@@ -123,6 +123,29 @@ import spinArt1 from './assets/stations/spin_art_1.jpg';
 import spinArt2 from './assets/stations/spin_art_2.jpg';
 import spinArt3 from './assets/stations/spin_art_3.jpg';
 import spinArt4 from './assets/stations/spin_art_4.jpg';
+import princessMirror1 from './assets/stations/princess_mirror_1.jpg';
+import princessMirror2 from './assets/stations/princess_mirror_2.jpg';
+import princessMirror3 from './assets/stations/princess_mirror_3.jpg';
+import princessMirror4 from './assets/stations/princess_mirror_4.jpg';
+import princessGarden1 from './assets/stations/princess_garden_1.jpg';
+import princessGarden2 from './assets/stations/princess_garden_2.jpg';
+import princessGarden3 from './assets/stations/princess_garden_3.jpg';
+import princessGarden4 from './assets/stations/princess_garden_4.jpg';
+import faceTattoo1 from './assets/stations/face_tattoo_1.jpg';
+import faceTattoo2 from './assets/stations/face_tattoo_2.jpg';
+import faceTattoo3 from './assets/stations/face_tattoo_3.jpg';
+import faceTattoo4 from './assets/stations/face_tattoo_4.jpg';
+import jujubeCandy1 from './assets/stations/jujube_candy_1.jpg';
+import jujubeCandy2 from './assets/stations/jujube_candy_2.jpg';
+import cottonCandy1 from './assets/stations/cotton_candy_1.jpg';
+import cottonCandy2 from './assets/stations/cotton_candy_2.jpg';
+import cottonCandy3 from './assets/stations/cotton_candy_3.jpg';
+import cottonCandy4 from './assets/stations/cotton_candy_4.jpg';
+import popcorn1 from './assets/stations/popcorn_1.jpg';
+import popcorn2 from './assets/stations/popcorn_2.jpg';
+import kinectGaming1 from './assets/stations/kinect_gaming_1.jpg';
+import kinectGaming2 from './assets/stations/kinect_gaming_2.jpg';
+import kinectGaming3 from './assets/stations/kinect_gaming_3.jpg';
 
 
 export const STATIONS = [
@@ -617,7 +640,8 @@ export const STATIONS = [
     nameHi: 'प्रिंसेस मिरर',
     description: 'Gilded and jeweled mirrors for every little princess.',
     descriptionHi: 'हर छोटी राजकुमारी के लिए सोने और रत्नों से जड़ित दर्पण।',
-    image: 'https://images.unsplash.com/photo-1583912267550-d44d7a125e71?auto=format&fit=crop&q=80&w=800',
+    image: princessMirror1,
+    gallery: [princessMirror1, princessMirror2, princessMirror3, princessMirror4],
     category: 'craft',
     popularFor: ['birthday']
   },
@@ -627,7 +651,8 @@ export const STATIONS = [
     nameHi: 'प्रिंसेस गार्डन',
     description: 'Create a mini fairy garden with flowers and magical figurines.',
     descriptionHi: 'फूलों और जादुई मूर्तियों के साथ एक छोटा फेयरी गार्डन बनाएं।',
-    image: 'https://images.unsplash.com/photo-1558905619-15d312948ce6?auto=format&fit=crop&q=80&w=800',
+    image: princessGarden1,
+    gallery: [princessGarden1, princessGarden2, princessGarden3, princessGarden4],
     category: 'craft',
     popularFor: ['birthday']
   },
@@ -647,7 +672,8 @@ export const STATIONS = [
     nameHi: 'फेस टैटू',
     description: 'Beautiful hand-painted face art designs for kids.',
     descriptionHi: 'बच्चों के लिए सुंदर हाथ से पेंट किए गए फेस आर्ट डिज़ाइन।',
-    image: 'https://images.unsplash.com/photo-1506863530036-1efeddceb993?auto=format&fit=crop&q=80&w=800',
+    image: faceTattoo1,
+    gallery: [faceTattoo1, faceTattoo2, faceTattoo3, faceTattoo4],
     category: 'entertainment',
     popularFor: ['birthday']
   },
@@ -657,7 +683,8 @@ export const STATIONS = [
     nameHi: 'जुजुब कैंडी',
     description: 'Sweet and chewy traditional fruit candies.',
     descriptionHi: 'मीठी और चबाने योग्य पारंपरिक फल कैंडी।',
-    image: 'https://images.unsplash.com/photo-1581798459219-318e76aecc7b?auto=format&fit=crop&q=80&w=800',
+    image: jujubeCandy1,
+    gallery: [jujubeCandy1, jujubeCandy2],
     category: 'food',
     popularFor: ['birthday']
   },
@@ -667,7 +694,8 @@ export const STATIONS = [
     nameHi: 'बुढ़िया के बाल',
     description: 'Fluffy clouds of sugar spun into sweet treats.',
     descriptionHi: 'चीनी के फूले हुए बादल मीठे व्यंजनों में बदल गए।',
-    image: 'https://images.unsplash.com/photo-1572913013824-33b8a913697e?auto=format&fit=crop&q=80&w=800',
+    image: cottonCandy1,
+    gallery: [cottonCandy1, cottonCandy2, cottonCandy3, cottonCandy4],
     category: 'food',
     popularFor: ['birthday']
   },
@@ -677,7 +705,8 @@ export const STATIONS = [
     nameHi: 'पॉपकॉर्न',
     description: 'Freshly popped, warm and buttery popcorn station.',
     descriptionHi: 'ताजा पॉप, गर्म और मक्खन जैसा पॉपकॉर्न स्टेशन।',
-    image: 'https://images.unsplash.com/photo-1585647348423-228bf2f470d9?auto=format&fit=crop&q=80&w=800',
+    image: popcorn2,
+    gallery: [popcorn1, popcorn2],
     category: 'food',
     popularFor: ['birthday']
   },
@@ -687,7 +716,8 @@ export const STATIONS = [
     nameHi: 'काइनेक्ट गेमिंग',
     description: 'Interactive motion-controlled video games for active play.',
     descriptionHi: 'सक्रिय खेल के लिए इंटरैक्टिव मोशन-कंट्रोल वीडियो गेम।',
-    image: 'https://images.unsplash.com/photo-1605899002131-0421e67cc084?auto=format&fit=crop&q=80&w=800',
+    image: kinectGaming2,
+    gallery: [kinectGaming1, kinectGaming2, kinectGaming3],
     category: 'gaming',
     popularFor: ['birthday']
   },
