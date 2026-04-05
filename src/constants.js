@@ -146,6 +146,10 @@ import popcorn2 from './assets/stations/popcorn_2.jpg';
 import kinectGaming1 from './assets/stations/kinect_gaming_1.jpg';
 import kinectGaming2 from './assets/stations/kinect_gaming_2.jpg';
 import kinectGaming3 from './assets/stations/kinect_gaming_3.jpg';
+import legoJars1 from './assets/stations/lego_jars_1.jpg';
+import legoJars2 from './assets/stations/lego_jars_2.jpg';
+import legoJars3 from './assets/stations/lego_jars_3.jpg';
+import legoJars4 from './assets/stations/lego_jars_4.jpg';
 
 
 export const STATIONS = [
@@ -737,7 +741,8 @@ export const STATIONS = [
     nameHi: 'लेगो जार',
     description: 'Build creative Lego models inside personalized glass jars.',
     descriptionHi: 'व्यक्तिगत ग्लास जार के अंदर रचनात्मक लेगो मॉडल बनाएं।',
-    image: 'https://images.unsplash.com/photo-1585366119957-e556f4d2b27a?auto=format&fit=crop&q=80&w=800',
+    image: legoJars4,
+    gallery: [legoJars1, legoJars2, legoJars3, legoJars4],
     category: 'craft',
     popularFor: ['birthday']
   },
