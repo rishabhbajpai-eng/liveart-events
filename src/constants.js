@@ -163,7 +163,7 @@ export const STATIONS = [
     gallery: [attarBar1, attarBar2, attarBar3],
     category: 'lifestyle',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-perfume-bottle-on-a-table-34490-large.mp4',
-    popularFor: ['wedding', 'anniversary']
+    popularFor: ['wedding']
   },
   {
     id: 'floral-jewellery',
@@ -835,6 +835,5 @@ export const OCCASIONS = [
     ],
     popularFor: ['wedding']
   },
-  { id: 'birthday', name: 'Kids Birthday', nameHi: 'बच्चों का जन्मदिन', slug: 'birthday', image: 'https://images.unsplash.com/photo-1530103043960-ef38714abb15?auto=format&fit=crop&q=80&w=800', description: 'Creative crafts to keep the little ones busy.' },
-  { id: 'anniversary', name: 'Anniversary', nameHi: 'सालगिरह', slug: 'anniversary', image: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=800', description: 'Celebrate love with handmade memories.' }
+  { id: 'birthday', name: 'Kids Birthday', nameHi: 'बच्चों का जन्मदिन', slug: 'birthday', image: 'https://images.unsplash.com/photo-1530103043960-ef38714abb15?auto=format&fit=crop&q=80&w=800', description: 'Creative crafts to keep the little ones busy.' }
 ];

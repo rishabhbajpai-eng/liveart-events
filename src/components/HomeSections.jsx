@@ -195,7 +195,7 @@ export const OccasionSelector = ({ onSelect, activeOccasion }) => {
           <p className="text-ink/60 text-lg">{t('We curate experiences that match your celebration perfectly.', 'हम ऐसे अनुभव तैयार करते हैं जो आपके उत्सव से पूरी तरह मेल खाते हैं।')}</p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {OCCASIONS.map((occasion, idx) => (
             <motion.button 
               key={occasion.id} 
