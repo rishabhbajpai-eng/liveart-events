@@ -18,7 +18,7 @@ export default function App() {
     // Ensuring preloader lasts for a consistent premium feel
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2800);
+    }, 2100);
     return () => clearTimeout(timer);
   }, []);
 

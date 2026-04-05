@@ -27,7 +27,7 @@ const Preloader = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 3200); // Animation duration
+    }, 2400); // Faster duration
     return () => clearTimeout(timer);
   }, []);
 
@@ -38,8 +38,8 @@ const Preloader = () => {
           initial={{ opacity: 1 }}
           exit={{ 
             opacity: 0,
-            scale: 1.1,
-            transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
+            scale: 1.05,
+            transition: { duration: 0.5, ease: "circOut" }
           }}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-snow"
         >
@@ -137,7 +137,7 @@ const Preloader = () => {
                   filter="url(#glow)"
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={{ pathLength: 1, opacity: 1 }}
-                  transition={{ duration: 1, ease: "easeInOut" }}
+                  transition={{ duration: 0.6, ease: "circOut" }}
                 />
                 {/* i */}
                 <motion.path
@@ -147,7 +147,7 @@ const Preloader = () => {
                   strokeLinecap="round"
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={{ pathLength: 1, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.8, ease: "easeInOut" }}
+                  transition={{ duration: 0.4, delay: 0.5, ease: "circOut" }}
                 />
                 {/* v */}
                 <motion.path
@@ -158,7 +158,7 @@ const Preloader = () => {
                   strokeLinejoin="round"
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={{ pathLength: 1, opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 1.1, ease: "easeInOut" }}
+                  transition={{ duration: 0.5, delay: 0.7, ease: "circOut" }}
                 />
                 {/* e */}
                 <motion.path
@@ -169,7 +169,7 @@ const Preloader = () => {
                   strokeLinejoin="round"
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={{ pathLength: 1, opacity: 1 }}
-                  transition={{ duration: 1.2, delay: 1.5, ease: "easeInOut" }}
+                  transition={{ duration: 0.6, delay: 0.9, ease: "circOut" }}
                 />
                 {/* Art (simplified) */}
                 <motion.path
@@ -180,7 +180,7 @@ const Preloader = () => {
                   strokeLinejoin="round"
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={{ pathLength: 1, opacity: 1 }}
-                  transition={{ duration: 1.5, delay: 2.2, ease: "easeInOut" }}
+                  transition={{ duration: 0.8, delay: 1.2, ease: "circOut" }}
                 />
               </svg>
             </div>
@@ -190,7 +190,7 @@ const Preloader = () => {
               <motion.div 
                 initial={{ left: '-100%' }}
                 animate={{ left: '0%' }}
-                transition={{ duration: 2.8, ease: [0.65, 0, 0.35, 1] }}
+                transition={{ duration: 2.0, ease: "circOut" }}
                 className="absolute inset-0 bg-gradient-to-r from-ocean via-firozi to-ocean"
               />
             </div>
@@ -200,7 +200,7 @@ const Preloader = () => {
               <motion.p
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 2.5, duration: 0.8 }}
+                transition={{ delay: 1.5, duration: 0.6 }}
                 className="text-sm font-display italic text-ink/60"
               >
                 Where Events Come to Life
@@ -208,13 +208,13 @@ const Preloader = () => {
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: '100%' }}
-                transition={{ delay: 2.8, duration: 1 }}
+                transition={{ delay: 1.8, duration: 0.8 }}
                 className="h-[1px] bg-gradient-to-r from-transparent via-firozi/50 to-transparent"
               />
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 3.2 }}
+                transition={{ delay: 2.1 }}
                 className="text-[10px] uppercase tracking-[0.4em] text-ink/30 font-bold"
               >
                 Interactive DIY Stations
