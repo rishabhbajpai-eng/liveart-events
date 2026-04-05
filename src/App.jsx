@@ -1,8 +1,9 @@
 import { LanguageProvider } from './context/LanguageProvider';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar, Footer, WhatsAppButton } from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
+import Preloader from './components/Preloader';
 import Home from './pages/Home';
 import Stations from './pages/Stations';
 import Packages from './pages/Packages';
@@ -11,11 +12,24 @@ import Partner from './pages/Partner';
 import { AnimatePresence } from 'motion/react';
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Ensuring preloader lasts for a consistent premium feel
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2800);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <LanguageProvider>
-      <Router>
-        <AppContent />
-      </Router>
+      <Preloader />
+      {!loading && (
+        <Router>
+          <AppContent />
+        </Router>
+      )}
     </LanguageProvider>
   );
 }
@@ -24,7 +38,12 @@ function AppContent() {
   const [selectedOccasion, setSelectedOccasion] = useState(null);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, ease: 'easeOut' }}
+      className="min-h-screen flex flex-col"
+    >
       <ScrollToTop />
       <Navbar />
       
@@ -57,6 +76,6 @@ function AppContent() {
 
       <Footer />
       <WhatsAppButton />
-    </div>
+    </motion.div>
   );
 }
