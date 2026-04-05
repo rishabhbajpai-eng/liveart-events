@@ -85,18 +85,20 @@ const Preloader = () => {
             ))}
           </div>
 
-          <div className="relative flex flex-col items-center">
+          <div className="relative flex flex-col items-center px-6">
             {/* Artistic Floating Icons */}
-            <div className="absolute -top-24 flex gap-12 text-ink/10">
+            <div className="absolute -top-32 md:-top-24 flex gap-16 md:gap-12 text-ink/10">
               <motion.div
                 animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="scale-150 md:scale-100"
               >
                 <PaletteIcon />
               </motion.div>
               <motion.div
                 animate={{ y: [0, -15, 0], rotate: [0, -5, 0] }}
                 transition={{ duration: 4, delay: 0.5, repeat: Infinity, ease: "easeInOut" }}
+                className="scale-150 md:scale-100"
               >
                 <CandleIcon />
               </motion.div>
@@ -106,7 +108,7 @@ const Preloader = () => {
             <div className="relative">
               <svg 
                 viewBox="0 0 400 120" 
-                className="w-72 md:w-[450px] h-auto overflow-visible"
+                className="w-full max-w-[320px] md:max-w-[450px] h-auto overflow-visible"
                 fill="none" 
                 xmlns="http://www.w3.org/2000/svg"
               >
