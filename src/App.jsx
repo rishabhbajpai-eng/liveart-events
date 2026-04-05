@@ -9,7 +9,7 @@ import Stations from './pages/Stations';
 import Packages from './pages/Packages';
 import Gallery from './pages/Gallery';
 import Partner from './pages/Partner';
-import { AnimatePresence } from 'motion/react';
+import { AnimatePresence, motion } from 'motion/react';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
