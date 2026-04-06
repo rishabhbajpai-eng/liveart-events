@@ -15,10 +15,10 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Ensuring preloader lasts for a consistent premium feel
+    // Sync with Preloader duration for a seamless transition
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2100);
+    }, 4000); 
     return () => clearTimeout(timer);
   }, []);
 

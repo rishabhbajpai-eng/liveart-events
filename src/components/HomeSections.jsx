@@ -52,8 +52,8 @@ export const Hero = () => {
 
             <h1 className="text-6xl sm:text-8xl lg:text-[10rem] font-display leading-[0.85] mb-8 tracking-tighter drop-shadow-[0_4px_15px_rgba(0,0,0,0.6)]">
               <span className="text-snow">{t('Live', 'लाइव')}</span> <br />
-              <span className="text-snow italic">{t('Art', 'कला')}</span> <br />
-              <span className="text-snow/30">{t('Moments', 'क्षण')}</span>
+              <span className="text-gradient italic font-bold">{t('Art', 'कला')}</span> <br />
+              <span className="text-snow/20">{t('Moments', 'क्षण')}</span>
             </h1>
 
             <p className="text-lg lg:text-2xl text-snow/90 mb-12 leading-relaxed max-w-xl font-light tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
@@ -330,7 +330,7 @@ const StationCard = ({ station, t, isExpanded, toggleExpand, openVideo, idx }) =
 
       <div className="p-5 lg:p-6" onClick={() => toggleExpand(station.id)}>
         <div className="flex justify-between items-start mb-2">
-          <h3 className="text-xl lg:text-2xl font-black text-gray-900 leading-tight">
+          <h3 className="text-xl lg:text-2xl font-black text-gray-900 leading-tight group-hover:text-ocean transition-colors">
             {t(station.name, station.nameHi)}
           </h3>
         </div>
