@@ -177,6 +177,9 @@ import origami2 from './assets/stations/origami_2.jpg';
 import origami3 from './assets/stations/origami_3.jpg';
 import origami4 from './assets/stations/origami_4.jpg';
 import origami5 from './assets/stations/origami_5.jpg';
+import solarLamp1 from './assets/stations/solar_lamp_1.jpg';
+import solarLamp2 from './assets/stations/solar_lamp_2.jpg';
+import solarLamp3 from './assets/stations/solar_lamp_3.jpg';
 
 
 
@@ -807,7 +810,8 @@ export const STATIONS = [
     nameHi: 'सौर लैंप',
     description: 'Assemble and decorate functional eco-friendly solar lamps.',
     descriptionHi: 'कार्यात्मक पर्यावरण के अनुकूल सौर लैंप इकट्ठा करें और सजाएं।',
-    image: 'https://images.unsplash.com/photo-1590424753046-58bf99192404?auto=format&fit=crop&q=80&w=800',
+    image: solarLamp3,
+    gallery: [solarLamp1, solarLamp2, solarLamp3],
     category: 'craft',
     popularFor: ['birthday']
   }
