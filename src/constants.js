@@ -154,6 +154,30 @@ import dreamCatcher1 from './assets/stations/dream_catcher_1.jpg';
 import dreamCatcher2 from './assets/stations/dream_catcher_2.jpg';
 import dreamCatcher3 from './assets/stations/dream_catcher_3.jpg';
 import dreamCatcher4 from './assets/stations/dream_catcher_4.jpg';
+import marshmallow1 from './assets/stations/marshmallow_1.jpg';
+import marshmallow2 from './assets/stations/marshmallow_2.jpg';
+import marshmallow3 from './assets/stations/marshmallow_3.jpg';
+import marshmallow4 from './assets/stations/marshmallow_4.jpg';
+import petAdoption1 from './assets/stations/pet_adoption_1.jpg';
+import petAdoption2 from './assets/stations/pet_adoption_2.jpg';
+import petAdoption3 from './assets/stations/pet_adoption_3.jpg';
+import teddyArt1 from './assets/stations/teddy_art_1.jpg';
+import teddyArt2 from './assets/stations/teddy_art_2.jpg';
+import teddyArt3 from './assets/stations/teddy_art_3.jpg';
+import teddyArt4 from './assets/stations/teddy_art_4.jpg';
+import teddyArt5 from './assets/stations/teddy_art_5.jpg';
+import crayonMaking1 from './assets/stations/crayon_making_1.jpg';
+import crayonMaking2 from './assets/stations/crayon_making_2.jpg';
+import crayonMaking3 from './assets/stations/crayon_making_3.jpg';
+import kiteMaking1 from './assets/stations/kite_making_1.jpg';
+import kiteMaking2 from './assets/stations/kite_making_2.jpg';
+import kiteMaking3 from './assets/stations/kite_making_3.jpg';
+import origami1 from './assets/stations/origami_1.jpg';
+import origami2 from './assets/stations/origami_2.jpg';
+import origami3 from './assets/stations/origami_3.jpg';
+import origami4 from './assets/stations/origami_4.jpg';
+import origami5 from './assets/stations/origami_5.jpg';
+
 
 
 export const STATIONS = [
@@ -190,7 +214,7 @@ export const STATIONS = [
     image: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&q=80&w=800',
     category: 'lifestyle',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hands-holding-a-polaroid-photo-34488-large.mp4',
-    popularFor: ['wedding', 'birthday']
+    popularFor: ['wedding']
   },
   {
     id: 'jute-print',
@@ -508,7 +532,8 @@ export const STATIONS = [
     nameHi: 'मार्शमैलो कैंडी',
     description: 'Sweet, fluffy marshmallows in various shapes and flavors.',
     descriptionHi: 'विभिन्न आकारों और स्वादों में मीठे, फूले हुए मार्शमैलो।',
-    image: 'https://images.unsplash.com/photo-1594950195709-a14f66c242d7?auto=format&fit=crop&q=80&w=800',
+    image: marshmallow4,
+    gallery: [marshmallow1, marshmallow2, marshmallow3, marshmallow4],
     category: 'food',
     popularFor: ['birthday']
   },
@@ -529,7 +554,8 @@ export const STATIONS = [
     nameHi: 'पालतू जानवर गोद लेना',
     description: 'A fun "adopt a plushie" station for kids to take home a toy friend.',
     descriptionHi: 'बच्चों के लिए एक खिलौना दोस्त घर ले जाने के लिए एक मजेदार "प्लशी गोद लें" स्टेशन।',
-    image: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=800',
+    image: petAdoption2,
+    gallery: [petAdoption1, petAdoption2, petAdoption3],
     category: 'entertainment',
     popularFor: ['birthday']
   },
@@ -550,7 +576,8 @@ export const STATIONS = [
     nameHi: 'क्रेयॉन बनाना',
     description: 'Melt and mold colorful wax into fun unique crayon shapes.',
     descriptionHi: 'रंगीन मोम को पिघलाकर मजेदार अनोखे क्रेयॉन आकार दें।',
-    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=800',
+    image: crayonMaking1,
+    gallery: [crayonMaking1, crayonMaking2, crayonMaking3],
     category: 'craft',
     popularFor: ['birthday']
   },
@@ -736,7 +763,8 @@ export const STATIONS = [
     nameHi: 'टेडी आर्ट',
     description: 'Decorate and accessorize your own stuffed teddy bear.',
     descriptionHi: 'अपने स्वयं के भरे हुए टेडी बियर को सजाएं और एक्सेसराइज़ करें।',
-    image: 'https://images.unsplash.com/photo-1559454403-b8fb88521f11?auto=format&fit=crop&q=80&w=800',
+    image: teddyArt5,
+    gallery: [teddyArt1, teddyArt2, teddyArt3, teddyArt4, teddyArt5],
     category: 'craft',
     popularFor: ['birthday']
   },
@@ -757,17 +785,8 @@ export const STATIONS = [
     nameHi: 'पतंग बनाना',
     description: 'Traditional kite crafting with colorful paper and bamboo.',
     descriptionHi: 'रंगीन कागज और बांस के साथ पारंपरिक पतंग बनाना।',
-    image: 'https://images.unsplash.com/photo-1596720426673-e48356972740?auto=format&fit=crop&q=80&w=800',
-    category: 'craft',
-    popularFor: ['birthday']
-  },
-  {
-    id: 'creative-head-bands',
-    name: 'Creative Head Bands',
-    nameHi: 'क्रिएटिव हेड बैंड्स',
-    description: 'Design stylish and fun headbands with ribbons and flowers.',
-    descriptionHi: 'रिबन और फूलों के साथ स्टाइलिश और मजेदार हेडबैंड डिजाइन करें।',
-    image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=800',
+    image: kiteMaking2,
+    gallery: [kiteMaking1, kiteMaking2, kiteMaking3],
     category: 'craft',
     popularFor: ['birthday']
   },
@@ -777,7 +796,8 @@ export const STATIONS = [
     nameHi: 'ओरिगामी',
     description: 'The ancient art of Japanese paper folding.',
     descriptionHi: 'जापानी पेपर फोल्डिंग की प्राचीन कला।',
-    image: 'https://images.unsplash.com/photo-1676378419612-4f3583274291?auto=format&fit=crop&q=80&w=800',
+    image: origami2,
+    gallery: [origami1, origami2, origami3, origami4, origami5],
     category: 'craft',
     popularFor: ['birthday']
   },
