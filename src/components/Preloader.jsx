@@ -10,6 +10,9 @@ const Preloader = () => {
   const springX = useSpring(mouseX, { damping: 50, stiffness: 400 });
   const springY = useSpring(mouseY, { damping: 50, stiffness: 400 });
 
+  const rotateX = useTransform(springY, [-20, 20], [5, -5]);
+  const rotateY = useTransform(springX, [-20, 20], [-5, 5]);
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
@@ -114,8 +117,8 @@ const Preloader = () => {
             style={{ 
               x: springX, 
               y: springY,
-              rotateX: useTransform(springY, [-20, 20], [5, -5]),
-              rotateY: useTransform(springX, [-20, 20], [-5, 5]),
+              rotateX: rotateX,
+              rotateY: rotateY,
               perspective: 1000
             }}
             className="relative z-10 flex flex-col items-center"
