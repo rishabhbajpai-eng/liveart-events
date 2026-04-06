@@ -150,6 +150,10 @@ import legoJars1 from './assets/stations/lego_jars_1.jpg';
 import legoJars2 from './assets/stations/lego_jars_2.jpg';
 import legoJars3 from './assets/stations/lego_jars_3.jpg';
 import legoJars4 from './assets/stations/lego_jars_4.jpg';
+import dreamCatcher1 from './assets/stations/dream_catcher_1.jpg';
+import dreamCatcher2 from './assets/stations/dream_catcher_2.jpg';
+import dreamCatcher3 from './assets/stations/dream_catcher_3.jpg';
+import dreamCatcher4 from './assets/stations/dream_catcher_4.jpg';
 
 
 export const STATIONS = [
@@ -666,7 +670,8 @@ export const STATIONS = [
     nameHi: 'ड्रीम कैचर',
     description: 'Weave colorful threads and feathers to make your own protector.',
     descriptionHi: 'अपना खुद का रक्षक बनाने के लिए रंगीन धागे और पंख बुनें।',
-    image: 'https://images.unsplash.com/photo-1549413216-566ca69c3a38?auto=format&fit=crop&q=80&w=800',
+    image: dreamCatcher1,
+    gallery: [dreamCatcher1, dreamCatcher2, dreamCatcher3, dreamCatcher4],
     category: 'craft',
     popularFor: ['birthday']
   },
