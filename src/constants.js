@@ -23,6 +23,7 @@ import perfumeBar1 from './assets/stations/perfume_bar_1.jpg';
 import perfumeBar2 from './assets/stations/perfume_bar_2.jpg';
 import perfumeBar4 from './assets/stations/perfume_bar_4.jpg';
 import weddingCollageImg from './assets/stations/wedding_collage.jpg';
+import birthdayCollageImg from './assets/stations/birthday_collage.jpg';
 
 
 import lightingJar1 from './assets/stations/lighting_jar_1.jpg';
@@ -842,7 +843,14 @@ export const OCCASIONS = [
     ],
     popularFor: ['wedding']
   },
-  { id: 'birthday', name: 'Kids Birthday', nameHi: 'बच्चों का जन्मदिन', slug: 'birthday', image: 'https://images.unsplash.com/photo-1530103043960-ef38714abb15?auto=format&fit=crop&q=80&w=800', description: 'Creative crafts to keep the little ones busy.' }
+  { 
+    id: 'birthday', 
+    name: 'Kids Birthday', 
+    nameHi: 'बच्चों का जन्मदिन', 
+    slug: 'birthday', 
+    image: birthdayCollageImg, 
+    description: 'Creative crafts to keep the little ones busy.' 
+  }
 ];
 
 export const BLOG_POSTS = [
@@ -909,7 +917,7 @@ export const BLOG_POSTS = [
     categoryHi: 'Birthday',
     summary: 'A step-by-step guide to keeping little hands busy and hearts happy with our popular craft stations. Full of masti and creativity!',
     summaryHi: 'Bachon ki party mein masti aur creativity ka dose! Dekhiye hamare popular craft stations kaise banate hain har birthday ko super hit. Ekdum asaan tips!',
-    image: kidsSlimeImg,
+    image: birthdayCollageImg,
     readTime: '15 min read',
     fullContent: `
       <h2>The Secret to a Tantrum-Free, Creative Kids Birthday</h2>
