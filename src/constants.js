@@ -255,17 +255,7 @@ export const STATIONS = [
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-perfume-bottle-on-a-table-34490-large.mp4',
     popularFor: ['wedding']
   },
-  {
-    id: 'pocket-perfume-photo',
-    name: 'Pocket Perfume with Photo',
-    nameHi: 'फोटो के साथ पॉकेट परफ्यूम',
-    description: 'Personalized pocket perfumes with your photograph.',
-    descriptionHi: 'आपकी तस्वीर के साथ व्यक्तिगत पॉकेट परफ्यूम।',
-    image: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=800',
-    category: 'lifestyle',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-perfume-bottle-on-a-table-34490-large.mp4',
-    popularFor: ['wedding']
-  },
+
   {
     id: 'charm-stall',
     name: 'Charm Stall',
@@ -446,17 +436,7 @@ export const STATIONS = [
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-painting-her-nails-34499-large.mp4',
     popularFor: ['wedding']
   },
-  {
-    id: 'maang-tika',
-    name: 'Maang Tika Stall',
-    nameHi: 'मांग टीका स्टॉल',
-    description: 'Elegant forehead ornaments for traditional looks.',
-    descriptionHi: 'पारंपरिक लुक के लिए सुरुचिपूर्ण माथे के गहने।',
-    image: 'https://images.unsplash.com/photo-1630019017537-073c9222f73b?auto=format&fit=crop&q=80&w=800',
-    category: 'lifestyle',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-earrings-34494-large.mp4',
-    popularFor: ['wedding']
-  },
+
   {
     id: 'foot-massage-spa',
     name: 'Foot Massage & Spa',
@@ -479,17 +459,7 @@ export const STATIONS = [
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-artist-painting-on-a-canvas-with-a-brush-34489-large.mp4',
     popularFor: ['wedding']
   },
-  {
-    id: 'hair-do',
-    name: 'Hair Do Station',
-    nameHi: 'हेयर डू स्टेशन',
-    description: 'Instant party hairstyling and hair accessories.',
-    descriptionHi: 'त्वरित पार्टी हेयरस्टाइलिंग और बाल सामान।',
-    image: 'https://images.unsplash.com/photo-1522336572018-3baf8dec989a?auto=format&fit=crop&q=80&w=800',
-    category: 'beauty',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-getting-her-hair-done-34501-large.mp4',
-    popularFor: ['wedding']
-  },
+
   {
     id: 'glitter-tattoo',
     name: 'Glitter Tattoo',
@@ -501,17 +471,7 @@ export const STATIONS = [
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-henna-tattoo-on-a-womans-hand-34497-large.mp4',
     popularFor: ['wedding']
   },
-  {
-    id: 'makeup-station',
-    name: 'Makeup Station',
-    nameHi: 'मेकअप स्टेशन',
-    description: 'Quick touch-ups and glamorous party makeup.',
-    descriptionHi: 'त्वरित टच-अप और ग्लैमरस पार्टी मेकअप।',
-    image: 'https://images.unsplash.com/photo-1522335228445-9f6f2b04c1ce?auto=format&fit=crop&q=80&w=800',
-    category: 'beauty',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-getting-her-makeup-done-34502-large.mp4',
-    popularFor: ['wedding']
-  },
+
   {
     id: 'robotics-foot-massage',
     name: 'Robotics Foot Massage',
