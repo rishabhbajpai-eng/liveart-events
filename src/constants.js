@@ -93,6 +93,10 @@ import sunglasses1 from './assets/stations/sunglasses_1.png';
 import sunglasses2 from './assets/stations/sunglasses_2.jpg';
 import sunglasses3 from './assets/stations/sunglasses_3.jpg';
 import sunglasses4 from './assets/stations/sunglasses_4.jpg';
+import creativeSunglasses1 from './assets/stations/creative_sunglasses_1.jpg';
+import creativeSunglasses2 from './assets/stations/creative_sunglasses_2.jpg';
+import creativeSunglasses3 from './assets/stations/creative_sunglasses_3.jpg';
+import creativeSunglasses4 from './assets/stations/creative_sunglasses_4.jpg';
 import moneyBank1 from './assets/stations/money_bank_1.jpg';
 import moneyBank2 from './assets/stations/money_bank_2.jpg';
 import moneyBank3 from './assets/stations/money_bank_3.jpg';
@@ -284,7 +288,8 @@ export const STATIONS = [
     nameHi: 'रचनात्मक धूप का चश्मा',
     description: 'Decorated and funky eyewear for the party vibe.',
     descriptionHi: 'पार्टी वाइब के लिए सजे हुए और फंकी आईवियर।',
-    image: 'https://images.unsplash.com/photo-1511499767350-a1590fdb7351?auto=format&fit=crop&q=80&w=800',
+    image: creativeSunglasses1,
+    gallery: [creativeSunglasses1, creativeSunglasses2, creativeSunglasses3, creativeSunglasses4],
     category: 'lifestyle',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-sunglasses-34493-large.mp4',
     popularFor: ['wedding']
