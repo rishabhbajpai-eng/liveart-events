@@ -1,4 +1,4 @@
-import { Hero, OccasionSelector, TrustSection } from '../components/HomeSections';
+import { Hero, OccasionSelector, TrustSection, BlogPreview } from '../components/HomeSections';
 import { motion } from 'motion/react';
 
 const Home = ({ onSelectOccasion, selectedOccasion }) => {
@@ -13,6 +13,7 @@ const Home = ({ onSelectOccasion, selectedOccasion }) => {
       <Hero />
       <OccasionSelector onSelect={onSelectOccasion} activeOccasion={selectedOccasion} />
       <TrustSection />
+      <BlogPreview />
     </motion.div>
   );
 };

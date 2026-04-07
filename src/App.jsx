@@ -9,6 +9,8 @@ import Stations from './pages/Stations';
 import Packages from './pages/Packages';
 import Gallery from './pages/Gallery';
 import Partner from './pages/Partner';
+import Blog from './pages/Blog';
+import BlogDetail from './pages/BlogDetail';
 import { AnimatePresence, motion } from 'motion/react';
 
 export default function App() {
@@ -69,6 +71,14 @@ function AppContent() {
             <Route 
               path="/partner" 
               element={<Partner />} 
+            />
+            <Route 
+              path="/blog" 
+              element={<Blog />} 
+            />
+            <Route 
+              path="/blog/:id" 
+              element={<BlogDetail />} 
             />
           </Routes>
         </AnimatePresence>
