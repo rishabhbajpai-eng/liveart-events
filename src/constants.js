@@ -65,6 +65,10 @@ import mehendi2 from './assets/stations/mehendi_2.jpg';
 import mehendi3 from './assets/stations/mehendi_3.jpg';
 import mehendi4 from './assets/stations/mehendi_4.jpg';
 import mehendi5 from './assets/stations/mehendi_5.jpg';
+import thappaMehendi1 from './assets/stations/thappa_mehendi_1.jpg';
+import thappaMehendi2 from './assets/stations/thappa_mehendi_2.jpg';
+import thappaMehendi3 from './assets/stations/thappa_mehendi_3.jpg';
+import thappaMehendi4 from './assets/stations/thappa_mehendi_4.jpg';
 import churan1 from './assets/stations/churan_1.jpg';
 import churan2 from './assets/stations/churan_2.jpg';
 import churan3 from './assets/stations/churan_3.jpg';
@@ -360,7 +364,8 @@ export const STATIONS = [
     nameHi: 'थप्पा मेहंदी',
     description: 'Instant block-print style traditional henna.',
     descriptionHi: 'त्वरित ब्लॉक-प्रिंट शैली पारंपरिक मेहंदी।',
-    image: 'https://images.unsplash.com/photo-1563223552-30d01fda3ead?auto=format&fit=crop&q=80&w=800',
+    image: thappaMehendi1,
+    gallery: [thappaMehendi1, thappaMehendi2, thappaMehendi3, thappaMehendi4],
     category: 'beauty',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-henna-tattoo-on-a-womans-hand-34497-large.mp4',
     popularFor: ['wedding']
