@@ -69,6 +69,10 @@ import thappaMehendi1 from './assets/stations/thappa_mehendi_1.jpg';
 import thappaMehendi2 from './assets/stations/thappa_mehendi_2.jpg';
 import thappaMehendi3 from './assets/stations/thappa_mehendi_3.jpg';
 import thappaMehendi4 from './assets/stations/thappa_mehendi_4.jpg';
+import tattooMehendi1 from './assets/stations/tattoo_mehendi_1.jpg';
+import tattooMehendi2 from './assets/stations/tattoo_mehendi_2.jpg';
+import tattooMehendi3 from './assets/stations/tattoo_mehendi_3.jpg';
+import tattooMehendi4 from './assets/stations/tattoo_mehendi_4.jpg';
 import churan1 from './assets/stations/churan_1.jpg';
 import churan2 from './assets/stations/churan_2.jpg';
 import churan3 from './assets/stations/churan_3.jpg';
@@ -376,7 +380,8 @@ export const STATIONS = [
     nameHi: 'टैटू मेहंदी',
     description: 'Modern henna designs and contemporary patterns.',
     descriptionHi: 'आधुनिक मेहंदी डिजाइन और समकालीन पैटर्न।',
-    image: 'https://images.unsplash.com/photo-1563223552-30d01fda3ead?auto=format&fit=crop&q=80&w=800',
+    image: tattooMehendi1,
+    gallery: [tattooMehendi1, tattooMehendi2, tattooMehendi3, tattooMehendi4],
     category: 'beauty',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-henna-tattoo-on-a-womans-hand-34497-large.mp4',
     popularFor: ['wedding']
