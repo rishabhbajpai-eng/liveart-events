@@ -22,6 +22,7 @@ import jute5 from './assets/stations/jute_5.jpg';
 import perfumeBar1 from './assets/stations/perfume_bar_1.jpg';
 import perfumeBar2 from './assets/stations/perfume_bar_2.jpg';
 import perfumeBar4 from './assets/stations/perfume_bar_4.jpg';
+import weddingCollageImg from './assets/stations/wedding_collage.jpg';
 
 
 import lightingJar1 from './assets/stations/lighting_jar_1.jpg';
@@ -831,7 +832,7 @@ export const OCCASIONS = [
     name: 'Wedding',
     nameHi: 'शादी',
     slug: 'wedding',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800',
+    image: weddingCollageImg,
     description: 'Premium souvenir stations for your guests.',
     subEvents: [
       { id: 'haldi', name: 'Haldi', nameHi: 'हल्दी' },
@@ -854,7 +855,7 @@ export const BLOG_POSTS = [
     categoryHi: 'Shaadi',
     summary: 'Make your wedding unforgettable with these unique and engaging guest experience ideas from perfume bars to live art. Guests will love it!',
     summaryHi: 'Perfume bar se lekar Live Art tak, jaaniye kaise aap apne guests ko "wow" feel kara sakte hain. Shaadi mein dhamaal machane ke liye best tips yahan hain!',
-    image: weddingPerfumeImg,
+    image: weddingCollageImg,
     readTime: '10 min read',
     fullContent: `
       <h2>Why Interactive Stations are the Heart of Modern Indian Weddings</h2>
