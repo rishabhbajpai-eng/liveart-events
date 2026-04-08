@@ -196,6 +196,24 @@ import origami5 from './assets/stations/origami_5.jpg';
 import solarLamp1 from './assets/stations/solar_lamp_1.jpg';
 import solarLamp2 from './assets/stations/solar_lamp_2.jpg';
 import solarLamp3 from './assets/stations/solar_lamp_3.jpg';
+import magnet1 from './assets/stations/photo_magnet_1.jpg';
+import magnet2 from './assets/stations/photo_magnet_2.jpg';
+import magnet3 from './assets/stations/photo_magnet_3.jpg';
+import magnet4 from './assets/stations/photo_magnet_4.jpg';
+import magnet5 from './assets/stations/photo_magnet_5.jpg';
+import magnet6 from './assets/stations/photo_magnet_6.jpg';
+import roboticsMassage1 from './assets/stations/robotics_massage_1.jpg';
+import roboticsMassage2 from './assets/stations/robotics_massage_2.jpg';
+import roboticsMassage3 from './assets/stations/robotics_massage_3.jpg';
+import roboticsMassage4 from './assets/stations/robotics_massage_4.jpg';
+import footSpa1 from './assets/stations/foot_spa_1.jpg';
+import footSpa2 from './assets/stations/foot_spa_2.jpg';
+import footSpa3 from './assets/stations/foot_spa_3.jpg';
+import caricature1 from './assets/stations/caricature_1.jpg';
+import caricature2 from './assets/stations/caricature_2.jpg';
+import caricature3 from './assets/stations/caricature_3.jpg';
+import caricature4 from './assets/stations/caricature_4.jpg';
+import caricature5 from './assets/stations/caricature_5.jpg';
 
 
 
@@ -230,7 +248,8 @@ export const STATIONS = [
     nameHi: 'फोटो फ्रिज चुंबक',
     description: 'Instant photo magnets as personalized souvenirs.',
     descriptionHi: 'व्यक्तिगत स्मृति चिन्ह के रूप में त्वरित फोटो मैग्नेट।',
-    image: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&q=80&w=800',
+    image: magnet1,
+    gallery: [magnet1, magnet2, magnet3, magnet4, magnet5, magnet6],
     category: 'lifestyle',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hands-holding-a-polaroid-photo-34488-large.mp4',
     popularFor: ['wedding']
@@ -447,7 +466,8 @@ export const STATIONS = [
     nameHi: 'फुट मसाज और स्पा',
     description: 'Relaxing manual foot therapy for tired guests.',
     descriptionHi: 'थके हुए मेहमानों के लिए आरामदायक मैनुअल फुट थेरेपी।',
-    image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=800',
+    image: footSpa1,
+    gallery: [footSpa1, footSpa2, footSpa3],
     category: 'wellness',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-getting-a-foot-massage-34500-large.mp4',
     popularFor: ['wedding']
@@ -458,21 +478,10 @@ export const STATIONS = [
     nameHi: 'लाइव कैरिकेचर',
     description: 'Fun hand-drawn portraits of guests in minutes.',
     descriptionHi: 'मिनटों में मेहमानों के मजेदार हाथ से बने चित्र।',
-    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=800',
+    image: caricature5,
+    gallery: [caricature1, caricature2, caricature3, caricature4, caricature5],
     category: 'entertainment',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-artist-painting-on-a-canvas-with-a-brush-34489-large.mp4',
-    popularFor: ['wedding']
-  },
-
-  {
-    id: 'glitter-tattoo',
-    name: 'Glitter Tattoo',
-    nameHi: 'ग्लिटर टैटू',
-    description: 'Sparkling temporary body art for all ages.',
-    descriptionHi: 'सभी उम्र के लिए शानदार अस्थायी बॉडी आर्ट।',
-    image: 'https://images.unsplash.com/photo-1590246144822-8745415b9dce?auto=format&fit=crop&q=80&w=800',
-    category: 'beauty',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-henna-tattoo-on-a-womans-hand-34497-large.mp4',
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-artist-painting-on-a-canvas-with-a-brush-34488-large.mp4',
     popularFor: ['wedding']
   },
 
@@ -482,7 +491,8 @@ export const STATIONS = [
     nameHi: 'रोबोटिक फुट मसाज',
     description: 'High-tech automated relaxation for your feet.',
     descriptionHi: 'आपके पैरों के लिए हाई-टेक स्वचालित विश्राम।',
-    image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=800',
+    image: roboticsMassage1,
+    gallery: [roboticsMassage1, roboticsMassage2, roboticsMassage3, roboticsMassage4],
     category: 'wellness',
     popularFor: ['wedding']
   },
