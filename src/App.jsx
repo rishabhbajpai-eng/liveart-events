@@ -1,7 +1,7 @@
 import { LanguageProvider } from './context/LanguageProvider';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Navbar, Footer, WhatsAppButton } from './components/Layout';
+import { Navbar, Footer, ContactFAB } from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import Preloader from './components/Preloader';
 import Home from './pages/Home';
@@ -85,7 +85,7 @@ function AppContent() {
       </main>
 
       <Footer />
-      <WhatsAppButton />
+      <ContactFAB />
     </motion.div>
   );
 }

@@ -2,9 +2,34 @@ import { useRef, useState, useEffect } from 'react';
 import haldiHero from '../assets/haldi-hero.png';
 import { useLanguage } from '../context/LanguageContext';
 import { OCCASIONS, STATIONS, BLOG_POSTS } from '../constants';
-import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'motion/react';
-import { ArrowRight, Users, Sparkles, X, CheckCircle2, PlayCircle, Star, Clock, BadgeIndianRupee, Tag } from 'lucide-react';
+import { motion, useScroll, useTransform, AnimatePresence, useInView, useMotionValue, useSpring } from 'motion/react';
+import { ArrowRight, Users, Sparkles, X, CheckCircle2, PlayCircle, Clock, BadgeIndianRupee, Tag } from 'lucide-react';
 import { useNavigate, Link, useSearchParams } from 'react-router-dom';
+
+const FloatingHeroBlob = ({ floatX, floatY, index }) => {
+  const x = useTransform(floatX, (val) => val * (index + 1) * 0.2);
+  const y = useTransform(floatY, (val) => val * (index + 1) * 0.2);
+
+  // Use fixed positions to satisfy React Purity rules
+  const positions = [
+    { width: 400, height: 400, left: '10%', top: '20%' },
+    { width: 300, height: 300, left: '70%', top: '15%' },
+    { width: 500, height: 500, left: '40%', top: '60%' },
+    { width: 250, height: 250, left: '80%', top: '70%' },
+    { width: 350, height: 350, left: '15%', top: '80%' },
+    { width: 450, height: 450, left: '60%', top: '40%' },
+  ];
+
+  const style = positions[index % positions.length];
+
+  return (
+    <motion.div
+      style={{ x, y }}
+      className="absolute rounded-full bg-firozi/10 blur-3xl"
+      initial={style}
+    />
+  );
+};
 
 export const Hero = () => {
   const { t } = useLanguage();
@@ -14,153 +39,226 @@ export const Hero = () => {
     offset: ["start start", "end start"]
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [0.8, 0.4]);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const springConfig = { stiffness: 100, damping: 30 };
+  const floatX = useSpring(mouseX, springConfig);
+  const floatY = useSpring(mouseY, springConfig);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e;
+      const { innerWidth, innerHeight } = window;
+      mouseX.set((clientX / innerWidth - 0.5) * 40);
+      mouseY.set((clientY / innerHeight - 0.5) * 40);
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [mouseX, mouseY]);
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.8, 0.2]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen flex items-center overflow-hidden bg-ink">
-      {/* Dynamic Background */}
+    <section ref={containerRef} className="relative min-h-screen flex items-center overflow-hidden bg-ink noise-bg mesh-gradient">
+      {/* Dynamic Background Base */}
       <motion.div style={{ scale, opacity }} className="absolute inset-0 z-0">
         <img 
           src={haldiHero} 
           alt="Haldi Ceremony DIY Activities" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover animate-slow-zoom grayscale-[0.2] contrast-[1.1]"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/30 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent"></div>
+        {/* Layered Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent"></div>
+        
+        {/* Animated Light Beams */}
+        <div className="absolute top-0 right-0 w-full h-full overflow-hidden opacity-30 pointer-events-none">
+          <motion.div 
+            animate={{ 
+              x: [0, 100, 0],
+              opacity: [0.1, 0.3, 0.1]
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-1/2 -right-1/4 w-[150%] h-[150%] bg-[radial-gradient(circle,rgba(0,206,209,0.1)_0%,transparent_70%)]"
+          />
+        </div>
       </motion.div>
 
+      {/* Floating Decorative Elements with Parallax */}
+      <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
+        {[...Array(6)].map((_, i) => (
+          <FloatingHeroBlob key={i} index={i} floatX={floatX} floatY={floatY} />
+        ))}
+      </div>
 
-      <div className="relative z-20 max-w-7xl mx-auto px-4 w-full pt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="relative z-30 max-w-7xl mx-auto px-4 w-full pt-32 pb-20 lg:pt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
+            style={{ y: textY }}
+            initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="lg:col-span-7 text-left"
+            transition={{ duration: 1.2, cubicBezier: [0.2, 0.65, 0.3, 0.9] }}
+            className="lg:col-span-8 text-left"
           >
-            <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full mb-8">
-              <span className="relative flex h-2 w-2">
+            {/* Premium Pill Badge */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="inline-flex items-center gap-4 px-6 py-3 bg-white/5 backdrop-blur-2xl border border-white/20 rounded-full mb-10 shadow-2xl"
+            >
+              <span className="flex h-3 w-3 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-firozi opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-firozi"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-firozi"></span>
               </span>
-              <span className="text-[10px] lg:text-xs font-black tracking-[0.2em] text-snow uppercase">
-                {t('Premium Haldi DIY Experience', 'प्रीमियम हल्दी DIY अनुभव')}
+              <span className="text-xs lg:text-sm font-black tracking-[0.3em] text-snow uppercase glow-text">
+                {t('Luxury Haldi DIY Experience', 'लक्जरी हल्दी DIY अनुभव')}
               </span>
-            </div>
+            </motion.div>
 
-            <h1 className="text-6xl sm:text-8xl lg:text-[10rem] font-display leading-[0.85] mb-8 tracking-tighter drop-shadow-[0_4px_15px_rgba(0,0,0,0.6)]">
-              <span className="text-snow">{t('Live', 'लाइव')}</span> <br />
-              <span className="text-gradient italic font-bold">{t('Art', 'कला')}</span> <br />
-              <span className="text-snow/20">{t('Moments', 'क्षण')}</span>
+            <h1 className="text-7xl sm:text-8xl lg:text-[12rem] font-display leading-[0.8] mb-10 tracking-tighter perspective-1000">
+              <motion.span 
+                initial={{ opacity: 0, rotateX: -30 }}
+                animate={{ opacity: 1, rotateX: 0 }}
+                transition={{ duration: 1, delay: 0.6 }}
+                className="block text-snow drop-shadow-2xl"
+              >
+                {t('Live', 'लाइव')}
+              </motion.span> 
+              <motion.span 
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.8 }}
+                className="text-gradient italic font-bold glow-text block my-2"
+              >
+                {t('Art', 'कला')}
+              </motion.span> 
+              <motion.span 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1 }}
+                className="text-snow/10 block"
+              >
+                {t('Moments', 'क्षण')}
+              </motion.span>
             </h1>
 
-            <p className="text-lg lg:text-2xl text-snow/90 mb-12 leading-relaxed max-w-xl font-light tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2 }}
+              className="text-xl lg:text-3xl text-snow/80 mb-14 leading-relaxed max-w-2xl font-light tracking-wide drop-shadow-xl"
+            >
+              <span className="text-firozi font-bold italic mr-2 border-b border-firozi/30">
+                {t('Elevate', 'ऊँचा उठाएं')}
+              </span>
               {t(
-                'Bring a burst of creativity to your Haldi ceremony. Interactive DIY stations for perfumes, jewelry, and favors—handcrafted with love.',
-                'अपनी हल्दी की रस्म में रचनात्मकता का तड़का लगाएं। इत्र, आभूषण और उपहारों के लिए इंटरैक्टिव DIY स्टेशन्स—प्यार से हाथ से बनाए गए।'
+                'your celebration with high-end interactive DIY stations. Handcrafted perfumes, bespoke jewelry, and artisanal favors that define luxury.',
+                'उच्च श्रेणी के इंटरैक्टिव DIY स्टेशन्स के साथ अपने उत्सव को बढ़ाएं। हाथ से बने इत्र, विशेष आभूषण और कलात्मक उपहार जो विलासिता को परिभाषित करते हैं।'
               )}
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-6 items-stretch sm:items-center">
+            <div className="flex flex-col sm:flex-row gap-8 items-stretch sm:items-center">
               <Link 
                 to="/packages" 
-                className="group relative bg-firozi text-ink px-10 py-6 rounded-2xl font-black text-xl overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(0,206,209,0.4)]"
+                className="group relative px-12 py-8 rounded-3xl font-black text-2xl overflow-hidden transition-all bg-firozi text-ink shadow-[0_20px_60px_-15px_rgba(0,206,209,0.5)] active:scale-95"
               >
-                <div className="relative z-10 flex items-center gap-3">
-                  <span>{t('Build Your Package', 'अपना पैकेज बनाएं')}</span>
-                  <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                <div className="relative z-10 flex items-center gap-4">
+                  <span>{t('Build Your Experience', 'अपना अनुभव बनाएं')}</span>
+                  <ArrowRight className="group-hover:translate-x-3 transition-transform duration-500" />
                 </div>
                 <motion.div 
                   className="absolute inset-0 bg-white"
-                  initial={{ y: '100%' }}
-                  whileHover={{ y: 0 }}
-                  transition={{ duration: 0.3 }}
+                  initial={{ x: '-100%' }}
+                  whileHover={{ x: 0 }}
+                  transition={{ type: "spring", damping: 25, stiffness: 120 }}
                 />
               </Link>
               
               <Link 
                 to="/stations" 
-                className="px-10 py-6 rounded-2xl font-black text-xl text-snow border-2 border-white/10 hover:bg-white/5 transition-all flex items-center justify-center gap-3"
+                className="group px-12 py-8 rounded-3xl font-black text-2xl text-snow border-2 border-white/20 hover:border-firozi/50 transition-all flex items-center justify-center gap-4 backdrop-blur-xl relative overflow-hidden"
               >
-                {t('Explore Stations', 'स्टेशन्स देखें')}
+                <span className="relative z-10">{t('Explore Catalogue', 'कैटलॉग देखें')}</span>
+                <Sparkles className="relative z-10 text-firozi group-hover:rotate-12 transition-transform" />
+                <div className="absolute inset-0 bg-gradient-to-r from-firozi/0 via-firozi/5 to-firozi/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               </Link>
             </div>
 
-            <div className="mt-16 flex flex-wrap gap-10 border-t border-white/5 pt-10">
+            {/* Stats Row */}
+            <div className="mt-20 flex flex-wrap gap-12 border-t border-white/10 pt-12">
               {[
-                { label: 'Events', value: '500+' },
-                { label: 'Guests', value: '20k+' },
-                { label: 'Cities', value: '15+' }
+                { label: 'Events Hosted', value: '500+' },
+                { label: 'Happy Guests', value: '25k+' },
+                { label: 'Cities Covered', value: '18+' }
               ].map((stat, i) => (
-                <div key={i}>
-                  <div className="text-3xl font-display text-snow mb-1">{stat.value}</div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-snow/40">{stat.label}</div>
+                <div key={i} className="relative group">
+                  <div className="text-4xl font-display text-snow mb-2 group-hover:text-firozi transition-colors duration-500">{stat.value}</div>
+                  <div className="text-[10px] font-black uppercase tracking-[0.3em] text-snow/40">{stat.label}</div>
+                  <div className="absolute -bottom-2 left-0 w-0 h-[1px] bg-firozi group-hover:w-full transition-all duration-500"></div>
                 </div>
               ))}
             </div>
           </motion.div>
 
-          <div className="lg:col-span-5 hidden lg:block relative">
+          <div className="lg:col-span-4 hidden lg:block relative perspective-1000">
             <motion.div 
-              initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-              animate={{ 
-                opacity: 1, 
-                scale: 1, 
-                rotate: 0,
-                boxShadow: [
-                  "0 0 40px rgba(0, 206, 209, 0.2)",
-                  "0 0 80px rgba(0, 206, 209, 0.4)",
-                  "0 0 40px rgba(0, 206, 209, 0.2)"
-                ]
+              style={{ 
+                rotateX: useTransform(floatY, y => y * 0.1),
+                rotateY: useTransform(floatX, x => x * -0.1)
               }}
-              transition={{ 
-                duration: 1, 
-                delay: 0.2,
-                boxShadow: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-              }}
-              className="relative aspect-[4/5] rounded-[60px] overflow-hidden border-8 border-firozi/20 shadow-2xl group"
+              initial={{ opacity: 0, scale: 0.8, y: 50 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 1.5, delay: 0.4 }}
+              className="relative aspect-[3/4] rounded-[80px] overflow-hidden border-[12px] border-white/5 shadow-2xl group cursor-none"
             >
               <img 
                 src={haldiHero} 
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-                alt="Live Art Experience" 
+                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 saturate-[1.2]" 
+                alt="Premium Live Art" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-10 left-10 right-10">
-                <div className="text-firozi font-black text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
-                   <div className="w-2 h-2 bg-firozi rounded-full animate-pulse"></div>
-                   Featured Experience
-                </div>
-                <div className="text-snow text-3xl font-display">The Attar Bar</div>
+              <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-60"></div>
+              
+              <div className="absolute bottom-16 left-12 right-12 translate-z-50">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  className="text-firozi font-black text-xs uppercase tracking-widest mb-4 flex items-center gap-3"
+                >
+                   <span className="w-4 h-[1px] bg-firozi"></span>
+                   Featured Setup
+                </motion.div>
+                <div className="text-snow text-5xl font-display leading-tight">{t('Curated Craftsmanship', 'क्यूरेटेड शिल्प कौशल')}</div>
               </div>
             </motion.div>
 
-            {/* Floating Badge */}
+            {/* Floating Elements */}
             <motion.div 
-              animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-10 -right-10 w-40 h-40 bg-snow rounded-full flex items-center justify-center p-4 shadow-2xl rotate-12"
+               animate={{ y: [0, -30, 0], rotate: [0, 10, 0] }}
+               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+               className="absolute -top-12 -right-12 w-48 h-48 bg-snow rounded-full flex items-center justify-center p-8 shadow-2xl -rotate-12 backdrop-blur-3xl border border-ink/5"
             >
               <div className="text-center">
-                <div className="text-ink font-black text-2xl leading-tight">100%</div>
-                <div className="text-ink/40 text-[10px] font-black uppercase tracking-tighter">Handcrafted</div>
+                <div className="text-ink font-black text-4xl leading-tight glow-text">10x</div>
+                <div className="text-ink/40 text-[10px] font-black uppercase tracking-widest mt-1">Attractive</div>
               </div>
             </motion.div>
+            
+            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-firozi rounded-3xl rotate-12 -z-10 shadow-2xl opacity-50 blur-xl"></div>
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Modern Scroll Indicator */}
       <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-30"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 z-40 px-4 py-8 bg-white/5 backdrop-blur-md rounded-full border border-white/10"
       >
-        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-snow/30 rotate-90 mb-8">SCROLL</span>
-        <div className="w-[1px] h-20 bg-gradient-to-b from-firozi to-transparent"></div>
+        <div className="w-1 h-3 rounded-full bg-firozi animate-bounce"></div>
       </motion.div>
     </section>
   );

@@ -1,5 +1,31 @@
 import { motion, AnimatePresence, useSpring, useMotionValue, useTransform } from 'motion/react';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
+
+const FloatingBlob = ({ color, size, initialPos, duration, delay }) => (
+  <motion.div
+    initial={initialPos}
+    animate={{
+      x: [initialPos.x, initialPos.x + 80, initialPos.x - 50, initialPos.x],
+      y: [initialPos.y, initialPos.y - 60, initialPos.y + 100, initialPos.y],
+      scale: [1, 1.2, 0.8, 1],
+      backgroundColor: [color, "var(--color-firozi)", "var(--color-ocean)", color],
+    }}
+    transition={{
+      duration,
+      repeat: Infinity,
+      ease: "easeInOut",
+      delay
+    }}
+    style={{
+      width: size,
+      height: size,
+      filter: 'blur(100px)',
+      position: 'absolute',
+      borderRadius: '50%',
+      opacity: 0.12,
+    }}
+  />
+);
 
 const Preloader = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -43,7 +69,7 @@ const Preloader = () => {
       clearInterval(progressTimer);
       clearTimeout(exitTimer);
     };
-  }, []);
+  }, [mouseX, mouseY]);
 
   const containerVariants = {
     exit: {
@@ -66,32 +92,6 @@ const Preloader = () => {
       }
     }
   };
-
-  const FloatingBlob = ({ color, size, initialPos, duration, delay }) => (
-    <motion.div
-      initial={initialPos}
-      animate={{
-        x: [initialPos.x, initialPos.x + 80, initialPos.x - 50, initialPos.x],
-        y: [initialPos.y, initialPos.y - 60, initialPos.y + 100, initialPos.y],
-        scale: [1, 1.2, 0.8, 1],
-        backgroundColor: [color, "var(--color-firozi)", "var(--color-ocean)", color],
-      }}
-      transition={{
-        duration,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay
-      }}
-      style={{
-        width: size,
-        height: size,
-        filter: 'blur(100px)',
-        position: 'absolute',
-        borderRadius: '50%',
-        opacity: 0.12,
-      }}
-    />
-  );
 
   return (
     <AnimatePresence>

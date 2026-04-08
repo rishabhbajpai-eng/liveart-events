@@ -7,6 +7,8 @@
   --color-snow: #FFFFFF;
   --color-emerald: #1b4332;
   --color-ink: #081c15;
+  --color-gold: #FFD700;
+  --color-rose: #FF007F;
 
   --font-display: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
@@ -46,29 +48,30 @@
 
 .party-gradient {
   background: linear-gradient(135deg, var(--color-ocean) 0%, var(--color-firozi) 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-
-.whatsapp-sticky {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
-  z-index: 50;
-  @apply bg-[#25D366] text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110 active:scale-95 flex items-center justify-center;
-  animation: whatsapp-pulse 2s infinite;
+.party-gradient::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 50%);
+  animation: rotate-shine 10s linear infinite;
 }
 
-@keyframes whatsapp-pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-  }
+@keyframes rotate-shine {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
+
+.glass-pill {
+  @apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.1)];
+}
+
 
 /* Custom selection and utility effects */
 ::selection {
@@ -100,4 +103,43 @@
 }
 ::-webkit-scrollbar-thumb {
   @apply bg-ink/5 rounded-full hover:bg-firozi/30 transition-all;
+}
+
+.noise-bg {
+  position: relative;
+}
+
+.noise-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mesh-gradient {
+  background-color: #081c15;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(180, 100%, 50%, 0.15) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, hsla(200, 100%, 50%, 0.1) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(320, 100%, 50%, 0.1) 0, transparent 50%);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(0, 206, 209, 0.4);
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+@keyframes slow-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s ease-in-out infinite alternate;
 }

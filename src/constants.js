@@ -1,6 +1,4 @@
 import attarBar1 from './assets/stations/attar_bar_1.jpg';
-import weddingPerfumeImg from './assets/blog/wedding-perfume.png';
-import kidsSlimeImg from './assets/blog/kids-slime.png';
 import attarBar2 from './assets/stations/attar_bar_2.jpg';
 import attarBar3 from './assets/stations/attar_bar_3.jpg';
 import floral1 from './assets/stations/floral_1.jpg';
@@ -10,7 +8,6 @@ import floral5 from './assets/stations/floral_5.jpg';
 import bangle2 from './assets/stations/bangle_2.png';
 import jute1 from './assets/stations/jute_1.jpg';
 import jute4 from './assets/stations/jute_4.jpg';
-import floralJewelleryImg from './assets/stations/floral_jewellery.png';
 import floral4 from './assets/stations/floral_4.jpg';
 import bangle1 from './assets/stations/bangle_1.png';
 import bangle3 from './assets/stations/bangle_3.png';

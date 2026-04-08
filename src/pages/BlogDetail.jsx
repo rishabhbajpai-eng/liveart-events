@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { BLOG_POSTS } from '../constants';
 import { useLanguage } from '../context/LanguageContext';
-import { ArrowLeft, Clock, Calendar, Tag, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, ChevronRight } from 'lucide-react';
 
 const BlogDetail = () => {
   const { id } = useParams();
