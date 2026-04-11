@@ -6,6 +6,37 @@ import { motion, useScroll, useTransform, AnimatePresence, useInView, useMotionV
 import { ArrowRight, Users, Sparkles, X, CheckCircle2, PlayCircle, Clock, BadgeIndianRupee, Tag, ShieldCheck, Zap, Heart } from 'lucide-react';
 import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { LeadForm } from './LeadForm';
+import emotionalMoment from '../assets/emotional-moment.png';
+
+export const MagneticButton = ({ children, className }) => {
+  const ref = useRef(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouse = (e) => {
+    const { clientX, clientY } = e;
+    const { height, width, left, top } = ref.current.getBoundingClientRect();
+    const middleX = clientX - (left + width / 2);
+    const middleY = clientY - (top + height / 2);
+    setPosition({ x: middleX * 0.2, y: middleY * 0.2 });
+  };
+
+  const reset = () => {
+    setPosition({ x: 0, y: 0 });
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouse}
+      onMouseLeave={reset}
+      animate={{ x: position.x, y: position.y }}
+      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 const FloatingHeroBlob = ({ floatX, floatY, index }) => {
   const x = useTransform(floatX, (val) => val * (index + 1) * 0.2);
@@ -952,6 +983,74 @@ export const ExperienceMarquee = () => {
         ))}
       </motion.div>
     </div>
+  );
+};
+
+export const TheArtistWithin = () => {
+  const { t } = useLanguage();
+  return (
+    <section className="py-24 lg:py-32 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="relative z-10 rounded-[60px] overflow-hidden shadow-2xl">
+              <img 
+                src={emotionalMoment} 
+                alt="The joy of creation" 
+                className="w-full h-full object-cover transform scale-105 hover:scale-110 transition-transform duration-1000"
+              />
+            </div>
+            {/* Decorative elements */}
+            <div className="absolute -top-12 -left-12 w-64 h-64 bg-ocean/5 rounded-full blur-3xl -z-0"></div>
+            <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-firozi/5 rounded-full blur-3xl -z-0"></div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div className="inline-flex items-center gap-3 text-ocean font-black uppercase tracking-[0.3em] text-xs">
+              <div className="w-10 h-px bg-ocean"></div>
+              {t('Beyond Activities', 'गतिविधियों से परे')}
+            </div>
+            
+            <h2 className="text-5xl md:text-7xl font-display leading-[1.1] text-ink">
+              {t('A Celebration of', 'उत्सव')} <br />
+              <span className="text-ocean italic">{t('Connection', 'संबंधों का')}</span>
+            </h2>
+            
+            <p className="text-xl text-ink/60 leading-relaxed font-medium">
+              {t('At LiveArt, we don’t just host stalls; we create spaces where hands meet, laughter flows, and memories are born. Every pot painted and every jar filled is a bridge between generations.', 'लाइवआर्ट में, हम केवल स्टॉल नहीं लगाते; हम ऐसे स्थान बनाते हैं जहाँ हाथ मिलते हैं, हंसी बहती है और यादें पैदा होती हैं। पेंट किया गया हर बर्तन और भरा हुआ हर जार पीढ़ियों के बीच एक पुल है।')}
+            </p>
+            
+            <div className="grid grid-cols-2 gap-8 py-8 border-y border-ink/5">
+              <div>
+                <h4 className="text-3xl font-display text-ink mb-1">98%</h4>
+                <p className="text-[10px] uppercase font-black tracking-widest text-ink/40">{t('Guest Engagement', 'मेहमानों की भागीदारी')}</p>
+              </div>
+              <div>
+                <h4 className="text-3xl font-display text-ink mb-1">10k+</h4>
+                <p className="text-[10px] uppercase font-black tracking-widest text-ink/40">{t('Smiles Created', 'मुस्कानें बनाईं')}</p>
+              </div>
+            </div>
+            
+            <MagneticButton className="inline-block">
+              <Link to="/gallery" className="inline-flex items-center gap-4 bg-ink text-white px-10 py-6 rounded-full font-black uppercase tracking-widest text-xs hover:bg-ocean transition-all shadow-xl group">
+                {t('View Our Story', 'हमारी कहानी देखें')}
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+              </Link>
+            </MagneticButton>
+          </motion.div>
+        </div>
+      </div>
+    </section>
   );
 };
 
