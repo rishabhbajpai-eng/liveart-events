@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { LeadForm } from '../components/LeadForm';
 import { useLanguage } from '../context/LanguageContext';
-import { Sparkles, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { Sparkles, Phone, Mail } from 'lucide-react';
 
 const Contact = () => {
   const { t } = useLanguage();

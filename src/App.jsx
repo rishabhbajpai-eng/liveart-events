@@ -1,11 +1,9 @@
 import { LanguageProvider } from './context/LanguageProvider';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar, Footer, ContactFAB } from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
-import Preloader from './components/Preloader';
 import { CustomCursor } from './components/CustomCursor';
-import { FloatingCTA } from './components/FloatingCTA';
 import Home from './pages/Home';
 import Stations from './pages/Stations';
 import Packages from './pages/Packages';
@@ -17,24 +15,11 @@ import Contact from './pages/Contact';
 import { AnimatePresence, motion } from 'motion/react';
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Sync with Preloader duration for a seamless transition
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2500); 
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <LanguageProvider>
-      <Preloader />
-      {!loading && (
-        <Router>
-          <AppContent />
-        </Router>
-      )}
+      <Router>
+        <AppContent />
+      </Router>
     </LanguageProvider>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { MessageCircle, Menu, X, Instagram, Phone, Facebook, MousePointer2 } from 'lucide-react';
-import { motion, AnimatePresence, useSpring } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
 
 export const Navbar = () => {

@@ -10,7 +10,7 @@ export const FloatingCTA = () => {
     <motion.div 
       initial={{ x: 100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      transition={{ delay: 2.5 }}
+      transition={{ delay: 1.0 }}
       className="fixed bottom-8 right-10 z-[60] flex flex-col gap-4 items-end"
     >
       <Link 

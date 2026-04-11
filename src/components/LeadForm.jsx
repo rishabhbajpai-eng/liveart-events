@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Send, X, CheckCircle2, User, Mail, Phone, Calendar, MapPin, Sparkles } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Send, CheckCircle2, User, Mail, Phone, Calendar, MapPin, Sparkles } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 export const LeadForm = () => {
   const { t } = useLanguage();
