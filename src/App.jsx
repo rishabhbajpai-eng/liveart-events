@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar, Footer, ContactFAB } from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import Preloader from './components/Preloader';
+import { CustomCursor } from './components/CustomCursor';
+import { FloatingCTA } from './components/FloatingCTA';
 import Home from './pages/Home';
 import Stations from './pages/Stations';
 import Packages from './pages/Packages';
@@ -11,6 +13,7 @@ import Gallery from './pages/Gallery';
 import Partner from './pages/Partner';
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
+import Contact from './pages/Contact';
 import { AnimatePresence, motion } from 'motion/react';
 
 export default function App() {
@@ -20,7 +23,7 @@ export default function App() {
     // Sync with Preloader duration for a seamless transition
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 4000); 
+    }, 2500); 
     return () => clearTimeout(timer);
   }, []);
 
@@ -47,6 +50,7 @@ function AppContent() {
       className="min-h-screen flex flex-col"
     >
       <ScrollToTop />
+      <CustomCursor />
       <Navbar />
       
       <main className="flex-grow relative">
@@ -79,6 +83,10 @@ function AppContent() {
             <Route 
               path="/blog/:id" 
               element={<BlogDetail />} 
+            />
+            <Route 
+              path="/contact" 
+              element={<Contact />} 
             />
           </Routes>
         </AnimatePresence>

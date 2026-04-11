@@ -58,11 +58,11 @@ const Preloader = () => {
         }
         return prev + 1;
       });
-    }, 30);
+    }, 22);
 
     const exitTimer = setTimeout(() => {
       setIsVisible(false);
-    }, 4200);
+    }, 2500);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);

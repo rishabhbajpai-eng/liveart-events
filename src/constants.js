@@ -837,8 +837,8 @@ export const PACKAGES = [
 export const OCCASIONS = [
   {
     id: 'wedding',
-    name: 'Wedding',
-    nameHi: 'शादी',
+    name: 'Wedding Experiences',
+    nameHi: 'शादी का अनुभव',
     slug: 'wedding',
     image: weddingCollageImg,
     description: 'Premium souvenir stations for your guests.',
@@ -852,8 +852,8 @@ export const OCCASIONS = [
   },
   { 
     id: 'birthday', 
-    name: 'Kids Birthday', 
-    nameHi: 'बच्चों का जन्मदिन', 
+    name: 'Kids Birthday Fun', 
+    nameHi: 'बच्चों के जन्मदिन की मस्ती', 
     slug: 'birthday', 
     image: birthdayCollageImg, 
     description: 'Creative crafts to keep the little ones busy.' 

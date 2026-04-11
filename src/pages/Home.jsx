@@ -1,4 +1,4 @@
-import { Hero, OccasionSelector, TrustSection, BlogPreview } from '../components/HomeSections';
+import { Hero, OccasionSelector, TrustSection, BlogPreview, InquirySection, ExperienceMarquee } from '../components/HomeSections';
 import { motion } from 'motion/react';
 
 const Home = ({ onSelectOccasion, selectedOccasion }) => {
@@ -11,9 +11,11 @@ const Home = ({ onSelectOccasion, selectedOccasion }) => {
       className="relative"
     >
       <Hero />
+      <ExperienceMarquee />
       <OccasionSelector onSelect={onSelectOccasion} activeOccasion={selectedOccasion} />
       <TrustSection />
       <BlogPreview />
+      <InquirySection />
     </motion.div>
   );
 };

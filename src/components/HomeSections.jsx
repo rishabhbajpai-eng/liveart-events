@@ -3,8 +3,9 @@ import haldiHero from '../assets/haldi-hero.png';
 import { useLanguage } from '../context/LanguageContext';
 import { OCCASIONS, STATIONS, BLOG_POSTS } from '../constants';
 import { motion, useScroll, useTransform, AnimatePresence, useInView, useMotionValue, useSpring } from 'motion/react';
-import { ArrowRight, Users, Sparkles, X, CheckCircle2, PlayCircle, Clock, BadgeIndianRupee, Tag } from 'lucide-react';
+import { ArrowRight, Users, Sparkles, X, CheckCircle2, PlayCircle, Clock, BadgeIndianRupee, Tag, ShieldCheck, Zap, Heart } from 'lucide-react';
 import { useNavigate, Link, useSearchParams } from 'react-router-dom';
+import { LeadForm } from './LeadForm';
 
 const FloatingHeroBlob = ({ floatX, floatY, index }) => {
   const x = useTransform(floatX, (val) => val * (index + 1) * 0.2);
@@ -132,7 +133,7 @@ export const Hero = () => {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 0.8 }}
-                className="text-gradient italic font-bold glow-text block my-2"
+                className="gold-shine italic font-bold glow-text block my-2"
               >
                 {t('Art', 'कला')}
               </motion.span> 
@@ -167,7 +168,7 @@ export const Hero = () => {
                 className="group relative px-12 py-8 rounded-3xl font-black text-2xl overflow-hidden transition-all bg-firozi text-ink shadow-[0_20px_60px_-15px_rgba(0,206,209,0.5)] active:scale-95"
               >
                 <div className="relative z-10 flex items-center gap-4">
-                  <span>{t('Build Your Experience', 'अपना अनुभव बनाएं')}</span>
+                  <span>{t('Book Your Experience', 'अपना अनुभव बुक करें')}</span>
                   <ArrowRight className="group-hover:translate-x-3 transition-transform duration-500" />
                 </div>
                 <motion.div 
@@ -722,41 +723,123 @@ export const StationCatalogue = ({ selectedOccasion }) => {
 export const TrustSection = () => {
   const { t } = useLanguage();
   return (
-    <section className="py-24 bg-ocean text-snow">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section className="py-24 bg-ocean text-snow overflow-hidden relative">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-ink/20 skew-x-12 translate-x-1/2 pointer-events-none"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
         <div className="text-center lg:text-left">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="inline-block px-4 py-1.5 bg-firozi/20 border border-firozi/30 rounded-full text-firozi text-[10px] font-black uppercase tracking-[0.3em] mb-6"
+          >
+            {t('Unmatched Excellence', 'अतुलनीय उत्कृष्टता')}
+          </motion.div>
           <h2 className="text-4xl md:text-6xl font-display mb-8 leading-tight">
-            {t('Why India Loves', 'भारत क्यों प्यार करता है')} <br />
+            {t('Why Luxury Hosts Choose', 'लक्जरी मेज़बान क्यों चुनते हैं')} <br />
             <span className="text-firozi italic">LiveArt Events</span>
           </h2>
           <div className="space-y-8 max-w-xl mx-auto lg:mx-0">
-            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-6">
-              <div className="w-12 h-12 rounded-2xl bg-snow/10 flex items-center justify-center shrink-0">
-                <Sparkles className="text-firozi" />
+            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-6 group">
+              <div className="w-14 h-14 rounded-2xl bg-snow/10 flex items-center justify-center shrink-0 group-hover:bg-firozi group-hover:text-ink transition-all duration-500">
+                <ShieldCheck className="w-7 h-7" />
               </div>
               <div>
-                <h4 className="text-xl font-display mb-2">{t('Memories over Momentary', 'क्षणभंगुर के ऊपर यादें')}</h4>
-                <p className="text-snow/60 text-sm">{t('Guests don\'t just watch; they create. Every souvenir is a story they built themselves.', 'मेहमान सिर्फ देखते नहीं हैं; वे बनाते हैं। हर स्मारिका एक कहानी है जिसे उन्होंने खुद बनाया है।')}</p>
+                <h4 className="text-2xl font-display mb-2">{t('Full-Service Elegance', 'पूर्ण-सेवा लालित्य')}</h4>
+                <p className="text-snow/60 text-base">{t('White-glove service from setup to cleanup. We handle the aesthetics while you host the guests.', 'सेटअप से लेकर सफाई तक व्हाइट-ग्लव सेवा। जब आप मेहमानों की मेजबानी करते हैं तो हम सौंदर्यशास्त्र को संभालते हैं।')}</p>
               </div>
             </div>
-            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-6">
-              <div className="w-12 h-12 rounded-2xl bg-snow/10 flex items-center justify-center shrink-0">
-                <Users className="text-firozi" />
+            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-6 group">
+              <div className="w-14 h-14 rounded-2xl bg-snow/10 flex items-center justify-center shrink-0 group-hover:bg-firozi group-hover:text-ink transition-all duration-500">
+                <Heart className="w-7 h-7" />
               </div>
               <div>
-                <h4 className="text-xl font-display mb-2">{t('Trained Facilitators', 'प्रशिक्षित सूत्रधार')}</h4>
-                <p className="text-snow/60 text-sm">{t('Our team manages the crowd, the craft, and the cleanup. You just enjoy the party.', 'हमारी टीम भीड़, शिल्प और सफाई का प्रबंधन करती है। आप बस पार्टी का आनंद लें।')}</p>
+                <h4 className="text-2xl font-display mb-2">{t('High ROI on Emotions', 'भावनाओं पर उच्च रिटर्न')}</h4>
+                <p className="text-snow/60 text-base">{t('Guests talk about our stations long after the party. It\'s the "wow" factor your event deserves.', 'मेहमान पार्टी के लंबे समय बाद तक हमारे स्टेशनों के बारे में बात करते हैं। यह वह "वाह" कारक है जिसका आपका कार्यक्रम हकदार है।')}</p>
               </div>
             </div>
           </div>
         </div>
         <div className="relative max-w-md mx-auto lg:max-w-none">
-          <div className="aspect-square rounded-[40px] lg:rounded-[60px] overflow-hidden rotate-3 shadow-2xl">
+          <motion.div 
+            whileHover={{ rotate: 0, scale: 1.05 }}
+            className="aspect-square rounded-[40px] lg:rounded-[60px] overflow-hidden rotate-3 shadow-2xl border-8 border-white/5"
+          >
             <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1000" alt="Happy Guests" className="w-full h-full object-cover" />
+          </motion.div>
+          <motion.div 
+             initial={{ opacity: 0, scale: 0.8 }}
+             whileInView={{ opacity: 1, scale: 1 }}
+             className="absolute -bottom-10 lg:-bottom-12 -left-6 lg:-left-10 bg-white text-ink p-8 lg:p-10 rounded-[40px] shadow-2xl -rotate-6 max-w-[260px] lg:max-w-[320px] border border-gray-100"
+          >
+            <div className="flex gap-1 mb-4">
+              {[...Array(5)].map((_, i) => <Sparkles key={i} className="w-4 h-4 text-firozi fill-firozi" />)}
+            </div>
+            <p className="font-display text-lg lg:text-xl leading-snug mb-4 italic text-ocean">&quot;The most premium addition to our event. Pure class!&quot;</p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-ocean/10 flex items-center justify-center text-ocean font-bold">RK</div>
+              <div>
+                <p className="text-xs font-black uppercase tracking-widest leading-none">Mrs. Kapoor</p>
+                <p className="text-[10px] text-ink/40 font-bold uppercase mt-1">Lalit Luxury Hotels</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const InquirySection = () => {
+  const { t } = useLanguage();
+  return (
+    <section id="contact" className="py-32 bg-snow relative overflow-hidden">
+      {/* Decorative background text */}
+      <div className="absolute bottom-0 right-0 opacity-[0.03] select-none pointer-events-none translate-y-1/2 translate-x-1/4">
+        <span className="text-[40vw] font-display font-black leading-none">LUXE</span>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+          <div className="lg:col-span-5 text-left">
+            <h2 className="text-6xl md:text-8xl font-display text-ink mb-10 leading-[0.9]">
+              {t('Ready to', 'तैयार हैं')} <br />
+              <span className="text-ocean italic">{t('Captivate?', 'मंत्रमुग्ध करने के लिए?')}</span>
+            </h2>
+            <div className="space-y-10">
+              <div className="flex items-start gap-6">
+                <div className="w-12 h-12 rounded-2xl bg-ocean/10 flex items-center justify-center shrink-0">
+                  <Zap className="text-ocean" />
+                </div>
+                <div>
+                  <h4 className="text-2xl font-display text-ink mb-2">{t('Express Booking', 'एक्सप्रेस बुकिंग')}</h4>
+                  <p className="text-ink/60">{t('Secure your date in under 60 seconds. We value your time as much as your experience.', '60 सेकंड से भी कम समय में अपनी तारीख सुरक्षित करें। हम आपके अनुभव के साथ-साथ आपके समय को भी महत्व देते हैं।')}</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-6">
+                <div className="w-12 h-12 rounded-2xl bg-ocean/10 flex items-center justify-center shrink-0">
+                  <Sparkles className="text-ocean" />
+                </div>
+                <div>
+                  <h4 className="text-2xl font-display text-ink mb-2">{t('Custom Themes', 'कस्टम थीम्स')}</h4>
+                  <p className="text-ink/60">{t('Every station is tailored to match your event color palette and prestige.', 'प्रत्येक स्टेशन आपके इवेंट कलर पैलेट और प्रतिष्ठा से मेल खाने के लिए तैयार किया गया है।')}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-16 p-8 bg-ink rounded-[40px] text-snow relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-firozi/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+              <div className="relative z-10">
+                <p className="text-firozi font-black text-xs uppercase tracking-[0.3em] mb-4">{t('Direct Line', 'सीधी लाइन')}</p>
+                <p className="text-3xl font-display mb-2">+91 99999 99999</p>
+                <p className="text-snow/40 text-sm font-medium">{t('Available 10 AM - 10 PM IST', 'सुबह 10 बजे - रात 10 बजे IST तक उपलब्ध')}</p>
+              </div>
+            </div>
           </div>
-          <div className="absolute -bottom-6 lg:-bottom-8 -left-6 lg:-left-8 bg-firozi text-ink p-6 lg:p-8 rounded-[30px] lg:rounded-[40px] shadow-xl -rotate-6 max-w-[200px] lg:max-w-[240px]">
-            <p className="font-display text-base lg:text-lg leading-tight mb-2">&quot;The best part of my daughter&apos;s haldi!&quot;</p>
-            <p className="text-[10px] lg:text-xs font-bold uppercase tracking-widest opacity-60">— Mrs. Kapoor</p>
+
+          <div className="lg:col-span-7">
+            <LeadForm />
           </div>
         </div>
       </div>
@@ -841,3 +924,34 @@ export const BlogPreview = () => {
     </section>
   );
 };
+
+export const ExperienceMarquee = () => {
+  const { t } = useLanguage();
+  const baseItems = [
+    { text: t('UNFORGETTABLE', 'अविस्मरणीय'), icon: <Sparkles className="w-8 h-8" /> },
+    { text: t('HANDCRAFTED', 'हैंडक्राफ्टेड'), icon: <Heart className="w-8 h-8" /> },
+    { text: t('BESPOKE', 'बेस्पोक'), icon: <Zap className="w-8 h-8" /> },
+    { text: t('PREMIUM', 'प्रीमियम'), icon: <ShieldCheck className="w-8 h-8" /> },
+  ];
+
+  const items = [...baseItems, ...baseItems, ...baseItems, ...baseItems];
+
+  return (
+    <div className="bg-ink py-10 overflow-hidden border-y border-white/5 relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-ink via-transparent to-ink z-10 pointer-events-none"></div>
+      <motion.div 
+        animate={{ x: [0, -1000] }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        className="flex gap-20 items-center whitespace-nowrap px-10"
+      >
+        {items.map((item, i) => (
+          <div key={i} className="flex items-center gap-8 text-snow/20 group hover:text-firozi transition-colors duration-500">
+            <span className="text-6xl md:text-8xl font-display font-black tracking-tighter uppercase">{item.text}</span>
+            <div className="text-firozi/40 group-hover:scale-125 transition-transform duration-500">{item.icon}</div>
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+
