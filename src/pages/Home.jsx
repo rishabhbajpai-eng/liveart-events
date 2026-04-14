@@ -10,7 +10,9 @@ import {
   SocialProof,
   ExclusivityScarcity,
   SectionCTA,
-  PainPointSection
+  PainPointSection,
+  WhoItIsFor,
+  VisualProofGallery
 } from '../components/HomeSections';
 import { motion } from 'motion/react';
 
@@ -29,8 +31,10 @@ const Home = ({ onSelectOccasion, selectedOccasion }) => {
       <OccasionSelector onSelect={onSelectOccasion} activeOccasion={selectedOccasion} />
       <SectionCTA />
       <ProcessSection />
+      <WhoItIsFor />
       <SectionCTA />
       <TrustSection />
+      <VisualProofGallery />
       <SectionCTA />
       <SocialProof />
       <SectionCTA />

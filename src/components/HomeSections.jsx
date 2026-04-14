@@ -150,7 +150,7 @@ export const Hero = () => {
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-gold"></span>
               </span>
               <span className="text-xs lg:text-sm font-black tracking-[0.3em] text-paper uppercase glow-text">
-                {t('Luxury Interactive Experience', 'लक्जरी इंटरैक्टिव अनुभव')}
+                {t('Trademarked LiveArt Experience Zones™', 'ट्रेडमार्क लाइवआर्ट एक्सपीरियंस जोन™')}
               </span>
             </motion.div>
 
@@ -171,6 +171,14 @@ export const Hero = () => {
               >
                 {t('Yours will be experienced.', 'आपकी अनुभव की जाएगी।')}
               </motion.span> 
+              <motion.span 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1 }}
+                className="text-white/60 text-lg md:text-xl block mt-6 font-sans tracking-[0.1em] uppercase font-black"
+              >
+                {t('Introducing LiveArt Experience Zones™', 'प्रस्तुत है लाइवआर्ट एक्सपीरियंस जोन™')}
+              </motion.span>
             </h1>
 
             <motion.p 
@@ -190,14 +198,17 @@ export const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-8 items-stretch sm:items-center relative z-20">
               <Link 
-                to="/packages" 
+                to="/contact" 
                 className="gold-btn group relative px-10 py-5 rounded-none tracking-widest uppercase text-sm font-semibold text-center"
               >
                 <div className="relative z-10 flex items-center justify-center gap-4">
-                  <span>{t('Book Your Experience Call Before Dates Fill', 'तारीखें भरने से पहले अपनी एक्सपीरियंस कॉल बुक करें')}</span>
+                  <span>{t('Check Availability for Your Date', 'अपनी तारीख के लिए उपलब्धता की जांच करें')}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-3 transition-transform duration-500" />
                 </div>
               </Link>
+              <div className="text-paper/40 text-[10px] uppercase font-black tracking-widest mt-4">
+                {t('Dates for peak wedding season fill quickly.', 'पीक वेडिंग सीजन की तारीखें जल्दी भर जाती हैं।')}
+              </div>
               
               <Link 
                 to="/stations" 
@@ -1215,7 +1226,7 @@ export const ExclusivityScarcity = () => {
                to="/contact" 
                className="inline-block bg-paper text-charcoal px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs hover:bg-gold transition-all"
              >
-               {t('Check Availability', 'उपलब्धता की जांच करें')}
+               {t('Check Availability for Your Date', 'अपनी तारीख के लिए उपलब्धता की जांच करें')}
              </Link>
           </div>
         </div>
@@ -1235,13 +1246,17 @@ export const SectionCTA = () => {
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
+        className="text-center"
       >
+        <p className="text-charcoal/40 text-[10px] font-black uppercase tracking-[0.3em] mb-4">
+          {t('Don’t risk a boring wedding.', 'बोरिंग शादी का जोखिम न उठाएं।')}
+        </p>
         <MagneticButton>
           <Link 
             to="/contact" 
             className="gold-btn px-16 py-6 rounded-full font-black uppercase tracking-[0.3em] text-[10px] shadow-[0_20px_50px_rgba(212,175,55,0.3)] hover:scale-105 transition-all flex items-center gap-4"
           >
-            {t('Book Your Free Consultation', 'अपना निःशुल्क परामर्श बुक करें')}
+            {t('Check Availability for Your Date', 'अपनी तारीख के लिए उपलब्धता की जांच करें')}
             <ArrowRight size={16} />
           </Link>
         </MagneticButton>
@@ -1302,6 +1317,91 @@ export const PainPointSection = () => {
                 <div className="text-white text-4xl font-display drop-shadow-2xl italic font-light leading-relaxed">&quot;{t('Don’t let your event be just another blur.', 'अपने ईवेंट को केवल एक धुंधलापन न बनने दें।')}&quot;</div>
              </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const WhoItIsFor = () => {
+  const { t } = useLanguage();
+  return (
+    <section className="py-32 bg-charcoal text-paper overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-24">
+          <h2 className="text-5xl md:text-7xl font-display mb-6">{t('Designed For The Few', 'कुछ चुनिंदा लोगों के लिए डिज़ाइन किया गया')}</h2>
+          <p className="text-gold uppercase tracking-[0.4em] font-black text-xs">{t('Qualification Process', 'योग्यता प्रक्रिया')}</p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="p-12 bg-white/5 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all group">
+            <div className="w-12 h-12 bg-gold/20 rounded-2xl flex items-center justify-center text-gold mb-8 group-hover:scale-110 transition-transform">
+              <Sparkles />
+            </div>
+            <h4 className="text-2xl font-display mb-4">{t('For High-Vision Couples', 'हाई-विज़न जोड़ों के लिए')}</h4>
+            <p className="text-paper/40 leading-relaxed italic">{t('For those who want their wedding to stand out and be remembered as a cultural moment, not just a function.', 'उन लोगों के लिए जो चाहते हैं कि उनकी शादी अलग दिखे और एक सांस्कृतिक क्षण के रूप में याद रखी जाए, न कि केवल एक समारोह के रूप में।')}</p>
+          </div>
+          
+          <div className="p-12 bg-white/5 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all group">
+            <div className="w-12 h-12 bg-gold/20 rounded-2xl flex items-center justify-center text-gold mb-8 group-hover:scale-110 transition-transform">
+              <Heart />
+            </div>
+            <h4 className="text-2xl font-display mb-4">{t('For Experience-First Hosts', 'अनुभव-प्रथम मेजबानों के लिए')}</h4>
+            <p className="text-paper/40 leading-relaxed italic">{t('For hosts who truly care about guest joy and want every person to leave with a handmade memory.', 'उन मेजबानों के लिए जो वास्तव में मेहमानों की खुशी की परवाह करते हैं और चाहते हैं कि हर व्यक्ति हाथ से बनी याद के साथ जाए।')}</p>
+          </div>
+          
+          <div className="p-12 bg-gold/10 rounded-[40px] border border-gold/30">
+            <div className="w-12 h-12 bg-gold rounded-2xl flex items-center justify-center text-charcoal mb-8">
+              <Zap />
+            </div>
+            <h4 className="text-2xl font-display mb-4">{t('Not For The Ordinary', 'साधारण के लिए नहीं')}</h4>
+            <p className="text-paper/60 leading-relaxed italic">{t('If you are looking for basic, generic decoration-only events, we are probably not the right fit. We design interaction.', 'यदि आप बुनियादी, सामान्य सजावट-मात्र कार्यक्रमों की तलाश में हैं, तो हम शायद सही फिट नहीं हैं। हम इंटरेक्शन डिज़ाइन करते हैं।')}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const VisualProofGallery = () => {
+  const { t } = useLanguage();
+  const images = [
+    "https://images.unsplash.com/photo-1519671482749-fd09be45bc36?q=80&w=2000&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2000&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1541250848049-b4f7141dca3f?q=80&w=2000&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2000&auto=format&fit=crop"
+  ];
+
+  return (
+    <section className="py-32 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-7xl font-display mb-6">{t('Real Moments We Created', 'वास्तविक क्षण जो हमने बनाए')}</h2>
+          <p className="text-charcoal/40 text-lg">{t('No generic decor. Pure guest interaction and authentic emotion.', 'कोई सामान्य सजावट नहीं। शुद्ध अतिथि सहभागिता और प्रामाणिक भावना।')}</p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {images.map((img, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="aspect-[3/4] rounded-[40px] overflow-hidden group shadow-xl"
+            >
+              <img src={img} alt="LiveArt Experience Zone" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="mt-20 text-center">
+           <p className="text-charcoal/40 text-[10px] font-black uppercase tracking-[0.3em] mb-8 italic">
+             {t('LiveArt Experience Zones™: Where guests become part of the art.', 'लाइवआर्ट एक्सपीरियंस जोन™: जहाँ मेहमान कला का हिस्सा बन जाते हैं।')}
+           </p>
+           <Link to="/contact" className="gold-btn px-10 py-5 rounded-full font-black uppercase tracking-widest text-[10px]">
+             {t('Check Availability for Your Date', 'अपनी तारीख के लिए उपलब्धता की जांच करें')}
+           </Link>
         </div>
       </div>
     </section>
