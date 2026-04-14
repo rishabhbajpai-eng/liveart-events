@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import Stations from './pages/Stations';
 import Packages from './pages/Packages';
 import Gallery from './pages/Gallery';
+import Inspiration from './pages/Inspiration';
 import Partner from './pages/Partner';
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
@@ -82,6 +83,10 @@ function AppContent() {
             <Route 
               path="/gallery" 
               element={<Gallery />} 
+            />
+            <Route 
+              path="/inspiration" 
+              element={<Inspiration />} 
             />
             <Route 
               path="/partner" 
