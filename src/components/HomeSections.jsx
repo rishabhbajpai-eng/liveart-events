@@ -154,31 +154,23 @@ export const Hero = () => {
               </span>
             </motion.div>
 
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-display leading-[1.1] mb-10 tracking-tighter perspective-1000 relative z-20">
+            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-display leading-[0.9] mb-10 tracking-tighter perspective-1000 relative z-20">
               <motion.span 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.6 }}
-                className="block text-cream"
+                className="block text-white"
               >
-                {t('We don’t just', 'हम सिर्फ')}
+                {t('Most weddings are watched.', 'अधिकांश शादियाँ देखी जाती हैं।')}
               </motion.span> 
               <motion.span 
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 0.8 }}
-                className="text-gradient italic font-bold block my-2"
+                className="text-gold italic font-bold block my-4"
               >
-                {t('decorate events.', 'इवेंट सजाते नहीं हैं।')}
+                {t('Yours will be experienced.', 'आपकी अनुभव की जाएगी।')}
               </motion.span> 
-              <motion.span 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 1 }}
-                className="text-cream/90 block"
-              >
-                {t('We create experiences your guests never forget.', 'हम ऐसे अनुभव बनाते हैं जिन्हें आपके मेहमान कभी नहीं भूलेंगे।')}
-              </motion.span>
             </h1>
 
             <motion.p 
@@ -188,10 +180,13 @@ export const Hero = () => {
               className="text-xl lg:text-3xl text-paper/80 mb-14 leading-relaxed max-w-3xl font-light tracking-wide drop-shadow-xl"
             >
               {t(
-                "Interactive activities, immersive setups, and guest engagement designed for modern celebrations.",
-                "इंटरैक्टिव गतिविधियाँ, इमर्सिव सेटअप और आधुनिक उत्सवों के लिए डिज़ाइन की गई अतिथि सहभागिता।"
+                "Your guests won’t remember the decor. They’ll remember how they felt.",
+                "आपके मेहमानों को सजावट याद नहीं रहेगी। उन्हें याद रहेगा कि उन्होंने कैसा महसूस किया।"
               )}
             </motion.p>
+            <div className="mb-8 inline-block px-4 py-2 bg-gold/10 border border-gold/20 rounded-lg text-gold text-xs font-black uppercase tracking-widest">
+               {t('Specializing in guest engagement and experience design for modern celebrations.', 'आधुनिक उत्सवों के लिए अतिथि सहभागिता और अनुभव डिज़ाइन में विशेषज्ञता।')}
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-8 items-stretch sm:items-center relative z-20">
               <Link 
@@ -199,7 +194,7 @@ export const Hero = () => {
                 className="gold-btn group relative px-10 py-5 rounded-none tracking-widest uppercase text-sm font-semibold text-center"
               >
                 <div className="relative z-10 flex items-center justify-center gap-4">
-                  <span>{t('Book Your Experience Call', 'अपना अनुभव कॉल बुक करें')}</span>
+                  <span>{t('Book Your Experience Call Before Dates Fill', 'तारीखें भरने से पहले अपनी एक्सपीरियंस कॉल बुक करें')}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-3 transition-transform duration-500" />
                 </div>
               </Link>
@@ -829,16 +824,16 @@ export const InquirySection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
           <div className="lg:col-span-5 text-left">
             <h2 className="text-6xl md:text-8xl font-display text-charcoal mb-4 leading-[0.9]">
-              {t('Let’s make your', 'आइए अपनी')} <br />
-              <span className="text-gold italic">{t('Celebration Unforgettable.', 'उत्सव को यादगार बनाएं।')}</span>
+              {t('Don’t let your event be', 'अपने ईवेंट को न होने दें')} <br />
+              <span className="text-gold italic">{t('Just Another Function.', 'सिर्फ एक और फंक्शन।')}</span>
             </h2>
-            <p className="text-charcoal/40 text-lg mb-10 font-medium">
-              {t('Experience Design tailored for the extraordinary.', 'असाधारण के लिए तैयार किया गया एक्सपीरियंस डिज़ाइन।')}
+            <p className="text-charcoal text-2xl mb-10 font-black uppercase tracking-widest">
+              {t('Make it unforgettable.', 'इसे अविस्मरणीय बनाएं।')}
             </p>
             <div className="mb-12">
                <MagneticButton>
                  <Link to="/contact" className="gold-btn px-10 py-5 rounded-full font-black tracking-widest text-[10px] uppercase shadow-xl inline-block">
-                   {t('Book Your Free Consultation', 'अपना निःशुल्क परामर्श बुक करें')}
+                   {t('Book Your Experience Call', 'अपना अनुभव कॉल बुक करें')}
                  </Link>
                </MagneticButton>
             </div>
@@ -1126,17 +1121,17 @@ export const SocialProof = () => {
   const { t } = useLanguage();
   const testimonials = [
     {
-      quote: t('LiveArt didn’t just add activities; they added soul to our wedding. Our guests couldn’t stop talking about how personal everything felt.', 'लाइवआर्ट ने केवल गतिविधियां नहीं जोड़ीं; उन्होंने हमारी शादी में जान डाल दी। हमारे मेहमान बात करना बंद नहीं कर सके कि सब कुछ कितना व्यक्तिगत महसूस हुआ।'),
+      quote: t('LiveArt didn’t just add activities; they added soul to our wedding. Our guests couldn’t stop talking about it even weeks after the celebration.', 'लाइवआर्ट ने केवल गतिविधियां नहीं जोड़ीं; उन्होंने हमारी शादी में जान डाल दी। हमारे मेहमान उत्सव के हफ़्तों बाद भी इसके बारे में बात करना बंद नहीं कर सके।'),
       author: 'Priya & Rahul',
       role: t('Modern Couple', 'आधुनिक जोड़ा')
     },
     {
-      quote: t('The perfume bar was a masterstroke. Watching our friends create their own signature scents was the highlight of our cocktail night.', 'परफ्यूम बार एक मास्टरस्ट्रोक था। हमारे दोस्तों को अपनी सिग्नेचर खुशबू बनाते देखना हमारी कॉकटेल नाइट का मुख्य आकर्षण था।'),
+      quote: t('The perfume bar was a masterstroke. Our friends ignored the dance floor just to create their signature scents. It was the talk of the night.', 'परफ्यूम बार एक मास्टरस्ट्रोक था। हमारे दोस्तों ने केवल अपनी सिग्नेचर खुशबू बनाने के लिए डांस फ्लोर को नज़रअंदाज़ कर दिया। यह रात की चर्चा थी।'),
       author: 'Sahil Mehra',
       role: t('Visionary Host', 'विज़नरी होस्ट')
     },
     {
-      quote: t('Finally, a celebration that wasn’t just about the stage. Every guest left with a smile and a handmade memory. Truly magical.', 'अंत में, एक ऐसा उत्सव जो केवल स्टेज के बारे में नहीं था। हर मेहमान एक मुस्कान और हाथ से बनी याद के साथ गया। वास्तव में जादुई।'),
+      quote: t('Every guest left with a handmade memory and a story to tell. Finally, an event where people actually interacted instead of just sitting.', 'हर मेहमान एक हाथ से बनी याद और बताने के लिए एक कहानी के साथ गया। अंत में, एक ऐसा कार्यक्रम जहाँ लोग सिर्फ बैठने के बजाय वास्तव में बातचीत करते थे।'),
       author: 'Anjali Kapoor',
       role: t('Luxury Curator', 'लक्जरी क्यूरेटर')
     }
@@ -1252,5 +1247,63 @@ export const SectionCTA = () => {
         </MagneticButton>
       </motion.div>
     </div>
+  );
+};
+
+export const PainPointSection = () => {
+  const { t } = useLanguage();
+  return (
+    <section className="py-32 bg-cream text-charcoal overflow-hidden border-y border-charcoal/5">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div>
+            <h2 className="text-5xl md:text-7xl font-display mb-10 leading-tight text-primary">
+              {t('Why Most Weddings Feel', 'अधिकांश शादियाँ क्यों महसूस होती हैं')} <br />
+              <span className="text-gold italic underline decoration-1 underline-offset-8">{t('Forgettable', 'भूलने योग्य')}</span>
+            </h2>
+            <div className="space-y-12">
+              <div className="flex gap-8 group">
+                <div className="text-charcoal/20 text-5xl font-display group-hover:text-gold transition-colors">01</div>
+                <div>
+                   <h4 className="text-2xl font-display mb-3">{t('The Idle Guest Problem', 'बेकार बैठे मेहमानों की समस्या')}</h4>
+                   <p className="text-charcoal/60 leading-relaxed italic">{t('Guests spend hours watching the stage, feeling disconnected and bored during long ceremonies.', 'मेहमान घंटों स्टेज देखते हुए बिताते हैं, लंबी रस्मों के दौरान कटा हुआ और ऊब महसूस करते हैं।')}</p>
+                </div>
+              </div>
+              <div className="flex gap-8 group">
+                <div className="text-charcoal/20 text-5xl font-display group-hover:text-gold transition-colors">02</div>
+                <div>
+                   <h4 className="text-2xl font-display mb-3">{t('Repetitive Functions', 'वही पुराने फंक्शन')}</h4>
+                   <p className="text-charcoal/60 leading-relaxed italic">{t('The same generic decor and routines that your guests have seen in every wedding this season.', 'वही पुराने डेकोर और रूटीन जो आपके मेहमानों ने इस सीजन की हर शादी में देखे हैं।')}</p>
+                </div>
+              </div>
+              <div className="flex gap-8 group">
+                <div className="text-charcoal/20 text-5xl font-display group-hover:text-gold transition-colors">03</div>
+                <div>
+                   <h4 className="text-2xl font-display mb-3">{t('Lack of Interaction', 'बातचीत की कमी')}</h4>
+                   <p className="text-charcoal/60 leading-relaxed italic">{t('Limited opportunities for guests to connect, create memories, and truly engage with your celebration.', 'मेहमानों के लिए जुड़ने, यादें बनाने और आपके उत्सव के साथ वास्तव में शामिल होने के सीमित अवसर।')}</p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-16 pt-10 border-t border-charcoal/10">
+               <p className="text-3xl font-display text-gold italic mb-8">{t('That’s exactly what we solve.', 'यही वह समस्या है जिसे हम हल करते हैं।')}</p>
+               <MagneticButton>
+                 <Link to="/contact" className="gold-btn px-10 py-5 rounded-full font-black tracking-widest text-[10px] uppercase shadow-xl inline-block">
+                   {t('Check Availability for Your Date', 'अपनी तारीख के लिए उपलब्धता की जांच करें')}
+                 </Link>
+               </MagneticButton>
+            </div>
+          </div>
+          <div className="relative">
+             <div className="aspect-square rounded-[80px] overflow-hidden rotate-3 shadow-2xl">
+               <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop" alt="Bored Guests at Wedding" className="w-full h-full object-cover grayscale brightness-50 contrast-125" />
+             </div>
+             <div className="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full px-10">
+                <div className="text-white text-4xl font-display drop-shadow-2xl italic font-light leading-relaxed">&quot;{t('Don’t let your event be just another blur.', 'अपने ईवेंट को केवल एक धुंधलापन न बनने दें।')}&quot;</div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };

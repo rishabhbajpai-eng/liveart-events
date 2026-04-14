@@ -9,7 +9,8 @@ import {
   ProcessSection,
   SocialProof,
   ExclusivityScarcity,
-  SectionCTA
+  SectionCTA,
+  PainPointSection
 } from '../components/HomeSections';
 import { motion } from 'motion/react';
 
@@ -23,6 +24,7 @@ const Home = ({ onSelectOccasion, selectedOccasion }) => {
       className="relative"
     >
       <Hero />
+      <PainPointSection />
       <ExperienceMarquee />
       <OccasionSelector onSelect={onSelectOccasion} activeOccasion={selectedOccasion} />
       <SectionCTA />
