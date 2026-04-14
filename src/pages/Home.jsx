@@ -12,7 +12,8 @@ import {
   SectionCTA,
   PainPointSection,
   WhoItIsFor,
-  VisualProofGallery
+  VisualProofGallery,
+  EmotionalInterrupt
 } from '../components/HomeSections';
 import { motion } from 'motion/react';
 
@@ -26,6 +27,7 @@ const Home = ({ onSelectOccasion, selectedOccasion }) => {
       className="relative"
     >
       <Hero />
+      <EmotionalInterrupt />
       <PainPointSection />
       <ExperienceMarquee />
       <OccasionSelector onSelect={onSelectOccasion} activeOccasion={selectedOccasion} />

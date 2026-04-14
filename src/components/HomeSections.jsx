@@ -197,26 +197,33 @@ export const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-8 items-stretch sm:items-center relative z-20">
-              <Link 
-                to="/contact" 
-                className="gold-btn group relative px-10 py-5 rounded-none tracking-widest uppercase text-sm font-semibold text-center"
-              >
-                <div className="relative z-10 flex items-center justify-center gap-4">
-                  <span>{t('Check Availability for Your Date', 'अपनी तारीख के लिए उपलब्धता की जांच करें')}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-3 transition-transform duration-500" />
-                </div>
-              </Link>
-              <div className="text-paper/40 text-[10px] uppercase font-black tracking-widest mt-4">
-                {t('Dates for peak wedding season fill quickly.', 'पीक वेडिंग सीजन की तारीखें जल्दी भर जाती हैं।')}
+              <div className="flex flex-col gap-4">
+                <Link 
+                  to="/contact" 
+                  className="gold-btn group relative px-10 py-5 rounded-none tracking-widest uppercase text-sm font-semibold text-center"
+                >
+                  <div className="relative z-10 flex items-center justify-center gap-4">
+                    <span>{t('Check Availability for Your Date', 'अपनी तारीख के लिए उपलब्धता की जांच करें')}</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-3 transition-transform duration-500" />
+                  </div>
+                </Link>
+                <p className="text-paper/40 text-[10px] uppercase font-black tracking-widest pl-2 italic">
+                   {t('Only limited weddings taken each month to maintain experience quality.', 'अनुभव की गुणवत्ता बनाए रखने के लिए हर महीने सीमित शादियां ही ली जाती हैं।')}
+                </p>
               </div>
-              
-              <Link 
-                to="/stations" 
-                className="group px-10 py-5 tracking-widest uppercase text-sm font-semibold text-cream border border-gold/50 hover:border-gold transition-all flex items-center justify-center gap-4 relative overflow-hidden"
-              >
-                <span className="relative z-10">{t('View Our Experiences', 'हमारे अनुभव देखें')}</span>
-                <div className="absolute inset-0 bg-gold/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
-              </Link>
+
+              <div className="flex flex-col gap-4">
+                <Link 
+                  to="/stations" 
+                  className="group px-10 py-5 tracking-widest uppercase text-sm font-semibold text-cream border border-gold/50 hover:border-gold transition-all flex items-center justify-center gap-4 relative overflow-hidden"
+                >
+                  <span className="relative z-10">{t('Explore Experience Zones™', 'एक्सपीरियंस जोन™ देखें')}</span>
+                  <div className="absolute inset-0 bg-gold/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                </Link>
+                <p className="text-paper/40 text-[10px] uppercase font-black tracking-widest pl-2 italic">
+                   {t('Peak season dates get booked weeks in advance.', 'पीक सीजन की तारीखें हफ्तों पहले बुक हो जाती हैं।')}
+                </p>
+              </div>
             </div>
 
             {/* Stats Row */}
@@ -251,6 +258,13 @@ export const Hero = () => {
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 saturate-[1.2]" 
                 alt="Premium Live Art" 
               />
+              {/* Trust Line */}
+              <div className="absolute top-8 left-8 z-30 flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+                <span className="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-white italic">
+                  {t('Serving modern weddings across Uttar Pradesh', 'उत्तर प्रदेश में आधुनिक शादियों की सेवा')}
+                </span>
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent opacity-60"></div>
               
               <div className="absolute bottom-16 left-12 right-12 translate-z-50">
@@ -347,7 +361,15 @@ export const OccasionSelector = ({ onSelect, activeOccasion }) => {
                   activeOccasion === occasion.id ? 'opacity-80 scale-105' : 'opacity-60'
                 }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent"></div>
+              
+              {/* Trust Line */}
+              <div className="absolute top-8 left-8 z-30 flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+                <span className="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-white italic">
+                  {t('Serving modern weddings across Uttar Pradesh', 'उत्तर प्रदेश में आधुनिक शादियों की सेवा')}
+                </span>
+              </div>
               <div className={`absolute inset-0 border-2 transition-all duration-500 m-4 rounded-[32px] ${
                 activeOccasion === occasion.id ? 'border-white/40' : 'border-white/0 group-hover:border-white/20'
               }`}></div>
@@ -841,10 +863,13 @@ export const InquirySection = () => {
             <p className="text-charcoal text-2xl mb-10 font-black uppercase tracking-widest">
               {t('Make it unforgettable.', 'इसे अविस्मरणीय बनाएं।')}
             </p>
+            <p className="text-charcoal/40 text-sm mb-12 italic font-display">
+              &quot;{t('Your guests won’t remember what they saw. They’ll remember what they experienced.', 'आपके मेहमानों को यह याद नहीं रहेगा कि उन्होंने क्या देखा। उन्हें याद रहेगा कि उन्होंने क्या अनुभव किया।')}&quot;
+            </p>
             <div className="mb-12">
                <MagneticButton>
                  <Link to="/contact" className="gold-btn px-10 py-5 rounded-full font-black tracking-widest text-[10px] uppercase shadow-xl inline-block">
-                   {t('Book Your Experience Call', 'अपना अनुभव कॉल बुक करें')}
+                   {t('Check Availability for Your Date', 'अपनी तारीख के लिए उपलब्धता की जांच करें')}
                  </Link>
                </MagneticButton>
             </div>
@@ -1402,6 +1427,37 @@ export const VisualProofGallery = () => {
            <Link to="/contact" className="gold-btn px-10 py-5 rounded-full font-black uppercase tracking-widest text-[10px]">
              {t('Check Availability for Your Date', 'अपनी तारीख के लिए उपलब्धता की जांच करें')}
            </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const EmotionalInterrupt = () => {
+  const { t } = useLanguage();
+  return (
+    <section className="py-24 bg-white overflow-hidden border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex flex-col items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-gold font-black text-xs uppercase tracking-[0.4em] mb-8"
+          >
+            {t('Let’s be honest...', 'ईमानदारी से बात करें तो...')}
+          </motion.div>
+          
+          <h2 className="text-4xl md:text-6xl font-display text-charcoal leading-tight max-w-4xl">
+            {t('Most weddings look beautiful. But very few', 'अधिकांश शादियाँ सुंदर दिखती हैं। लेकिन बहुत कम')} <br />
+            <span className="text-gold italic underline underline-offset-[12px] decoration-1">{t('Feel Alive', 'जीवंत महसूस होती हैं')}</span>.
+          </h2>
+          
+          <div className="mt-16 w-12 h-px bg-charcoal/10"></div>
+          
+          <p className="mt-12 text-charcoal/40 text-sm font-black uppercase tracking-widest max-w-lg leading-loose italic">
+            {t('Conventional decor captures eyes. LiveArt Experience Zones™ capture souls.', 'पारंपरिक सजावट आँखों को पकड़ती है। लाइवआर्ट एक्सपीरियंस जोन™ आत्माओं को पकड़ते हैं।')}
+          </p>
         </div>
       </div>
     </section>
