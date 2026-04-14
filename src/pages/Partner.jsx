@@ -18,16 +18,16 @@ const Partner = () => {
           </div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-display text-charcoal mb-6 lg:mb-8 leading-tight">
             {t('Are you an', 'क्या आप एक')} <br />
-            <span className="text-teal italic">{t('Event Planner?', 'इवेंट प्लानर हैं?')}</span>
+            <span className="text-teal italic">{t('Experience Designer?', 'एक्सपीरियंस डिज़ाइनर हैं?')}</span>
           </h2>
           <p className="text-charcoal/60 mb-10 lg:mb-12 text-lg lg:text-xl leading-relaxed">
-            Partner with us and bring India&apos;s most unique DIY experiences to your clients. 
+            Partner with us and bring India&apos;s most unique interactive celebrations to your clients. 
             Enjoy a <span className="text-teal font-black">12% referral commission</span> on every successful booking.
           </p>
           <motion.a 
             whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(26,26,26,0.2)" }}
             whileTap={{ scale: 0.95 }}
-            href="https://wa.me/919999999999?text=I'm an event planner and I'd like to partner with LiveArt." 
+            href="https://wa.me/919999999999?text=I'm an experience designer and I'd like to partner with LiveArt." 
             className="inline-block bg-charcoal text-paper px-10 lg:px-16 py-4 lg:py-6 rounded-full font-black text-lg lg:text-xl transition-all"
           >
             Apply for Partner Program

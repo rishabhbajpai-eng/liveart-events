@@ -27,7 +27,7 @@ const Contact = () => {
             {t('Contact', 'संपर्क')} <span className="text-teal italic">{t('Us', 'करें')}</span>
           </h1>
           <p className="text-charcoal/60 text-lg max-w-2xl mx-auto">
-            {t('Ready to elevate your event? Reach out to our luxury stylists for a personalized consultation.', 'अपने इवेंट को एलीवेट करने के लिए तैयार हैं? व्यक्तिगत परामर्श के लिए हमारे लग्जरी स्टाइलिस्टों से संपर्क करें।')}
+            {t('Ready to elevate your celebration? Reach out to our Experience Designers for a personalized consultation.', 'अपने उत्सव को भव्य बनाने के लिए तैयार हैं? व्यक्तिगत परामर्श के लिए हमारे एक्सपीरियंस डिज़ाइनर से संपर्क करें।')}
           </p>
         </div>
 

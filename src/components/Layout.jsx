@@ -139,8 +139,8 @@ export const Footer = () => {
           </div>
           <p className="text-paper/60 text-base leading-relaxed max-w-xs">
             {t(
-              "India's only mobile multi-station DIY activity service for personal celebrations.",
-              "व्यक्तिगत उत्सवों के लिए भारत की एकमात्र मोबाइल मल्टी-स्टेशन DIY गतिविधि सेवा।"
+              "India's leading Experience Design collective creating interactive celebrations for personal events.",
+              "लक्जरी इंटरैक्टिव उत्सव बनाने वाली भारत की अग्रणी एक्सपीरियंस डिज़ाइन टीम।"
             )}
           </p>
           <div className="flex gap-6">

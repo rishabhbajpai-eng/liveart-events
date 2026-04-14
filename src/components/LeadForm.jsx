@@ -35,7 +35,7 @@ export const LeadForm = () => {
         </div>
         <h3 className="text-4xl font-display text-charcoal mb-4">{t('Request Received!', 'अनुरोध प्राप्त हुआ!')}</h3>
         <p className="text-charcoal/60 text-lg mb-8">
-          {t('Our luxury event stylists will reach out to you within 24 hours to curate your experience.', 'हमारे लग्जरी इवेंट स्टाइलिस्ट आपके अनुभव को क्यूरेट करने के लिए 24 घंटों के भीतर आपसे संपर्क करेंगे।')}
+          {t('Our Experience Designers will reach out to you within 24 hours to curate your masterpiece.', 'हमारे एक्सपीरियंस डिज़ाइनर आपके मास्टरपीस को क्यूरेट करने के लिए 24 घंटों के भीतर आपसे संपर्क करेंगे।')}
         </p>
         <button 
           onClick={() => setIsSubmitted(false)}

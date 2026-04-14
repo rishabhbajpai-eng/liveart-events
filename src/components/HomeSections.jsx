@@ -146,11 +146,11 @@ export const Hero = () => {
               className="inline-flex items-center gap-4 px-6 py-3 bg-white/5 backdrop-blur-2xl border border-white/20 rounded-full mb-10 shadow-2xl"
             >
               <span className="flex h-3 w-3 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-purple"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-gold"></span>
               </span>
               <span className="text-xs lg:text-sm font-black tracking-[0.3em] text-paper uppercase glow-text">
-                {t('Luxury Haldi DIY Experience', 'लक्जरी हल्दी DIY अनुभव')}
+                {t('Luxury Interactive Experience', 'लक्जरी इंटरैक्टिव अनुभव')}
               </span>
             </motion.div>
 
@@ -161,7 +161,7 @@ export const Hero = () => {
                 transition={{ duration: 1, delay: 0.6 }}
                 className="block text-cream"
               >
-                {t('Where', 'जहाँ')}
+                {t('We don’t just', 'हम सिर्फ')}
               </motion.span> 
               <motion.span 
                 initial={{ opacity: 0, x: -30 }}
@@ -169,7 +169,7 @@ export const Hero = () => {
                 transition={{ duration: 1, delay: 0.8 }}
                 className="text-gradient italic font-bold block my-2"
               >
-                {t('Moments', 'क्षण')}
+                {t('decorate events.', 'इवेंट सजाते नहीं हैं।')}
               </motion.span> 
               <motion.span 
                 initial={{ opacity: 0, y: 30 }}
@@ -177,7 +177,7 @@ export const Hero = () => {
                 transition={{ duration: 1, delay: 1 }}
                 className="text-cream/90 block"
               >
-                {t('Become Art', 'कला बन जाते हैं')}
+                {t('We create experiences your guests never forget.', 'हम ऐसे अनुभव बनाते हैं जिन्हें आपके मेहमान कभी नहीं भूलेंगे।')}
               </motion.span>
             </h1>
 
@@ -185,34 +185,31 @@ export const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2 }}
-              className="text-xl lg:text-3xl text-paper/80 mb-14 leading-relaxed max-w-2xl font-light tracking-wide drop-shadow-xl"
+              className="text-xl lg:text-3xl text-paper/80 mb-14 leading-relaxed max-w-3xl font-light tracking-wide drop-shadow-xl"
             >
-              <span className="text-purple font-bold italic mr-2 border-b border-purple/30">
-                {t('Elevate', 'ऊँचा उठाएं')}
-              </span>
               {t(
-                'your celebration with high-end interactive DIY stations. Handcrafted perfumes, bespoke jewelry, and artisanal favors that define luxury.',
-                'उच्च श्रेणी के इंटरैक्टिव DIY स्टेशन्स के साथ अपने उत्सव को बढ़ाएं। हाथ से बने इत्र, विशेष आभूषण और कलात्मक उपहार जो विलासिता को परिभाषित करते हैं।'
+                "Interactive activities, immersive setups, and guest engagement designed for modern celebrations.",
+                "इंटरैक्टिव गतिविधियाँ, इमर्सिव सेटअप और आधुनिक उत्सवों के लिए डिज़ाइन की गई अतिथि सहभागिता।"
               )}
             </motion.p>
 
             <div className="flex flex-col sm:flex-row gap-8 items-stretch sm:items-center relative z-20">
               <Link 
                 to="/packages" 
-                className="copper-btn group relative px-10 py-5 rounded-none tracking-widest uppercase text-sm font-semibold text-center"
+                className="gold-btn group relative px-10 py-5 rounded-none tracking-widest uppercase text-sm font-semibold text-center"
               >
                 <div className="relative z-10 flex items-center justify-center gap-4">
-                  <span>{t('Book Your Experience', 'अपना अनुभव बुक करें')}</span>
+                  <span>{t('Book Your Experience Call', 'अपना अनुभव कॉल बुक करें')}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-3 transition-transform duration-500" />
                 </div>
               </Link>
               
               <Link 
                 to="/stations" 
-                className="group px-10 py-5 tracking-widest uppercase text-sm font-semibold text-cream border border-copper/50 hover:border-copper transition-all flex items-center justify-center gap-4 relative overflow-hidden"
+                className="group px-10 py-5 tracking-widest uppercase text-sm font-semibold text-cream border border-gold/50 hover:border-gold transition-all flex items-center justify-center gap-4 relative overflow-hidden"
               >
-                <span className="relative z-10">{t('Explore Catalogue', 'कैटलॉग देखें')}</span>
-                <div className="absolute inset-0 bg-copper/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                <span className="relative z-10">{t('View Our Experiences', 'हमारे अनुभव देखें')}</span>
+                <div className="absolute inset-0 bg-gold/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
               </Link>
             </div>
 
@@ -224,9 +221,9 @@ export const Hero = () => {
                 { label: 'Cities Covered', value: '18+' }
               ].map((stat, i) => (
                 <div key={i} className="relative group">
-                  <div className="text-4xl font-display text-paper mb-2 group-hover:text-purple transition-colors duration-500">{stat.value}</div>
+                  <div className="text-4xl font-display text-paper mb-2 group-hover:text-gold transition-colors duration-500">{stat.value}</div>
                   <div className="text-[10px] font-black uppercase tracking-[0.3em] text-paper/40">{stat.label}</div>
-                  <div className="absolute -bottom-2 left-0 w-0 h-[1px] bg-purple group-hover:w-full transition-all duration-500"></div>
+                  <div className="absolute -bottom-2 left-0 w-0 h-[1px] bg-gold group-hover:w-full transition-all duration-500"></div>
                 </div>
               ))}
             </div>
@@ -244,7 +241,7 @@ export const Hero = () => {
               className="relative aspect-[3/4] rounded-[80px] overflow-hidden border-[12px] border-white/5 shadow-2xl group cursor-none"
             >
               <img 
-                src={haldiHero} 
+                src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2000&auto=format&fit=crop" 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 saturate-[1.2]" 
                 alt="Premium Live Art" 
               />
@@ -254,9 +251,9 @@ export const Hero = () => {
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  className="text-purple font-black text-xs uppercase tracking-widest mb-4 flex items-center gap-3"
+                  className="text-gold font-black text-xs uppercase tracking-widest mb-4 flex items-center gap-3"
                 >
-                   <span className="w-4 h-[1px] bg-purple"></span>
+                   <span className="w-4 h-[1px] bg-gold"></span>
                    Featured Setup
                 </motion.div>
                 <div className="text-paper text-5xl font-display leading-tight">{t('Curated Craftsmanship', 'क्यूरेटेड शिल्प कौशल')}</div>
@@ -275,7 +272,7 @@ export const Hero = () => {
               </div>
             </motion.div>
             
-            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-purple rounded-3xl rotate-12 -z-10 shadow-2xl opacity-50 blur-xl"></div>
+            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gold rounded-3xl rotate-12 -z-10 shadow-2xl opacity-50 blur-xl"></div>
           </div>
         </div>
       </div>
@@ -317,7 +314,7 @@ export const OccasionSelector = ({ onSelect, activeOccasion }) => {
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-7xl font-display text-teal mb-4">{t('Choose Your Vibe', 'अपना वाइब चुनें')}</h2>
+          <h2 className="text-5xl md:text-7xl font-display text-primary mb-4">{t('Choose Your Vibe', 'अपना वाइब चुनें')}</h2>
           <p className="text-charcoal/60 text-lg">{t('We curate experiences that match your celebration perfectly.', 'हम ऐसे अनुभव तैयार करते हैं जो आपके उत्सव से पूरी तरह मेल खाते हैं।')}</p>
         </div>
         
@@ -334,7 +331,7 @@ export const OccasionSelector = ({ onSelect, activeOccasion }) => {
               transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
               className={`group relative h-[400px] overflow-hidden rounded-[40px] bg-charcoal shadow-2xl transition-all duration-500 ${
-                activeOccasion === occasion.id ? 'ring-4 ring-teal ring-offset-4' : ''
+                activeOccasion === occasion.id ? 'ring-4 ring-gold ring-offset-4' : ''
               }`}
             >
               <img 
@@ -350,7 +347,7 @@ export const OccasionSelector = ({ onSelect, activeOccasion }) => {
               }`}></div>
               
               <div className="absolute bottom-10 left-10 right-10 text-left">
-                <span className="text-purple font-black text-xs tracking-[0.3em] uppercase mb-2 block opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0">
+                <span className="text-gold font-black text-xs tracking-[0.3em] uppercase mb-2 block opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0">
                   {t('Interactive Experience', 'इंटरैक्टिव अनुभव')}
                 </span>
                 <h3 className="text-paper font-display text-4xl leading-tight mb-2">{t(occasion.name, occasion.nameHi)}</h3>
@@ -447,7 +444,7 @@ const StationCard = ({ station, t, isExpanded, toggleExpand, openVideo, idx }) =
               onClick={(e) => { e.stopPropagation(); openVideo(station.videoUrl, station.name); }}
               className="bg-white/90 backdrop-blur-md text-gray-900 px-5 py-2.5 rounded-full font-bold text-sm tracking-wide flex items-center gap-2 transform hover:scale-105 transition-all shadow-xl"
             >
-              <PlayCircle size={18} className="text-teal-600" />
+              <PlayCircle size={18} className="text-primary" />
               {t('Watch Demo', 'डेमो')}
             </button>
           </div>
@@ -456,7 +453,7 @@ const StationCard = ({ station, t, isExpanded, toggleExpand, openVideo, idx }) =
 
       <div className="p-5 lg:p-6" onClick={() => toggleExpand(station.id)}>
         <div className="flex justify-between items-start mb-2">
-          <h3 className="text-xl lg:text-2xl font-black text-gray-900 leading-tight group-hover:text-teal transition-colors">
+          <h3 className="text-xl lg:text-2xl font-black text-gray-900 leading-tight group-hover:text-gold transition-colors">
             {t(station.name, station.nameHi)}
           </h3>
         </div>
@@ -467,17 +464,17 @@ const StationCard = ({ station, t, isExpanded, toggleExpand, openVideo, idx }) =
 
         <div className="flex items-center gap-4 py-3 border-y border-gray-100 mb-4 bg-gray-50/50 -mx-5 px-5 lg:-mx-6 lg:px-6">
           <div className="flex items-center gap-2">
-            <Clock size={16} className="text-teal-600" />
+            <Clock size={16} className="text-gold" />
             <span className="text-xs lg:text-sm font-semibold text-gray-700">2-4 hrs</span>
           </div>
           <div className="w-1 h-1 rounded-full bg-gray-300" />
           <div className="flex items-center gap-2">
-            <Users size={16} className="text-teal-600" />
+            <Users size={16} className="text-gold" />
             <span className="text-xs lg:text-sm font-semibold text-gray-700">30+ Guests</span>
           </div>
           <div className="w-1 h-1 rounded-full bg-gray-300" />
           <div className="flex items-center gap-2">
-            <BadgeIndianRupee size={16} className="text-teal-600" />
+            <BadgeIndianRupee size={16} className="text-gold" />
             <span className="text-xs lg:text-sm font-semibold text-gray-700">Priced per guest</span>
           </div>
         </div>
@@ -498,7 +495,7 @@ const StationCard = ({ station, t, isExpanded, toggleExpand, openVideo, idx }) =
               className="overflow-hidden mt-4"
             >
               <div className="pt-4 border-t border-gray-100">
-                <h4 className="text-sm font-black uppercase tracking-widest text-teal-600 mb-3 flex items-center gap-2">
+                <h4 className="text-sm font-black uppercase tracking-widest text-gold mb-3 flex items-center gap-2">
                   <Sparkles size={16} />
                   {t("What's Included", 'क्या शामिल है')}
                 </h4>
@@ -539,7 +536,7 @@ const StationCard = ({ station, t, isExpanded, toggleExpand, openVideo, idx }) =
                    {station.videoUrl && (
                     <button
                       onClick={(e) => { e.stopPropagation(); openVideo(station.videoUrl, station.name); }}
-                      className="text-teal-600 font-bold flex items-center gap-1.5 hover:text-teal-700 transition-colors"
+                      className="text-gold font-bold flex items-center gap-1.5 hover:text-gold/80 transition-colors"
                     >
                       <PlayCircle size={18} />
                       {t('Demo', 'डेमो')}
@@ -655,8 +652,8 @@ export const StationCatalogue = ({ selectedOccasion }) => {
                 onClick={() => { setActiveCategory(cat); setExpandedId(null); }}
                 className={`flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 border ${
                   activeCategory === cat
-                    ? 'bg-teal-600 text-white border-teal-600 shadow-md transform scale-105'
-                    : 'bg-white text-gray-600 border-gray-200 hover:border-teal-400 hover:text-teal-700 hover:bg-teal-50'
+                    ? 'bg-primary text-white border-primary shadow-md transform scale-105'
+                    : 'bg-white text-gray-600 border-gray-200 hover:border-gold hover:text-primary hover:bg-gold/5'
                 }`}
               >
                 {cat === 'all' ? t('ALL', 'सभी') : cat}
@@ -735,7 +732,7 @@ export const StationCatalogue = ({ selectedOccasion }) => {
                 <a 
                   href="#packages" 
                   onClick={() => setVideoModal({ ...videoModal, isOpen: false })}
-                  className="bg-white text-teal-700 px-6 py-3 rounded-xl font-bold uppercase tracking-wider text-sm hover:scale-105 transition-transform"
+                  className="bg-white text-primary px-6 py-3 rounded-xl font-bold uppercase tracking-wider text-sm hover:scale-105 transition-transform"
                 >
                   {t('Build Package', 'पैकेज बनाएं')}
                 </a>
@@ -751,7 +748,7 @@ export const StationCatalogue = ({ selectedOccasion }) => {
 export const TrustSection = () => {
   const { t } = useLanguage();
   return (
-    <section className="py-24 bg-teal text-paper overflow-hidden relative">
+    <section className="py-24 bg-primary text-paper overflow-hidden relative">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-charcoal/20 skew-x-12 translate-x-1/2 pointer-events-none"></div>
       
@@ -760,30 +757,30 @@ export const TrustSection = () => {
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="inline-block px-4 py-1.5 bg-purple/20 border border-purple/30 rounded-full text-purple text-[10px] font-black uppercase tracking-[0.3em] mb-6"
+            className="inline-block px-4 py-1.5 bg-gold/20 border border-gold/30 rounded-full text-gold text-[10px] font-black uppercase tracking-[0.3em] mb-6"
           >
             {t('Unmatched Excellence', 'अतुलनीय उत्कृष्टता')}
           </motion.div>
           <h2 className="text-4xl md:text-6xl font-display mb-8 leading-tight">
             {t('Why Luxury Hosts Choose', 'लक्जरी मेज़बान क्यों चुनते हैं')} <br />
-            <span className="text-purple italic">LiveArt Events</span>
+            <span className="text-gold italic">LiveArt Events</span>
           </h2>
           <div className="space-y-8 max-w-xl mx-auto lg:mx-0">
             <div className="flex flex-col sm:flex-row items-center lg:items-start gap-6 group">
-              <div className="w-14 h-14 rounded-2xl bg-paper/10 flex items-center justify-center shrink-0 group-hover:bg-purple group-hover:text-charcoal transition-all duration-500">
+              <div className="w-14 h-14 rounded-2xl bg-paper/10 flex items-center justify-center shrink-0 group-hover:bg-gold group-hover:text-primary transition-all duration-500">
                 <ShieldCheck className="w-7 h-7" />
               </div>
               <div>
-                <h4 className="text-2xl font-display mb-2">{t('Full-Service Elegance', 'पूर्ण-सेवा लालित्य')}</h4>
-                <p className="text-paper/60 text-base">{t('White-glove service from setup to cleanup. We handle the aesthetics while you host the guests.', 'सेटअप से लेकर सफाई तक व्हाइट-ग्लव सेवा। जब आप मेहमानों की मेजबानी करते हैं तो हम सौंदर्यशास्त्र को संभालते हैं।')}</p>
+                <h4 className="text-2xl font-display mb-2">{t('Bespoke Experience Design', 'बेस्पोक एक्सपीरियंस डिज़ाइन')}</h4>
+                <p className="text-paper/60 text-base">{t('Premium guest engagement from setup to cleanup. We handle the aesthetics while you host the moments.', 'सेटअप से लेकर सफाई तक प्रीमियम अतिथि जुड़ाव। जब आप क्षणों की मेजबानी करते हैं तो हम सौंदर्यशास्त्र को संभालते हैं।')}</p>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row items-center lg:items-start gap-6 group">
-              <div className="w-14 h-14 rounded-2xl bg-paper/10 flex items-center justify-center shrink-0 group-hover:bg-purple group-hover:text-charcoal transition-all duration-500">
+              <div className="w-14 h-14 rounded-2xl bg-paper/10 flex items-center justify-center shrink-0 group-hover:bg-gold group-hover:text-primary transition-all duration-500">
                 <Heart className="w-7 h-7" />
               </div>
               <div>
-                <h4 className="text-2xl font-display mb-2">{t('High ROI on Emotions', 'भावनाओं पर उच्च रिटर्न')}</h4>
+                <h4 className="text-2xl font-display mb-2">{t('Emotional ROI', 'इमोशनल ROI')}</h4>
                 <p className="text-paper/60 text-base">{t('Guests talk about our stations long after the party. It\'s the "wow" factor your event deserves.', 'मेहमान पार्टी के लंबे समय बाद तक हमारे स्टेशनों के बारे में बात करते हैं। यह वह "वाह" कारक है जिसका आपका कार्यक्रम हकदार है।')}</p>
               </div>
             </div>
@@ -802,7 +799,7 @@ export const TrustSection = () => {
              className="absolute -bottom-10 lg:-bottom-12 -left-6 lg:-left-10 bg-white text-charcoal p-8 lg:p-10 rounded-[40px] shadow-2xl -rotate-6 max-w-[260px] lg:max-w-[320px] border border-gray-100"
           >
             <div className="flex gap-1 mb-4">
-              {[...Array(5)].map((_, i) => <Sparkles key={i} className="w-4 h-4 text-purple fill-purple" />)}
+              {[...Array(5)].map((_, i) => <Sparkles key={i} className="w-4 h-4 text-gold fill-gold" />)}
             </div>
             <p className="font-display text-lg lg:text-xl leading-snug mb-4 italic text-teal">&quot;The most premium addition to our event. Pure class!&quot;</p>
             <div className="flex items-center gap-3">
@@ -831,14 +828,24 @@ export const InquirySection = () => {
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
           <div className="lg:col-span-5 text-left">
-            <h2 className="text-6xl md:text-8xl font-display text-charcoal mb-10 leading-[0.9]">
-              {t('Ready to', 'तैयार हैं')} <br />
-              <span className="text-teal italic">{t('Captivate?', 'मंत्रमुग्ध करने के लिए?')}</span>
+            <h2 className="text-6xl md:text-8xl font-display text-charcoal mb-4 leading-[0.9]">
+              {t('Let’s make your', 'आइए अपनी')} <br />
+              <span className="text-gold italic">{t('Celebration Unforgettable.', 'उत्सव को यादगार बनाएं।')}</span>
             </h2>
+            <p className="text-charcoal/40 text-lg mb-10 font-medium">
+              {t('Experience Design tailored for the extraordinary.', 'असाधारण के लिए तैयार किया गया एक्सपीरियंस डिज़ाइन।')}
+            </p>
+            <div className="mb-12">
+               <MagneticButton>
+                 <Link to="/contact" className="gold-btn px-10 py-5 rounded-full font-black tracking-widest text-[10px] uppercase shadow-xl inline-block">
+                   {t('Book Your Free Consultation', 'अपना निःशुल्क परामर्श बुक करें')}
+                 </Link>
+               </MagneticButton>
+            </div>
             <div className="space-y-10">
               <div className="flex items-start gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-teal/10 flex items-center justify-center shrink-0">
-                  <Zap className="text-teal" />
+                <div className="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center shrink-0">
+                  <Zap className="text-gold" />
                 </div>
                 <div>
                   <h4 className="text-2xl font-display text-charcoal mb-2">{t('Express Booking', 'एक्सप्रेस बुकिंग')}</h4>
@@ -846,8 +853,8 @@ export const InquirySection = () => {
                 </div>
               </div>
               <div className="flex items-start gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-teal/10 flex items-center justify-center shrink-0">
-                  <Sparkles className="text-teal" />
+                <div className="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center shrink-0">
+                  <Sparkles className="text-gold" />
                 </div>
                 <div>
                   <h4 className="text-2xl font-display text-charcoal mb-2">{t('Custom Themes', 'कस्टम थीम्स')}</h4>
@@ -857,9 +864,9 @@ export const InquirySection = () => {
             </div>
 
             <div className="mt-16 p-8 bg-charcoal rounded-[40px] text-paper relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-purple/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
               <div className="relative z-10">
-                <p className="text-purple font-black text-xs uppercase tracking-[0.3em] mb-4">{t('Direct Line', 'सीधी लाइन')}</p>
+                <p className="text-gold font-black text-xs uppercase tracking-[0.3em] mb-4">{t('Direct Line', 'सीधी लाइन')}</p>
                 <p className="text-3xl font-display mb-2">+91 99999 99999</p>
                 <p className="text-paper/40 text-sm font-medium">{t('Available 10 AM - 10 PM IST', 'सुबह 10 बजे - रात 10 बजे IST तक उपलब्ध')}</p>
               </div>
@@ -956,10 +963,10 @@ export const BlogPreview = () => {
 export const ExperienceMarquee = () => {
   const { t } = useLanguage();
   const baseItems = [
-    { text: t('UNFORGETTABLE', 'अविस्मरणीय'), icon: <Sparkles className="w-8 h-8" /> },
-    { text: t('HANDCRAFTED', 'हैंडक्राफ्टेड'), icon: <Heart className="w-8 h-8" /> },
-    { text: t('BESPOKE', 'बेस्पोक'), icon: <Zap className="w-8 h-8" /> },
-    { text: t('PREMIUM', 'प्रीमियम'), icon: <ShieldCheck className="w-8 h-8" /> },
+    { text: t('EXPERIENCE DESIGN', 'एक्सपीरियंस डिज़ाइन'), icon: <Sparkles className="w-8 h-8" /> },
+    { text: t('INTERACTIVE', 'इंटरैक्टिव'), icon: <Zap className="w-8 h-8" /> },
+    { text: t('GUEST ENGAGEMENT', 'अतिथि सहभागिता'), icon: <Heart className="w-8 h-8" /> },
+    { text: t('ROYAL LUXURY', 'शाही विलासिता'), icon: <ShieldCheck className="w-8 h-8" /> },
   ];
 
   const items = [...baseItems, ...baseItems, ...baseItems, ...baseItems];
@@ -973,9 +980,9 @@ export const ExperienceMarquee = () => {
         className="flex gap-20 items-center whitespace-nowrap px-10"
       >
         {items.map((item, i) => (
-          <div key={i} className="flex items-center gap-8 text-paper/20 group hover:text-purple transition-colors duration-500">
+          <div key={i} className="flex items-center gap-8 text-paper/20 group hover:text-gold transition-colors duration-500">
             <span className="text-6xl md:text-8xl font-display font-black tracking-tighter uppercase">{item.text}</span>
-            <div className="text-purple/40 group-hover:scale-125 transition-transform duration-500">{item.icon}</div>
+            <div className="text-gold/40 group-hover:scale-125 transition-transform duration-500">{item.icon}</div>
           </div>
         ))}
       </motion.div>
@@ -997,14 +1004,14 @@ export const TheArtistWithin = () => {
           >
             <div className="relative z-10 rounded-[60px] overflow-hidden shadow-2xl">
               <img 
-                src={emotionalMoment} 
+                src="https://images.unsplash.com/photo-1541250848049-b4f7141dca3f?q=80&w=2000&auto=format&fit=crop" 
                 alt="The joy of creation" 
                 className="w-full h-full object-cover transform scale-105 hover:scale-110 transition-transform duration-1000"
               />
             </div>
             {/* Decorative elements */}
-            <div className="absolute -top-12 -left-12 w-64 h-64 bg-teal/5 rounded-full blur-3xl -z-0"></div>
-            <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-purple/5 rounded-full blur-3xl -z-0"></div>
+            <div className="absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-0"></div>
+            <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-gold/5 rounded-full blur-3xl -z-0"></div>
           </motion.div>
           
           <motion.div
@@ -1020,7 +1027,7 @@ export const TheArtistWithin = () => {
             
             <h2 className="text-5xl md:text-7xl font-display leading-[1.1] text-charcoal">
               {t('A Celebration of', 'उत्सव')} <br />
-              <span className="text-teal italic">{t('Connection', 'संबंधों का')}</span>
+              <span className="text-gold italic">{t('Connection', 'संबंधों का')}</span>
             </h2>
             
             <p className="text-xl text-charcoal/60 leading-relaxed font-medium">
@@ -1039,7 +1046,7 @@ export const TheArtistWithin = () => {
             </div>
             
             <MagneticButton className="inline-block">
-              <Link to="/gallery" className="inline-flex items-center gap-4 bg-charcoal text-white px-10 py-6 rounded-full font-black uppercase tracking-widest text-xs hover:bg-teal transition-all shadow-xl group">
+              <Link to="/gallery" className="inline-flex items-center gap-4 bg-charcoal text-white px-10 py-6 rounded-full font-black uppercase tracking-widest text-xs hover:bg-gold transition-all shadow-xl group">
                 {t('View Our Story', 'हमारी कहानी देखें')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </Link>
@@ -1051,3 +1058,199 @@ export const TheArtistWithin = () => {
   );
 };
 
+
+export const ProcessSection = () => {
+  const { t } = useLanguage();
+  const steps = [
+    {
+      id: 1,
+      title: t('The Vision', 'विज़न'),
+      description: t('We meet for a personalized styling session to understand your event’s unique soul and guest profile.', 'हम आपके कार्यक्रम की अनूठी आत्मा और अतिथि प्रोफाइल को समझने के लिए एक व्यक्तिगत स्टाइलिंग सत्र के लिए मिलते हैं।'),
+      icon: <Zap className="w-8 h-8" />
+    },
+    {
+      id: 2,
+      title: t('The Curation', 'क्यूरेशन'),
+      description: t('Our Experience Designers handpick and personalize activity stations that reflect your brand and taste.', 'हमारे एक्सपीरियंस डिज़ाइनर उन गतिविधि स्टेशनों को चुनते हैं और वैयक्तिकृत करते हैं जो आपके ब्रांड और स्वाद को दर्शाते हैं।'),
+      icon: <Sparkles className="w-8 h-8" />
+    },
+    {
+      id: 3,
+      title: t('The Magic', 'जादू'),
+      description: t('We arrive, execute seamlessly with white-glove service, and transform your event into a world of interaction.', 'हम पहुँचते हैं, पूर्ण सेवा के साथ निर्बाध रूप से निष्पादित करते हैं, और आपके इवेंट को बातचीत की दुनिया में बदल देते हैं।'),
+      icon: <Heart className="w-8 h-8" />
+    }
+  ];
+
+  return (
+    <section className="py-32 bg-cream text-charcoal overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-7xl font-display mb-6">{t('How It Works', 'यह कैसे काम करता है')}</h2>
+          <p className="text-charcoal/60 text-lg max-w-2xl mx-auto">
+            {t('Three simple steps to transform your celebration from ordinary to extraordinary.', 'अपने उत्सव को साधारण से असाधारण में बदलने के लिए तीन सरल कदम।')}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20 relative">
+          {/* Connector Line (Desktop) */}
+          <div className="hidden md:block absolute top-1/4 left-1/4 right-1/4 h-px bg-charcoal/10 -z-0"></div>
+          
+          {steps.map((step, idx) => (
+            <motion.div 
+              key={step.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.2 }}
+              viewport={{ once: true }}
+              className="relative z-10 text-center flex flex-col items-center group"
+            >
+              <div className="w-20 h-20 rounded-[32px] bg-white shadow-xl flex items-center justify-center mb-8 border border-gray-100 group-hover:bg-gold group-hover:text-primary transition-all duration-500 transform group-hover:-rotate-12">
+                {step.icon}
+              </div>
+              <h3 className="text-2xl font-display mb-4">{step.title}</h3>
+              <p className="text-charcoal/60 leading-relaxed text-sm lg:text-base">{step.description}</p>
+              
+              <div className="absolute -top-6 -left-6 text-9xl font-display font-black text-charcoal/[0.03] pointer-events-none select-none">
+                0{step.id}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const SocialProof = () => {
+  const { t } = useLanguage();
+  const testimonials = [
+    {
+      quote: t('LiveArt didn’t just add activities; they added soul to our wedding. Our guests couldn’t stop talking about how personal everything felt.', 'लाइवआर्ट ने केवल गतिविधियां नहीं जोड़ीं; उन्होंने हमारी शादी में जान डाल दी। हमारे मेहमान बात करना बंद नहीं कर सके कि सब कुछ कितना व्यक्तिगत महसूस हुआ।'),
+      author: 'Priya & Rahul',
+      role: t('Modern Couple', 'आधुनिक जोड़ा')
+    },
+    {
+      quote: t('The perfume bar was a masterstroke. Watching our friends create their own signature scents was the highlight of our cocktail night.', 'परफ्यूम बार एक मास्टरस्ट्रोक था। हमारे दोस्तों को अपनी सिग्नेचर खुशबू बनाते देखना हमारी कॉकटेल नाइट का मुख्य आकर्षण था।'),
+      author: 'Sahil Mehra',
+      role: t('Visionary Host', 'विज़नरी होस्ट')
+    },
+    {
+      quote: t('Finally, a celebration that wasn’t just about the stage. Every guest left with a smile and a handmade memory. Truly magical.', 'अंत में, एक ऐसा उत्सव जो केवल स्टेज के बारे में नहीं था। हर मेहमान एक मुस्कान और हाथ से बनी याद के साथ गया। वास्तव में जादुई।'),
+      author: 'Anjali Kapoor',
+      role: t('Luxury Curator', 'लक्जरी क्यूरेटर')
+    }
+  ];
+
+  return (
+    <section className="py-32 bg-white overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-24">
+          <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 bg-gold/5 text-gold rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
+            <Sparkles size={14} />
+            {t('Trusted by modern couples', 'आधुनिक जोड़ों द्वारा विश्वसनीय')}
+          </div>
+          <h2 className="text-5xl md:text-7xl font-display text-charcoal leading-tight">
+            {t('Real Stories from', 'से वास्तविक')} <br />
+            <span className="text-gold italic">{t('Real Celebrations', 'कहानियां')}</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {testimonials.map((item, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              className="p-10 rounded-[40px] bg-paper-dark border border-gray-100 flex flex-col shadow-sm hover:shadow-xl transition-all duration-500"
+            >
+              <div className="flex gap-1 mb-8">
+                {[...Array(5)].map((_, i) => <Sparkles key={i} size={14} className="text-gold fill-gold" />)}
+              </div>
+              <p className="text-xl font-display text-charcoal leading-relaxed italic mb-10 text-pretty">
+                &ldquo;{item.quote}&rdquo;
+              </p>
+              <div className="mt-auto flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-teal/10 flex items-center justify-center text-teal font-black text-xs uppercase">
+                  {item.author.split(' ')[0][0]}{item.author.split(' & ')[1] ? item.author.split(' & ')[1][0] : ''}
+                </div>
+                <div>
+                  <h4 className="font-bold text-charcoal leading-none mb-1">{item.author}</h4>
+                  <p className="text-[10px] uppercase font-black tracking-widest text-charcoal/40">{item.role}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const ExclusivityScarcity = () => {
+  const { t } = useLanguage();
+  return (
+    <section className="py-20 bg-charcoal text-paper overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 mb-6 text-gold">
+              <ShieldCheck size={20} />
+              <span className="text-xs font-black uppercase tracking-[0.3em]">{t('Exclusivity Guaranteed', 'अनन्यत की गारंटी')}</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-display mb-6">
+              {t('We take limited bookings each month to ensure premium quality.', 'हम प्रीमियम गुणवत्ता सुनिश्चित करने के लिए हर महीने सीमित बुकिंग लेते हैं।')}
+            </h2>
+            <p className="text-paper/60 text-lg">
+              {t('Each celebration receives our full focus, from custom designs to white-glove execution. Secure your date early for the legendary LiveArt experience.', 'प्रत्येक उत्सव को हमारा पूरा ध्यान मिलता है, कस्टम डिज़ाइन से लेकर व्हाइट-ग्लव निष्पादन तक। महान लाइवआर्ट अनुभव के लिए अपनी तारीख जल्दी सुरक्षित करें।')}
+            </p>
+          </div>
+          <div className="bg-white/5 backdrop-blur-md p-10 rounded-[40px] border border-white/10 text-center">
+             <h4 className="text-gold font-black text-xs uppercase tracking-[0.4em] mb-6">{t('Investment', 'निवेश')}</h4>
+             <div className="mb-8">
+               <p className="text-paper/40 text-sm mb-2 uppercase tracking-widest">{t('Starting from', 'से शुरू')}</p>
+               <h3 className="text-5xl md:text-6xl font-display">₹15,000</h3>
+             </div>
+             <p className="text-paper/60 text-sm mb-10 leading-relaxed italic">
+               {t('Custom luxury experiences available for those who seek the truly extraordinary.', 'उन लोगों के लिए कस्टम लक्जरी अनुभव उपलब्ध हैं जो वास्तव में असाधारण की तलाश में हैं।')}
+             </p>
+             <Link 
+               to="/contact" 
+               className="inline-block bg-paper text-charcoal px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs hover:bg-gold transition-all"
+             >
+               {t('Check Availability', 'उपलब्धता की जांच करें')}
+             </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const SectionCTA = () => {
+  const { t } = useLanguage();
+  return (
+    <div className="py-16 bg-white flex justify-center relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--color-gold)_0%,_transparent_70%)]"></div>
+      </div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+      >
+        <MagneticButton>
+          <Link 
+            to="/contact" 
+            className="gold-btn px-16 py-6 rounded-full font-black uppercase tracking-[0.3em] text-[10px] shadow-[0_20px_50px_rgba(212,175,55,0.3)] hover:scale-105 transition-all flex items-center gap-4"
+          >
+            {t('Book Your Free Consultation', 'अपना निःशुल्क परामर्श बुक करें')}
+            <ArrowRight size={16} />
+          </Link>
+        </MagneticButton>
+      </motion.div>
+    </div>
+  );
+};
