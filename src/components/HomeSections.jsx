@@ -57,7 +57,7 @@ const FloatingHeroBlob = ({ floatX, floatY, index }) => {
   return (
     <motion.div
       style={{ x, y }}
-      className="absolute rounded-full bg-firozi/10 blur-3xl"
+      className="absolute rounded-full bg-purple/10 blur-3xl"
       initial={style}
     />
   );
@@ -93,18 +93,21 @@ export const Hero = () => {
   const textY = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen flex items-center overflow-hidden bg-ink noise-bg mesh-gradient">
+    <section ref={containerRef} className="relative min-h-screen flex items-center overflow-hidden bg-charcoal noise-bg mesh-gradient">
       {/* Dynamic Background Base */}
+      {/* LA Monogram Background */}
+      <div className="la-monogram">LA</div>
+
       <motion.div style={{ scale, opacity }} className="absolute inset-0 z-0">
         <img 
           src={haldiHero} 
-          alt="Haldi Ceremony DIY Activities" 
-          className="w-full h-full object-cover animate-slow-zoom grayscale-[0.2] contrast-[1.1]"
+          alt="Luxury Event" 
+          className="w-full h-full object-cover animate-slow-zoom grayscale-[0.1] contrast-[1.1] mix-blend-overlay"
           referrerPolicy="no-referrer"
         />
         {/* Layered Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/40 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
         
         {/* Animated Light Beams */}
         <div className="absolute top-0 right-0 w-full h-full overflow-hidden opacity-30 pointer-events-none">
@@ -143,38 +146,38 @@ export const Hero = () => {
               className="inline-flex items-center gap-4 px-6 py-3 bg-white/5 backdrop-blur-2xl border border-white/20 rounded-full mb-10 shadow-2xl"
             >
               <span className="flex h-3 w-3 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-firozi opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-firozi"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-purple"></span>
               </span>
-              <span className="text-xs lg:text-sm font-black tracking-[0.3em] text-snow uppercase glow-text">
+              <span className="text-xs lg:text-sm font-black tracking-[0.3em] text-paper uppercase glow-text">
                 {t('Luxury Haldi DIY Experience', 'लक्जरी हल्दी DIY अनुभव')}
               </span>
             </motion.div>
 
-            <h1 className="text-7xl sm:text-8xl lg:text-[12rem] font-display leading-[0.8] mb-10 tracking-tighter perspective-1000">
+            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-display leading-[1.1] mb-10 tracking-tighter perspective-1000 relative z-20">
               <motion.span 
-                initial={{ opacity: 0, rotateX: -30 }}
-                animate={{ opacity: 1, rotateX: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.6 }}
-                className="block text-snow drop-shadow-2xl"
+                className="block text-cream"
               >
-                {t('Live', 'लाइव')}
+                {t('Where', 'जहाँ')}
               </motion.span> 
               <motion.span 
-                initial={{ opacity: 0, x: 50 }}
+                initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 0.8 }}
-                className="gold-shine italic font-bold glow-text block my-2"
-              >
-                {t('Art', 'कला')}
-              </motion.span> 
-              <motion.span 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 1 }}
-                className="text-snow/10 block"
+                className="text-gradient italic font-bold block my-2"
               >
                 {t('Moments', 'क्षण')}
+              </motion.span> 
+              <motion.span 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1 }}
+                className="text-cream/90 block"
+              >
+                {t('Become Art', 'कला बन जाते हैं')}
               </motion.span>
             </h1>
 
@@ -182,9 +185,9 @@ export const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2 }}
-              className="text-xl lg:text-3xl text-snow/80 mb-14 leading-relaxed max-w-2xl font-light tracking-wide drop-shadow-xl"
+              className="text-xl lg:text-3xl text-paper/80 mb-14 leading-relaxed max-w-2xl font-light tracking-wide drop-shadow-xl"
             >
-              <span className="text-firozi font-bold italic mr-2 border-b border-firozi/30">
+              <span className="text-purple font-bold italic mr-2 border-b border-purple/30">
                 {t('Elevate', 'ऊँचा उठाएं')}
               </span>
               {t(
@@ -193,30 +196,23 @@ export const Hero = () => {
               )}
             </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-8 items-stretch sm:items-center">
+            <div className="flex flex-col sm:flex-row gap-8 items-stretch sm:items-center relative z-20">
               <Link 
                 to="/packages" 
-                className="group relative px-12 py-8 rounded-3xl font-black text-2xl overflow-hidden transition-all bg-firozi text-ink shadow-[0_20px_60px_-15px_rgba(0,206,209,0.5)] active:scale-95"
+                className="copper-btn group relative px-10 py-5 rounded-none tracking-widest uppercase text-sm font-semibold text-center"
               >
-                <div className="relative z-10 flex items-center gap-4">
+                <div className="relative z-10 flex items-center justify-center gap-4">
                   <span>{t('Book Your Experience', 'अपना अनुभव बुक करें')}</span>
-                  <ArrowRight className="group-hover:translate-x-3 transition-transform duration-500" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-3 transition-transform duration-500" />
                 </div>
-                <motion.div 
-                  className="absolute inset-0 bg-white"
-                  initial={{ x: '-100%' }}
-                  whileHover={{ x: 0 }}
-                  transition={{ type: "spring", damping: 25, stiffness: 120 }}
-                />
               </Link>
               
               <Link 
                 to="/stations" 
-                className="group px-12 py-8 rounded-3xl font-black text-2xl text-snow border-2 border-white/20 hover:border-firozi/50 transition-all flex items-center justify-center gap-4 backdrop-blur-xl relative overflow-hidden"
+                className="group px-10 py-5 tracking-widest uppercase text-sm font-semibold text-cream border border-copper/50 hover:border-copper transition-all flex items-center justify-center gap-4 relative overflow-hidden"
               >
                 <span className="relative z-10">{t('Explore Catalogue', 'कैटलॉग देखें')}</span>
-                <Sparkles className="relative z-10 text-firozi group-hover:rotate-12 transition-transform" />
-                <div className="absolute inset-0 bg-gradient-to-r from-firozi/0 via-firozi/5 to-firozi/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                <div className="absolute inset-0 bg-copper/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
               </Link>
             </div>
 
@@ -228,9 +224,9 @@ export const Hero = () => {
                 { label: 'Cities Covered', value: '18+' }
               ].map((stat, i) => (
                 <div key={i} className="relative group">
-                  <div className="text-4xl font-display text-snow mb-2 group-hover:text-firozi transition-colors duration-500">{stat.value}</div>
-                  <div className="text-[10px] font-black uppercase tracking-[0.3em] text-snow/40">{stat.label}</div>
-                  <div className="absolute -bottom-2 left-0 w-0 h-[1px] bg-firozi group-hover:w-full transition-all duration-500"></div>
+                  <div className="text-4xl font-display text-paper mb-2 group-hover:text-purple transition-colors duration-500">{stat.value}</div>
+                  <div className="text-[10px] font-black uppercase tracking-[0.3em] text-paper/40">{stat.label}</div>
+                  <div className="absolute -bottom-2 left-0 w-0 h-[1px] bg-purple group-hover:w-full transition-all duration-500"></div>
                 </div>
               ))}
             </div>
@@ -252,18 +248,18 @@ export const Hero = () => {
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 saturate-[1.2]" 
                 alt="Premium Live Art" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-60"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent opacity-60"></div>
               
               <div className="absolute bottom-16 left-12 right-12 translate-z-50">
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  className="text-firozi font-black text-xs uppercase tracking-widest mb-4 flex items-center gap-3"
+                  className="text-purple font-black text-xs uppercase tracking-widest mb-4 flex items-center gap-3"
                 >
-                   <span className="w-4 h-[1px] bg-firozi"></span>
+                   <span className="w-4 h-[1px] bg-purple"></span>
                    Featured Setup
                 </motion.div>
-                <div className="text-snow text-5xl font-display leading-tight">{t('Curated Craftsmanship', 'क्यूरेटेड शिल्प कौशल')}</div>
+                <div className="text-paper text-5xl font-display leading-tight">{t('Curated Craftsmanship', 'क्यूरेटेड शिल्प कौशल')}</div>
               </div>
             </motion.div>
 
@@ -271,15 +267,15 @@ export const Hero = () => {
             <motion.div 
                animate={{ y: [0, -30, 0], rotate: [0, 10, 0] }}
                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-               className="absolute -top-12 -right-12 w-48 h-48 bg-snow rounded-full flex items-center justify-center p-8 shadow-2xl -rotate-12 backdrop-blur-3xl border border-ink/5"
+               className="absolute -top-12 -right-12 w-48 h-48 bg-paper rounded-full flex items-center justify-center p-8 shadow-2xl -rotate-12 backdrop-blur-3xl border border-charcoal/5"
             >
               <div className="text-center">
-                <div className="text-ink font-black text-4xl leading-tight glow-text">10x</div>
-                <div className="text-ink/40 text-[10px] font-black uppercase tracking-widest mt-1">Attractive</div>
+                <div className="text-charcoal font-black text-4xl leading-tight glow-text">10x</div>
+                <div className="text-charcoal/40 text-[10px] font-black uppercase tracking-widest mt-1">Attractive</div>
               </div>
             </motion.div>
             
-            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-firozi rounded-3xl rotate-12 -z-10 shadow-2xl opacity-50 blur-xl"></div>
+            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-purple rounded-3xl rotate-12 -z-10 shadow-2xl opacity-50 blur-xl"></div>
           </div>
         </div>
       </div>
@@ -290,7 +286,7 @@ export const Hero = () => {
         transition={{ duration: 2, repeat: Infinity }}
         className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 z-40 px-4 py-8 bg-white/5 backdrop-blur-md rounded-full border border-white/10"
       >
-        <div className="w-1 h-3 rounded-full bg-firozi animate-bounce"></div>
+        <div className="w-1 h-3 rounded-full bg-purple animate-bounce"></div>
       </motion.div>
     </section>
   );
@@ -308,7 +304,7 @@ export const OccasionSelector = ({ onSelect, activeOccasion }) => {
   const xPos = useTransform(scrollYProgress, [0, 1], [-200, 200]);
 
   return (
-    <section ref={sectionRef} className="py-32 bg-snow overflow-hidden relative">
+    <section ref={sectionRef} className="py-32 bg-paper overflow-hidden relative">
       {/* Decorative background text */}
       <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-[0.02] pointer-events-none select-none overflow-hidden">
         <motion.span 
@@ -321,8 +317,8 @@ export const OccasionSelector = ({ onSelect, activeOccasion }) => {
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-7xl font-display text-ocean mb-4">{t('Choose Your Vibe', 'अपना वाइब चुनें')}</h2>
-          <p className="text-ink/60 text-lg">{t('We curate experiences that match your celebration perfectly.', 'हम ऐसे अनुभव तैयार करते हैं जो आपके उत्सव से पूरी तरह मेल खाते हैं।')}</p>
+          <h2 className="text-5xl md:text-7xl font-display text-teal mb-4">{t('Choose Your Vibe', 'अपना वाइब चुनें')}</h2>
+          <p className="text-charcoal/60 text-lg">{t('We curate experiences that match your celebration perfectly.', 'हम ऐसे अनुभव तैयार करते हैं जो आपके उत्सव से पूरी तरह मेल खाते हैं।')}</p>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -337,8 +333,8 @@ export const OccasionSelector = ({ onSelect, activeOccasion }) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className={`group relative h-[400px] overflow-hidden rounded-[40px] bg-ink shadow-2xl transition-all duration-500 ${
-                activeOccasion === occasion.id ? 'ring-4 ring-ocean ring-offset-4' : ''
+              className={`group relative h-[400px] overflow-hidden rounded-[40px] bg-charcoal shadow-2xl transition-all duration-500 ${
+                activeOccasion === occasion.id ? 'ring-4 ring-teal ring-offset-4' : ''
               }`}
             >
               <img 
@@ -348,28 +344,28 @@ export const OccasionSelector = ({ onSelect, activeOccasion }) => {
                   activeOccasion === occasion.id ? 'opacity-80 scale-105' : 'opacity-60'
                 }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent"></div>
               <div className={`absolute inset-0 border-2 transition-all duration-500 m-4 rounded-[32px] ${
                 activeOccasion === occasion.id ? 'border-white/40' : 'border-white/0 group-hover:border-white/20'
               }`}></div>
               
               <div className="absolute bottom-10 left-10 right-10 text-left">
-                <span className="text-firozi font-black text-xs tracking-[0.3em] uppercase mb-2 block opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0">
+                <span className="text-purple font-black text-xs tracking-[0.3em] uppercase mb-2 block opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0">
                   {t('Interactive Experience', 'इंटरैक्टिव अनुभव')}
                 </span>
-                <h3 className="text-snow font-display text-4xl leading-tight mb-2">{t(occasion.name, occasion.nameHi)}</h3>
+                <h3 className="text-paper font-display text-4xl leading-tight mb-2">{t(occasion.name, occasion.nameHi)}</h3>
                 
                 {occasion.subEvents && (
                   <div className="flex flex-wrap gap-2 mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0">
                     {occasion.subEvents.map(sub => (
-                      <span key={sub.id} className="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-[10px] font-black uppercase tracking-widest text-snow">
+                      <span key={sub.id} className="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-[10px] font-black uppercase tracking-widest text-paper">
                         {t(sub.name, sub.nameHi)}
                       </span>
                     ))}
                   </div>
                 )}
 
-                <p className="text-snow/60 text-sm mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 line-clamp-2">
+                <p className="text-paper/60 text-sm mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 line-clamp-2">
                   {occasion.description}
                 </p>
               </div>
@@ -384,7 +380,7 @@ export const OccasionSelector = ({ onSelect, activeOccasion }) => {
 // Highlight chip variants per category
 const chipConfig = {
   lifestyle: { label: 'Includes premium materials', color: 'bg-amber-50 text-amber-700 border-amber-200' },
-  craft: { label: 'Includes all craft supplies', color: 'bg-emerald-50 text-emerald-700 border-emerald-200' },
+  craft: { label: 'Includes all craft supplies', color: 'bg-slate-50 text-slate-700 border-slate-200' },
   food: { label: 'Fresh ingredients daily', color: 'bg-rose-50 text-rose-700 border-rose-200' },
   beauty: { label: 'Professional artist included', color: 'bg-purple-50 text-purple-700 border-purple-200' },
   wellness: { label: 'Expert therapist included', color: 'bg-teal-50 text-teal-700 border-teal-200' },
@@ -460,7 +456,7 @@ const StationCard = ({ station, t, isExpanded, toggleExpand, openVideo, idx }) =
 
       <div className="p-5 lg:p-6" onClick={() => toggleExpand(station.id)}>
         <div className="flex justify-between items-start mb-2">
-          <h3 className="text-xl lg:text-2xl font-black text-gray-900 leading-tight group-hover:text-ocean transition-colors">
+          <h3 className="text-xl lg:text-2xl font-black text-gray-900 leading-tight group-hover:text-teal transition-colors">
             {t(station.name, station.nameHi)}
           </h3>
         </div>
@@ -669,27 +665,28 @@ export const StationCatalogue = ({ selectedOccasion }) => {
           </div>
         </div>
 
-        {/* Card List - Stacked vertically like Zomato feed */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Card List - Masonry grid layout */}
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 lg:gap-8 space-y-6 lg:space-y-8">
           <AnimatePresence mode="popLayout">
             {filteredStations.map((station, idx) => (
-              <StationCard
-                key={station.id}
-                station={station}
-                t={t}
-                isExpanded={expandedId === station.id}
-                toggleExpand={toggleExpand}
-                openVideo={openVideo}
-                idx={idx}
-              />
+              <div key={station.id} className="break-inside-avoid shadow-xl hover:shadow-2xl transition-shadow duration-500 rounded-none bg-cream border border-copper/10">
+                <StationCard
+                  station={station}
+                  t={t}
+                  isExpanded={expandedId === station.id}
+                  toggleExpand={toggleExpand}
+                  openVideo={openVideo}
+                  idx={idx}
+                />
+              </div>
             ))}
           </AnimatePresence>
 
           {filteredStations.length === 0 && (
-            <div className="col-span-full py-20 text-center">
-               <div className="text-6xl mb-4 opacity-50">🍽️</div>
-               <h3 className="text-xl font-bold text-gray-900 mb-2">{t('No matching experiences found', 'कोई मेल खाने वाला अनुभव नहीं मिला')}</h3>
-               <p className="text-gray-500">{t('Try adjusting your search or filters.', 'अपनी खोज या फ़िल्टर समायोजित करने का प्रयास करें।')}</p>
+            <div className="col-span-full py-20 text-center break-inside-avoid">
+               <div className="text-6xl mb-4 opacity-50">🖼️</div>
+               <h3 className="text-xl font-display font-medium text-gray-900 mb-2">{t('No matching experiences found', 'कोई मेल खाने वाला अनुभव नहीं मिला')}</h3>
+               <p className="text-gray-500 font-light">{t('Try adjusting your search or filters.', 'अपनी खोज या फ़िल्टर समायोजित करने का प्रयास करें।')}</p>
             </div>
           )}
         </div>
@@ -754,40 +751,40 @@ export const StationCatalogue = ({ selectedOccasion }) => {
 export const TrustSection = () => {
   const { t } = useLanguage();
   return (
-    <section className="py-24 bg-ocean text-snow overflow-hidden relative">
+    <section className="py-24 bg-teal text-paper overflow-hidden relative">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-ink/20 skew-x-12 translate-x-1/2 pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-charcoal/20 skew-x-12 translate-x-1/2 pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
         <div className="text-center lg:text-left">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="inline-block px-4 py-1.5 bg-firozi/20 border border-firozi/30 rounded-full text-firozi text-[10px] font-black uppercase tracking-[0.3em] mb-6"
+            className="inline-block px-4 py-1.5 bg-purple/20 border border-purple/30 rounded-full text-purple text-[10px] font-black uppercase tracking-[0.3em] mb-6"
           >
             {t('Unmatched Excellence', 'अतुलनीय उत्कृष्टता')}
           </motion.div>
           <h2 className="text-4xl md:text-6xl font-display mb-8 leading-tight">
             {t('Why Luxury Hosts Choose', 'लक्जरी मेज़बान क्यों चुनते हैं')} <br />
-            <span className="text-firozi italic">LiveArt Events</span>
+            <span className="text-purple italic">LiveArt Events</span>
           </h2>
           <div className="space-y-8 max-w-xl mx-auto lg:mx-0">
             <div className="flex flex-col sm:flex-row items-center lg:items-start gap-6 group">
-              <div className="w-14 h-14 rounded-2xl bg-snow/10 flex items-center justify-center shrink-0 group-hover:bg-firozi group-hover:text-ink transition-all duration-500">
+              <div className="w-14 h-14 rounded-2xl bg-paper/10 flex items-center justify-center shrink-0 group-hover:bg-purple group-hover:text-charcoal transition-all duration-500">
                 <ShieldCheck className="w-7 h-7" />
               </div>
               <div>
                 <h4 className="text-2xl font-display mb-2">{t('Full-Service Elegance', 'पूर्ण-सेवा लालित्य')}</h4>
-                <p className="text-snow/60 text-base">{t('White-glove service from setup to cleanup. We handle the aesthetics while you host the guests.', 'सेटअप से लेकर सफाई तक व्हाइट-ग्लव सेवा। जब आप मेहमानों की मेजबानी करते हैं तो हम सौंदर्यशास्त्र को संभालते हैं।')}</p>
+                <p className="text-paper/60 text-base">{t('White-glove service from setup to cleanup. We handle the aesthetics while you host the guests.', 'सेटअप से लेकर सफाई तक व्हाइट-ग्लव सेवा। जब आप मेहमानों की मेजबानी करते हैं तो हम सौंदर्यशास्त्र को संभालते हैं।')}</p>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row items-center lg:items-start gap-6 group">
-              <div className="w-14 h-14 rounded-2xl bg-snow/10 flex items-center justify-center shrink-0 group-hover:bg-firozi group-hover:text-ink transition-all duration-500">
+              <div className="w-14 h-14 rounded-2xl bg-paper/10 flex items-center justify-center shrink-0 group-hover:bg-purple group-hover:text-charcoal transition-all duration-500">
                 <Heart className="w-7 h-7" />
               </div>
               <div>
                 <h4 className="text-2xl font-display mb-2">{t('High ROI on Emotions', 'भावनाओं पर उच्च रिटर्न')}</h4>
-                <p className="text-snow/60 text-base">{t('Guests talk about our stations long after the party. It\'s the "wow" factor your event deserves.', 'मेहमान पार्टी के लंबे समय बाद तक हमारे स्टेशनों के बारे में बात करते हैं। यह वह "वाह" कारक है जिसका आपका कार्यक्रम हकदार है।')}</p>
+                <p className="text-paper/60 text-base">{t('Guests talk about our stations long after the party. It\'s the "wow" factor your event deserves.', 'मेहमान पार्टी के लंबे समय बाद तक हमारे स्टेशनों के बारे में बात करते हैं। यह वह "वाह" कारक है जिसका आपका कार्यक्रम हकदार है।')}</p>
               </div>
             </div>
           </div>
@@ -802,17 +799,17 @@ export const TrustSection = () => {
           <motion.div 
              initial={{ opacity: 0, scale: 0.8 }}
              whileInView={{ opacity: 1, scale: 1 }}
-             className="absolute -bottom-10 lg:-bottom-12 -left-6 lg:-left-10 bg-white text-ink p-8 lg:p-10 rounded-[40px] shadow-2xl -rotate-6 max-w-[260px] lg:max-w-[320px] border border-gray-100"
+             className="absolute -bottom-10 lg:-bottom-12 -left-6 lg:-left-10 bg-white text-charcoal p-8 lg:p-10 rounded-[40px] shadow-2xl -rotate-6 max-w-[260px] lg:max-w-[320px] border border-gray-100"
           >
             <div className="flex gap-1 mb-4">
-              {[...Array(5)].map((_, i) => <Sparkles key={i} className="w-4 h-4 text-firozi fill-firozi" />)}
+              {[...Array(5)].map((_, i) => <Sparkles key={i} className="w-4 h-4 text-purple fill-purple" />)}
             </div>
-            <p className="font-display text-lg lg:text-xl leading-snug mb-4 italic text-ocean">&quot;The most premium addition to our event. Pure class!&quot;</p>
+            <p className="font-display text-lg lg:text-xl leading-snug mb-4 italic text-teal">&quot;The most premium addition to our event. Pure class!&quot;</p>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-ocean/10 flex items-center justify-center text-ocean font-bold">RK</div>
+              <div className="w-10 h-10 rounded-full bg-teal/10 flex items-center justify-center text-teal font-bold">RK</div>
               <div>
                 <p className="text-xs font-black uppercase tracking-widest leading-none">Mrs. Kapoor</p>
-                <p className="text-[10px] text-ink/40 font-bold uppercase mt-1">Lalit Luxury Hotels</p>
+                <p className="text-[10px] text-charcoal/40 font-bold uppercase mt-1">Lalit Luxury Hotels</p>
               </div>
             </div>
           </motion.div>
@@ -825,7 +822,7 @@ export const TrustSection = () => {
 export const InquirySection = () => {
   const { t } = useLanguage();
   return (
-    <section id="contact" className="py-32 bg-snow relative overflow-hidden">
+    <section id="contact" className="py-32 bg-paper relative overflow-hidden">
       {/* Decorative background text */}
       <div className="absolute bottom-0 right-0 opacity-[0.03] select-none pointer-events-none translate-y-1/2 translate-x-1/4">
         <span className="text-[40vw] font-display font-black leading-none">LUXE</span>
@@ -834,37 +831,37 @@ export const InquirySection = () => {
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
           <div className="lg:col-span-5 text-left">
-            <h2 className="text-6xl md:text-8xl font-display text-ink mb-10 leading-[0.9]">
+            <h2 className="text-6xl md:text-8xl font-display text-charcoal mb-10 leading-[0.9]">
               {t('Ready to', 'तैयार हैं')} <br />
-              <span className="text-ocean italic">{t('Captivate?', 'मंत्रमुग्ध करने के लिए?')}</span>
+              <span className="text-teal italic">{t('Captivate?', 'मंत्रमुग्ध करने के लिए?')}</span>
             </h2>
             <div className="space-y-10">
               <div className="flex items-start gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-ocean/10 flex items-center justify-center shrink-0">
-                  <Zap className="text-ocean" />
+                <div className="w-12 h-12 rounded-2xl bg-teal/10 flex items-center justify-center shrink-0">
+                  <Zap className="text-teal" />
                 </div>
                 <div>
-                  <h4 className="text-2xl font-display text-ink mb-2">{t('Express Booking', 'एक्सप्रेस बुकिंग')}</h4>
-                  <p className="text-ink/60">{t('Secure your date in under 60 seconds. We value your time as much as your experience.', '60 सेकंड से भी कम समय में अपनी तारीख सुरक्षित करें। हम आपके अनुभव के साथ-साथ आपके समय को भी महत्व देते हैं।')}</p>
+                  <h4 className="text-2xl font-display text-charcoal mb-2">{t('Express Booking', 'एक्सप्रेस बुकिंग')}</h4>
+                  <p className="text-charcoal/60">{t('Secure your date in under 60 seconds. We value your time as much as your experience.', '60 सेकंड से भी कम समय में अपनी तारीख सुरक्षित करें। हम आपके अनुभव के साथ-साथ आपके समय को भी महत्व देते हैं।')}</p>
                 </div>
               </div>
               <div className="flex items-start gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-ocean/10 flex items-center justify-center shrink-0">
-                  <Sparkles className="text-ocean" />
+                <div className="w-12 h-12 rounded-2xl bg-teal/10 flex items-center justify-center shrink-0">
+                  <Sparkles className="text-teal" />
                 </div>
                 <div>
-                  <h4 className="text-2xl font-display text-ink mb-2">{t('Custom Themes', 'कस्टम थीम्स')}</h4>
-                  <p className="text-ink/60">{t('Every station is tailored to match your event color palette and prestige.', 'प्रत्येक स्टेशन आपके इवेंट कलर पैलेट और प्रतिष्ठा से मेल खाने के लिए तैयार किया गया है।')}</p>
+                  <h4 className="text-2xl font-display text-charcoal mb-2">{t('Custom Themes', 'कस्टम थीम्स')}</h4>
+                  <p className="text-charcoal/60">{t('Every station is tailored to match your event color palette and prestige.', 'प्रत्येक स्टेशन आपके इवेंट कलर पैलेट और प्रतिष्ठा से मेल खाने के लिए तैयार किया गया है।')}</p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-16 p-8 bg-ink rounded-[40px] text-snow relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-firozi/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div className="mt-16 p-8 bg-charcoal rounded-[40px] text-paper relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-purple/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
               <div className="relative z-10">
-                <p className="text-firozi font-black text-xs uppercase tracking-[0.3em] mb-4">{t('Direct Line', 'सीधी लाइन')}</p>
+                <p className="text-purple font-black text-xs uppercase tracking-[0.3em] mb-4">{t('Direct Line', 'सीधी लाइन')}</p>
                 <p className="text-3xl font-display mb-2">+91 99999 99999</p>
-                <p className="text-snow/40 text-sm font-medium">{t('Available 10 AM - 10 PM IST', 'सुबह 10 बजे - रात 10 बजे IST तक उपलब्ध')}</p>
+                <p className="text-paper/40 text-sm font-medium">{t('Available 10 AM - 10 PM IST', 'सुबह 10 बजे - रात 10 बजे IST तक उपलब्ध')}</p>
               </div>
             </div>
           </div>
@@ -886,17 +883,17 @@ export const BlogPreview = () => {
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-6xl font-display text-ink mb-6">
+            <h2 className="text-4xl md:text-6xl font-display text-charcoal mb-6">
               {t('Event Insights &', 'इवेंट अंतर्दृष्टि और')} <br />
-              <span className="text-ocean italic">{t('Creative Ideas', 'रचनात्मक विचार')}</span>
+              <span className="text-teal italic">{t('Creative Ideas', 'रचनात्मक विचार')}</span>
             </h2>
-            <p className="text-ink/60 text-lg">
+            <p className="text-charcoal/60 text-lg">
               {t('Expert tips and inspiration for making your next celebration truly extraordinary.', 'अगले उत्सव को वास्तव में असाधारण बनाने के लिए विशेषज्ञ सुझाव और प्रेरणा।')}
             </p>
           </div>
           <Link 
             to="/blog" 
-            className="group flex items-center gap-3 text-ocean font-black uppercase tracking-widest text-sm hover:gap-5 transition-all"
+            className="group flex items-center gap-3 text-teal font-black uppercase tracking-widest text-sm hover:gap-5 transition-all"
           >
             {t('View All Posts', 'सभी पोस्ट देखें')}
             <ArrowRight size={20} />
@@ -920,7 +917,7 @@ export const BlogPreview = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-ocean text-[10px] font-black uppercase tracking-widest rounded-lg shadow-sm">
+                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-teal text-[10px] font-black uppercase tracking-widest rounded-lg shadow-sm">
                     {language === 'hi' ? post.categoryHi : post.category}
                   </span>
                 </div>
@@ -931,7 +928,7 @@ export const BlogPreview = () => {
                   {new Date(post.date).toLocaleDateString(language === 'hi' ? 'hi-IN' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                 </div>
                 
-                <h3 className="text-xl font-bold mb-4 group-hover:text-ocean transition-colors line-clamp-2 leading-tight">
+                <h3 className="text-xl font-bold mb-4 group-hover:text-teal transition-colors line-clamp-2 leading-tight">
                   <Link to={`/blog/${post.id}`}>
                     {language === 'hi' ? post.titleHi : post.title}
                   </Link>
@@ -942,7 +939,7 @@ export const BlogPreview = () => {
                 </p>
                 
                 <div className="mt-auto pt-6 border-t border-slate-50">
-                  <Link to={`/blog/${post.id}`} className="text-ocean font-black text-xs uppercase tracking-widest flex items-center gap-2 group/btn">
+                  <Link to={`/blog/${post.id}`} className="text-teal font-black text-xs uppercase tracking-widest flex items-center gap-2 group/btn">
                     {t('Read Story', 'कहानी पढ़ें')}
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
@@ -968,17 +965,17 @@ export const ExperienceMarquee = () => {
   const items = [...baseItems, ...baseItems, ...baseItems, ...baseItems];
 
   return (
-    <div className="bg-ink py-10 overflow-hidden border-y border-white/5 relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-ink via-transparent to-ink z-10 pointer-events-none"></div>
+    <div className="bg-charcoal py-10 overflow-hidden border-y border-white/5 relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-transparent to-charcoal z-10 pointer-events-none"></div>
       <motion.div 
         animate={{ x: [0, -1000] }}
         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
         className="flex gap-20 items-center whitespace-nowrap px-10"
       >
         {items.map((item, i) => (
-          <div key={i} className="flex items-center gap-8 text-snow/20 group hover:text-firozi transition-colors duration-500">
+          <div key={i} className="flex items-center gap-8 text-paper/20 group hover:text-purple transition-colors duration-500">
             <span className="text-6xl md:text-8xl font-display font-black tracking-tighter uppercase">{item.text}</span>
-            <div className="text-firozi/40 group-hover:scale-125 transition-transform duration-500">{item.icon}</div>
+            <div className="text-purple/40 group-hover:scale-125 transition-transform duration-500">{item.icon}</div>
           </div>
         ))}
       </motion.div>
@@ -1006,8 +1003,8 @@ export const TheArtistWithin = () => {
               />
             </div>
             {/* Decorative elements */}
-            <div className="absolute -top-12 -left-12 w-64 h-64 bg-ocean/5 rounded-full blur-3xl -z-0"></div>
-            <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-firozi/5 rounded-full blur-3xl -z-0"></div>
+            <div className="absolute -top-12 -left-12 w-64 h-64 bg-teal/5 rounded-full blur-3xl -z-0"></div>
+            <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-purple/5 rounded-full blur-3xl -z-0"></div>
           </motion.div>
           
           <motion.div
@@ -1016,33 +1013,33 @@ export const TheArtistWithin = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="inline-flex items-center gap-3 text-ocean font-black uppercase tracking-[0.3em] text-xs">
-              <div className="w-10 h-px bg-ocean"></div>
+            <div className="inline-flex items-center gap-3 text-teal font-black uppercase tracking-[0.3em] text-xs">
+              <div className="w-10 h-px bg-teal"></div>
               {t('Beyond Activities', 'गतिविधियों से परे')}
             </div>
             
-            <h2 className="text-5xl md:text-7xl font-display leading-[1.1] text-ink">
+            <h2 className="text-5xl md:text-7xl font-display leading-[1.1] text-charcoal">
               {t('A Celebration of', 'उत्सव')} <br />
-              <span className="text-ocean italic">{t('Connection', 'संबंधों का')}</span>
+              <span className="text-teal italic">{t('Connection', 'संबंधों का')}</span>
             </h2>
             
-            <p className="text-xl text-ink/60 leading-relaxed font-medium">
+            <p className="text-xl text-charcoal/60 leading-relaxed font-medium">
               {t('At LiveArt, we don’t just host stalls; we create spaces where hands meet, laughter flows, and memories are born. Every pot painted and every jar filled is a bridge between generations.', 'लाइवआर्ट में, हम केवल स्टॉल नहीं लगाते; हम ऐसे स्थान बनाते हैं जहाँ हाथ मिलते हैं, हंसी बहती है और यादें पैदा होती हैं। पेंट किया गया हर बर्तन और भरा हुआ हर जार पीढ़ियों के बीच एक पुल है।')}
             </p>
             
-            <div className="grid grid-cols-2 gap-8 py-8 border-y border-ink/5">
+            <div className="grid grid-cols-2 gap-8 py-8 border-y border-charcoal/5">
               <div>
-                <h4 className="text-3xl font-display text-ink mb-1">98%</h4>
-                <p className="text-[10px] uppercase font-black tracking-widest text-ink/40">{t('Guest Engagement', 'मेहमानों की भागीदारी')}</p>
+                <h4 className="text-3xl font-display text-charcoal mb-1">98%</h4>
+                <p className="text-[10px] uppercase font-black tracking-widest text-charcoal/40">{t('Guest Engagement', 'मेहमानों की भागीदारी')}</p>
               </div>
               <div>
-                <h4 className="text-3xl font-display text-ink mb-1">10k+</h4>
-                <p className="text-[10px] uppercase font-black tracking-widest text-ink/40">{t('Smiles Created', 'मुस्कानें बनाईं')}</p>
+                <h4 className="text-3xl font-display text-charcoal mb-1">10k+</h4>
+                <p className="text-[10px] uppercase font-black tracking-widest text-charcoal/40">{t('Smiles Created', 'मुस्कानें बनाईं')}</p>
               </div>
             </div>
             
             <MagneticButton className="inline-block">
-              <Link to="/gallery" className="inline-flex items-center gap-4 bg-ink text-white px-10 py-6 rounded-full font-black uppercase tracking-widest text-xs hover:bg-ocean transition-all shadow-xl group">
+              <Link to="/gallery" className="inline-flex items-center gap-4 bg-charcoal text-white px-10 py-6 rounded-full font-black uppercase tracking-widest text-xs hover:bg-teal transition-all shadow-xl group">
                 {t('View Our Story', 'हमारी कहानी देखें')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </Link>

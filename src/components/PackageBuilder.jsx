@@ -55,7 +55,7 @@ Please confirm availability!`;
   };
 
   return (
-    <section id="packages" className="py-20 lg:py-32 bg-ink text-snow relative overflow-hidden">
+    <section id="packages" className="py-20 lg:py-32 bg-charcoal text-paper relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-12 lg:mb-20">
@@ -64,13 +64,13 @@ Please confirm availability!`;
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-firozi font-black tracking-[0.3em] text-[10px] lg:text-xs uppercase mb-4 block">
+            <span className="text-purple font-black tracking-[0.3em] text-[10px] lg:text-xs uppercase mb-4 block">
               {t('Transparent Pricing', 'पारदर्शी मूल्य निर्धारण')}
             </span>
-            <h2 className="text-4xl sm:text-6xl lg:text-8xl font-display text-snow mb-6">
-              {t('Build Your', 'अपनी')} <span className="text-firozi italic">{t('Party', 'पार्टी')}</span>
+            <h2 className="text-4xl sm:text-6xl lg:text-8xl font-display text-paper mb-6">
+              {t('Build Your', 'अपनी')} <span className="text-purple italic">{t('Party', 'पार्टी')}</span>
             </h2>
-            <p className="text-snow/60 max-w-2xl mx-auto text-base lg:text-lg">
+            <p className="text-paper/60 max-w-2xl mx-auto text-base lg:text-lg">
               {t('Customize every detail of your interactive experience. Watch the price update live.', 'अपने इंटरैक्टिव अनुभव के हर विवरण को कस्टमाइज़ करें। मूल्य अपडेट लाइव देखें।')}
             </p>
           </motion.div>
@@ -82,7 +82,7 @@ Please confirm availability!`;
             {/* Step 1: Packages */}
             <div className="space-y-6 lg:space-y-8">
               <h3 className="text-xl lg:text-3xl font-display flex items-center gap-4">
-                <span className="w-8 lg:w-12 h-8 lg:h-12 rounded-full bg-firozi text-ink flex items-center justify-center font-black text-sm lg:text-xl shadow-lg">1</span>
+                <span className="w-8 lg:w-12 h-8 lg:h-12 rounded-full bg-purple text-charcoal flex items-center justify-center font-black text-sm lg:text-xl shadow-lg">1</span>
                 {t('Choose a Base Package', 'एक बेस पैकेज चुनें')}
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
@@ -94,28 +94,28 @@ Please confirm availability!`;
                     onClick={() => setSelectedPackage(pkg)}
                     className={`relative p-6 lg:p-8 rounded-[32px] lg:rounded-[40px] border-2 text-left transition-all duration-500 ${
                       selectedPackage.id === pkg.id 
-                      ? 'border-snow bg-snow/10 shadow-[0_20px_40px_rgba(255,255,255,0.05)]' 
-                      : 'border-snow/10 hover:border-snow/30 bg-snow/5'
+                      ? 'border-paper bg-paper/10 shadow-[0_20px_40px_rgba(255,255,255,0.05)]' 
+                      : 'border-paper/10 hover:border-paper/30 bg-paper/5'
                     }`}
                   >
                     <div className="mb-6">
                       <span className="block text-xl lg:text-2xl font-display mb-2">{t(pkg.name, pkg.nameHi)}</span>
-                      <span className="text-firozi font-black text-2xl lg:text-3xl">₹{pkg.basePrice.toLocaleString()}</span>
+                      <span className="text-purple font-black text-2xl lg:text-3xl">₹{pkg.basePrice.toLocaleString()}</span>
                     </div>
-                    <ul className="space-y-3 text-xs lg:text-sm text-snow/60">
-                      <li className="flex items-center gap-3"><Check size={14} className="text-firozi"/> {pkg.stationsCount} {t('Stations included', 'स्टेशन्स शामिल')}</li>
-                      <li className="flex items-center gap-3"><Check size={14} className="text-firozi"/> {t('Up to', 'तक')} {pkg.guestsCount} {t('Guests', 'मेहमान')}</li>
-                      <li className="flex items-center gap-3"><Check size={14} className="text-firozi"/> {pkg.durationHours} {t('Hours of fun', 'घंटे का मज़ा')}</li>
+                    <ul className="space-y-3 text-xs lg:text-sm text-paper/60">
+                      <li className="flex items-center gap-3"><Check size={14} className="text-purple"/> {pkg.stationsCount} {t('Stations included', 'स्टेशन्स शामिल')}</li>
+                      <li className="flex items-center gap-3"><Check size={14} className="text-purple"/> {t('Up to', 'तक')} {pkg.guestsCount} {t('Guests', 'मेहमान')}</li>
+                      <li className="flex items-center gap-3"><Check size={14} className="text-purple"/> {pkg.durationHours} {t('Hours of fun', 'घंटे का मज़ा')}</li>
                     </ul>
                     {pkg.isPopular && (
-                      <div className="absolute -top-3 left-8 bg-firozi text-ink text-[10px] font-black px-4 py-1.5 rounded-full shadow-xl animate-bounce">
+                      <div className="absolute -top-3 left-8 bg-purple text-charcoal text-[10px] font-black px-4 py-1.5 rounded-full shadow-xl animate-bounce">
                         {t('MOST POPULAR', 'सबसे लोकप्रिय')}
                       </div>
                     )}
                     {selectedPackage.id === pkg.id && (
                       <motion.div 
                         layoutId="active-pkg"
-                        className="absolute inset-0 border-4 border-firozi rounded-[32px] lg:rounded-[40px] pointer-events-none"
+                        className="absolute inset-0 border-4 border-purple rounded-[32px] lg:rounded-[40px] pointer-events-none"
                       />
                     )}
                   </motion.button>
@@ -126,7 +126,7 @@ Please confirm availability!`;
             {/* Step 2: Stations */}
             <div className="space-y-6 lg:space-y-8">
               <h3 className="text-xl lg:text-3xl font-display flex items-center gap-4">
-                <span className="w-8 lg:w-12 h-8 lg:h-12 rounded-full bg-firozi text-ink flex items-center justify-center font-black text-sm lg:text-xl shadow-lg">2</span>
+                <span className="w-8 lg:w-12 h-8 lg:h-12 rounded-full bg-purple text-charcoal flex items-center justify-center font-black text-sm lg:text-xl shadow-lg">2</span>
                 {t('Pick Your Stations', 'अपने स्टेशन्स चुनें')}
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
@@ -138,12 +138,12 @@ Please confirm availability!`;
                     onClick={() => handleStationToggle(station.id)}
                     className={`group relative aspect-square rounded-[24px] lg:rounded-[32px] overflow-hidden border-4 transition-all duration-500 ${
                       selectedStations.includes(station.id)
-                      ? 'border-snow shadow-[0_0_30px_rgba(255,255,255,0.1)]'
+                      ? 'border-paper shadow-[0_0_30px_rgba(255,255,255,0.1)]'
                       : 'border-transparent opacity-60 hover:opacity-100'
                     }`}
                   >
                     <img src={station.image} alt={station.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-transparent to-transparent"></div>
                     <div className="absolute bottom-4 left-4 right-4">
                       <span className="text-[10px] lg:text-xs font-black uppercase tracking-widest block leading-tight">{t(station.name, station.nameHi)}</span>
                     </div>
@@ -151,9 +151,9 @@ Please confirm availability!`;
                       <motion.div 
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        className="absolute inset-0 bg-snow/10 flex items-center justify-center"
+                        className="absolute inset-0 bg-paper/10 flex items-center justify-center"
                       >
-                        <div className="bg-snow text-ink p-2 lg:p-3 rounded-full shadow-2xl">
+                        <div className="bg-paper text-charcoal p-2 lg:p-3 rounded-full shadow-2xl">
                           <Check size={20} />
                         </div>
                       </motion.div>
@@ -170,17 +170,17 @@ Please confirm availability!`;
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-snow text-ink p-8 lg:p-10 rounded-[40px] lg:rounded-[56px] shadow-[0_40px_80px_rgba(0,0,0,0.6)] space-y-8 lg:space-y-10 border-t-8 border-firozi"
+              className="bg-paper text-charcoal p-8 lg:p-10 rounded-[40px] lg:rounded-[56px] shadow-[0_40px_80px_rgba(0,0,0,0.6)] space-y-8 lg:space-y-10 border-t-8 border-purple"
             >
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3 text-ocean">
+                <div className="flex items-center gap-3 text-teal">
                   <Calculator size={28} />
                   <h3 className="text-2xl lg:text-3xl font-display">{t('Live Quote', 'लाइव कोट')}</h3>
                 </div>
                 <motion.div 
                   animate={{ rotate: 360 }}
                   transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                  className="text-firozi"
+                  className="text-purple"
                 >
                   <Sparkles size={24} />
                 </motion.div>
@@ -188,41 +188,41 @@ Please confirm availability!`;
 
               <div className="space-y-8">
                 <div>
-                  <div className="flex justify-between text-xs lg:text-sm font-black uppercase tracking-widest text-ink/40 mb-4">
+                  <div className="flex justify-between text-xs lg:text-sm font-black uppercase tracking-widest text-charcoal/40 mb-4">
                     <span>{t('Guest Count', 'मेहमानों की संख्या')}</span>
-                    <span className="text-ocean text-lg">{guestCount}</span>
+                    <span className="text-teal text-lg">{guestCount}</span>
                   </div>
                   <div className="flex items-center gap-6">
-                    <button onClick={() => setGuestCount(Math.max(10, guestCount - 10))} className="w-10 lg:w-12 h-10 lg:h-12 bg-ink/5 rounded-full flex items-center justify-center hover:bg-ink/10 transition-colors"><Minus size={16}/></button>
+                    <button onClick={() => setGuestCount(Math.max(10, guestCount - 10))} className="w-10 lg:w-12 h-10 lg:h-12 bg-charcoal/5 rounded-full flex items-center justify-center hover:bg-charcoal/10 transition-colors"><Minus size={16}/></button>
                     <input 
                       type="range" min="10" max="500" step="10" value={guestCount} 
                       onChange={(e) => setGuestCount(parseInt(e.target.value))}
-                      className="flex-1 h-2 bg-ink/10 rounded-lg appearance-none cursor-pointer accent-ocean"
+                      className="flex-1 h-2 bg-charcoal/10 rounded-lg appearance-none cursor-pointer accent-ocean"
                     />
-                    <button onClick={() => setGuestCount(guestCount + 10)} className="w-10 lg:w-12 h-10 lg:h-12 bg-ink/5 rounded-full flex items-center justify-center hover:bg-ink/10 transition-colors"><Plus size={16}/></button>
+                    <button onClick={() => setGuestCount(guestCount + 10)} className="w-10 lg:w-12 h-10 lg:h-12 bg-charcoal/5 rounded-full flex items-center justify-center hover:bg-charcoal/10 transition-colors"><Plus size={16}/></button>
                   </div>
                 </div>
 
                 <div>
-                  <div className="flex justify-between text-xs lg:text-sm font-black uppercase tracking-widest text-ink/40 mb-4">
+                  <div className="flex justify-between text-xs lg:text-sm font-black uppercase tracking-widest text-charcoal/40 mb-4">
                     <span>{t('Travel Distance', 'यात्रा की दूरी')}</span>
-                    <span className="text-ocean text-lg">{travelDistance}km</span>
+                    <span className="text-teal text-lg">{travelDistance}km</span>
                   </div>
                   <input 
                     type="range" min="0" max="250" value={travelDistance} 
                     onChange={(e) => setTravelDistance(parseInt(e.target.value))}
-                    className="w-full h-2 bg-ink/10 rounded-lg appearance-none cursor-pointer accent-ocean"
+                    className="w-full h-2 bg-charcoal/10 rounded-lg appearance-none cursor-pointer accent-ocean"
                   />
-                  <div className="flex justify-between mt-2 text-[10px] text-ink/30 font-bold">
+                  <div className="flex justify-between mt-2 text-[10px] text-charcoal/30 font-bold">
                     <span>INDIA</span>
                     <span>OUTSTATION</span>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-8 lg:pt-10 border-t-2 border-dashed border-ink/10">
+              <div className="pt-8 lg:pt-10 border-t-2 border-dashed border-charcoal/10">
                 <div className="flex justify-between items-end mb-8 lg:mb-10">
-                  <span className="text-ink/40 font-black uppercase tracking-widest text-xs lg:text-sm">{t('Total Investment', 'कुल निवेश')}</span>
+                  <span className="text-charcoal/40 font-black uppercase tracking-widest text-xs lg:text-sm">{t('Total Investment', 'कुल निवेश')}</span>
                   <div className="text-right">
                     <motion.span 
                       key={totalPrice}
@@ -244,7 +244,7 @@ Please confirm availability!`;
                   <Send size={24} />
                   {t('Book via WhatsApp', 'व्हाट्सएप के माध्यम से बुक करें')}
                 </motion.a>
-                <p className="text-[10px] lg:text-xs text-center text-ink/40 mt-6 lg:mt-8 font-bold uppercase tracking-widest flex items-center justify-center gap-2">
+                <p className="text-[10px] lg:text-xs text-center text-charcoal/40 mt-6 lg:mt-8 font-bold uppercase tracking-widest flex items-center justify-center gap-2">
                   <Sparkles size={12} />
                   {t('Instant confirmation • 30% advance', 'त्वरित पुष्टि • 30% अग्रिम')}
                 </p>

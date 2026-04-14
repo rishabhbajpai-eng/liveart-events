@@ -2,13 +2,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ocean: #0077b6;
-  --color-firozi: #00CED1;
-  --color-snow: #FFFFFF;
-  --color-emerald: #1b4332;
-  --color-ink: #081c15;
-  --color-gold: #FFD700;
-  --color-rose: #FF007F;
+  --color-burgundy: #4A0E0E;
+  --color-copper: #B87333;
+  --color-cream: #FDFBF7;
+  --color-charcoal: #111111;
+  --color-gold: #D4AF37;
+  --color-rose: #B87333;
+
+  --color-teal: #4A0E0E; /* Keep old aliases working implicitly if any are missed */
+  --color-purple: #B87333;
+  --color-paper: #FDFBF7;
+  --color-slate: #222222;
 
   --font-display: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
@@ -20,7 +24,7 @@
   }
 
   body {
-    @apply bg-snow text-ink font-sans overflow-x-hidden;
+    @apply bg-paper text-charcoal font-sans overflow-x-hidden;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight;
@@ -47,7 +51,7 @@
 }
 
 .party-gradient {
-  background: linear-gradient(135deg, var(--color-ocean) 0%, var(--color-firozi) 100%);
+  background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-purple) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -75,12 +79,12 @@
 
 /* Custom selection and utility effects */
 ::selection {
-  background: var(--color-firozi);
+  background: var(--color-copper);
   color: white;
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-ocean via-firozi to-ocean;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-burgundy via-copper to-burgundy;
 }
 
 .mask-reveal {
@@ -94,42 +98,49 @@
   to { mask-position: 0% 0; }
 }
 
-/* Custom scrollbar for party vibes */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--color-cream);
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-ink/5 rounded-full hover:bg-firozi/30 transition-all;
+  @apply bg-copper/50 rounded-full hover:bg-copper transition-all;
 }
 
 .noise-bg {
   position: relative;
+  background-color: var(--color-cream);
 }
 
-.noise-bg::after {
-  content: "";
+/* LA Monogram watermark */
+.la-monogram {
   position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  filter: contrast(120%) brightness(120%);
-  opacity: 0.1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: 40vw;
+  font-weight: 700;
+  color: rgba(184, 115, 51, 0.03); /* Copper, very subtle */
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
+  white-space: nowrap;
+  letter-spacing: -0.05em;
+  user-select: none;
 }
 
 .mesh-gradient {
-  background-color: #081c15;
+  background-color: var(--color-cream);
   background-image: 
-    radial-gradient(at 0% 0%, hsla(180, 100%, 50%, 0.15) 0, transparent 50%), 
-    radial-gradient(at 50% 0%, hsla(200, 100%, 50%, 0.1) 0, transparent 50%), 
-    radial-gradient(at 100% 0%, hsla(320, 100%, 50%, 0.1) 0, transparent 50%);
+    radial-gradient(at 0% 0%, hsla(12, 60%, 50%, 0.05) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, hsla(12, 50%, 40%, 0.05) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(0, 70%, 20%, 0.05) 0, transparent 50%);
 }
 
 .glow-text {
-  text-shadow: 0 0 20px rgba(0, 206, 209, 0.4);
+  text-shadow: 0 0 20px rgba(184, 115, 51, 0.4);
 }
 
 .perspective-1000 {
@@ -142,23 +153,65 @@
 }
 
 .luxe-shadow {
-  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 40px 100px -20px rgba(74, 14, 14, 0.15);
 }
 
 .gold-shine {
   background: linear-gradient(
     to right,
-    #bf953f,
-    #fcf6ba,
-    #b38728,
-    #fcf6ba,
-    #bf953f
+    #8f4b16,
+    #e8a86a,
+    #B87333,
+    #e8a86a,
+    #8f4b16
   );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   background-size: 200% auto;
   animation: shine 3s linear infinite;
+}
+
+/* Metallic Copper Sheen Button */
+.copper-btn {
+  background: linear-gradient(135deg, #4A0E0E, #2A0808);
+  position: relative;
+  overflow: hidden;
+  color: var(--color-cream);
+  border: 1px solid rgba(184, 115, 51, 0.3);
+  transition: all 0.3s ease;
+}
+
+.copper-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(184, 115, 51, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  animation: none;
+  transition: all 0.5s ease;
+}
+
+.copper-btn:hover {
+  box-shadow: 0 10px 30px -10px rgba(184, 115, 51, 0.5);
+  border-color: rgba(184, 115, 51, 0.8);
+}
+
+.copper-btn:hover::after {
+  animation: sheen 1.5s ease-out;
+}
+
+@keyframes sheen {
+  0% { left: -100%; }
+  100% { left: 200%; }
 }
 
 @keyframes shine {
@@ -169,11 +222,11 @@
 
 .luxury-border {
   border: 1px solid transparent;
-  background: linear-gradient(white, white) padding-box,
-              linear-gradient(to right, #bf953f, #fcf6ba) border-box;
+  background: linear-gradient(var(--color-cream), var(--color-cream)) padding-box,
+              linear-gradient(to right, #B87333, #e8a86a) border-box;
 }
 
 .dark .luxury-border {
-  background: linear-gradient(#081c15, #081c15) padding-box,
-              linear-gradient(to right, #bf953f, #fcf6ba) border-box;
+  background: linear-gradient(#111111, #111111) padding-box,
+              linear-gradient(to right, #B87333, #e8a86a) border-box;
 }

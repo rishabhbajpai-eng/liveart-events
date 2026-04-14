@@ -8,7 +8,7 @@ const FloatingBlob = ({ color, size, initialPos, duration, delay }) => (
       x: [initialPos.x, initialPos.x + 80, initialPos.x - 50, initialPos.x],
       y: [initialPos.y, initialPos.y - 60, initialPos.y + 100, initialPos.y],
       scale: [1, 1.2, 0.8, 1],
-      backgroundColor: [color, "var(--color-firozi)", "var(--color-ocean)", color],
+      backgroundColor: [color, "var(--color-purple)", "var(--color-teal)", color],
     }}
     transition={{
       duration,
@@ -99,7 +99,7 @@ const Preloader = () => {
         <motion.div
           variants={containerVariants}
           exit="exit"
-          className="fixed inset-0 z-[1001] flex items-center justify-center bg-snow overflow-hidden"
+          className="fixed inset-0 z-[1001] flex items-center justify-center bg-paper overflow-hidden"
         >
           {/* Paper Texture Overlay */}
           <div className="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-multiply"
@@ -108,9 +108,9 @@ const Preloader = () => {
 
           {/* Interactive Cinematic Background */}
           <div className="absolute inset-0 overflow-hidden">
-            <FloatingBlob color="var(--color-ocean)" size="70vw" initialPos={{ x: -100, y: -100 }} duration={18} delay={0} />
-            <FloatingBlob color="var(--color-firozi)" size="60vw" initialPos={{ x: 700, y: 100 }} duration={22} delay={2} />
-            <FloatingBlob color="var(--color-ocean)" size="50vw" initialPos={{ x: 200, y: 700 }} duration={25} delay={4} />
+            <FloatingBlob color="var(--color-teal)" size="70vw" initialPos={{ x: -100, y: -100 }} duration={18} delay={0} />
+            <FloatingBlob color="var(--color-purple)" size="60vw" initialPos={{ x: 700, y: 100 }} duration={22} delay={2} />
+            <FloatingBlob color="var(--color-teal)" size="50vw" initialPos={{ x: 200, y: 700 }} duration={25} delay={4} />
           </div>
 
           <motion.div 
@@ -133,15 +133,15 @@ const Preloader = () => {
                 transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                 className="relative"
               >
-                <h1 className="text-7xl md:text-9xl font-display italic text-ink tracking-tighter select-none flex items-baseline">
+                <h1 className="text-7xl md:text-9xl font-display italic text-charcoal tracking-tighter select-none flex items-baseline">
                   Live 
-                  <span className="text-ocean relative ml-4">
+                  <span className="text-teal relative ml-4">
                     Art
                     <motion.div
                       initial={{ scaleX: 0 }}
                       animate={{ scaleX: 1 }}
                       transition={{ delay: 1.2, duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-                      className="absolute -bottom-2 left-0 right-0 h-[8px] bg-gradient-to-r from-ocean to-firozi blur-[1px] rounded-full origin-left"
+                      className="absolute -bottom-2 left-0 right-0 h-[8px] bg-gradient-to-r from-teal to-purple blur-[1px] rounded-full origin-left"
                     />
                   </span>
                 </h1>
@@ -150,16 +150,16 @@ const Preloader = () => {
                 <motion.div
                   animate={{ opacity: [0.2, 0.4, 0.2] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute inset-0 bg-firozi/10 blur-[60px] -z-10 rounded-full"
+                  className="absolute inset-0 bg-purple/10 blur-[60px] -z-10 rounded-full"
                 />
               </motion.div>
             </div>
 
             {/* Premium Loader Info */}
             <div className="flex flex-col items-center gap-10 w-72">
-              <div className="relative w-full h-[3px] bg-ink/5 rounded-full overflow-hidden backdrop-blur-sm">
+              <div className="relative w-full h-[3px] bg-charcoal/5 rounded-full overflow-hidden backdrop-blur-sm">
                 <motion.div
-                  className="absolute inset-y-0 left-0 bg-gradient-to-r from-ocean via-firozi to-ocean"
+                  className="absolute inset-y-0 left-0 bg-gradient-to-r from-teal via-purple to-teal"
                   initial={{ width: "0%" }}
                   animate={{ width: `${progress}%` }}
                   transition={{ duration: 0.1 }}
@@ -172,13 +172,13 @@ const Preloader = () => {
                   initial={{ opacity: 0, tracking: '0.2em' }}
                   animate={{ opacity: 1, tracking: '0.8em' }}
                   transition={{ duration: 2 }}
-                  className="text-[10px] uppercase font-bold text-ocean/40"
+                  className="text-[10px] uppercase font-bold text-teal/40"
                 >
                   Brewing Creativity
                 </motion.span>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-3xl font-display italic text-ink/70">{progress}</span>
-                  <span className="text-[12px] font-sans text-ink/20 font-medium">%</span>
+                  <span className="text-3xl font-display italic text-charcoal/70">{progress}</span>
+                  <span className="text-[12px] font-sans text-charcoal/20 font-medium">%</span>
                 </div>
               </div>
             </div>
@@ -189,10 +189,10 @@ const Preloader = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="absolute inset-8 border border-ink/5 pointer-events-none rounded-sm"
+            className="absolute inset-8 border border-charcoal/5 pointer-events-none rounded-sm"
           >
-            <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-ocean/20" />
-            <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-ocean/20" />
+            <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-teal/20" />
+            <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-teal/20" />
           </motion.div>
 
           {/* Liquid Splash Transition Mask (for the exit) */}
@@ -204,7 +204,7 @@ const Preloader = () => {
                 transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
               }
             }}
-            className="absolute inset-0 bg-ocean pointer-events-none origin-bottom opacity-5 z-[1002]"
+            className="absolute inset-0 bg-teal pointer-events-none origin-bottom opacity-5 z-[1002]"
           />
         </motion.div>
       )}
