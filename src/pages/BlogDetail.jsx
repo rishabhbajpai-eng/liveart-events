@@ -20,7 +20,7 @@ const BlogDetail = () => {
     return (
       <div className="pt-32 pb-20 px-4 text-center min-h-screen">
         <h1 className="text-2xl font-bold mb-4">Post not found!</h1>
-        <Link to="/blog" className="text-ocean underline">Back to Blog</Link>
+        <Link to="/blog" className="text-teal underline">Back to Blog</Link>
       </div>
     );
   }
@@ -37,16 +37,16 @@ const BlogDetail = () => {
       <div className="max-w-4xl mx-auto">
         {/* Breadcrumbs */}
         <nav className="flex items-center gap-2 text-sm text-slate-400 mb-8 overflow-x-auto no-scrollbar whitespace-nowrap">
-          <Link to="/" className="hover:text-ocean transition-colors">Home</Link>
+          <Link to="/" className="hover:text-teal transition-colors">Home</Link>
           <ChevronRight size={14} />
-          <Link to="/blog" className="hover:text-ocean transition-colors">Blog</Link>
+          <Link to="/blog" className="hover:text-teal transition-colors">Blog</Link>
           <ChevronRight size={14} />
           <span className="text-slate-600 truncate">{language === 'hi' ? post.titleHi : post.title}</span>
         </nav>
 
         <button 
           onClick={() => navigate(-1)}
-          className="mb-8 flex items-center gap-2 text-ocean font-bold hover:gap-3 transition-all group"
+          className="mb-8 flex items-center gap-2 text-teal font-bold hover:gap-3 transition-all group"
         >
           <ArrowLeft size={20} />
           {t('Back', 'वापस')}
@@ -54,7 +54,7 @@ const BlogDetail = () => {
 
         <header className="mb-12">
           <div className="flex items-center gap-4 mb-6">
-            <span className="px-3 py-1 bg-ocean/10 text-ocean text-xs font-black uppercase tracking-widest rounded-full">
+            <span className="px-3 py-1 bg-teal/10 text-teal text-xs font-black uppercase tracking-widest rounded-full">
               {language === 'hi' ? post.categoryHi : post.category}
             </span>
             <div className="flex items-center gap-2 text-slate-400 text-sm">
@@ -67,11 +67,11 @@ const BlogDetail = () => {
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 text-ink leading-tight">
+          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 text-charcoal leading-tight">
             {language === 'hi' ? post.titleHi : post.title}
           </h1>
 
-          <p className="text-xl text-slate-500 italic leading-relaxed border-l-4 border-ocean/20 pl-6 mb-10">
+          <p className="text-xl text-slate-500 italic leading-relaxed border-l-4 border-teal/20 pl-6 mb-10">
             {language === 'hi' ? post.summaryHi : post.summary}
           </p>
         </header>
@@ -86,7 +86,7 @@ const BlogDetail = () => {
 
         {/* Structured Content with Internal Links */}
         <div 
-          className="prose prose-lg max-w-none prose-slate prose-headings:font-display prose-headings:font-bold prose-a:text-ocean prose-a:no-underline hover:prose-a:underline"
+          className="prose prose-lg max-w-none prose-slate prose-headings:font-display prose-headings:font-bold prose-a:text-teal prose-a:no-underline hover:prose-a:underline"
           dangerouslySetInnerHTML={{ __html: content }}
         />
 
@@ -102,13 +102,13 @@ const BlogDetail = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Link 
               to="/stations" 
-              className="px-8 py-4 bg-ocean text-white font-bold rounded-2xl hover:scale-105 transition-transform"
+              className="px-8 py-4 bg-teal text-white font-bold rounded-2xl hover:scale-105 transition-transform"
             >
               {t('Explore All Stations', 'सभी स्टेशन्स देखें')}
             </Link>
             <Link 
               to="/packages" 
-              className="px-8 py-4 bg-ink text-white font-bold rounded-2xl hover:scale-105 transition-transform"
+              className="px-8 py-4 bg-charcoal text-white font-bold rounded-2xl hover:scale-105 transition-transform"
             >
               {t('Build Your Package', 'अपना पैकेज बनाएं')}
             </Link>

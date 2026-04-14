@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Heart, Share2, ExternalLink, Camera } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
@@ -30,7 +30,7 @@ const Inspiration = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pt-24 min-h-screen bg-snow"
+      className="pt-24 min-h-screen bg-paper"
     >
       {/* Pinterest Profile Header */}
       <section className="max-w-7xl mx-auto px-4 py-12 text-center">
@@ -39,18 +39,18 @@ const Inspiration = () => {
             whileHover={{ scale: 1.05 }}
             className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-2xl relative group"
           >
-            <div className="absolute inset-0 bg-ink/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-               <Camera className="text-snow" size={32} />
+            <div className="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+               <Camera className="text-paper" size={32} />
             </div>
-            <div className="w-full h-full bg-gradient-to-tr from-ocean to-firozi flex items-center justify-center text-snow font-display text-5xl font-black">
+            <div className="w-full h-full bg-gradient-to-tr from-teal to-purple flex items-center justify-center text-paper font-display text-5xl font-black">
               L
             </div>
           </motion.div>
           
           <div>
-            <h1 className="text-4xl lg:text-5xl font-display font-black text-ink mb-2">Liveart Events</h1>
-            <p className="text-ink/40 text-sm font-black tracking-widest uppercase mb-4">@liveartpartyevents</p>
-            <p className="max-w-2xl mx-auto text-ink/70 text-lg leading-relaxed mb-8">
+            <h1 className="text-4xl lg:text-5xl font-display font-black text-charcoal mb-2">Liveart Events</h1>
+            <p className="text-charcoal/40 text-sm font-black tracking-widest uppercase mb-4">@liveartpartyevents</p>
+            <p className="max-w-2xl mx-auto text-charcoal/70 text-lg leading-relaxed mb-8">
               {t(
                 "LiveArt Events creates celebrations people don’t just attend—they feel, live, and remember. We design moments that spark joy, connection, and belonging.",
                 "LiveArt Events ऐसे उत्सव बनाता है जिन्हें लोग केवल देखते नहीं हैं - वे उन्हें महसूस करते हैं, जीते हैं और याद रखते हैं।"
@@ -59,13 +59,13 @@ const Inspiration = () => {
             
             <div className="flex flex-wrap justify-center gap-4">
                <div className="flex items-center gap-2">
-                  <span className="font-black text-ink">0</span>
-                  <span className="text-ink/40 text-sm font-bold uppercase tracking-tighter">Followers</span>
+                  <span className="font-black text-charcoal">0</span>
+                  <span className="text-charcoal/40 text-sm font-bold uppercase tracking-tighter">Followers</span>
                </div>
-               <div className="w-1 h-1 bg-ink/10 rounded-full my-auto"></div>
+               <div className="w-1 h-1 bg-charcoal/10 rounded-full my-auto"></div>
                <div className="flex items-center gap-2">
-                  <span className="font-black text-ink">0</span>
-                  <span className="text-ink/40 text-sm font-bold uppercase tracking-tighter">Following</span>
+                  <span className="font-black text-charcoal">0</span>
+                  <span className="text-charcoal/40 text-sm font-bold uppercase tracking-tighter">Following</span>
                </div>
             </div>
 
@@ -75,7 +75,7 @@ const Inspiration = () => {
                 whileTap={{ scale: 0.95 }}
                 href="https://pin.it/A9pbFdUQT"
                 target="_blank"
-                className="bg-red-600 text-snow px-8 py-3 rounded-full font-black text-base flex items-center gap-3 shadow-lg hover:bg-red-700 transition-colors"
+                className="bg-red-600 text-paper px-8 py-3 rounded-full font-black text-base flex items-center gap-3 shadow-lg hover:bg-red-700 transition-colors"
                >
                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                     <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.965 1.406-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.654 2.569-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.138.892 2.738.1.12.115.223.085.345-.094.393-.309 1.25-.353 1.432-.058.24-.192.29-.442.175-1.644-.763-2.67-3.16-2.67-5.087 0-4.139 3.009-7.938 8.656-7.938 4.544 0 8.071 3.226 8.071 7.546 0 4.513-2.844 8.147-6.804 8.147-1.33 0-2.578-.69-3.003-1.493l-.819 3.11c-.296 1.141-1.099 2.568-1.639 3.429a12.13 12.13 0 003.37.472c6.621 0 11.988-5.366 11.988-11.987C23.992 5.368 18.63 0 12.017 0z"/>
@@ -85,7 +85,7 @@ const Inspiration = () => {
                <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-ink/5 text-ink px-8 py-3 rounded-full font-black text-base flex items-center gap-3 hover:bg-ink/10 transition-colors"
+                className="bg-charcoal/5 text-charcoal px-8 py-3 rounded-full font-black text-base flex items-center gap-3 hover:bg-charcoal/10 transition-colors"
                >
                  <Share2 size={20} />
                  {t('Share', 'शेयर करें')}
@@ -96,7 +96,7 @@ const Inspiration = () => {
       </section>
 
       {/* Board Navigation */}
-      <section className="sticky top-20 z-40 bg-snow/80 backdrop-blur-md border-b-2 border-ink/5">
+      <section className="sticky top-20 z-40 bg-paper/80 backdrop-blur-md border-b-2 border-charcoal/5">
         <div className="max-w-7xl mx-auto px-4 overflow-x-auto no-scrollbar">
           <div className="flex justify-center gap-8 py-6">
             {boards.map((board) => (
@@ -104,14 +104,14 @@ const Inspiration = () => {
                 key={board.id}
                 onClick={() => setActiveBoard(board.id)}
                 className={`relative px-2 py-1 text-sm font-black uppercase tracking-widest transition-colors whitespace-nowrap ${
-                  activeBoard === board.id ? 'text-ink' : 'text-ink/40 hover:text-ink'
+                  activeBoard === board.id ? 'text-charcoal' : 'text-charcoal/40 hover:text-charcoal'
                 }`}
               >
                 {board.name}
                 {activeBoard === board.id && (
                   <motion.div 
                     layoutId="boardUnderline"
-                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-ink"
+                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-charcoal"
                   />
                 )}
               </button>
@@ -134,7 +134,7 @@ const Inspiration = () => {
                 transition={{ duration: 0.4, delay: (index % 10) * 0.05 }}
                 className="break-inside-avoid relative group cursor-zoom-in"
               >
-                <div className="relative overflow-hidden rounded-[32px] bg-snow-dark group">
+                <div className="relative overflow-hidden rounded-[32px] bg-paper-dark group">
                   <img 
                     src={pin.image} 
                     alt={pin.name}
@@ -148,7 +148,7 @@ const Inspiration = () => {
                       <motion.button 
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="bg-red-600 text-snow px-6 py-3 rounded-full font-black text-sm shadow-xl"
+                        className="bg-red-600 text-paper px-6 py-3 rounded-full font-black text-sm shadow-xl"
                       >
                         {t('Save', 'सेव करें')}
                       </motion.button>
@@ -156,14 +156,14 @@ const Inspiration = () => {
                     
                     <div className="absolute bottom-6 left-6 right-6 translate-y-4 group-hover:translate-y-0 transition-all">
                       <div className="flex items-center justify-between">
-                         <div className="p-2 bg-snow/20 backdrop-blur-md rounded-full border border-white/30 text-snow opacity-0 group-hover:opacity-100 transition-opacity">
+                         <div className="p-2 bg-paper/20 backdrop-blur-md rounded-full border border-white/30 text-paper opacity-0 group-hover:opacity-100 transition-opacity">
                             <ExternalLink size={16} />
                          </div>
                          <div className="flex gap-2">
-                            <div className="p-2 bg-snow/20 backdrop-blur-md rounded-full border border-white/30 text-snow">
+                            <div className="p-2 bg-paper/20 backdrop-blur-md rounded-full border border-white/30 text-paper">
                                <Share2 size={16} />
                             </div>
-                            <div className="p-2 bg-snow/20 backdrop-blur-md rounded-full border border-white/30 text-snow">
+                            <div className="p-2 bg-paper/20 backdrop-blur-md rounded-full border border-white/30 text-paper">
                                <Heart size={16} />
                             </div>
                          </div>
@@ -174,10 +174,10 @@ const Inspiration = () => {
                 
                 {/* Info */}
                 <div className="mt-3 px-2">
-                  <h3 className="text-sm font-black text-ink mb-1 line-clamp-1">{pin.name}</h3>
+                  <h3 className="text-sm font-black text-charcoal mb-1 line-clamp-1">{pin.name}</h3>
                   <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 rounded-full bg-ink/10 flex items-center justify-center text-[8px] font-black text-ink">L</div>
-                    <span className="text-[10px] text-ink/40 font-bold uppercase tracking-tighter">LiveArt Events</span>
+                    <div className="w-5 h-5 rounded-full bg-charcoal/10 flex items-center justify-center text-[8px] font-black text-charcoal">L</div>
+                    <span className="text-[10px] text-charcoal/40 font-bold uppercase tracking-tighter">LiveArt Events</span>
                   </div>
                 </div>
               </motion.div>
@@ -190,7 +190,7 @@ const Inspiration = () => {
       <div className="py-20 text-center">
          <motion.button 
           whileHover={{ scale: 1.05 }}
-          className="bg-ink text-snow px-10 py-4 rounded-full font-black text-lg shadow-2xl uppercase tracking-widest"
+          className="bg-charcoal text-paper px-10 py-4 rounded-full font-black text-lg shadow-2xl uppercase tracking-widest"
          >
            {t('Load More Inspiration', 'और अधिक प्रेरणा लोड करें')}
          </motion.button>

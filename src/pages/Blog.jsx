@@ -37,7 +37,7 @@ const Blog = () => {
           <motion.h1 
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-ocean to-firozi bg-clip-text text-transparent"
+            className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent"
           >
             {language === 'en' ? 'LiveArt Insights' : 'लाइवआर्ट अंतर्दृष्टि'}
           </motion.h1>
@@ -72,7 +72,7 @@ const Blog = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-ocean text-sm font-semibold rounded-full shadow-sm">
+                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-teal text-sm font-semibold rounded-full shadow-sm">
                     {language === 'en' ? post.category : post.categoryHi}
                   </span>
                 </div>
@@ -85,7 +85,7 @@ const Blog = () => {
                   <span>{post.readTime}</span>
                 </div>
                 
-                <h2 className="text-xl font-bold mb-3 group-hover:text-ocean transition-colors line-clamp-2 leading-tight">
+                <h2 className="text-xl font-bold mb-3 group-hover:text-teal transition-colors line-clamp-2 leading-tight">
                   <Link to={`/blog/${post.id}`}>{language === 'en' ? post.title : post.titleHi}</Link>
                 </h2>
                 
@@ -94,7 +94,7 @@ const Blog = () => {
                 </p>
                 
                 <div className="mt-auto">
-                  <Link to={`/blog/${post.id}`} className="text-ocean font-semibold flex items-center gap-2 group/btn hover:gap-3 transition-all">
+                  <Link to={`/blog/${post.id}`} className="text-teal font-semibold flex items-center gap-2 group/btn hover:gap-3 transition-all">
                     {language === 'en' ? 'Read More' : 'अधिक पढ़ें'}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

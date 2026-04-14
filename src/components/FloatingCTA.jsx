@@ -17,15 +17,15 @@ export const FloatingCTA = () => {
       <MagneticButton>
         <Link 
           to="/contact" 
-          className="group relative flex items-center gap-6 bg-ink text-white px-8 py-6 rounded-full shadow-[0_30px_60px_-15px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_40px_-5px_rgba(0,206,209,0.3)] hover:scale-105 hover:bg-ocean transition-all duration-500 active:scale-95 border border-white/10"
+          className="group relative flex items-center gap-6 bg-charcoal text-white px-8 py-6 rounded-full shadow-[0_30px_60px_-15px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_40px_-5px_rgba(0,206,209,0.3)] hover:scale-105 hover:bg-teal transition-all duration-500 active:scale-95 border border-white/10"
         >
           <span className="relative z-10 font-black tracking-[0.2em] uppercase text-[10px]">{t('Book Experience', 'अनुभव बुक करें')}</span>
-          <div className="relative z-10 w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:bg-firozi transition-colors shadow-lg">
-            <Phone className="text-ink w-5 h-5 group-hover:scale-110 transition-transform" />
+          <div className="relative z-10 w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:bg-purple transition-colors shadow-lg">
+            <Phone className="text-charcoal w-5 h-5 group-hover:scale-110 transition-transform" />
           </div>
           
           {/* Glow effect */}
-          <div className="absolute inset-0 rounded-full bg-firozi/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div className="absolute inset-0 rounded-full bg-purple/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
         </Link>
       </MagneticButton>
     </motion.div>
