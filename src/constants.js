@@ -50,9 +50,7 @@ import potli1 from './assets/stations/potli_1.jpg';
 import potli2 from './assets/stations/potli_2.jpg';
 import potli3 from './assets/stations/potli_3.jpg';
 import potli4 from './assets/stations/potli_4.jpg';
-import aromaCandle1 from './assets/stations/aroma_candle_1.jpg';
-import aromaCandle2 from './assets/stations/aroma_candle_2.jpg';
-import aromaCandle3 from './assets/stations/aroma_candle_3.jpg';
+
 import candy1 from './assets/stations/candy_1.jpg';
 import candy2 from './assets/stations/candy_2.jpg';
 import candy3 from './assets/stations/candy_3.jpg';
@@ -61,11 +59,7 @@ import candy5 from './assets/stations/candy_5.jpg';
 import tarotCard1 from './assets/stations/tarot_card_1.jpg';
 import tarotCard2 from './assets/stations/tarot_card_2.jpg';
 import tarotCard3 from './assets/stations/tarot_card_3.jpg';
-import mehendi1 from './assets/stations/mehendi_1.jpg';
-import mehendi2 from './assets/stations/mehendi_2.jpg';
-import mehendi3 from './assets/stations/mehendi_3.jpg';
-import mehendi4 from './assets/stations/mehendi_4.jpg';
-import mehendi5 from './assets/stations/mehendi_5.jpg';
+
 import thappaMehendi1 from './assets/stations/thappa_mehendi_1.jpg';
 import thappaMehendi2 from './assets/stations/thappa_mehendi_2.jpg';
 import thappaMehendi3 from './assets/stations/thappa_mehendi_3.jpg';
@@ -102,10 +96,7 @@ import sunglasses1 from './assets/stations/sunglasses_1.png';
 import sunglasses2 from './assets/stations/sunglasses_2.jpg';
 import sunglasses3 from './assets/stations/sunglasses_3.jpg';
 import sunglasses4 from './assets/stations/sunglasses_4.jpg';
-import creativeSunglasses1 from './assets/stations/creative_sunglasses_1.jpg';
-import creativeSunglasses2 from './assets/stations/creative_sunglasses_2.jpg';
-import creativeSunglasses3 from './assets/stations/creative_sunglasses_3.jpg';
-import creativeSunglasses4 from './assets/stations/creative_sunglasses_4.jpg';
+
 import moneyBank1 from './assets/stations/money_bank_1.jpg';
 import moneyBank2 from './assets/stations/money_bank_2.jpg';
 import moneyBank3 from './assets/stations/money_bank_3.jpg';

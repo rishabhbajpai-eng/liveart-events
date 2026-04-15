@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform, AnimatePresence, useInView, useMotionV
 import { ArrowRight, Users, Sparkles, X, CheckCircle2, PlayCircle, Clock, BadgeIndianRupee, Tag, ShieldCheck, Zap, Heart, Check } from 'lucide-react';
 import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { LeadForm } from './LeadForm';
-import emotionalMoment from '../assets/emotional-moment.png';
+
 
 export const MagneticButton = ({ children, className }) => {
   const ref = useRef(null);
