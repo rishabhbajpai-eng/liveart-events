@@ -206,7 +206,7 @@ export const Hero = () => {
               className="lg:hidden mb-12 aspect-[4/5] rounded-[40px] overflow-hidden border-4 border-white/5 shadow-2xl relative"
             >
                <img 
-                 src="https://images.unsplash.com/photo-1549416878-b9ca3532997e?q=80&w=1000&auto=format&fit=crop" 
+                 src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop" 
                  className="w-full h-full object-cover saturate-[1.1]" 
                  alt="Experience Joy" 
                />
