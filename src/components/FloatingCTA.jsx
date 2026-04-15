@@ -24,7 +24,7 @@ export const FloatingCTA = () => {
             </span>
           </div>
           <a 
-            href="https://wa.me/919582538183" 
+            href="https://wa.me/918853299951" 
             target="_blank" 
             rel="noopener noreferrer"
             className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 group relative z-50 pointer-events-auto"

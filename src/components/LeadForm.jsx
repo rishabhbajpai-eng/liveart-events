@@ -103,7 +103,7 @@ export const LeadForm = () => {
                 <input 
                   required
                   type="tel"
-                  placeholder="+91 99999 99999"
+                  placeholder="+91 88532 99951"
                   className="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:border-purple focus:bg-white transition-all text-charcoal font-medium"
                   value={formData.phone}
                   onChange={(e) => setFormData({...formData, phone: e.target.value})}

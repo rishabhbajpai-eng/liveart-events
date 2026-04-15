@@ -907,7 +907,7 @@ export const InquirySection = () => {
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
               <div className="relative z-10">
                 <p className="text-gold font-black text-xs uppercase tracking-[0.3em] mb-4">{t('Direct Line', 'सीधी लाइन')}</p>
-                <p className="text-3xl font-display mb-2">+91 99999 99999</p>
+                <p className="text-3xl font-display mb-2">+91 88532 99951</p>
                 <p className="text-paper/40 text-sm font-medium">{t('Available 10 AM - 10 PM IST', 'सुबह 10 बजे - रात 10 बजे IST तक उपलब्ध')}</p>
               </div>
             </div>

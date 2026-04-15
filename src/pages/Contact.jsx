@@ -42,7 +42,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-[10px] font-black text-charcoal/40 uppercase tracking-widest mb-1">{t('Call or WhatsApp', 'कॉल या व्हाट्सएप')}</p>
-                    <p className="font-bold text-charcoal">+91 99999 99999</p>
+                    <p className="font-bold text-charcoal">+91 88532 99951</p>
                   </div>
                 </div>
                 <div className="flex gap-4">

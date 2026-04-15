@@ -174,7 +174,7 @@ export const Footer = () => {
             <p className="leading-relaxed">
               {t('Available Across India', 'पूरे भारत में उपलब्ध')}
             </p>
-            <p className="text-paper tracking-widest">+91 99999 99999</p>
+            <p className="text-paper tracking-widest">+91 88532 99951</p>
             <p className="text-paper/70">hello@liveartevents.in</p>
           </div>
         </div>
