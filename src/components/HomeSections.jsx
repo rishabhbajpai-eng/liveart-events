@@ -873,9 +873,12 @@ export const InquirySection = () => {
               &quot;{t('Years from now, people won’t remember the decorations. They’ll remember how your celebration felt.', 'अब से बरसों बाद, लोग सजावट को याद नहीं रखेंगे। उन्हें याद रहेगा कि आपका उत्सव कैसा महसूस हुआ।')}&quot;
             </p>
             <div className="mb-12">
+               <p className="text-charcoal/60 text-xs font-black uppercase tracking-widest mb-6 italic">
+                  {t('Tell us your event date & we’ll suggest the perfect experience plan.', 'हमें अपने कार्यक्रम की तारीख बताएं और हम सही अनुभव योजना का सुझाव देंगे।')}
+               </p>
                <MagneticButton>
                  <Link to="/contact" className="gold-btn px-10 py-5 rounded-full font-black tracking-widest text-[10px] uppercase shadow-xl inline-block">
-                   {t('Check Availability for Your Date', 'अपनी तारीख के लिए उपलब्धता की जांच करें')}
+                   {t('Request Your Custom Plan', 'अपने कस्टम प्लान का अनुरोध करें')}
                  </Link>
                </MagneticButton>
             </div>
@@ -1245,13 +1248,13 @@ export const ExclusivityScarcity = () => {
             </p>
           </div>
           <div className="bg-white/5 backdrop-blur-md p-10 rounded-[40px] border border-white/10 text-center">
-             <h4 className="text-gold font-black text-xs uppercase tracking-[0.4em] mb-6">{t('Investment', 'निवेश')}</h4>
+             <h4 className="text-gold font-black text-xs uppercase tracking-[0.4em] mb-6">{t('Elite Scarcity', 'विशेष उपलब्धता')}</h4>
              <div className="mb-8">
                <p className="text-paper/40 text-sm mb-2 uppercase tracking-widest">{t('Starting from', 'से शुरू')}</p>
                <h3 className="text-5xl md:text-6xl font-display">₹15,000</h3>
              </div>
              <p className="text-paper/60 text-sm mb-10 leading-relaxed italic">
-               {t('Custom luxury experiences available for those who seek the truly extraordinary.', 'उन लोगों के लिए कस्टम लक्जरी अनुभव उपलब्ध हैं जो वास्तव में असाधारण की तलाश में हैं।')}
+               {t('Not more than 10 events taken per month to ensure signature experience quality.', 'सिग्नेचर अनुभव गुणवत्ता सुनिश्चित करने के लिए प्रति माह 10 से अधिक ईवेंट नहीं लिए जाते हैं।')}
              </p>
              <Link 
                to="/contact" 
@@ -1604,12 +1607,55 @@ export const RefinedHostsSection = () => {
              <div className="space-y-6">
                 <div className="text-gold font-display text-4xl">03</div>
                 <h4 className="text-xl font-black uppercase tracking-widest">{t('Designed for standby', 'स्टैंडआउट के लिए डिज़ाइन किया गया')}</h4>
-                <p className="text-charcoal/40 text-sm italic leading-relaxed">{t('Standout celebrations that are talked about for seasons, not just hours.', 'शानदार उत्सव जिनकी चर्चा हफ्तों तक होती है, न कि केवल घंटों तक।')}</p>
+                <p className="text-charcoal/40 text-sm italic leading-relaxed">{t('Standout celebrations that are talked about for seasons, not just hours. Designed to engage guests across all age groups.', 'शानदार उत्सव जिनकी चर्चा हफ्तों तक होती है, न कि केवल घंटों तक। सभी आयु समूहों के मेहमानों को शामिल करने के लिए डिज़ाइन किया गया।')}</p>
              </div>
           </div>
 
           <div className="mt-24">
              <Link to="/contact" className="gold-btn px-12 py-6 rounded-full font-black uppercase tracking-[0.2em] text-[10px]">
+                {t('Check Availability for Your Date', 'अपनी तारीख के लिए उपलब्धता की जांच करें')}
+             </Link>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export const DecisionControlSection = () => {
+  const { t } = useLanguage();
+  return (
+    <section className="py-32 bg-primary text-paper overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 text-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto"
+        >
+          <h2 className="text-5xl md:text-7xl font-display mb-10 leading-tight text-white">
+            {t('If your wedding matters,', 'यदि आपकी शादी मायने रखती है,')} <br />
+            <span className="text-gold italic">{t('This decision matters.', 'तो यह निर्णय मायने रखता है।')}</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16 text-left">
+             <div className="p-8 bg-paper/5 backdrop-blur-md rounded-3xl border border-paper/10">
+                <p className="text-xl leading-relaxed italic text-paper/80">
+                  {t('Guests remember experiences, not just visuals. Decoration sets the stage, but interaction defines the memory.', 'मेहमान अनुभवों को याद रखते हैं, न कि केवल दृश्यों को। सजावट मंच तैयार करती है, लेकिन बातचीत याद को परिभाषित करती है।')}
+                </p>
+             </div>
+             <div className="p-8 bg-paper/5 backdrop-blur-md rounded-3xl border border-paper/10">
+                <p className="text-xl leading-relaxed italic text-paper/80">
+                   {t('Engagement defines how your event is remembered for decades. Don’t overlook the part your guests will talk about the most.', 'सहभागिता यह परिभाषित करती है कि आपके कार्यक्रम को दशकों तक कैसे याद रखा जाएगा। उस हिस्से को नज़रअंदाज़ न करें जिसके बारे में आपके मेहमान सबसे ज्यादा बात करेंगे।')}
+                </p>
+             </div>
+          </div>
+
+          <div className="mt-20">
+             <p className="text-gold font-black uppercase tracking-[0.3em] text-xs mb-10 italic">
+                {t('From passive weddings to unforgettable experiences.', 'सुस्त शादियों से अविस्मरणीय अनुभवों तक।')}
+             </p>
+             <Link to="/contact" className="gold-btn px-10 py-5 rounded-full font-black uppercase tracking-widest text-[10px]">
                 {t('Check Availability for Your Date', 'अपनी तारीख के लिए उपलब्धता की जांच करें')}
              </Link>
           </div>
