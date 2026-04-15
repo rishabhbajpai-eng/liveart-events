@@ -150,7 +150,7 @@ export const Hero = () => {
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-gold"></span>
               </span>
               <span className="text-xs lg:text-sm font-black tracking-[0.3em] text-paper uppercase glow-text">
-                {t('Trademarked LiveArt Experience Zones™', 'ट्रेडमार्क लाइवआर्ट एक्सपीरियंस जोन™')}
+                {t('Crafted for Modern Indian Weddings', 'आधुनिक भारतीय शादियों के लिए तैयार किया गया')}
               </span>
             </motion.div>
 
@@ -161,7 +161,7 @@ export const Hero = () => {
                 transition={{ duration: 1, delay: 0.6 }}
                 className="block text-white"
               >
-                {t('Most weddings are watched.', 'अधिकांश शादियाँ देखी जाती हैं।')}
+                {t('Ordinary is easy.', 'साधारण आसान है।')}
               </motion.span> 
               <motion.span 
                 initial={{ opacity: 0, x: -30 }}
@@ -169,7 +169,7 @@ export const Hero = () => {
                 transition={{ duration: 1, delay: 0.8 }}
                 className="text-gold italic font-bold block my-4"
               >
-                {t('Yours will be experienced.', 'आपकी अनुभव की जाएगी।')}
+                {t('Extraordinary is LiveArt.', 'असाधारण लाइवआर्ट है।')}
               </motion.span> 
               <motion.span 
                 initial={{ opacity: 0, y: 30 }}
@@ -863,14 +863,14 @@ export const InquirySection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
           <div className="lg:col-span-5 text-left">
             <h2 className="text-6xl md:text-8xl font-display text-charcoal mb-4 leading-[0.9]">
-              {t('Don’t let your event be', 'अपने ईवेंट को न होने दें')} <br />
-              <span className="text-gold italic">{t('Just Another Function.', 'सिर्फ एक और फंक्शन।')}</span>
+              {t('Because your wedding', 'क्योंकि आपकी शादी')} <br />
+              <span className="text-gold italic">{t('Deserves the Extraordinary.', 'असाधारण की हकदार है।')}</span>
             </h2>
             <p className="text-charcoal text-2xl mb-10 font-black uppercase tracking-widest">
-              {t('Make it unforgettable.', 'इसे अविस्मरणीय बनाएं।')}
+              {t('Refuse to be ordinary.', 'साधारण होने से इनकार करें।')}
             </p>
-            <p className="text-charcoal/40 text-sm mb-12 italic font-display">
-              &quot;{t('Your guests won’t remember what they saw. They’ll remember what they experienced.', 'आपके मेहमानों को यह याद नहीं रहेगा कि उन्होंने क्या देखा। उन्हें याद रहेगा कि उन्होंने क्या अनुभव किया।')}&quot;
+            <p className="text-charcoal/40 text-sm mb-12 italic font-display max-w-xl mx-auto">
+              &quot;{t('Years from now, people won’t remember the decorations. They’ll remember how your celebration felt.', 'अब से बरसों बाद, लोग सजावट को याद नहीं रखेंगे। उन्हें याद रहेगा कि आपका उत्सव कैसा महसूस हुआ।')}&quot;
             </p>
             <div className="mb-12">
                <MagneticButton>
@@ -1571,5 +1571,49 @@ export const ExperiencePackages = () => {
         </div>
       </div>
     </section>
+
+export const RefinedHostsSection = () => {
+  const { t } = useLanguage();
+  return (
+    <section className="py-32 bg-white text-charcoal overflow-hidden border-y border-charcoal/5">
+      <div className="max-w-7xl mx-auto px-4 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto"
+        >
+          <h2 className="text-5xl md:text-7xl font-display mb-12 leading-tight">
+            {t('For hosts who refuse', 'उन मेजबानों के लिए जो इनकार करते हैं')} <br />
+            <span className="text-gold italic">{t('Ordinary Celebrations.', 'साधारण उत्सवों से।')}</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mt-20">
+             <div className="space-y-6">
+                <div className="text-gold font-display text-4xl">01</div>
+                <h4 className="text-xl font-black uppercase tracking-widest">{t('Not for basic weddings', 'बेसिक शादियों के लिए नहीं')}</h4>
+                <p className="text-charcoal/40 text-sm italic leading-relaxed">{t('We do not build generic setups. We design cultural moments that define a legacy.', 'हम सामान्य सेटअप नहीं बनाते हैं। हम सांस्कृतिक क्षण डिजाइन करते हैं जो एक विरासत को परिभाषित करते हैं।')}</p>
+             </div>
+             <div className="space-y-6">
+                <div className="text-gold font-display text-4xl">02</div>
+                <h4 className="text-xl font-black uppercase tracking-widest">{t('Not for passive events', 'सुस्त ईवेंट्स के लिए नहीं')}</h4>
+                <p className="text-charcoal/40 text-sm italic leading-relaxed">{t('For hosts who want their guests to be the art, not just the audience.', 'उन मेजबानों के लिए जो चाहते हैं कि उनके मेहमान कला बनें, न कि केवल दर्शक।')}</p>
+             </div>
+             <div className="space-y-6">
+                <div className="text-gold font-display text-4xl">03</div>
+                <h4 className="text-xl font-black uppercase tracking-widest">{t('Designed for standby', 'स्टैंडआउट के लिए डिज़ाइन किया गया')}</h4>
+                <p className="text-charcoal/40 text-sm italic leading-relaxed">{t('Standout celebrations that are talked about for seasons, not just hours.', 'शानदार उत्सव जिनकी चर्चा हफ्तों तक होती है, न कि केवल घंटों तक।')}</p>
+             </div>
+          </div>
+
+          <div className="mt-24">
+             <Link to="/contact" className="gold-btn px-12 py-6 rounded-full font-black uppercase tracking-[0.2em] text-[10px]">
+                {t('Check Availability for Your Date', 'अपनी तारीख के लिए उपलब्धता की जांच करें')}
+             </Link>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
+

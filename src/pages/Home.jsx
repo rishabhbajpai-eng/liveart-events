@@ -15,7 +15,8 @@ import {
   VisualProofGallery,
   EmotionalInterrupt,
   LossAversionSection,
-  ExperiencePackages
+  ExperiencePackages,
+  RefinedHostsSection
 } from '../components/HomeSections';
 import { motion } from 'motion/react';
 
@@ -37,6 +38,7 @@ const Home = ({ onSelectOccasion, selectedOccasion }) => {
       <SectionCTA />
       <ProcessSection />
       <WhoItIsFor />
+      <RefinedHostsSection />
       <ExperiencePackages />
       <SectionCTA />
       <TrustSection />
