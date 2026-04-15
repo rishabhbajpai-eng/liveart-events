@@ -1571,6 +1571,8 @@ export const ExperiencePackages = () => {
         </div>
       </div>
     </section>
+  );
+};
 
 export const RefinedHostsSection = () => {
   const { t } = useLanguage();
