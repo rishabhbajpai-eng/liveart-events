@@ -3,7 +3,7 @@ import haldiHero from '../assets/haldi-hero.png';
 import { useLanguage } from '../context/LanguageContext';
 import { OCCASIONS, STATIONS, BLOG_POSTS } from '../constants';
 import { motion, useScroll, useTransform, AnimatePresence, useInView, useMotionValue, useSpring } from 'motion/react';
-import { ArrowRight, Users, Sparkles, X, CheckCircle2, PlayCircle, Clock, BadgeIndianRupee, Tag, ShieldCheck, Zap, Heart } from 'lucide-react';
+import { ArrowRight, Users, Sparkles, X, CheckCircle2, PlayCircle, Clock, BadgeIndianRupee, Tag, ShieldCheck, Zap, Heart, Check } from 'lucide-react';
 import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { LeadForm } from './LeadForm';
 import emotionalMoment from '../assets/emotional-moment.png';

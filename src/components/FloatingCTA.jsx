@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Phone } from 'lucide-react';
+import { Phone, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { MagneticButton } from './HomeSections';
