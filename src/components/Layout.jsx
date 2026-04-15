@@ -63,7 +63,7 @@ export const Navbar = () => {
             <motion.a 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="https://wa.me/919999999999" 
+              href="https://wa.me/918853299951" 
               className="bg-slate text-paper px-6 py-2.5 rounded-full font-black text-sm hover:shadow-lg transition-all flex items-center gap-2 uppercase tracking-wider"
             >
               <MessageCircle size={18} />
@@ -110,7 +110,7 @@ export const Navbar = () => {
                 </Link>
               ))}
               <div className="pt-4">
-                <a href="https://wa.me/919999999999" className="block w-full bg-slate text-paper text-center py-4 rounded-2xl font-black text-lg shadow-xl">
+                <a href="https://wa.me/918853299951" className="block w-full bg-slate text-paper text-center py-4 rounded-2xl font-black text-lg shadow-xl">
                   {t('Book on WhatsApp', 'व्हाट्सएप पर बुक करें')}
                 </a>
               </div>
@@ -144,7 +144,15 @@ export const Footer = () => {
             )}
           </p>
           <div className="flex gap-6">
-            <motion.a whileHover={{ scale: 1.2, color: '#00ced1' }} href="#" className="text-paper/40 transition-colors"><Instagram size={24} /></motion.a>
+            <motion.a 
+              whileHover={{ scale: 1.2, color: '#00ced1' }} 
+              href="https://www.instagram.com/liveart_events/?hl=en" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-paper/40 transition-colors"
+            >
+              <Instagram size={24} />
+            </motion.a>
             <motion.a whileHover={{ scale: 1.2, color: '#00ced1' }} href="#" className="text-paper/40 transition-colors"><MessageCircle size={24} /></motion.a>
             <motion.a whileHover={{ scale: 1.2, color: '#00ced1' }} href="#" className="text-paper/40 transition-colors"><Phone size={24} /></motion.a>
           </div>
@@ -215,7 +223,7 @@ export const ContactFAB = () => {
       id: 'instagram', 
       name: t('Instagram', 'इंस्टाग्राम'), 
       icon: <Instagram size={18} />, 
-      href: 'https://instagram.com/liveartevents', 
+      href: 'https://www.instagram.com/liveart_events/?hl=en', 
       gradient: 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)',
       label: 'Instagram',
       shadow: 'shadow-pink-500/30'
@@ -237,7 +245,7 @@ export const ContactFAB = () => {
       id: 'whatsapp', 
       name: t('WhatsApp', 'व्हाट्सएप'), 
       icon: <MessageCircle size={18} />, 
-      href: 'https://wa.me/919999999999', 
+      href: 'https://wa.me/918853299951', 
       gradient: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
       label: 'WhatsApp',
       shadow: 'shadow-green-500/30'
@@ -246,7 +254,7 @@ export const ContactFAB = () => {
       id: 'call', 
       name: t('Call Us', 'हमें कॉल करें'), 
       icon: <Phone size={18} />, 
-      href: 'tel:+919999999999', 
+      href: 'tel:+918853299951', 
       gradient: 'linear-gradient(135deg, #007BFF 0%, #00d2ff 100%)',
       label: 'Call',
       shadow: 'shadow-blue-500/30'

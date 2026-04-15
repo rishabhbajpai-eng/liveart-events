@@ -58,11 +58,13 @@ const Gallery = () => {
           <div className="mt-12 lg:mt-20 text-center">
             <motion.a 
               whileHover={{ scale: 1.1 }}
-              href="#" 
+              href="https://www.instagram.com/liveart_events/?hl=en" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 lg:gap-4 text-purple font-black text-lg lg:text-xl uppercase tracking-widest"
             >
               <Instagram size={24} />
-              @liveartevents.in
+              @liveart_events
             </motion.a>
           </div>
         </div>

@@ -7,6 +7,34 @@ import { STATIONS } from '../constants';
 const Inspiration = () => {
   const { t } = useLanguage();
   const [activeBoard, setActiveBoard] = useState('All');
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationMessage, setNotificationMessage] = useState('');
+
+  const triggerNotification = (message) => {
+    setNotificationMessage(message);
+    setShowNotification(true);
+    setTimeout(() => setShowNotification(false), 3000);
+  };
+
+  const shareContent = async (title, text, url) => {
+    if (navigator.share) {
+      try {
+        await navigator.share({ title, text, url });
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          copyToClipboard(url);
+        }
+      }
+    } else {
+      copyToClipboard(url);
+    }
+  };
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text).then(() => {
+      triggerNotification(t('Link copied to clipboard!', 'लिंक क्लिपबोर्ड पर कॉपी हो गया!'));
+    });
+  };
 
   const boards = [
     { id: 'All', name: t('All Pins', 'सभी पिन्स') },
@@ -85,6 +113,11 @@ const Inspiration = () => {
                <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => shareContent(
+                  'LiveArt Events - Inspiration',
+                  'Check out these amazing event inspirations by LiveArt Events!',
+                  window.location.href
+                )}
                 className="bg-charcoal/5 text-charcoal px-8 py-3 rounded-full font-black text-base flex items-center gap-3 hover:bg-charcoal/10 transition-colors"
                >
                  <Share2 size={20} />
@@ -148,6 +181,7 @@ const Inspiration = () => {
                       <motion.button 
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
+                        onClick={() => triggerNotification(t('Saved to your inspiration board!', 'आपकी प्रेरणा बोर्ड में सहेज लिया गया!'))}
                         className="bg-red-600 text-paper px-6 py-3 rounded-full font-black text-sm shadow-xl"
                       >
                         {t('Save', 'सेव करें')}
@@ -160,12 +194,26 @@ const Inspiration = () => {
                             <ExternalLink size={16} />
                          </div>
                          <div className="flex gap-2">
-                            <div className="p-2 bg-paper/20 backdrop-blur-md rounded-full border border-white/30 text-paper">
+                            <motion.div 
+                               whileHover={{ scale: 1.1 }}
+                               whileTap={{ scale: 0.9 }}
+                               onClick={() => shareContent(
+                                 `LiveArt - ${pin.name}`,
+                                 `Check out this inspiration: ${pin.name}`,
+                                 window.location.href
+                               )}
+                               className="p-2 bg-paper/20 backdrop-blur-md rounded-full border border-white/30 text-paper cursor-pointer"
+                            >
                                <Share2 size={16} />
-                            </div>
-                            <div className="p-2 bg-paper/20 backdrop-blur-md rounded-full border border-white/30 text-paper">
+                            </motion.div>
+                               <motion.div 
+                               whileHover={{ scale: 1.1 }}
+                               whileTap={{ scale: 0.9 }}
+                               onClick={() => triggerNotification(t('Added to favorites!', 'पसंदीदा में जोड़ा गया!'))}
+                               className="p-2 bg-paper/20 backdrop-blur-md rounded-full border border-white/30 text-paper cursor-pointer"
+                            >
                                <Heart size={16} />
-                            </div>
+                            </motion.div>
                          </div>
                       </div>
                     </div>
@@ -195,6 +243,21 @@ const Inspiration = () => {
            {t('Load More Inspiration', 'और अधिक प्रेरणा लोड करें')}
          </motion.button>
       </div>
+      
+      {/* Notification Toast */}
+      <AnimatePresence>
+        {showNotification && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, x: '-50%' }}
+            animate={{ opacity: 1, y: 0, x: '-50%' }}
+            exit={{ opacity: 0, y: 20, x: '-50%' }}
+            className="fixed bottom-10 left-1/2 z-[100] bg-charcoal text-paper px-6 py-3 rounded-full font-black text-sm shadow-2xl flex items-center gap-3 border border-paper/10 whitespace-nowrap"
+          >
+            <div className="w-2 h-2 rounded-full bg-teal animate-pulse" />
+            {notificationMessage}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };

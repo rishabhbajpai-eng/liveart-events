@@ -51,7 +51,7 @@ export const PackageBuilder = () => {
 - Estimated Price: ₹${totalPrice}
 Please confirm availability!`;
     
-    return `https://wa.me/919999999999?text=${encodeURIComponent(message)}`;
+    return `https://wa.me/918853299951?text=${encodeURIComponent(message)}`;
   };
 
   return (
