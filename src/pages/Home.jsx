@@ -13,7 +13,9 @@ import {
   PainPointSection,
   WhoItIsFor,
   VisualProofGallery,
-  EmotionalInterrupt
+  EmotionalInterrupt,
+  LossAversionSection,
+  ExperiencePackages
 } from '../components/HomeSections';
 import { motion } from 'motion/react';
 
@@ -29,11 +31,13 @@ const Home = ({ onSelectOccasion, selectedOccasion }) => {
       <Hero />
       <EmotionalInterrupt />
       <PainPointSection />
+      <LossAversionSection />
       <ExperienceMarquee />
       <OccasionSelector onSelect={onSelectOccasion} activeOccasion={selectedOccasion} />
       <SectionCTA />
       <ProcessSection />
       <WhoItIsFor />
+      <ExperiencePackages />
       <SectionCTA />
       <TrustSection />
       <VisualProofGallery />
