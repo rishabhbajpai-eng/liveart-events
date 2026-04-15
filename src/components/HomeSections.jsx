@@ -199,19 +199,20 @@ export const Hero = () => {
               )}
             </motion.p>
 
-            {/* Mobile-Only High-Energy Image */}
+            {/* Mobile-Only High-Energy Close-Up Interaction */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="lg:hidden mb-12 aspect-[4/5] rounded-[40px] overflow-hidden border-4 border-white/5 shadow-2xl relative"
+              className="lg:hidden mb-12 aspect-[4/5] rounded-[40px] overflow-hidden border-4 border-white/5 shadow-2xl relative group"
             >
                <img 
-                 src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop" 
-                 className="w-full h-full object-cover saturate-[1.1]" 
+                 src="https://images.unsplash.com/photo-1510076857177-7470076d4098?q=80&w=1000&auto=format&fit=crop" 
+                 className="w-full h-full object-cover saturate-[1.2] brightness-[0.9]" 
                  alt="Experience Joy" 
                />
-               <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-charcoal to-transparent">
-                  <p className="text-gold font-black text-[10px] uppercase tracking-widest italic">{t('High-Energy Guest Interaction', 'हाई-एनर्जी गेस्ट इंटरैक्शन')}</p>
+               {/* Subtle Dark Overlay for Readability */}
+               <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-charcoal/80 via-charcoal/40 to-transparent">
+                  <p className="text-gold font-black text-[10px] uppercase tracking-widest italic drop-shadow-md">{t('Human Connection & Discovery', 'मानवीय संबंध और खोज')}</p>
                </div>
             </motion.div>
 
