@@ -198,6 +198,23 @@ export const Hero = () => {
                 "आपके मेहमानों को सजावट याद नहीं रहेगी। उन्हें याद रहेगा कि उन्होंने कैसा महसूस किया।"
               )}
             </motion.p>
+
+            {/* Mobile-Only High-Energy Image */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="lg:hidden mb-12 aspect-[4/5] rounded-[40px] overflow-hidden border-4 border-white/5 shadow-2xl relative"
+            >
+               <img 
+                 src="https://images.unsplash.com/photo-1549416878-b9ca3532997e?q=80&w=1000&auto=format&fit=crop" 
+                 className="w-full h-full object-cover saturate-[1.1]" 
+                 alt="Experience Joy" 
+               />
+               <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-charcoal to-transparent">
+                  <p className="text-gold font-black text-[10px] uppercase tracking-widest italic">{t('High-Energy Guest Interaction', 'हाई-एनर्जी गेस्ट इंटरैक्शन')}</p>
+               </div>
+            </motion.div>
+
             <div className="mb-8 inline-block px-4 py-2 bg-gold/10 border border-gold/20 rounded-lg text-gold text-xs font-black uppercase tracking-widest">
                {t('Specializing in guest engagement and experience design for modern celebrations.', 'आधुनिक उत्सवों के लिए अतिथि सहभागिता और अनुभव डिज़ाइन में विशेषज्ञता।')}
             </div>
