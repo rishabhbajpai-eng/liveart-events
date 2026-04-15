@@ -177,13 +177,13 @@ export const Hero = () => {
                 transition={{ duration: 1, delay: 1 }}
                 className="text-white/60 text-lg md:text-xl block mt-6 font-sans tracking-[0.1em] uppercase font-black"
               >
-                {t('Because your wedding deserves more than decoration.', 'क्योंकि आपकी शादी सजावट से कहीं ज़्यादा की हकदार है।')}
+                {t('A great wedding is seen. A memorable one is experienced.', 'एक अच्छी शादी देखी जाती है। एक यादगार शादी का अनुभव किया जाता है।')}
               </motion.span>
             </h1>
             
             <div className="mt-8 mb-12 py-3 px-6 bg-paper/5 backdrop-blur-md border border-paper/10 rounded-xl inline-block">
                <p className="text-paper/60 text-xs font-black uppercase tracking-widest italic leading-relaxed">
-                  {t('Designed for modern weddings that value experience over tradition.', 'आधुनिक शादियों के लिए डिज़ाइन किया गया जो परंपरा से अधिक अनुभव को महत्व देते हैं।')}
+                  {t('This isn’t event planning. This is experience design.', 'यह ईवेंट प्लानिंग नहीं है। यह एक्सपीरियंस डिज़ाइन है।')}
                </p>
             </div>
 
@@ -874,11 +874,11 @@ export const InquirySection = () => {
             </p>
             <div className="mb-12">
                <p className="text-charcoal/60 text-xs font-black uppercase tracking-widest mb-6 italic">
-                  {t('Tell us your event date & we’ll suggest the perfect experience plan.', 'हमें अपने कार्यक्रम की तारीख बताएं और हम सही अनुभव योजना का सुझाव देंगे।')}
+                  {t('Make your event impossible to forget.', 'अपने ईवेंट को भूलना असंभव बनाएं।')}
                </p>
                <MagneticButton>
-                 <Link to="/contact" className="gold-btn px-10 py-5 rounded-full font-black tracking-widest text-[10px] uppercase shadow-xl inline-block">
-                   {t('Request Your Custom Plan', 'अपने कस्टम प्लान का अनुरोध करें')}
+                 <Link to="/contact" className="gold-btn px-10 py-5 rounded-full font-black tracking-widest text-[10px] uppercase shadow-xl inline-block text-center">
+                   {t('Plan My Wedding Experience', 'मेरी शादी के अनुभव की योजना बनाएं')}
                  </Link>
                </MagneticButton>
             </div>
@@ -1254,7 +1254,7 @@ export const ExclusivityScarcity = () => {
                <h3 className="text-5xl md:text-6xl font-display">₹15,000</h3>
              </div>
              <p className="text-paper/60 text-sm mb-10 leading-relaxed italic">
-               {t('Not more than 10 events taken per month to ensure signature experience quality.', 'सिग्नेचर अनुभव गुणवत्ता सुनिश्चित करने के लिए प्रति माह 10 से अधिक ईवेंट नहीं लिए जाते हैं।')}
+               {t('Bookings are confirmed only after a quick consultation to ensure the right fit.', 'सही फिट सुनिश्चित करने के लिए त्वरित परामर्श के बाद ही बुकिंग की पुष्टि की जाती है।')}
              </p>
              <Link 
                to="/contact" 
