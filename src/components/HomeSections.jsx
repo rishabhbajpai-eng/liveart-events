@@ -6,8 +6,8 @@ import { motion, useScroll, useTransform, AnimatePresence, useInView, useMotionV
 import { ArrowRight, Users, Sparkles, X, CheckCircle2, PlayCircle, Clock, BadgeIndianRupee, Tag, ShieldCheck, Zap, Heart, Check } from 'lucide-react';
 import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { LeadForm } from './LeadForm';
-
-
+import emotionalMoment from '../assets/emotional-moment.png';
+import heroInteraction from '../assets/hero-interaction.png';
 export const MagneticButton = ({ children, className }) => {
   const ref = useRef(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -260,9 +260,9 @@ export const Hero = () => {
               className="relative aspect-[3/4] rounded-[80px] overflow-hidden border-[12px] border-white/5 shadow-2xl group cursor-none"
             >
               <img 
-                src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2000&auto=format&fit=crop" 
+                src={heroInteraction} 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 saturate-[1.2]" 
-                alt="Premium Live Art" 
+                alt="Live Event Experience" 
               />
               {/* Trust Line */}
               <div className="absolute top-8 left-8 z-30 flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
@@ -282,7 +282,7 @@ export const Hero = () => {
                    <span className="w-4 h-[1px] bg-gold"></span>
                    Featured Setup
                 </motion.div>
-                <div className="text-paper text-5xl font-display leading-tight">{t('Curated Craftsmanship', 'क्यूरेटेड शिल्प कौशल')}</div>
+                <div className="text-paper text-5xl font-display leading-tight">{t('Experience the Joy', 'जोय का अनुभव करें')}</div>
               </div>
             </motion.div>
 
