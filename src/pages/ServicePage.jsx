@@ -99,6 +99,65 @@ const ServicePage = () => {
         <StationCatalogue selectedOccasion={occasion.id} />
       </section>
 
+      {/* Where Used & Benefits */}
+      <section className="py-24 bg-cream border-y border-charcoal/5">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            {/* Where Used */}
+            <div className="space-y-12">
+              <div>
+                <span className="text-gold font-black tracking-[0.3em] uppercase text-xs mb-4 block">
+                  {t('Ideal Occasions', 'आदर्श अवसर')}
+                </span>
+                <h2 className="text-4xl md:text-6xl font-display text-charcoal mb-8">
+                  {t('Where it shines', 'कहाँ यह चमकता है')}
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                {[
+                  { title: t('Mehndi', 'मेहंदी'), desc: t('Perfect ice-breakers for an afternoon of fun.', 'दोपहर की मस्ती के लिए बेहतरीन शुरुआत।') },
+                  { title: t('Haldi', 'हल्दी'), desc: t('High-energy games for a vibrant yellow morning.', 'एक जीवंत पीली सुबह के लिए उच्च-ऊर्जा वाले खेल।') },
+                  { title: t('Sangeet', 'संगीत'), desc: t('Interactive hosting to keep the energy high between performances.', 'प्रदर्शनों के बीच ऊर्जा को बनाए रखने के लिए इंटरैक्टिव होस्टिंग।') },
+                  { title: t('Cocktails', 'कॉकटेल'), desc: t('Sophisticated activity stations for a relaxed evening.', 'एक आरामदायक शाम के लिए परिष्कृत गतिविधि स्टेशन।') }
+                ].map((item, i) => (
+                  <div key={i} className="space-y-3">
+                    <h4 className="text-xl font-display text-charcoal">{item.title}</h4>
+                    <p className="text-charcoal/60 text-sm leading-relaxed italic">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Benefits */}
+            <div className="space-y-12">
+              <div>
+                <span className="text-gold font-black tracking-[0.3em] uppercase text-xs mb-4 block">
+                  {t('The LiveArt Advantage', 'लाइवआर्ट लाभ')}
+                </span>
+                <h2 className="text-4xl md:text-6xl font-display text-charcoal mb-8">
+                  {t('Why guests love it', 'मेहमान इसे क्यों पसंद करते हैं')}
+                </h2>
+              </div>
+              <div className="space-y-8">
+                {[
+                  { title: t('Real Connections', 'वास्तविक जुड़ाव'), desc: t('We break the ice between families, turning strangers into participants.', 'हम परिवारों के बीच की झिझक को दूर करते हैं, अजनबियों को प्रतिभागियों में बदलते हैं।') },
+                  { title: t('No Boring Moments', 'कोई बोरियत नहीं'), desc: t('Our engagement experts ensure there is always something fun happening.', 'हमारे एंगेजमेंट विशेषज्ञ सुनिश्चित करते हैं कि हमेशा कुछ मज़ेदार होता रहे।') },
+                  { title: t('Memorable Favors', 'यादगार उपहार'), desc: t('Guests take home handmade memories, not just generic store-bought gifts.', 'मेहमान घर पर हाथ से बनी यादें ले जाते हैं, न कि केवल सामान्य स्टोर से खरीदे गए उपहार।') }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-6 group">
+                    <div className="text-gold font-display text-4xl opacity-20 group-hover:opacity-100 transition-opacity">0{i+1}</div>
+                    <div>
+                      <h4 className="text-xl font-display text-charcoal mb-2">{item.title}</h4>
+                      <p className="text-charcoal/60 text-base leading-relaxed italic">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Inquiry Form */}
       <section className="py-24 bg-white border-t border-charcoal/5">
         <div className="max-w-4xl mx-auto px-4">

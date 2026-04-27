@@ -38,20 +38,15 @@ const Inspiration = () => {
 
   const boards = [
     { id: 'All', name: t('All Pins', 'सभी पिन्स') },
-    { id: 'wedding', name: t('Weddings', 'शादियाँ') },
-    { id: 'birthday', name: t('Kids Parties', 'बच्चों की पार्टियाँ') },
-    { id: 'corporate', name: t('Corporate', 'कॉर्पोरेट') },
-    { id: 'lifestyle', name: t('Lifestyle', 'लाइफस्टाइल') },
+    { id: 'wedding', name: t('Wedding Games', 'वेडिंग गेम्स') },
+    { id: 'mehndi', name: t('Mehndi Activities', 'मेहंदी गतिविधियां') },
+    { id: 'haldi', name: t('Haldi Games', 'हल्दी गेम्स') },
+    { id: 'stalls', name: t('Interactive Stalls', 'इंटरैक्टिव स्टॉल') },
   ];
 
   const filteredPins = activeBoard === 'All' 
     ? STATIONS 
-    : STATIONS.filter(s => 
-        (activeBoard === 'wedding' && s.popularFor?.includes('wedding')) ||
-        (activeBoard === 'birthday' && s.popularFor?.includes('birthday')) ||
-        (activeBoard === 'corporate' && s.category === 'entertainment') ||
-        (activeBoard === 'lifestyle' && s.category === 'lifestyle')
-      );
+    : STATIONS.filter(s => s.popularFor?.includes(activeBoard));
 
   return (
     <motion.div

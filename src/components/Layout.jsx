@@ -13,11 +13,26 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: t('Home', 'होम'), href: '/' },
-    { name: t('Services', 'सेवाएं'), href: '/stations' },
-    { name: t('Wedding Games', 'वेडिंग गेम्स'), href: '/wedding-games' },
-    { name: t('Cities', 'शहर'), href: '/#cities' }, // Link to home section
-    { name: t('Gallery', 'गैलरी'), href: '/gallery' },
-    { name: t('Packages', 'पैकेज'), href: '/packages' },
+    { 
+      name: t('Services', 'सेवाएं'), 
+      href: '/#services',
+      subLinks: [
+        { name: t('Wedding Games', 'वेडिंग गेम्स'), href: '/services/wedding-games' },
+        { name: t('Mehndi Activities', 'मेहंदी गतिविधियां'), href: '/services/mehndi-activities' },
+        { name: t('Haldi Games', 'हल्दी गेम्स'), href: '/services/haldi-games' },
+        { name: t('Interactive Stalls', 'इंटरैक्टिव स्टॉल'), href: '/services/interactive-stalls' },
+      ]
+    },
+    { 
+      name: t('Cities', 'शहर'), 
+      href: '/#cities',
+      subLinks: [
+        { name: 'Delhi NCR', href: '/wedding-games-in-delhi' },
+        { name: 'Lucknow', href: '/wedding-games-in-lucknow' },
+        { name: 'Indore', href: '/wedding-games-in-indore' },
+        { name: 'Jaipur', href: '/wedding-games-in-jaipur' },
+      ]
+    },
     { name: t('Blog', 'ब्लॉग'), href: '/blog' },
   ];
 
