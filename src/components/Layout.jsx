@@ -13,27 +13,11 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: t('Home', 'होम'), href: '/' },
-    { 
-      name: t('Services', 'सेवाएं'), 
-      href: '/#services',
-      subLinks: [
-        { name: t('Wedding Games', 'वेडिंग गेम्स'), href: '/wedding-games-india' },
-        { name: t('Mehndi Activities', 'मेहंदी गतिविधियां'), href: '/mehndi-activities-india' },
-        { name: t('Haldi Games', 'हल्दी गेम्स'), href: '/haldi-games-india' },
-        { name: t('Interactive Stalls', 'इंटरैक्टिव स्टॉल'), href: '/interactive-stalls-india' },
-      ]
-    },
-    { 
-      name: t('Cities', 'शहर'), 
-      href: '/#cities',
-      subLinks: [
-        { name: 'Delhi NCR', href: '/wedding-games-delhi' },
-        { name: 'Lucknow', href: '/wedding-games-lucknow' },
-        { name: 'Kanpur', href: '/wedding-games-kanpur' },
-        { name: 'Indore', href: '/wedding-games-indore' },
-        { name: 'Jaipur', href: '/wedding-games-jaipur' },
-      ]
-    },
+    { name: t('Services', 'सेवाएं'), href: '/stations' },
+    { name: t('Wedding Games', 'वेडिंग गेम्स'), href: '/wedding-games' },
+    { name: t('Cities', 'शहर'), href: '/#cities' }, // Link to home section
+    { name: t('Gallery', 'गैलरी'), href: '/gallery' },
+    { name: t('Packages', 'पैकेज'), href: '/packages' },
     { name: t('Blog', 'ब्लॉग'), href: '/blog' },
   ];
 
@@ -156,8 +140,8 @@ export const Footer = () => {
           </div>
           <p className="text-paper/60 text-base leading-relaxed max-w-xs">
             {t(
-              "India's #1 wedding guest engagement & entertainment brand. We turn boring weddings into unforgettable experiences.",
-              "भारत का #1 वेडिंग गेस्ट एंगेजमेंट और एंटरटेनमेंट ब्रांड। हम उबाऊ शादियों को अविस्मरणीय अनुभवों में बदल देते हैं।"
+              "India's leading Experience Design collective creating interactive celebrations for personal events.",
+              "लक्जरी इंटरैक्टिव उत्सव बनाने वाली भारत की अग्रणी एक्सपीरियंस डिज़ाइन टीम।"
             )}
           </p>
           <div className="flex gap-6">

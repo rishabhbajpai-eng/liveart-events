@@ -1,12 +1,25 @@
 import { 
   Hero, 
   OccasionSelector, 
-  WhyChooseUs,
-  VisualProofGallery,
-  LocationsSection,
+  TrustSection, 
+  TheArtistWithin, 
   BlogPreview, 
-  FAQSection,
-  InquirySection
+  InquirySection, 
+  ExperienceMarquee,
+  ProcessSection,
+  SocialProof,
+  ExclusivityScarcity,
+  SectionCTA,
+  PainPointSection,
+  WhoItIsFor,
+  VisualProofGallery,
+  EmotionalInterrupt,
+  LossAversionSection,
+  ExperiencePackages,
+  RefinedHostsSection,
+  DecisionControlSection,
+  LocationsSection,
+  FAQSection
 } from '../components/HomeSections';
 import { motion } from 'motion/react';
 
@@ -20,27 +33,30 @@ const Home = ({ onSelectOccasion, selectedOccasion }) => {
       className="relative"
     >
       <Hero />
-      
-      {/* Services Section */}
-      <section id="services">
-        <OccasionSelector onSelect={onSelectOccasion} activeOccasion={selectedOccasion} />
-      </section>
-
-      {/* Why Choose Us - Focus on engagement vs decoration */}
-      <WhyChooseUs />
-
-      {/* Real Event Experiences */}
+      <EmotionalInterrupt />
+      <PainPointSection />
+      <LossAversionSection />
+      <ExperienceMarquee />
+      <OccasionSelector onSelect={onSelectOccasion} activeOccasion={selectedOccasion} />
+      <SectionCTA />
+      <ProcessSection />
+      <WhoItIsFor />
+      <RefinedHostsSection />
+      <ExperiencePackages />
+      <SectionCTA />
+      <TrustSection />
       <VisualProofGallery />
-      
-      {/* Cities Served */}
-      <section id="cities">
-        <LocationsSection />
-      </section>
-
+      <SectionCTA />
+      <SocialProof />
+      <SectionCTA />
+      <TheArtistWithin />
+      <SectionCTA />
+      <ExclusivityScarcity />
+      <SectionCTA />
+      <DecisionControlSection />
+      <LocationsSection />
       <FAQSection />
       <BlogPreview />
-      
-      {/* Strong Final CTA */}
       <InquirySection />
     </motion.div>
   );

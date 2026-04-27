@@ -84,10 +84,13 @@ function AppContent() {
               element={<WeddingGames />} 
             />
             <Route 
-              path="/wedding-games-:citySlug" 
+              path="/wedding-games-in-:citySlug" 
               element={<CityPage />} 
             />
-
+            <Route 
+              path="/services/:serviceSlug" 
+              element={<ServicePage />} 
+            />
             <Route 
               path="/packages" 
               element={<Packages />} 
@@ -115,10 +118,6 @@ function AppContent() {
             <Route 
               path="/contact" 
               element={<Contact />} 
-            />
-            <Route 
-              path="/:serviceSlug" 
-              element={<ServicePage />} 
             />
           </Routes>
         </AnimatePresence>
