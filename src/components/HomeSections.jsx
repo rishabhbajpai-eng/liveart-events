@@ -379,3 +379,63 @@ export const InquirySection = () => {
     </section>
   );
 };
+
+// 8. STATION CATALOGUE
+export const StationCatalogue = ({ selectedOccasion }) => {
+  const { t } = useLanguage();
+  
+  // Filter stations based on selected occasion
+  const filteredStations = selectedOccasion && selectedOccasion !== 'all'
+    ? STATIONS.filter(station => station.popularFor?.includes(selectedOccasion))
+    : STATIONS;
+
+  return (
+    <div className="max-w-7xl mx-auto px-4">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl md:text-6xl font-display text-charcoal mb-4">
+          {t('Explore Activities', 'गतिविधियां एक्सप्लोर करें')}
+        </h2>
+        <p className="text-gold uppercase tracking-[0.4em] font-black text-xs">
+          {t('Interactive Entertainment Options', 'इंटरैक्टिव मनोरंजन विकल्प')}
+        </p>
+      </div>
+      
+      {filteredStations.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredStations.map((station) => (
+            <motion.div 
+              key={station.id}
+              whileHover={{ y: -10 }}
+              className="bg-white rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl transition-all border border-charcoal/5 group"
+            >
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src={station.image} 
+                  alt={station.name} 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                />
+              </div>
+              <div className="p-8">
+                <div className="mb-4">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">
+                    {t(station.category, station.category)}
+                  </span>
+                </div>
+                <h3 className="text-2xl font-display text-charcoal mb-3 group-hover:text-gold transition-colors">
+                  {t(station.name, station.nameHi)}
+                </h3>
+                <p className="text-charcoal/60 text-sm leading-relaxed italic line-clamp-2">
+                  {t(station.description, station.descriptionHi)}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-20 bg-cream rounded-[40px]">
+          <p className="text-charcoal/40 text-lg italic">{t('No activities found for this selection.', 'इस चयन के लिए कोई गतिविधियाँ नहीं मिलीं।')}</p>
+        </div>
+      )}
+    </div>
+  );
+};
