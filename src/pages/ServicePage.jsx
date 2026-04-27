@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { motion } from 'motion/react';
-import { OCCASIONS } from '../constants';
+import { motion, AnimatePresence } from 'motion/react';
+import { OCCASIONS, FAQS } from '../constants';
 import { useLanguage } from '../context/LanguageContext';
 import { StationCatalogue } from '../components/HomeSections';
 import { Sparkles, MessageCircle, ArrowRight } from 'lucide-react';
@@ -11,6 +11,7 @@ const ServicePage = () => {
   const { serviceSlug } = useParams();
   const { t } = useLanguage();
   const navigate = useNavigate();
+  const [openFaqIndex, setOpenFaqIndex] = useState(0);
   
   const occasion = OCCASIONS.find(o => o.slug === serviceSlug);
   
@@ -154,6 +155,48 @@ const ServicePage = () => {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-cream border-t border-charcoal/5">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-display text-charcoal mb-6">{t('Common Questions', 'सामान्य प्रश्न')}</h2>
+            <p className="text-gold uppercase tracking-[0.4em] font-black text-xs">{t('Everything you need to know', 'सब कुछ जो आपको जानना आवश्यक है')}</p>
+          </div>
+
+          <div className="space-y-4">
+            {FAQS.map((faq, i) => (
+              <div key={i} className="border-b border-charcoal/10 last:border-0">
+                <button 
+                  onClick={() => setOpenFaqIndex(openFaqIndex === i ? null : i)}
+                  className="w-full py-8 flex items-center justify-between text-left group"
+                >
+                  <span className={`text-xl font-display transition-colors ${openFaqIndex === i ? 'text-gold' : 'text-charcoal group-hover:text-gold'}`}>
+                    {t(faq.question, faq.questionHi)}
+                  </span>
+                  <div className={`w-10 h-10 rounded-full border border-charcoal/10 flex items-center justify-center transition-all ${openFaqIndex === i ? 'bg-gold border-gold text-white rotate-45' : 'text-charcoal group-hover:border-gold'}`}>
+                    <Sparkles size={16} />
+                  </div>
+                </button>
+                <AnimatePresence>
+                  {openFaqIndex === i && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <p className="pb-8 text-charcoal/60 text-base leading-relaxed italic">
+                        {t(faq.answer, faq.answerHi)}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
           </div>
         </div>
       </section>

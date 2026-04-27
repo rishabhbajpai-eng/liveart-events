@@ -128,7 +128,7 @@ const CityPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {OCCASIONS.map((occ) => (
               <Link 
-                to={`/stations?occasion=${occ.id}`} 
+                to={`/${occ.slug}`} 
                 key={occ.id}
                 className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-charcoal/5"
               >

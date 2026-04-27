@@ -183,6 +183,15 @@ export const CITIES = [
     keywords: 'wedding games Lucknow, guest engagement Lucknow, UP wedding entertainment'
   },
   {
+    id: 'kanpur',
+    name: 'Kanpur',
+    nameHi: 'कानपुर',
+    slug: 'kanpur',
+    title: 'Wedding Guest Engagement Services in Kanpur',
+    description: 'The best interactive wedding games and haldi entertainment in Kanpur city.',
+    keywords: 'wedding games Kanpur, guest engagement Kanpur, Kanpur wedding entertainment'
+  },
+  {
     id: 'indore',
     name: 'Indore',
     nameHi: 'इंदौर',
@@ -228,7 +237,7 @@ export const OCCASIONS = [
     id: 'wedding-games',
     name: 'Wedding Games',
     nameHi: 'वेडिंग गेम्स',
-    slug: 'wedding-games',
+    slug: 'wedding-games-india',
     image: weddingCollageImg,
     description: 'Professional hosting and high-energy games that keep every guest involved, not just watching.',
     popularFor: ['wedding-games']
@@ -237,7 +246,7 @@ export const OCCASIONS = [
     id: 'mehndi-activities',
     name: 'Mehndi Activities',
     nameHi: 'मेहंदी गतिविधियां',
-    slug: 'mehndi-activities',
+    slug: 'mehndi-activities-india',
     image: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=2000&auto=format&fit=crop',
     description: 'Interactive stalls and creative activities designed to add a vibrant soul to your Mehndi function.',
     popularFor: ['mehndi-activities']
@@ -246,7 +255,7 @@ export const OCCASIONS = [
     id: 'haldi-games',
     name: 'Haldi Games',
     nameHi: 'हल्दी गेम्स',
-    slug: 'haldi-games',
+    slug: 'haldi-games-india',
     image: 'https://images.unsplash.com/photo-1621345155106-9399264c760d?auto=format&fit=crop&q=80',
     description: 'Fun, messy, and high-energy activities that turn your Haldi into a celebration everyone remembers.',
     popularFor: ['haldi-games']
@@ -255,7 +264,7 @@ export const OCCASIONS = [
     id: 'interactive-stalls',
     name: 'Interactive Stalls',
     nameHi: 'इंटरैक्टिव स्टॉल',
-    slug: 'interactive-stalls',
+    slug: 'interactive-stalls-india',
     image: charmStall1,
     description: 'Unique experience zones where guests create their own personalized wedding favors and souvenirs.',
     popularFor: ['interactive-stalls']
@@ -264,30 +273,51 @@ export const OCCASIONS = [
 
 export const BLOG_POSTS = [
   {
-    id: 'unforgettable-wedding-games',
-    title: 'How to Choose the Perfect Wedding Games for Your Indian Wedding',
-    titleHi: 'अपनी भारतीय शादी के लिए परफेक्ट वेडिंग गेम्स कैसे चुनें',
+    id: 'wedding-games-for-guests-in-india',
+    title: 'Wedding Games for Guests in India',
+    titleHi: 'भारत में मेहमानों के लिए वेडिंग गेम्स',
     date: '2024-04-15',
     category: 'Wedding Guide',
     categoryHi: 'वेडिंग गाइड',
-    summary: 'Keeping guests engaged is the secret to a successful wedding. Discover top-rated games for Mehndi, Haldi, and Sangeet.',
-    summaryHi: 'मेहमानों को व्यस्त रखना एक सफल शादी का रहस्य है। मेहंदी, हल्दी और संगीत के लिए टॉप-रेटेड गेम्स देखें।',
+    summary: 'Keeping guests engaged is the secret to a successful wedding. Discover top-rated games for Indian weddings.',
+    summaryHi: 'मेहमानों को व्यस्त रखना एक सफल शादी का रहस्य है। भारतीय शादियों के लिए टॉप-रेटेड गेम्स खोजें।',
     image: weddingCollageImg,
     readTime: '8 min read',
     fullContent: `
       <h2>The Secret to a High-Energy Indian Wedding</h2>
-      <p>Most Indian weddings focus heavily on decor and food, but the real soul of the party is <strong>Guest Engagement</strong>. Without interactive activities, guests often feel like spectators. Our goal is to make them participants.</p>
-      
-      <h3>1. Ice-Breaker Games for Mehndi</h3>
-      <p>Mehndi is the perfect time for intimate interactions. Instead of just sitting, introduce <strong>Custom Jenga</strong> or <strong>Wedding Trivia</strong> about the couple. It breaks the ice between the two families instantly.</p>
-      
-      <h3>2. Interactive Stalls for Haldi</h3>
-      <p>Haldi is all about vibrant colors. A <strong>DIY Floral Jewellery</strong> station or a <strong>Bangle Stall</strong> adds a creative layer to the yellow-themed morning.</p>
-      
-      <h3>3. High-Energy Sangeet Hosting</h3>
-      <p>Don't just have dance performances. Use professional hosts to conduct <strong>Crowd Interaction Games</strong> that involve everyone on the floor, not just the performers.</p>
-      
-      <p>Ready to transform your wedding? Book our <a href="/wedding-games">Wedding Game Services</a> today!</p>
+      <p>Most Indian weddings focus heavily on decor and food, but the real soul of the party is <strong>Guest Engagement</strong>.</p>
+    `
+  },
+  {
+    id: 'mehndi-function-activities-ideas',
+    title: 'Mehndi Function Activities Ideas',
+    titleHi: 'मेहंदी फंक्शन गतिविधियों के विचार',
+    date: '2024-04-18',
+    category: 'Activities',
+    categoryHi: 'गतिविधियां',
+    summary: 'Make your Mehndi function unforgettable with these interactive stalls and activities.',
+    summaryHi: 'इन इंटरैक्टिव स्टालों और गतिविधियों के साथ अपने मेहंदी समारोह को अविस्मरणीय बनाएं।',
+    image: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=2000&auto=format&fit=crop',
+    readTime: '5 min read',
+    fullContent: `
+      <h2>Mehndi Engagement Ideas</h2>
+      <p>Interactive stalls like a custom bangle bar or floral jewellery making.</p>
+    `
+  },
+  {
+    id: 'haldi-ceremony-games-guide',
+    title: 'Haldi Ceremony Games Guide',
+    titleHi: 'हल्दी समारोह खेल गाइड',
+    date: '2024-04-20',
+    category: 'Games',
+    categoryHi: 'खेल',
+    summary: 'High-energy games that turn your Haldi into a celebration everyone remembers.',
+    summaryHi: 'उच्च ऊर्जा वाले खेल जो आपकी हल्दी को एक ऐसे उत्सव में बदल देते हैं जिसे हर कोई याद रखता है।',
+    image: 'https://images.unsplash.com/photo-1621345155106-9399264c760d?auto=format&fit=crop&q=80',
+    readTime: '6 min read',
+    fullContent: `
+      <h2>Fun Haldi Games</h2>
+      <p>Incorporate messy, fun, and high-energy games into the yellow morning.</p>
     `
   }
 ];

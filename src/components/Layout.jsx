@@ -17,20 +17,21 @@ export const Navbar = () => {
       name: t('Services', 'सेवाएं'), 
       href: '/#services',
       subLinks: [
-        { name: t('Wedding Games', 'वेडिंग गेम्स'), href: '/services/wedding-games' },
-        { name: t('Mehndi Activities', 'मेहंदी गतिविधियां'), href: '/services/mehndi-activities' },
-        { name: t('Haldi Games', 'हल्दी गेम्स'), href: '/services/haldi-games' },
-        { name: t('Interactive Stalls', 'इंटरैक्टिव स्टॉल'), href: '/services/interactive-stalls' },
+        { name: t('Wedding Games', 'वेडिंग गेम्स'), href: '/wedding-games-india' },
+        { name: t('Mehndi Activities', 'मेहंदी गतिविधियां'), href: '/mehndi-activities-india' },
+        { name: t('Haldi Games', 'हल्दी गेम्स'), href: '/haldi-games-india' },
+        { name: t('Interactive Stalls', 'इंटरैक्टिव स्टॉल'), href: '/interactive-stalls-india' },
       ]
     },
     { 
       name: t('Cities', 'शहर'), 
       href: '/#cities',
       subLinks: [
-        { name: 'Delhi NCR', href: '/wedding-games-in-delhi' },
-        { name: 'Lucknow', href: '/wedding-games-in-lucknow' },
-        { name: 'Indore', href: '/wedding-games-in-indore' },
-        { name: 'Jaipur', href: '/wedding-games-in-jaipur' },
+        { name: 'Delhi NCR', href: '/wedding-games-delhi' },
+        { name: 'Lucknow', href: '/wedding-games-lucknow' },
+        { name: 'Kanpur', href: '/wedding-games-kanpur' },
+        { name: 'Indore', href: '/wedding-games-indore' },
+        { name: 'Jaipur', href: '/wedding-games-jaipur' },
       ]
     },
     { name: t('Blog', 'ब्लॉग'), href: '/blog' },

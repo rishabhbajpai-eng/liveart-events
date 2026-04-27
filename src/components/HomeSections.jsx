@@ -126,7 +126,7 @@ export const OccasionSelector = ({ onSelect, activeOccasion }) => {
                 <h3 className="text-3xl font-display text-paper mb-4">{t(occ.name, occ.nameHi)}</h3>
                 <p className="text-paper/60 text-sm mb-8 leading-relaxed italic line-clamp-2">{t(occ.description, occ.description)}</p>
                 <Link 
-                  to={`/services/${occ.slug}`}
+                  to={`/${occ.slug}`}
                   className="w-full py-4 bg-paper/10 backdrop-blur-md border border-white/20 text-paper text-center text-[10px] font-black uppercase tracking-widest rounded-full group-hover:bg-gold group-hover:border-gold group-hover:text-charcoal transition-all"
                 >
                   {t('Explore Service', 'सेवा देखें')}
@@ -236,7 +236,7 @@ export const LocationsSection = () => {
           {CITIES.map((city) => (
             <Link 
               key={city.id} 
-              to={`/wedding-games-in-${city.slug}`}
+              to={`/wedding-games-${city.slug}`}
               className="group p-12 bg-white/5 rounded-[40px] border border-white/10 hover:bg-gold hover:border-gold transition-all duration-500"
             >
               <h3 className="text-3xl font-display mb-4 group-hover:text-charcoal transition-colors">{city.name}</h3>
