@@ -17,7 +17,7 @@ const ServicePage = () => {
   useEffect(() => {
     if (!occasion) {
       // Check if it's one of our predefined wedding slugs
-      if (['mehndi-activities', 'interactive-stalls', 'sangeet-engagement', 'wedding-games'].includes(serviceSlug)) {
+      if (['mehndi-activities', 'interactive-stalls', 'haldi-games', 'wedding-games'].includes(serviceSlug)) {
         // already handled by occasion find
       } else {
         // navigate('/');

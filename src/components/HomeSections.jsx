@@ -150,7 +150,7 @@ export const Hero = () => {
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-gold"></span>
               </span>
               <span className="text-xs lg:text-sm font-black tracking-[0.3em] text-paper uppercase glow-text">
-                {t('Crafted for Modern Indian Weddings', 'आधुनिक भारतीय शादियों के लिए तैयार किया गया')}
+                {t('India’s #1 Wedding Guest Engagement Brand', 'भारत का #1 वेडिंग गेस्ट एंगेजमेंट ब्रांड')}
               </span>
             </motion.div>
 
@@ -159,9 +159,9 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.6 }}
-                className="block text-white"
+                className="block text-paper/40"
               >
-                {t('India’s Leading Wedding Guest Engagement', 'भारत का प्रमुख वेडिंग गेस्ट एंगेजमेंट')}
+                {t('Wedding Guest', 'वेडिंग गेस्ट')}
               </motion.span> 
               <motion.span 
                 initial={{ opacity: 0, x: -30 }}
@@ -169,17 +169,34 @@ export const Hero = () => {
                 transition={{ duration: 1, delay: 0.8 }}
                 className="text-gold italic font-bold block my-4"
               >
-                {t('& Entertainment Brand', '& एंटरटेनमेंट ब्रांड')}
+                {t('Engagement', 'एन्गेजमेंट')}
               </motion.span> 
               <motion.span 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 1 }}
-                className="text-white/60 text-lg md:text-xl block mt-6 font-sans tracking-[0.1em] uppercase font-black"
+                className="text-paper block"
               >
-                {t('We Turn Boring Weddings Into Unforgettable Experiences', 'हम बोरिंग शादियों को अविस्मरणीय अनुभवों में बदलते हैं')}
+                {t('& Entertainment', '& एंटरटेनमेंट')}
+              </motion.span>
+              <motion.span 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.2 }}
+                className="text-gold/60 text-xs lg:text-sm block mt-6 tracking-[0.4em] uppercase font-black"
+              >
+                {t('Across India', 'पूरे भारत में')}
               </motion.span>
             </h1>
+
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.4 }}
+              className="text-xl md:text-2xl text-paper/60 mb-12 max-w-2xl leading-relaxed italic"
+            >
+              &ldquo;{t('We turn boring weddings into unforgettable experiences. Interactive games, stalls, and activities that involve every guest.', 'हम उबाऊ शादियों को अविस्मरणीय अनुभवों में बदल देते हैं। इंटरैक्टिव गेम्स, स्टॉल और गतिविधियां जो हर मेहमान को जोड़ती हैं।')}&rdquo;
+            </motion.p>
             
             <motion.p 
               initial={{ opacity: 0 }}
@@ -808,8 +825,8 @@ export const TrustSection = () => {
           <div className="space-y-8 max-w-xl mx-auto lg:mx-0">
             {[
               { title: 'Designed for Indian Weddings', desc: 'Customized for Indian weddings & family audiences to ensure maximum participation.' },
-              { title: 'Custom Experiences', desc: 'Crafting unique, tailored experiences for every function, from Haldi to Sangeet.' },
-              { title: '10x Engagement', desc: 'Proven to increase guest interaction by 10x, leaving no dull moments.' }
+              { title: 'No Boring Moments', desc: 'We specialize in turning the "waiting time" during ceremonies into fun engagement zones.' },
+              { title: '10x Guest Interaction', desc: 'Proven to increase guest interaction by 10x, leaving no person out of the celebration.' }
             ].map((item, i) => (
               <div key={i} className="flex flex-col sm:flex-row items-center lg:items-start gap-6 group">
                 <div className="w-14 h-14 rounded-2xl bg-paper/10 flex items-center justify-center shrink-0 group-hover:bg-gold group-hover:text-primary transition-all duration-500">
@@ -1434,21 +1451,21 @@ export const PainPointSection = () => {
               <div className="flex gap-8 group">
                 <div className="text-charcoal/20 text-5xl font-display group-hover:text-gold transition-colors">01</div>
                 <div>
-                   <h4 className="text-2xl font-display mb-3">{t('The Idle Guest Problem', 'बेकार बैठे मेहमानों की समस्या')}</h4>
+                   <h4 className="text-2xl font-display mb-3">{t('The "Idle Guest" Problem', 'बेकार बैठे मेहमानों की समस्या')}</h4>
                    <p className="text-charcoal/60 leading-relaxed italic">{t('Guests spend hours watching the stage, feeling disconnected and bored during long ceremonies.', 'मेहमान घंटों स्टेज देखते हुए बिताते हैं, लंबी रस्मों के दौरान कटा हुआ और ऊब महसूस करते हैं।')}</p>
                 </div>
               </div>
               <div className="flex gap-8 group">
                 <div className="text-charcoal/20 text-5xl font-display group-hover:text-gold transition-colors">02</div>
                 <div>
-                   <h4 className="text-2xl font-display mb-3">{t('Repetitive Functions', 'वही पुराने फंक्शन')}</h4>
+                   <h4 className="text-2xl font-display mb-3">{t('Repetitive Wedding Routines', 'वही पुराने फंक्शन')}</h4>
                    <p className="text-charcoal/60 leading-relaxed italic">{t('The same generic decor and routines that your guests have seen in every wedding this season.', 'वही पुराने डेकोर और रूटीन जो आपके मेहमानों ने इस सीजन की हर शादी में देखे हैं।')}</p>
                 </div>
               </div>
               <div className="flex gap-8 group">
                 <div className="text-charcoal/20 text-5xl font-display group-hover:text-gold transition-colors">03</div>
                 <div>
-                   <h4 className="text-2xl font-display mb-3">{t('Lack of Interaction', 'बातचीत की कमी')}</h4>
+                   <h4 className="text-2xl font-display mb-3">{t('Lack of Real Connection', 'बातचीत की कमी')}</h4>
                    <p className="text-charcoal/60 leading-relaxed italic">{t('Limited opportunities for guests to connect, create memories, and truly engage with your celebration.', 'मेहमानों के लिए जुड़ने, यादें बनाने और आपके उत्सव के साथ वास्तव में शामिल होने के सीमित अवसर।')}</p>
                 </div>
               </div>

@@ -68,7 +68,7 @@ Please confirm availability!`;
               {t('Transparent Pricing', 'पारदर्शी मूल्य निर्धारण')}
             </span>
             <h2 className="text-4xl sm:text-6xl lg:text-8xl font-display text-paper mb-6">
-              {t('Build Your', 'अपनी')} <span className="text-purple italic">{t('Party', 'पार्टी')}</span>
+              {t('Build Your', 'अपनी')} <span className="text-gold italic">{t('Wedding', 'शादी')}</span>
             </h2>
             <p className="text-paper/60 max-w-2xl mx-auto text-base lg:text-lg">
               {t('Customize every detail of your interactive experience. Watch the price update live.', 'अपने इंटरैक्टिव अनुभव के हर विवरण को कस्टमाइज़ करें। मूल्य अपडेट लाइव देखें।')}
