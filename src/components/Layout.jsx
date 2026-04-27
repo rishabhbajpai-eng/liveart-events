@@ -4,6 +4,7 @@ import { MessageCircle, Menu, X, Instagram, Phone, Facebook, MousePointer2 } fro
 import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
 import logoImg from '../assets/logo.png';
+import { CITIES } from '../constants';
 
 export const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -12,11 +13,27 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: t('Home', 'होम'), href: '/' },
-    { name: t('Stations', 'स्टेशन्स'), href: '/stations' },
-    { name: t('Packages', 'पैकेज'), href: '/packages' },
-    { name: t('Inspiration', 'प्रेरणा'), href: '/inspiration' },
-    { name: t('Gallery', 'गैलरी'), href: '/gallery' },
-    { name: t('Partner', 'पार्टनर'), href: '/partner' },
+    { 
+      name: t('Services', 'सेवाएं'), 
+      href: '/#services',
+      subLinks: [
+        { name: t('Wedding Games', 'वेडिंग गेम्स'), href: '/wedding-games-india' },
+        { name: t('Mehndi Activities', 'मेहंदी गतिविधियां'), href: '/mehndi-activities-india' },
+        { name: t('Haldi Games', 'हल्दी गेम्स'), href: '/haldi-games-india' },
+        { name: t('Interactive Stalls', 'इंटरैक्टिव स्टॉल'), href: '/interactive-stalls-india' },
+      ]
+    },
+    { 
+      name: t('Cities', 'शहर'), 
+      href: '/#cities',
+      subLinks: [
+        { name: 'Delhi NCR', href: '/wedding-games-delhi' },
+        { name: 'Lucknow', href: '/wedding-games-lucknow' },
+        { name: 'Kanpur', href: '/wedding-games-kanpur' },
+        { name: 'Indore', href: '/wedding-games-indore' },
+        { name: 'Jaipur', href: '/wedding-games-jaipur' },
+      ]
+    },
     { name: t('Blog', 'ब्लॉग'), href: '/blog' },
   ];
 
@@ -139,8 +156,8 @@ export const Footer = () => {
           </div>
           <p className="text-paper/60 text-base leading-relaxed max-w-xs">
             {t(
-              "India's leading Experience Design collective creating interactive celebrations for personal events.",
-              "लक्जरी इंटरैक्टिव उत्सव बनाने वाली भारत की अग्रणी एक्सपीरियंस डिज़ाइन टीम।"
+              "India's #1 wedding guest engagement & entertainment brand. We turn boring weddings into unforgettable experiences.",
+              "भारत का #1 वेडिंग गेस्ट एंगेजमेंट और एंटरटेनमेंट ब्रांड। हम उबाऊ शादियों को अविस्मरणीय अनुभवों में बदल देते हैं।"
             )}
           </p>
           <div className="flex gap-6">
@@ -159,20 +176,26 @@ export const Footer = () => {
         </div>
         
         <div>
-          <h4 className="font-display text-xl mb-8 text-purple uppercase tracking-widest">{t('Quick Links', 'त्वरित लिंक')}</h4>
+          <h4 className="font-display text-xl mb-8 text-purple uppercase tracking-widest">{t('Our Services', 'हमारी सेवाएं')}</h4>
           <ul className="space-y-4 text-paper/50 font-medium">
-            <li><Link to="/stations" className="hover:text-paper transition-colors">{t('Activity Stations', 'गतिविधि स्टेशन्स')}</Link></li>
-            <li><Link to="/packages" className="hover:text-paper transition-colors">{t('Package Builder', 'पैकेज बिल्डर')}</Link></li>
-            <li><Link to="/gallery" className="hover:text-paper transition-colors">{t('Gallery', 'गैलरी')}</Link></li>
-            <li><Link to="/partner" className="hover:text-paper transition-colors">{t('Referral Program', 'रेफरल प्रोग्राम')}</Link></li>
-            <li><Link to="/blog" className="hover:text-paper transition-colors">{t('Blog', 'ब्लॉग')}</Link></li>
+            <li><Link to="/wedding-games" className="hover:text-gold transition-colors">{t('Wedding Hosting & Games', 'वेडिंग होस्टिंग और गेम्स')}</Link></li>
+            <li><Link to="/services/mehndi-activities" className="hover:text-gold transition-colors">{t('Mehndi Activities', 'मेहंदी गतिविधियां')}</Link></li>
+            <li><Link to="/services/interactive-stalls" className="hover:text-gold transition-colors">{t('Interactive Gift Stalls', 'इंटरैक्टिव गिफ्ट स्टॉल')}</Link></li>
+            <li><Link to="/services/sangeet-engagement" className="hover:text-gold transition-colors">{t('Sangeet Night Engagement', 'संगीत नाइट एंगेजमेंट')}</Link></li>
+            <li><Link to="/stations" className="hover:text-gold transition-colors">{t('Full Activity Catalogue', 'पूर्ण गतिविधि सूची')}</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-display text-xl mb-8 text-purple uppercase tracking-widest">{t('Locations', 'स्थान')}</h4>
+          <h4 className="font-display text-xl mb-8 text-purple uppercase tracking-widest">{t('Popular Cities', 'लोकप्रिय शहर')}</h4>
           <ul className="space-y-4 text-paper/50 font-medium">
-            <li>{t('Across India', 'पूरे भारत में')}</li>
+            {CITIES.map(city => (
+              <li key={city.id}>
+                <Link to={`/wedding-games-in-${city.slug}`} className="hover:text-gold transition-colors">
+                  {t(city.name, city.nameHi)}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
