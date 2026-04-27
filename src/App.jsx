@@ -6,17 +6,10 @@ import { Navbar, Footer, ContactFAB } from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import { CustomCursor } from './components/CustomCursor';
 import Home from './pages/Home';
-import Stations from './pages/Stations';
-import Packages from './pages/Packages';
-import Gallery from './pages/Gallery';
-import Inspiration from './pages/Inspiration';
-import Partner from './pages/Partner';
-import Blog from './pages/Blog';
-import BlogDetail from './pages/BlogDetail';
+import Weddings from './pages/Weddings';
+import Birthdays from './pages/Birthdays';
+import About from './pages/About';
 import Contact from './pages/Contact';
-import WeddingGames from './pages/WeddingGames';
-import CityPage from './pages/CityPage';
-import ServicePage from './pages/ServicePage';
 import { AnimatePresence, motion } from 'motion/react';
 
 export default function App() {
@@ -76,49 +69,20 @@ function AppContent() {
               element={<Home onSelectOccasion={setSelectedOccasion} selectedOccasion={selectedOccasion} />} 
             />
             <Route 
-              path="/stations" 
-              element={<Stations selectedOccasion={selectedOccasion} />} 
+              path="/weddings" 
+              element={<Weddings />} 
             />
             <Route 
-              path="/wedding-games" 
-              element={<WeddingGames />} 
+              path="/birthdays" 
+              element={<Birthdays />} 
             />
             <Route 
-              path="/wedding-games-:citySlug" 
-              element={<CityPage />} 
-            />
-
-            <Route 
-              path="/packages" 
-              element={<Packages />} 
-            />
-            <Route 
-              path="/gallery" 
-              element={<Gallery />} 
-            />
-            <Route 
-              path="/inspiration" 
-              element={<Inspiration />} 
-            />
-            <Route 
-              path="/partner" 
-              element={<Partner />} 
-            />
-            <Route 
-              path="/blog" 
-              element={<Blog />} 
-            />
-            <Route 
-              path="/blog/:id" 
-              element={<BlogDetail />} 
+              path="/about" 
+              element={<About />} 
             />
             <Route 
               path="/contact" 
               element={<Contact />} 
-            />
-            <Route 
-              path="/:serviceSlug" 
-              element={<ServicePage />} 
             />
           </Routes>
         </AnimatePresence>

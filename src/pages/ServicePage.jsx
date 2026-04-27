@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
-import { OCCASIONS, FAQS } from '../constants';
+import { motion } from 'motion/react';
+import { OCCASIONS } from '../constants';
 import { useLanguage } from '../context/LanguageContext';
 import { StationCatalogue } from '../components/HomeSections';
 import { Sparkles, MessageCircle, ArrowRight } from 'lucide-react';
@@ -11,14 +11,13 @@ const ServicePage = () => {
   const { serviceSlug } = useParams();
   const { t } = useLanguage();
   const navigate = useNavigate();
-  const [openFaqIndex, setOpenFaqIndex] = useState(0);
   
   const occasion = OCCASIONS.find(o => o.slug === serviceSlug);
   
   useEffect(() => {
     if (!occasion) {
       // Check if it's one of our predefined wedding slugs
-      if (['mehndi-activities', 'interactive-stalls', 'haldi-games', 'wedding-games'].includes(serviceSlug)) {
+      if (['mehndi-activities', 'interactive-stalls', 'sangeet-engagement', 'wedding-games'].includes(serviceSlug)) {
         // already handled by occasion find
       } else {
         // navigate('/');
@@ -98,107 +97,6 @@ const ServicePage = () => {
       {/* Catalogue Section */}
       <section id="stations" className="py-24">
         <StationCatalogue selectedOccasion={occasion.id} />
-      </section>
-
-      {/* Where Used & Benefits */}
-      <section className="py-24 bg-cream border-y border-charcoal/5">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            {/* Where Used */}
-            <div className="space-y-12">
-              <div>
-                <span className="text-gold font-black tracking-[0.3em] uppercase text-xs mb-4 block">
-                  {t('Ideal Occasions', 'आदर्श अवसर')}
-                </span>
-                <h2 className="text-4xl md:text-6xl font-display text-charcoal mb-8">
-                  {t('Where it shines', 'कहाँ यह चमकता है')}
-                </h2>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {[
-                  { title: t('Mehndi', 'मेहंदी'), desc: t('Perfect ice-breakers for an afternoon of fun.', 'दोपहर की मस्ती के लिए बेहतरीन शुरुआत।') },
-                  { title: t('Haldi', 'हल्दी'), desc: t('High-energy games for a vibrant yellow morning.', 'एक जीवंत पीली सुबह के लिए उच्च-ऊर्जा वाले खेल।') },
-                  { title: t('Sangeet', 'संगीत'), desc: t('Interactive hosting to keep the energy high between performances.', 'प्रदर्शनों के बीच ऊर्जा को बनाए रखने के लिए इंटरैक्टिव होस्टिंग।') },
-                  { title: t('Cocktails', 'कॉकटेल'), desc: t('Sophisticated activity stations for a relaxed evening.', 'एक आरामदायक शाम के लिए परिष्कृत गतिविधि स्टेशन।') }
-                ].map((item, i) => (
-                  <div key={i} className="space-y-3">
-                    <h4 className="text-xl font-display text-charcoal">{item.title}</h4>
-                    <p className="text-charcoal/60 text-sm leading-relaxed italic">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Benefits */}
-            <div className="space-y-12">
-              <div>
-                <span className="text-gold font-black tracking-[0.3em] uppercase text-xs mb-4 block">
-                  {t('The LiveArt Advantage', 'लाइवआर्ट लाभ')}
-                </span>
-                <h2 className="text-4xl md:text-6xl font-display text-charcoal mb-8">
-                  {t('Why guests love it', 'मेहमान इसे क्यों पसंद करते हैं')}
-                </h2>
-              </div>
-              <div className="space-y-8">
-                {[
-                  { title: t('Real Connections', 'वास्तविक जुड़ाव'), desc: t('We break the ice between families, turning strangers into participants.', 'हम परिवारों के बीच की झिझक को दूर करते हैं, अजनबियों को प्रतिभागियों में बदलते हैं।') },
-                  { title: t('No Boring Moments', 'कोई बोरियत नहीं'), desc: t('Our engagement experts ensure there is always something fun happening.', 'हमारे एंगेजमेंट विशेषज्ञ सुनिश्चित करते हैं कि हमेशा कुछ मज़ेदार होता रहे।') },
-                  { title: t('Memorable Favors', 'यादगार उपहार'), desc: t('Guests take home handmade memories, not just generic store-bought gifts.', 'मेहमान घर पर हाथ से बनी यादें ले जाते हैं, न कि केवल सामान्य स्टोर से खरीदे गए उपहार।') }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-6 group">
-                    <div className="text-gold font-display text-4xl opacity-20 group-hover:opacity-100 transition-opacity">0{i+1}</div>
-                    <div>
-                      <h4 className="text-xl font-display text-charcoal mb-2">{item.title}</h4>
-                      <p className="text-charcoal/60 text-base leading-relaxed italic">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-24 bg-cream border-t border-charcoal/5">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-display text-charcoal mb-6">{t('Common Questions', 'सामान्य प्रश्न')}</h2>
-            <p className="text-gold uppercase tracking-[0.4em] font-black text-xs">{t('Everything you need to know', 'सब कुछ जो आपको जानना आवश्यक है')}</p>
-          </div>
-
-          <div className="space-y-4">
-            {FAQS.map((faq, i) => (
-              <div key={i} className="border-b border-charcoal/10 last:border-0">
-                <button 
-                  onClick={() => setOpenFaqIndex(openFaqIndex === i ? null : i)}
-                  className="w-full py-8 flex items-center justify-between text-left group"
-                >
-                  <span className={`text-xl font-display transition-colors ${openFaqIndex === i ? 'text-gold' : 'text-charcoal group-hover:text-gold'}`}>
-                    {t(faq.question, faq.questionHi)}
-                  </span>
-                  <div className={`w-10 h-10 rounded-full border border-charcoal/10 flex items-center justify-center transition-all ${openFaqIndex === i ? 'bg-gold border-gold text-white rotate-45' : 'text-charcoal group-hover:border-gold'}`}>
-                    <Sparkles size={16} />
-                  </div>
-                </button>
-                <AnimatePresence>
-                  {openFaqIndex === i && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden"
-                    >
-                      <p className="pb-8 text-charcoal/60 text-base leading-relaxed italic">
-                        {t(faq.answer, faq.answerHi)}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* Inquiry Form */}

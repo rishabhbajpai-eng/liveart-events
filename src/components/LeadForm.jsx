@@ -132,7 +132,7 @@ export const LeadForm = () => {
               <input 
                 required
                 type="text"
-                placeholder="Delhi NCR, The Leela / Farmhouse"
+                placeholder="New Delhi, Imperial Hotel"
                 className="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:border-purple focus:bg-white transition-all text-charcoal font-medium"
                 value={formData.location}
                 onChange={(e) => setFormData({...formData, location: e.target.value})}

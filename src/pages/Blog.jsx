@@ -4,7 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
 
 const Blog = () => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -30,34 +30,26 @@ const Blog = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pt-32 pb-20 px-4 min-h-screen bg-paper"
+      className="pt-32 pb-20 px-4 min-h-screen bg-slate-50"
     >
       <div className="max-w-7xl mx-auto">
-        <header className="mb-24 text-center">
-          <motion.span 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-gold font-black tracking-[0.4em] uppercase text-xs mb-6 block"
-          >
-            {t('The Wedding Journal', 'वेडिंग जर्नल')}
-          </motion.span>
+        <header className="mb-16 text-center">
           <motion.h1 
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="text-5xl md:text-8xl font-display text-charcoal mb-8"
+            className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent"
           >
-            {t('Engagement Insights', 'एंगेजमेंट अंतर्दृष्टि')}
+            {language === 'en' ? 'LiveArt Insights' : 'लाइवआर्ट अंतर्दृष्टि'}
           </motion.h1>
           <motion.p 
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.1 }}
-            className="text-charcoal/60 text-xl max-w-2xl mx-auto italic leading-relaxed"
+            className="text-slate-600 text-lg max-w-2xl mx-auto"
           >
-            {t(
-              'Discover creative ideas, event planning tips, and the latest trends in interactive guest experiences for Indian weddings.',
-              'भारतीय शादियों के लिए रचनात्मक विचार, इवेंट प्लानिंग टिप्स और इंटरैक्टिव गेस्ट एक्सपीरियंस के नवीनतम रुझानों की खोज करें।'
-            )}
+            {language === 'en' 
+              ? 'Discover creative ideas, event planning tips, and the latest trends in interactive guest experiences.' 
+              : 'रचनात्मक विचार, इवेंट प्लानिंग टिप्स और इंटरैक्टिव गेस्ट एक्सपीरियंस के नवीनतम रुझानों की खोज करें।'}
           </motion.p>
         </header>
 
@@ -65,50 +57,48 @@ const Blog = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {BLOG_POSTS.map((post) => (
             <motion.article
               key={post.id}
               variants={itemVariants}
-              className="bg-white rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-charcoal/5 flex flex-col group"
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col group"
             >
               <Link to={`/blog/${post.id}`} className="relative aspect-[16/9] overflow-hidden block">
                 <img 
                   src={post.image} 
                   alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-8 left-8">
-                  <span className="px-6 py-2 bg-paper/90 backdrop-blur-sm text-gold text-[10px] font-black uppercase tracking-widest rounded-full shadow-xl">
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-teal text-sm font-semibold rounded-full shadow-sm">
                     {language === 'en' ? post.category : post.categoryHi}
                   </span>
                 </div>
               </Link>
               
-              <div className="p-10 flex-grow flex flex-col">
-                <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-charcoal/40 mb-6">
+              <div className="p-6 flex-grow flex flex-col">
+                <div className="flex items-center gap-4 text-sm text-slate-500 mb-3">
                   <span>{new Date(post.date).toLocaleDateString(language === 'en' ? 'en-US' : 'hi-IN', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
                   <span>•</span>
                   <span>{post.readTime}</span>
                 </div>
                 
-                <h2 className="text-3xl font-display mb-6 group-hover:text-gold transition-colors leading-tight">
+                <h2 className="text-xl font-bold mb-3 group-hover:text-teal transition-colors line-clamp-2 leading-tight">
                   <Link to={`/blog/${post.id}`}>{language === 'en' ? post.title : post.titleHi}</Link>
                 </h2>
                 
-                <p className="text-charcoal/60 mb-8 line-clamp-3 text-lg italic leading-relaxed">
+                <p className="text-slate-600 mb-6 line-clamp-3 text-sm">
                   {language === 'en' ? post.summary : post.summaryHi}
                 </p>
                 
-                <div className="mt-auto pt-8 border-t border-charcoal/5">
-                  <Link to={`/blog/${post.id}`} className="text-gold font-black uppercase tracking-widest text-[10px] flex items-center gap-3 group/btn">
-                    {language === 'en' ? 'Read the Full Story' : 'पूरी कहानी पढ़ें'}
-                    <motion.div animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </motion.div>
+                <div className="mt-auto">
+                  <Link to={`/blog/${post.id}`} className="text-teal font-semibold flex items-center gap-2 group/btn hover:gap-3 transition-all">
+                    {language === 'en' ? 'Read More' : 'अधिक पढ़ें'}
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                   </Link>
                 </div>
               </div>
