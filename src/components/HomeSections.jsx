@@ -229,10 +229,10 @@ export const Hero = () => {
 
               <div className="flex flex-col gap-4">
                 <Link 
-                  to="/stations" 
+                  to="/weddings" 
                   className="group px-10 py-5 tracking-widest uppercase text-sm font-semibold text-cream border border-gold/50 hover:border-gold transition-all flex items-center justify-center gap-4 relative overflow-hidden"
                 >
-                  <span className="relative z-10">{t('Explore Our Services', 'हमारी सेवाएं देखें')}</span>
+                  <span className="relative z-10">{t('Explore Weddings', 'शादियाँ')}</span>
                   <div className="absolute inset-0 bg-gold/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
                 </Link>
               </div>
@@ -356,7 +356,7 @@ export const OccasionSelector = ({ onSelect, activeOccasion }) => {
               key={occasion.id} 
               onClick={() => {
                 onSelect(occasion.id);
-                navigate('/stations');
+                navigate('/' + occasion.slug);
               }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

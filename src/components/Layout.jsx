@@ -13,12 +13,10 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: t('Home', 'होम'), href: '/' },
-    { name: t('Services', 'सेवाएं'), href: '/stations' },
-    { name: t('Wedding Games', 'वेडिंग गेम्स'), href: '/wedding-games' },
-    { name: t('Cities', 'शहर'), href: '/#cities' }, // Link to home section
-    { name: t('Gallery', 'गैलरी'), href: '/gallery' },
-    { name: t('Packages', 'पैकेज'), href: '/packages' },
-    { name: t('Blog', 'ब्लॉग'), href: '/blog' },
+    { name: t('Weddings', 'शादियाँ'), href: '/weddings' },
+    { name: t('Birthdays', 'जन्मदिन'), href: '/birthdays' },
+    { name: t('About', 'हमारे बारे में'), href: '/about' },
+    { name: t('Contact', 'संपर्क'), href: '/contact' },
   ];
 
   return (
@@ -162,11 +160,10 @@ export const Footer = () => {
         <div>
           <h4 className="font-display text-xl mb-8 text-purple uppercase tracking-widest">{t('Our Services', 'हमारी सेवाएं')}</h4>
           <ul className="space-y-4 text-paper/50 font-medium">
-            <li><Link to="/wedding-games" className="hover:text-gold transition-colors">{t('Wedding Hosting & Games', 'वेडिंग होस्टिंग और गेम्स')}</Link></li>
-            <li><Link to="/services/mehndi-activities" className="hover:text-gold transition-colors">{t('Mehndi Activities', 'मेहंदी गतिविधियां')}</Link></li>
-            <li><Link to="/services/interactive-stalls" className="hover:text-gold transition-colors">{t('Interactive Gift Stalls', 'इंटरैक्टिव गिफ्ट स्टॉल')}</Link></li>
-            <li><Link to="/services/sangeet-engagement" className="hover:text-gold transition-colors">{t('Sangeet Night Engagement', 'संगीत नाइट एंगेजमेंट')}</Link></li>
-            <li><Link to="/stations" className="hover:text-gold transition-colors">{t('Full Activity Catalogue', 'पूर्ण गतिविधि सूची')}</Link></li>
+            <li><Link to="/weddings" className="hover:text-gold transition-colors">{t('Weddings', 'शादियाँ')}</Link></li>
+            <li><Link to="/birthdays" className="hover:text-gold transition-colors">{t('Birthday Parties', 'जन्मदिन की पार्टी')}</Link></li>
+            <li><Link to="/about" className="hover:text-gold transition-colors">{t('About Us', 'हमारे बारे में')}</Link></li>
+            <li><Link to="/contact" className="hover:text-gold transition-colors">{t('Contact', 'संपर्क करें')}</Link></li>
           </ul>
         </div>
 

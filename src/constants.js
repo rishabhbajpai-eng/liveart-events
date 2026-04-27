@@ -888,40 +888,22 @@ export const FAQS = [
 
 export const OCCASIONS = [
   {
-    id: 'wedding-games',
-    name: 'Professional Wedding Games',
-    nameHi: 'प्रोफेशनल वेडिंग गेम्स',
-    slug: 'wedding-games',
+    id: 'weddings',
+    name: 'Weddings',
+    nameHi: 'शादियाँ',
+    slug: 'weddings',
     image: weddingCollageImg,
-    description: 'Curated games that keep the energy high and every guest involved, from kids to elders.',
+    description: 'Transform your pre-wedding and wedding functions into interactive experiences your guests will cherish forever.',
     popularFor: ['wedding']
   },
   {
-    id: 'mehndi-activities',
-    name: 'Mehndi & Haldi Activities',
-    nameHi: 'मेहंदी और हल्दी गतिविधियां',
-    slug: 'mehndi-activities',
-    image: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=2000&auto=format&fit=crop',
-    description: 'Interactive stalls like Bangle Bar, Perfume blending, and more for a vibrant function.',
-    popularFor: ['wedding']
-  },
-  {
-    id: 'interactive-stalls',
-    name: 'Interactive Gift Stalls',
-    nameHi: 'इंटरैक्टिव गिफ्ट स्टॉल',
-    slug: 'interactive-stalls',
-    image: charmStall1,
-    description: 'Unique experiences where guests create their own personalized wedding favors.',
-    popularFor: ['wedding']
-  },
-  {
-    id: 'sangeet-engagement',
-    name: 'Sangeet & Party Engagement',
-    nameHi: 'संगीत और पार्टी एंगेजमेंट',
-    slug: 'sangeet-engagement',
-    image: heroInteraction,
-    description: 'Dynamic hosting and group activities to make your Sangeet night unforgettable.',
-    popularFor: ['wedding']
+    id: 'birthdays',
+    name: 'Birthday Parties',
+    nameHi: 'जन्मदिन की पार्टी',
+    slug: 'birthdays',
+    image: birthdayCollageImg,
+    description: 'From magical kids parties to sophisticated adult milestones, we design engagement tailored for every age.',
+    popularFor: ['birthday']
   }
 ];
 
