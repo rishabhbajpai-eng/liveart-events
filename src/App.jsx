@@ -14,6 +14,9 @@ import Partner from './pages/Partner';
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
+import WeddingGames from './pages/WeddingGames';
+import CityPage from './pages/CityPage';
+import ServicePage from './pages/ServicePage';
 import { AnimatePresence, motion } from 'motion/react';
 
 export default function App() {
@@ -75,6 +78,18 @@ function AppContent() {
             <Route 
               path="/stations" 
               element={<Stations selectedOccasion={selectedOccasion} />} 
+            />
+            <Route 
+              path="/wedding-games" 
+              element={<WeddingGames />} 
+            />
+            <Route 
+              path="/wedding-games-in-:citySlug" 
+              element={<CityPage />} 
+            />
+            <Route 
+              path="/services/:serviceSlug" 
+              element={<ServicePage />} 
             />
             <Route 
               path="/packages" 

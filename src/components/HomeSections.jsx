@@ -1,9 +1,9 @@
 import { useRef, useState, useEffect } from 'react';
 import haldiHero from '../assets/haldi-hero.png';
 import { useLanguage } from '../context/LanguageContext';
-import { OCCASIONS, STATIONS, BLOG_POSTS } from '../constants';
+import { OCCASIONS, STATIONS, BLOG_POSTS, CITIES, FAQS } from '../constants';
 import { motion, useScroll, useTransform, AnimatePresence, useInView, useMotionValue, useSpring } from 'motion/react';
-import { ArrowRight, Users, Sparkles, X, CheckCircle2, PlayCircle, Clock, BadgeIndianRupee, Tag, ShieldCheck, Zap, Heart, Check } from 'lucide-react';
+import { ArrowRight, Users, Sparkles, X, CheckCircle2, PlayCircle, Clock, BadgeIndianRupee, Tag, ShieldCheck, Zap, Heart, Check, MessageCircle } from 'lucide-react';
 import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { LeadForm } from './LeadForm';
 import emotionalMoment from '../assets/emotional-moment.png';
@@ -161,7 +161,7 @@ export const Hero = () => {
                 transition={{ duration: 1, delay: 0.6 }}
                 className="block text-white"
               >
-                {t('Ordinary is easy.', 'साधारण आसान है।')}
+                {t('India’s Leading Wedding Guest Engagement', 'भारत का प्रमुख वेडिंग गेस्ट एंगेजमेंट')}
               </motion.span> 
               <motion.span 
                 initial={{ opacity: 0, x: -30 }}
@@ -169,7 +169,7 @@ export const Hero = () => {
                 transition={{ duration: 1, delay: 0.8 }}
                 className="text-gold italic font-bold block my-4"
               >
-                {t('Extraordinary is LiveArt.', 'असाधारण लाइवआर्ट है।')}
+                {t('& Entertainment Brand', '& एंटरटेनमेंट ब्रांड')}
               </motion.span> 
               <motion.span 
                 initial={{ opacity: 0, y: 30 }}
@@ -177,25 +177,19 @@ export const Hero = () => {
                 transition={{ duration: 1, delay: 1 }}
                 className="text-white/60 text-lg md:text-xl block mt-6 font-sans tracking-[0.1em] uppercase font-black"
               >
-                {t('A great wedding is seen. A memorable one is experienced.', 'एक अच्छी शादी देखी जाती है। एक यादगार शादी का अनुभव किया जाता है।')}
+                {t('We Turn Boring Weddings Into Unforgettable Experiences', 'हम बोरिंग शादियों को अविस्मरणीय अनुभवों में बदलते हैं')}
               </motion.span>
             </h1>
             
-            <div className="mt-8 mb-12 py-3 px-6 bg-paper/5 backdrop-blur-md border border-paper/10 rounded-xl inline-block">
-               <p className="text-paper/60 text-xs font-black uppercase tracking-widest italic leading-relaxed">
-                  {t('This isn’t event planning. This is experience design.', 'यह ईवेंट प्लानिंग नहीं है। यह एक्सपीरियंस डिज़ाइन है।')}
-               </p>
-            </div>
-
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2 }}
-              className="text-xl lg:text-3xl text-paper/80 mb-14 leading-relaxed max-w-3xl font-light tracking-wide drop-shadow-xl"
+              className="text-xl lg:text-2xl text-paper/80 mb-14 leading-relaxed max-w-3xl font-light tracking-wide drop-shadow-xl"
             >
               {t(
-                "Your guests won’t remember the decor. They’ll remember how they felt.",
-                "आपके मेहमानों को सजावट याद नहीं रहेगी। उन्हें याद रहेगा कि उन्होंने कैसा महसूस किया।"
+                "From high-energy wedding games to interactive stalls and live guest engagement, we create moments your guests will never forget.",
+                "हाई-एनर्जी वेडिंग गेम्स से लेकर इंटरैक्टिव स्टॉल और लाइव गेस्ट एंगेजमेंट तक, हम ऐसे क्षण बनाते हैं जिन्हें आपके मेहमान कभी नहीं भूलेंगे।"
               )}
             </motion.p>
 
@@ -227,13 +221,10 @@ export const Hero = () => {
                   className="gold-btn group relative px-10 py-5 rounded-none tracking-widest uppercase text-sm font-semibold text-center"
                 >
                   <div className="relative z-10 flex items-center justify-center gap-4">
-                    <span>{t('Check Availability for Your Date', 'अपनी तारीख के लिए उपलब्धता की जांच करें')}</span>
+                    <span>{t('Book Your Experience', 'अपना अनुभव बुक करें')}</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-3 transition-transform duration-500" />
                   </div>
                 </Link>
-                <p className="text-paper/40 text-[10px] uppercase font-black tracking-widest pl-2 italic">
-                   {t('Only limited weddings taken each month to maintain experience quality.', 'अनुभव की गुणवत्ता बनाए रखने के लिए हर महीने सीमित शादियां ही ली जाती हैं।')}
-                </p>
               </div>
 
               <div className="flex flex-col gap-4">
@@ -241,12 +232,9 @@ export const Hero = () => {
                   to="/stations" 
                   className="group px-10 py-5 tracking-widest uppercase text-sm font-semibold text-cream border border-gold/50 hover:border-gold transition-all flex items-center justify-center gap-4 relative overflow-hidden"
                 >
-                  <span className="relative z-10">{t('Explore Experience Zones™', 'एक्सपीरियंस जोन™ देखें')}</span>
+                  <span className="relative z-10">{t('Explore Our Services', 'हमारी सेवाएं देखें')}</span>
                   <div className="absolute inset-0 bg-gold/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
                 </Link>
-                <p className="text-paper/40 text-[10px] uppercase font-black tracking-widest pl-2 italic">
-                   {t('Peak season dates get booked weeks in advance.', 'पीक सीजन की तारीखें हफ्तों पहले बुक हो जाती हैं।')}
-                </p>
               </div>
             </div>
 
@@ -362,7 +350,7 @@ export const OccasionSelector = ({ onSelect, activeOccasion }) => {
           <p className="text-charcoal/60 text-lg">{t('We curate experiences that match your celebration perfectly.', 'हम ऐसे अनुभव तैयार करते हैं जो आपके उत्सव से पूरी तरह मेल खाते हैं।')}</p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {OCCASIONS.map((occasion, idx) => (
             <motion.button 
               key={occasion.id} 
@@ -811,31 +799,28 @@ export const TrustSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             className="inline-block px-4 py-1.5 bg-gold/20 border border-gold/30 rounded-full text-gold text-[10px] font-black uppercase tracking-[0.3em] mb-6"
           >
-            {t('Unmatched Excellence', 'अतुलनीय उत्कृष्टता')}
+            {t('Why Choose Us?', 'हमें ही क्यों चुनें?')}
           </motion.div>
           <h2 className="text-4xl md:text-6xl font-display mb-8 leading-tight">
-            {t('Why Luxury Hosts Choose', 'लक्जरी मेज़बान क्यों चुनते हैं')} <br />
-            <span className="text-gold italic">LiveArt Events</span>
+            {t('Not Just Setup — We', 'सिर्फ सेटअप नहीं — हम')} <br />
+            <span className="text-gold italic">{t('HOST and ENGAGE', 'मेजबानी और जुड़ाव')}</span>
           </h2>
           <div className="space-y-8 max-w-xl mx-auto lg:mx-0">
-            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-6 group">
-              <div className="w-14 h-14 rounded-2xl bg-paper/10 flex items-center justify-center shrink-0 group-hover:bg-gold group-hover:text-primary transition-all duration-500">
-                <ShieldCheck className="w-7 h-7" />
+            {[
+              { title: 'Designed for Indian Weddings', desc: 'Customized for Indian weddings & family audiences to ensure maximum participation.' },
+              { title: 'Custom Experiences', desc: 'Crafting unique, tailored experiences for every function, from Haldi to Sangeet.' },
+              { title: '10x Engagement', desc: 'Proven to increase guest interaction by 10x, leaving no dull moments.' }
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col sm:flex-row items-center lg:items-start gap-6 group">
+                <div className="w-14 h-14 rounded-2xl bg-paper/10 flex items-center justify-center shrink-0 group-hover:bg-gold group-hover:text-primary transition-all duration-500">
+                  <Check className="w-7 h-7" />
+                </div>
+                <div>
+                  <h4 className="text-2xl font-display mb-2">{t(item.title, item.title)}</h4>
+                  <p className="text-paper/60 text-base">{t(item.desc, item.desc)}</p>
+                </div>
               </div>
-              <div>
-                <h4 className="text-2xl font-display mb-2">{t('Bespoke Experience Design', 'बेस्पोक एक्सपीरियंस डिज़ाइन')}</h4>
-                <p className="text-paper/60 text-base">{t('Premium guest engagement from setup to cleanup. We handle the aesthetics while you host the moments.', 'सेटअप से लेकर सफाई तक प्रीमियम अतिथि जुड़ाव। जब आप क्षणों की मेजबानी करते हैं तो हम सौंदर्यशास्त्र को संभालते हैं।')}</p>
-              </div>
-            </div>
-            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-6 group">
-              <div className="w-14 h-14 rounded-2xl bg-paper/10 flex items-center justify-center shrink-0 group-hover:bg-gold group-hover:text-primary transition-all duration-500">
-                <Heart className="w-7 h-7" />
-              </div>
-              <div>
-                <h4 className="text-2xl font-display mb-2">{t('Emotional ROI', 'इमोशनल ROI')}</h4>
-                <p className="text-paper/60 text-base">{t('Guests talk about our stations long after the party. It\'s the "wow" factor your event deserves.', 'मेहमान पार्टी के लंबे समय बाद तक हमारे स्टेशनों के बारे में बात करते हैं। यह वह "वाह" कारक है जिसका आपका कार्यक्रम हकदार है।')}</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
         <div className="relative max-w-md mx-auto lg:max-w-none">
@@ -843,7 +828,7 @@ export const TrustSection = () => {
             whileHover={{ rotate: 0, scale: 1.05 }}
             className="aspect-square rounded-[40px] lg:rounded-[60px] overflow-hidden rotate-3 shadow-2xl border-8 border-white/5"
           >
-            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1000" alt="Happy Guests" className="w-full h-full object-cover" />
+            <img src={heroInteraction} alt="Happy Guests" className="w-full h-full object-cover" />
           </motion.div>
           <motion.div 
              initial={{ opacity: 0, scale: 0.8 }}
@@ -853,12 +838,12 @@ export const TrustSection = () => {
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => <Sparkles key={i} className="w-4 h-4 text-gold fill-gold" />)}
             </div>
-            <p className="font-display text-lg lg:text-xl leading-snug mb-4 italic text-teal">&quot;The most premium addition to our event. Pure class!&quot;</p>
+            <p className="font-display text-lg lg:text-xl leading-snug mb-4 italic text-teal">&quot;{t('We had 200 guests and not a single dull moment — every person was involved!', 'हमारे पास 200 मेहमान थे और एक भी पल बोरिंग नहीं था — हर व्यक्ति शामिल था!')}&quot;</p>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-teal/10 flex items-center justify-center text-teal font-bold">RK</div>
               <div>
-                <p className="text-xs font-black uppercase tracking-widest leading-none">Mrs. Kapoor</p>
-                <p className="text-[10px] text-charcoal/40 font-bold uppercase mt-1">Lalit Luxury Hotels</p>
+                <p className="text-xs font-black uppercase tracking-widest leading-none">Wedding Host</p>
+                <p className="text-[10px] text-charcoal/40 font-bold uppercase mt-1">Real Experience</p>
               </div>
             </div>
           </motion.div>
@@ -1184,9 +1169,9 @@ export const SocialProof = () => {
   const { t } = useLanguage();
   const testimonials = [
     {
-      quote: t('LiveArt didn’t just add activities; they added soul to our wedding. Our guests couldn’t stop talking about it even weeks after the celebration.', 'लाइवआर्ट ने केवल गतिविधियां नहीं जोड़ीं; उन्होंने हमारी शादी में जान डाल दी। हमारे मेहमान उत्सव के हफ़्तों बाद भी इसके बारे में बात करना बंद नहीं कर सके।'),
-      author: 'Priya & Rahul',
-      role: t('Modern Couple', 'आधुनिक जोड़ा')
+      quote: t('We had 200 guests and not a single dull moment — every person was involved!', 'हमारे पास 200 मेहमान थे और एक भी पल बोरिंग नहीं था — हर व्यक्ति शामिल था!'),
+      author: 'A & S',
+      role: t('Wedding Couple', 'वेडिंग कपल')
     },
     {
       quote: t('The perfume bar was a masterstroke. Our friends ignored the dance floor just to create their signature scents. It was the talk of the night.', 'परफ्यूम बार एक मास्टरस्ट्रोक था। हमारे दोस्तों ने केवल अपनी सिग्नेचर खुशबू बनाने के लिए डांस फ्लोर को नज़रअंदाज़ कर दिया। यह रात की चर्चा थी।'),
@@ -1290,30 +1275,147 @@ export const ExclusivityScarcity = () => {
 export const SectionCTA = () => {
   const { t } = useLanguage();
   return (
-    <div className="py-16 bg-white flex justify-center relative overflow-hidden">
+    <div className="py-24 bg-white flex flex-col items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--color-gold)_0%,_transparent_70%)]"></div>
       </div>
+      
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center"
+        className="text-center mb-12"
       >
-        <p className="text-charcoal/40 text-[10px] font-black uppercase tracking-[0.3em] mb-4">
+        <h2 className="text-4xl md:text-6xl font-display text-charcoal mb-4">{t('Make Your Wedding Unforgettable', 'अपनी शादी को अविस्मरणीय बनाएं')}</h2>
+        <p className="text-charcoal/40 text-[10px] font-black uppercase tracking-[0.3em]">
           {t('Don’t risk a boring wedding.', 'बोरिंग शादी का जोखिम न उठाएं।')}
         </p>
+      </motion.div>
+
+      <div className="flex flex-wrap justify-center gap-6 px-4">
+        <MagneticButton>
+          <a 
+            href="tel:+918853299951" 
+            className="px-10 py-5 rounded-full font-black uppercase tracking-widest text-[10px] bg-charcoal text-paper flex items-center gap-3 hover:bg-gold transition-all shadow-xl"
+          >
+            <Zap size={16} />
+            {t('Call Now', 'अभी कॉल करें')}
+          </a>
+        </MagneticButton>
+
+        <MagneticButton>
+          <a 
+            href="https://wa.me/918853299951" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-5 rounded-full font-black uppercase tracking-widest text-[10px] bg-[#25D366] text-white flex items-center gap-3 hover:scale-105 transition-all shadow-xl"
+          >
+            <MessageCircle size={16} />
+            {t('WhatsApp Us', 'व्हाट्सएप करें')}
+          </a>
+        </MagneticButton>
+
         <MagneticButton>
           <Link 
             to="/contact" 
-            className="gold-btn px-16 py-6 rounded-full font-black uppercase tracking-[0.3em] text-[10px] shadow-[0_20px_50px_rgba(212,175,55,0.3)] hover:scale-105 transition-all flex items-center gap-4"
+            className="gold-btn px-10 py-5 rounded-full font-black uppercase tracking-widest text-[10px] shadow-xl flex items-center gap-3"
           >
-            {t('Check Availability for Your Date', 'अपनी तारीख के लिए उपलब्धता की जांच करें')}
             <ArrowRight size={16} />
+            {t('Get a Custom Quote', 'कस्टम कोट प्राप्त करें')}
           </Link>
         </MagneticButton>
-      </motion.div>
+      </div>
     </div>
+  );
+};
+
+export const LocationsSection = () => {
+  const { t } = useLanguage();
+  
+  return (
+    <section id="cities" className="py-24 bg-cream overflow-hidden border-y border-charcoal/5">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-display text-charcoal mb-4">{t('Bringing the Fun to Your City', 'आपके शहर में मस्ती लाना')}</h2>
+          <p className="text-gold uppercase tracking-[0.4em] font-black text-xs">
+            {t('Professional Wedding Guest Engagement Across India', 'पूरे भारत में प्रोफेशनल वेडिंग गेस्ट एंगेजमेंट')}
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {CITIES.map((city, i) => (
+            <motion.div 
+              key={city.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              className="p-8 bg-white rounded-3xl shadow-sm border border-charcoal/5 hover:shadow-xl hover:border-gold transition-all group"
+            >
+              <h4 className="text-2xl font-display text-primary mb-3 group-hover:text-gold transition-colors">{t(city.name, city.nameHi)}</h4>
+              <p className="text-charcoal/40 text-sm italic leading-relaxed mb-6">{t(city.description, city.description)}</p>
+              <Link to={`/wedding-games-in-${city.slug}`} className="text-[10px] font-black uppercase tracking-widest text-gold flex items-center gap-2 group/link">
+                {t('View Services', 'सेवाएं देखें')}
+                <ArrowRight size={12} className="group-hover/link:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+        
+        <div className="mt-20 text-center">
+          <p className="text-charcoal/40 text-sm italic font-display">
+            {t('Serving Delhi, Lucknow, Jaipur, Indore, Kanpur & major cities across India.', 'दिल्ली, लखनऊ, जयपुर, इंदौर, कानपुर और भारत के प्रमुख शहरों में सेवा दे रहे हैं।')}
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const FAQSection = () => {
+  const { t } = useLanguage();
+  const [openIndex, setOpenIndex] = useState(0);
+
+  return (
+    <section className="py-32 bg-white overflow-hidden">
+      <div className="max-w-4xl mx-auto px-4">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-7xl font-display text-charcoal mb-6">{t('Common Questions', 'सामान्य प्रश्न')}</h2>
+          <p className="text-gold uppercase tracking-[0.4em] font-black text-xs">{t('Everything you need to know', 'सब कुछ जो आपको जानना आवश्यक है')}</p>
+        </div>
+
+        <div className="space-y-4">
+          {FAQS.map((faq, i) => (
+            <div key={i} className="border-b border-gray-100 last:border-0">
+              <button 
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                className="w-full py-8 flex items-center justify-between text-left group"
+              >
+                <span className={`text-xl md:text-2xl font-display transition-colors ${openIndex === i ? 'text-gold' : 'text-charcoal group-hover:text-gold'}`}>
+                  {t(faq.question, faq.questionHi)}
+                </span>
+                <div className={`w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center transition-all ${openIndex === i ? 'bg-gold border-gold text-white rotate-45' : 'text-charcoal group-hover:border-gold'}`}>
+                  <Sparkles size={16} />
+                </div>
+              </button>
+              <AnimatePresence>
+                {openIndex === i && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <p className="pb-8 text-charcoal/60 text-lg leading-relaxed italic">
+                      {t(faq.answer, faq.answerHi)}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

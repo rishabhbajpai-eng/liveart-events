@@ -97,6 +97,7 @@ import sunglasses2 from './assets/stations/sunglasses_2.jpg';
 import sunglasses3 from './assets/stations/sunglasses_3.jpg';
 import sunglasses4 from './assets/stations/sunglasses_4.jpg';
 
+import heroInteraction from './assets/hero-interaction.png';
 import moneyBank1 from './assets/stations/money_bank_1.jpg';
 import moneyBank2 from './assets/stations/money_bank_2.jpg';
 import moneyBank3 from './assets/stations/money_bank_3.jpg';
@@ -825,33 +826,133 @@ export const PACKAGES = [
   }
 ];
 
+export const CITIES = [
+  {
+    id: 'delhi',
+    name: 'Delhi NCR',
+    nameHi: 'दिल्ली एनसीआर',
+    slug: 'delhi',
+    title: 'Wedding Games & Entertainment in Delhi NCR',
+    description: 'Elevate your Delhi wedding with professional guest engagement services. From South Delhi farmhouses to Gurgaon luxury hotels.',
+    keywords: 'wedding games Delhi, guest engagement Delhi, sangeet entertainment Delhi'
+  },
+  {
+    id: 'jaipur',
+    name: 'Jaipur',
+    nameHi: 'जयपुर',
+    slug: 'jaipur',
+    title: 'Royal Wedding Guest Engagement in Jaipur',
+    description: 'Making destination weddings in Jaipur more interactive and fun with heritage-inspired games and activities.',
+    keywords: 'wedding games Jaipur, palace wedding entertainment, jaipur wedding activities'
+  },
+  {
+    id: 'lucknow',
+    name: 'Lucknow',
+    nameHi: 'लखनऊ',
+    slug: 'lucknow',
+    title: 'Professional Wedding Entertainment in Lucknow',
+    description: 'Bringing Awadhi charm and interactive fun to weddings across Lucknow and Uttar Pradesh.',
+    keywords: 'wedding games Lucknow, guest engagement Lucknow, UP wedding entertainment'
+  },
+  {
+    id: 'indore',
+    name: 'Indore',
+    nameHi: 'इंदौर',
+    slug: 'indore',
+    title: 'Interactive Wedding Games in Indore',
+    description: 'The #1 choice for wedding guest engagement and entertainment in Indore and Madhya Pradesh.',
+    keywords: 'wedding games Indore, MP wedding entertainment, indore event engagement'
+  }
+];
+
+export const FAQS = [
+  {
+    question: 'What kind of wedding games do you provide?',
+    questionHi: 'आप किस तरह के वेडिंग गेम्स प्रदान करते हैं?',
+    answer: 'We provide a mix of interactive hosting games, DIY craft stations (Perfume Bar, Bangle Stall), and traditional activities like Thappa Mehendi. Every concept is tailored to your event theme.',
+    answerHi: 'हम इंटरैक्टिव होस्टिंग गेम्स, DIY क्राफ्ट स्टेशन्स (परफ्यूम बार, चूड़ी स्टॉल) और थप्पा मेहंदी जैसी पारंपरिक गतिविधियों का मिश्रण प्रदान करते हैं।'
+  },
+  {
+    question: 'Do you provide services outside Delhi NCR?',
+    questionHi: 'क्या आप दिल्ली एनसीआर के बाहर सेवाएं प्रदान करते हैं?',
+    answer: 'Yes! We provide wedding guest engagement services across India, including Jaipur, Lucknow, Indore, Udaipur, and more.',
+    answerHi: 'हाँ! हम जयपुर, लखनऊ, इंदौर, उदयपुर और अन्य सहित पूरे भारत में वेडिंग गेस्ट एंगेजमेंट सेवाएं प्रदान करते हैं।'
+  },
+  {
+    question: 'How many guests can your activity stations handle?',
+    questionHi: 'आपके एक्टिविटी स्टेशन्स कितने मेहमानों को संभाल सकते हैं?',
+    answer: 'Our stations are scalable. A single station can typically engage 50-100 guests, and we can set up multiple units for larger weddings of 500+ guests.',
+    answerHi: 'हमारे स्टेशन्स स्केलेबल हैं। एक सिंगल स्टेशन आमतौर पर 50-100 मेहमानों को जोड़ सकता है, और हम 500+ मेहमानों की बड़ी शादियों के लिए कई यूनिट्स सेट कर सकते हैं।'
+  }
+];
+
 export const OCCASIONS = [
   {
-    id: 'wedding',
-    name: 'Wedding Experiences',
-    nameHi: 'शादी का अनुभव',
-    slug: 'wedding',
+    id: 'wedding-games',
+    name: 'Professional Wedding Games',
+    nameHi: 'प्रोफेशनल वेडिंग गेम्स',
+    slug: 'wedding-games',
     image: weddingCollageImg,
-    description: 'Ensure your guests never feel a dull moment with world-class interactive entertainment and luxury souvenirs.',
-    subEvents: [
-      { id: 'haldi', name: 'Haldi', nameHi: 'हल्दी' },
-      { id: 'sangeet', name: 'Sangeet', nameHi: 'संगीत' },
-      { id: 'reception', name: 'Reception', nameHi: 'रिसेप्शन' },
-      { id: 'mehendi-event', name: 'Mehendi', nameHi: 'मेहंदी' }
-    ],
+    description: 'Curated games that keep the energy high and every guest involved, from kids to elders.',
     popularFor: ['wedding']
   },
-  { 
-    id: 'birthday', 
-    name: 'Kids Birthday Fun', 
-    nameHi: 'बच्चों के जन्मदिन की मस्ती', 
-    slug: 'birthday', 
-    image: birthdayCollageImg, 
-    description: 'Ignite the imagination of your little guests with immersive craft stations that create core childhood memories.' 
+  {
+    id: 'mehndi-activities',
+    name: 'Mehndi & Haldi Activities',
+    nameHi: 'मेहंदी और हल्दी गतिविधियां',
+    slug: 'mehndi-activities',
+    image: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=2000&auto=format&fit=crop',
+    description: 'Interactive stalls like Bangle Bar, Perfume blending, and more for a vibrant function.',
+    popularFor: ['wedding']
+  },
+  {
+    id: 'interactive-stalls',
+    name: 'Interactive Gift Stalls',
+    nameHi: 'इंटरैक्टिव गिफ्ट स्टॉल',
+    slug: 'interactive-stalls',
+    image: charmStall1,
+    description: 'Unique experiences where guests create their own personalized wedding favors.',
+    popularFor: ['wedding']
+  },
+  {
+    id: 'sangeet-engagement',
+    name: 'Sangeet & Party Engagement',
+    nameHi: 'संगीत और पार्टी एंगेजमेंट',
+    slug: 'sangeet-engagement',
+    image: heroInteraction,
+    description: 'Dynamic hosting and group activities to make your Sangeet night unforgettable.',
+    popularFor: ['wedding']
   }
 ];
 
 export const BLOG_POSTS = [
+  {
+    id: 'unforgettable-wedding-games',
+    title: 'How to Choose the Perfect Wedding Games for Your Indian Wedding',
+    titleHi: 'अपनी भारतीय शादी के लिए परफेक्ट वेडिंग गेम्स कैसे चुनें',
+    date: '2024-04-15',
+    category: 'Wedding Guide',
+    categoryHi: 'वेडिंग गाइड',
+    summary: 'Keeping guests engaged is the secret to a successful wedding. Discover top-rated games for Mehndi, Haldi, and Sangeet.',
+    summaryHi: 'मेहमानों को व्यस्त रखना एक सफल शादी का रहस्य है। मेहंदी, हल्दी और संगीत के लिए टॉप-रेटेड गेम्स देखें।',
+    image: weddingCollageImg,
+    readTime: '8 min read',
+    fullContent: `
+      <h2>The Secret to a High-Energy Indian Wedding</h2>
+      <p>Most Indian weddings focus heavily on decor and food, but the real soul of the party is <strong>Guest Engagement</strong>. Without interactive activities, guests often feel like spectators. Our goal is to make them participants.</p>
+      
+      <h3>1. Ice-Breaker Games for Mehndi</h3>
+      <p>Mehndi is the perfect time for intimate interactions. Instead of just sitting, introduce <strong>Custom Jenga</strong> or <strong>Wedding Trivia</strong> about the couple. It breaks the ice between the two families instantly.</p>
+      
+      <h3>2. Interactive Stalls for Haldi</h3>
+      <p>Haldi is all about vibrant colors. A <strong>DIY Floral Jewellery</strong> station or a <strong>Pottery Painting</strong> stall adds a creative layer to the yellow-themed morning.</p>
+      
+      <h3>3. High-Energy Sangeet Hosting</h3>
+      <p>Don't just have dance performances. Use professional hosts to conduct <strong>Crowd Interaction Games</strong> that involve everyone on the floor, not just the performers.</p>
+      
+      <p>Ready to transform your wedding? Book our <a href="/wedding-games">Wedding Game Services</a> today!</p>
+    `
+  },
   {
     id: 'top-5-wedding-activities',
     title: '5 Super Fun Interactive Activity Stations for your Big Fat Indian Wedding!',
@@ -883,81 +984,7 @@ export const BLOG_POSTS = [
       <p>Nothing brings people together like childhood memories. A <a href="/stations?id=90s-candy">90s Candy Nostalgia</a> stall is always the busiest spot in any wedding reception. From phantom cigarettes to orange candies, it’s a sweet trip down memory lane that transcends age gaps.</p>
       
       <p>By integrating these activities, you’re not just hosting an event; you’re creating an <strong>interactive world</strong> for your loved ones. Explore our full range of <a href="/stations">Activity Stations</a> to find the perfect match for your big day!</p>
-    `,
-    fullContentHi: `
-      <h2>Kyun interactive stations hain aaj kal ki Shaadiyon ki jaan?</h2>
-      <p>Doston, woh din gaye jab shaadi sirf khaane aur stage tak limit thi. Aaj kal sabse zaroori hai <strong>Guest Experience</strong>. Har koi chahta hai ki unki shaadi "hatke" aur "yaadgaar" ho. Hamare DIY activity stations wahi karte hain! Humne dekha hai kaise ek simple <strong>Perfume Bar</strong> ya <strong>Bangle Stall</strong> poore mahaul ko badal deta hai.</p>
-      
-      <h3>1. Khushbuon ka Jadoo: Perfume Bar</h3>
-      <p>Sochiye aapke guests Mehendi ya Sangeet mein enter karte hain aur unhe milti hai exotic fragrances ki ek range. Hamara <a href="/stations?id=perfume-bar">Perfume Bar</a> sirf acchi khushbu ke baare mein nahi hai, balki apna khud ka unique fragrance banane ke experience ke baare mein hai. Guests aapas mein baatein karte hain, "Tumne kaunsa blend banaya?" — yeh ek best conversation starter hai!</p>
-      
-      <h3>2. Shahi Andaaz: Attar Bar</h3>
-      <p>Agar aapko thoda traditional touch pasand hai, toh hamara <a href="/stations?id=attar-bar">Attar Bar</a> ek nostalgic trip hai. Sundar bottles mein concentrated oils guests ke liye ek perfect souvenir bante hain jo woh mahino tak yaad rakhenge.</p>
-      
-      <h3>3. Creativity ka Dhamaal: Live Art & Caricatures</h3>
-      <p>Live entertainment toh sab de dete hain, par interactive live art kuch aur hi hai. Chahe woh <strong>Live Caricature</strong> ho ya <strong>Thappa Mehendi</strong>, yeh stations guests ko engage rakhte hain aur unke chehre par smile late hain.</p>
-      
-      <h3>4. Eco-Friendly Souvenirs: Jute Bag Block Printing</h3>
-      <p>Sustainability aaj kal trend mein hai. Hamara <a href="/stations?id=jute-print">Jute Bag Block Printing</a> station guests ko mauka deta hai wooden blocks se apne bags khud design karne ka. Yeh ek hands-on activity hai jo ek useful gift mein khatam hoti hai.</p>
-      
-      <h3>5. Bachpan ki Yaadein: 90s Candy Stall</h3>
-      <p>Nostalgia se badhkar kuch nahi! Hamara <a href="/stations?id=90s-candy">90s Candy Nostalgia</a> stall reception mein sabse busy rehta hai. Peppermint se lekar Orange candies tak, yeh har kisi ko unke bachpan mein le jata hai.</p>
-      
-      <p>Toh der kis baat ki? Apne event ko ek <strong>interactive world</strong> banayein. Hamare baaki <a href="/stations">Activity Stations</a> dekhiye aur apna favourite pick kijiye!</p>
-    `
-  },
-  {
-    id: 'planning-the-perfect-kids-birthday',
-    title: 'How to Plan the Ultimate Kids Birthday Craft Party in Style!',
-    titleHi: 'Kids Birthday Party ka dhamaal: Perfect Craft Party kaise plan karein?',
-    date: '2024-03-20',
-    category: 'Birthday',
-    categoryHi: 'Birthday',
-    summary: 'A step-by-step guide to keeping little hands busy and hearts happy with our popular craft stations. Full of masti and creativity!',
-    summaryHi: 'Bachon ki party mein masti aur creativity ka dose! Dekhiye hamare popular craft stations kaise banate hain har birthday ko super hit. Ekdum asaan tips!',
-    image: birthdayCollageImg,
-    readTime: '15 min read',
-    fullContent: `
-      <h2>The Secret to a Tantrum-Free, Creative Kids Birthday</h2>
-      <p>Planning a kids' birthday party can be stressful. How do you keep 20 energetic kids busy without them getting bored? The answer is <strong>Structured Creativity</strong>. Instead of just a clown or a bouncy castle, give them something to create. Our craft stations ensure that every child goes home with not just a return gift, but a sense of achievement.</p>
-      
-      <h3>1. The Slime Craze: Slime Making Station</h3>
-      <p>Ask any kid today what they want at their party, and the answer is invariably <strong>Slime!</strong> Our <a href="/stations?id=slime-making">Slime Making</a> station is a supervised, mess-free (mostly!) way for kids to learn about textures and colors. They love stretching it, poking it, and taking it home in their personalized jars.</p>
-      
-      <h3>2. Glowing Joy: Lighting Jar Station</h3>
-      <p>For a magic-themed or evening party, the <a href="/stations?id=lighting-jar">Lighting Jar</a> station is a hit. Kids get to decorate mason jars with fairy lights, creating their very own nightlights. It’s magical, functional, and looks great on their bedside tables.</p>
-      
-      <h3>3. Personalized Art: Name Plates & Mug Art</h3>
-      <p>Kids love seeing their names on things. Our <a href="/stations?id=name-plates">Name Plates</a> and <a href="/stations?id=mug-art">Mug Art</a> stations allow them to paint and personalize their personal belongings. It teaches them patience and gives them a gift they’ll actually use every day.</p>
-      
-      <h3>4. Messy Fun with Purpose: Pottery Plant Station</h3>
-      <p>Connect kids with nature through our <a href="/stations?id=pottery-plant">Pottery Plant</a> station. They get to paint a pot and then plant a seedling. It’s an educational experience that teaches them about growth and responsibility, all while having fun at the party.</p>
-      
-      <h3>5. Fun with Physics: Spin Art</h3>
-      <p>Our <a href="/stations?id=spin-art">Spin Art</a> station uses a rotating canvas to create dynamic, abstract designs. It’s fast-paced, exciting, and every single painting is a unique masterpiece. Even the youngest kids can do this and feel like professional artists.</p>
-      
-      <p>Remember, a great kids' party is one where the children are actively participating, not just watching. Ready to plan yours? Check out our <a href="/stations?category=kids">Kids Activity Catalogue</a> or <a href="/packages">Build a Package</a> today!</p>
-    `,
-    fullContentHi: `
-      <h2>Bachon ki Birthday Party ko banayein Creative aur Dhamaal-bhara!</h2>
-      <p>Doston, bachon ki party plan karna koi asaan kaam nahi hai. 20 sharaarati bachon ko kaise busy rakhein? Iska answer hai <strong>Structured Creativity</strong>. Hamare craft stations se bachon ko sirf maza hi nahi aata, balki unhe kuch naya banane ki khushi bhi milti hai.</p>
-      
-      <h3>1. Sabka Favourite: Slime Making Station</h3>
-      <p>Aaj kal har bache ko <strong>Slime</strong> chahiye! Hamara <a href="/stations?id=slime-making">Slime Making</a> station bachon ko mauka deta hai apni pasand ka slime banane ka. Woh ise stretch karte hain, khelte hain aur apne ghar le jaate hain. Masti hi masti!</p>
-      
-      <h3>2. Chamakta Jadoo: Lighting Jar Station</h3>
-      <p>Agar party raat ki hai ya "Magic" theme hai, toh hamara <a href="/stations?id=lighting-jar">Lighting Jar</a> station best hai. Bachon ko fairy lights ke saath mason jars decorate karne mein bahut maza aata hai. Yeh unke room ke liye ek best nightlight banti hai.</p>
-      
-      <h3>3. Apni Pehchaan: Name Plates & Mug Art</h3>
-      <p>Bachon ko apna naam har jagah dekhna pasand hai. Hamare <a href="/stations?id=name-plates">Name Plates</a> aur <a href="/stations?id=mug-art">Mug Art</a> stations unhe apni cheezein personalise karne ka mauka dete hain. Yeh unki creativity ko badhava deta hai.</p>
-      
-      <h3>4. Mitti se Judi Masti: Pottery Plant Station</h3>
-      <p>Bachon ko nature se jodne ke liye hamara <a href="/stations?id=pottery-plant">Pottery Plant</a> station ek best tareeka hai. Woh mitti ke pot ko paint karte hain aur usme nanha sa pauda lagate hain. Yeh sirf fun nahi, ek sikhne wala experience bhi hai.</p>
-      
-      <h3>5. Speed aur Colors: Spin Art</h3>
-      <p>Hamara <a href="/stations?id=spin-art">Spin Art</a> station bachon ka fav hai! Rotating canvas par colors daalkar ek amazing abstract painting banti hai. Yeh fast hai, exciting hai aur har bache ko ek artist feel karata hai.</p>
-      
-      <p>Toh is saal, party ko sirf games tak mat rakhiye, unhe kuch creative karne ka mauka dijiye. Dekhiye hamare special <a href="/stations?category=kids">Kids Activity Catalogue</a> ko ya aaj hi apna <a href="/packages">Package banayein</a>!</p>
     `
   }
 ];
+
