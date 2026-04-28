@@ -4,7 +4,6 @@ import { MessageCircle, Menu, X, Instagram, Phone, Facebook, MousePointer2 } fro
 import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
 import logoImg from '../assets/logo.png';
-import { CITIES } from '../constants';
 
 export const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -13,10 +12,12 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: t('Home', 'होम'), href: '/' },
-    { name: t('Weddings', 'शादियाँ'), href: '/weddings' },
-    { name: t('Birthdays', 'जन्मदिन'), href: '/birthdays' },
-    { name: t('About', 'हमारे बारे में'), href: '/about' },
-    { name: t('Contact', 'संपर्क'), href: '/contact' },
+    { name: t('Stations', 'स्टेशन्स'), href: '/stations' },
+    { name: t('Packages', 'पैकेज'), href: '/packages' },
+    { name: t('Inspiration', 'प्रेरणा'), href: '/inspiration' },
+    { name: t('Gallery', 'गैलरी'), href: '/gallery' },
+    { name: t('Partner', 'पार्टनर'), href: '/partner' },
+    { name: t('Blog', 'ब्लॉग'), href: '/blog' },
   ];
 
   return (
@@ -158,25 +159,20 @@ export const Footer = () => {
         </div>
         
         <div>
-          <h4 className="font-display text-xl mb-8 text-purple uppercase tracking-widest">{t('Our Services', 'हमारी सेवाएं')}</h4>
+          <h4 className="font-display text-xl mb-8 text-purple uppercase tracking-widest">{t('Quick Links', 'त्वरित लिंक')}</h4>
           <ul className="space-y-4 text-paper/50 font-medium">
-            <li><Link to="/weddings" className="hover:text-gold transition-colors">{t('Weddings', 'शादियाँ')}</Link></li>
-            <li><Link to="/birthdays" className="hover:text-gold transition-colors">{t('Birthday Parties', 'जन्मदिन की पार्टी')}</Link></li>
-            <li><Link to="/about" className="hover:text-gold transition-colors">{t('About Us', 'हमारे बारे में')}</Link></li>
-            <li><Link to="/contact" className="hover:text-gold transition-colors">{t('Contact', 'संपर्क करें')}</Link></li>
+            <li><Link to="/stations" className="hover:text-paper transition-colors">{t('Activity Stations', 'गतिविधि स्टेशन्स')}</Link></li>
+            <li><Link to="/packages" className="hover:text-paper transition-colors">{t('Package Builder', 'पैकेज बिल्डर')}</Link></li>
+            <li><Link to="/gallery" className="hover:text-paper transition-colors">{t('Gallery', 'गैलरी')}</Link></li>
+            <li><Link to="/partner" className="hover:text-paper transition-colors">{t('Referral Program', 'रेफरल प्रोग्राम')}</Link></li>
+            <li><Link to="/blog" className="hover:text-paper transition-colors">{t('Blog', 'ब्लॉग')}</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-display text-xl mb-8 text-purple uppercase tracking-widest">{t('Popular Cities', 'लोकप्रिय शहर')}</h4>
+          <h4 className="font-display text-xl mb-8 text-purple uppercase tracking-widest">{t('Locations', 'स्थान')}</h4>
           <ul className="space-y-4 text-paper/50 font-medium">
-            {CITIES.map(city => (
-              <li key={city.id}>
-                <Link to={`/wedding-games-in-${city.slug}`} className="hover:text-gold transition-colors">
-                  {t(city.name, city.nameHi)}
-                </Link>
-              </li>
-            ))}
+            <li>{t('Across India', 'पूरे भारत में')}</li>
           </ul>
         </div>
 

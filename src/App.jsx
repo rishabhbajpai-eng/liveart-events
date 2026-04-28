@@ -6,9 +6,13 @@ import { Navbar, Footer, ContactFAB } from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import { CustomCursor } from './components/CustomCursor';
 import Home from './pages/Home';
-import Weddings from './pages/Weddings';
-import Birthdays from './pages/Birthdays';
-import About from './pages/About';
+import Stations from './pages/Stations';
+import Packages from './pages/Packages';
+import Gallery from './pages/Gallery';
+import Inspiration from './pages/Inspiration';
+import Partner from './pages/Partner';
+import Blog from './pages/Blog';
+import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
 import { AnimatePresence, motion } from 'motion/react';
 
@@ -69,16 +73,32 @@ function AppContent() {
               element={<Home onSelectOccasion={setSelectedOccasion} selectedOccasion={selectedOccasion} />} 
             />
             <Route 
-              path="/weddings" 
-              element={<Weddings />} 
+              path="/stations" 
+              element={<Stations selectedOccasion={selectedOccasion} />} 
             />
             <Route 
-              path="/birthdays" 
-              element={<Birthdays />} 
+              path="/packages" 
+              element={<Packages />} 
             />
             <Route 
-              path="/about" 
-              element={<About />} 
+              path="/gallery" 
+              element={<Gallery />} 
+            />
+            <Route 
+              path="/inspiration" 
+              element={<Inspiration />} 
+            />
+            <Route 
+              path="/partner" 
+              element={<Partner />} 
+            />
+            <Route 
+              path="/blog" 
+              element={<Blog />} 
+            />
+            <Route 
+              path="/blog/:id" 
+              element={<BlogDetail />} 
             />
             <Route 
               path="/contact" 
