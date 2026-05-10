@@ -37,7 +37,7 @@ export default function About() {
             transition={{ delay: 0.2 }}
             className="text-xl text-charcoal/60 leading-relaxed font-light"
           >
-            We are India's premier experience design collective, dedicated to transforming personal milestones into deeply engaging, joy-filled celebrations.
+            We are India&apos;s premier experience design collective, dedicated to transforming personal milestones into deeply engaging, joy-filled celebrations.
           </motion.p>
         </div>
 
@@ -63,7 +63,7 @@ export default function About() {
           >
             <h2 className="text-4xl font-display text-charcoal">The Philosophy of <span className="text-copper italic">Play</span></h2>
             <p className="text-charcoal/80 text-lg leading-relaxed">
-              We believe that celebrations shouldn't just be attended; they should be experienced. The magic of an event doesn't lie in the decor alone, but in the laughter shared, the connections made, and the unexpected moments of joy.
+              We believe that celebrations shouldn&apos;t just be attended; they should be experienced. The magic of an event doesn&apos;t lie in the decor alone, but in the laughter shared, the connections made, and the unexpected moments of joy.
             </p>
             <p className="text-charcoal/80 text-lg leading-relaxed">
               At LiveArt Events, we specialize in human connection. Through interactive games, curated stalls, and expert hosting, we break the ice and bring families and friends together like never before.

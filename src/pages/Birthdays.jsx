@@ -102,7 +102,7 @@ export default function Birthdays() {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-7xl font-display text-charcoal mb-6 leading-tight"
           >
-            Celebrate Life's <span className="text-copper italic">Milestones</span>
+            Celebrate Life&apos;s <span className="text-copper italic">Milestones</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

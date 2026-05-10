@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 export * from './home/Hero';
 export * from './home/OccasionSelector';
 export * from './home/TrustSection';

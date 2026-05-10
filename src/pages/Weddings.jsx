@@ -120,7 +120,7 @@ export default function Weddings() {
             transition={{ delay: 0.2 }}
             className="text-xl text-charcoal/60 leading-relaxed font-light"
           >
-            We don't just provide services; we craft experiences. Discover how we can transform each ceremony of your wedding into an interactive, joy-filled celebration.
+            We don&apos;t just provide services; we craft experiences. Discover how we can transform each ceremony of your wedding into an interactive, joy-filled celebration.
           </motion.p>
         </div>
 

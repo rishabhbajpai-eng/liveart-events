@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { OCCASIONS } from '../constants';
 import { useLanguage } from '../context/LanguageContext';
 import { StationCatalogue } from '../components/HomeSections';
-import { Sparkles, MessageCircle, ArrowRight } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { LeadForm } from '../components/LeadForm';
 
 const ServicePage = () => {

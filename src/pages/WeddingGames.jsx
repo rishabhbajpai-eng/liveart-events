@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { Sparkles, Users, Lightbulb, MapPin, CheckCircle2, MessageCircle } from 'lucide-react';

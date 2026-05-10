@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { CITIES, OCCASIONS } from '../constants';
 import { useLanguage } from '../context/LanguageContext';
-import { Sparkles, MapPin, ArrowRight, MessageCircle, ShieldCheck, Heart, Zap } from 'lucide-react';
+import { MapPin, MessageCircle, ShieldCheck, Zap } from 'lucide-react';
 import { LeadForm } from '../components/LeadForm';
 
 const CityPage = () => {

@@ -166,7 +166,7 @@ export const Hero = () => {
               className="lg:hidden mb-12 aspect-[4/5] rounded-[40px] overflow-hidden border-4 border-white/5 shadow-2xl relative group"
             >
                <img 
-                 src="https://images.unsplash.com/photo-1510076857177-7470076d4098?q=80&w=1000&auto=format&fit=crop" 
+                 src={heroInteraction} 
                  className="w-full h-full object-cover saturate-[1.2] brightness-[0.9]" 
                  alt="Experience Joy" 
                />
