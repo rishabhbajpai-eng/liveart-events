@@ -105,6 +105,25 @@ const Blog = () => {
             </motion.article>
           ))}
         </motion.div>
+
+        {/* SEO Cities Tag Cloud */}
+        <div className="mt-24 pt-16 border-t border-slate-200 text-center">
+            <h3 className="text-xl font-bold mb-6 text-slate-800">
+               {language === 'en' ? 'Serving Premier Event Destinations' : 'प्रमुख इवेंट गंतव्यों की सेवा'}
+            </h3>
+            <p className="text-slate-500 max-w-3xl mx-auto mb-8 leading-relaxed">
+               {language === 'en' 
+                 ? 'From luxury destination weddings to exclusive corporate galas, LiveArt Experience Zones™ elevate guest engagement across major cities in India.'
+                 : 'लक्जरी डेस्टिनेशन शादियों से लेकर विशेष कॉर्पोरेट गाला तक, लाइवआर्ट एक्सपीरियंस जोन™ भारत के प्रमुख शहरों में अतिथि जुड़ाव को बढ़ाते हैं।'}
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+              {['Delhi NCR', 'Mumbai', 'Udaipur', 'Jaipur', 'Goa', 'Bangalore', 'Hyderabad', 'Chandigarh', 'Kolkata', 'Chennai', 'Agra', 'Pune'].map((city) => (
+                <span key={city} className="px-4 py-2 bg-white border border-slate-200 rounded-full text-slate-600 text-sm font-medium shadow-sm hover:border-teal hover:text-teal transition-colors cursor-default">
+                  {language === 'en' ? `Events in ${city}` : `${city} में कार्यक्रम`}
+                </span>
+              ))}
+            </div>
+        </div>
       </div>
     </motion.div>
   );

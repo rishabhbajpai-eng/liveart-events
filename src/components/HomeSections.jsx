@@ -18,6 +18,7 @@ export * from './home/LossAversionSection';
 export * from './home/ExperiencePackages';
 export * from './home/RefinedHostsSection';
 export * from './home/DecisionControlSection';
+export * from './home/CitiesSection';
 export * from './home/StationCard';
 export * from './home/StationCatalogue';
 export * from './shared/MagneticButton';

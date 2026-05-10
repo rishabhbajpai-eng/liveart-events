@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { X } from 'lucide-react';
+import weddingImage from '../../assets/gorgeous-indian-wedding.png';
 import { useLanguage } from '../../context/LanguageContext';
+
 
 export const LossAversionSection = () => {
   const { t } = useLanguage();
@@ -8,9 +10,9 @@ export const LossAversionSection = () => {
     <section className="py-32 bg-charcoal text-paper overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="opacity-50 grayscale hover:grayscale-0 transition-all duration-1000">
+          <div className="hover:scale-[1.02] transition-all duration-1000">
              <div className="aspect-square rounded-[80px] overflow-hidden rotate-2 shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1541250848049-b4f7141dca3f?q=80&w=2000&auto=format&fit=crop" alt="Stale Wedding Moment" className="w-full h-full object-cover" />
+                <img src={weddingImage} alt="Gorgeous Indian Wedding" className="w-full h-full object-cover" />
              </div>
           </div>
           <div>

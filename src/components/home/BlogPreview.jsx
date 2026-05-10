@@ -77,6 +77,15 @@ export const BlogPreview = () => {
             </motion.article>
           ))}
         </div>
+
+        {/* SEO Cities Mention */}
+        <div className="mt-16 text-center">
+            <p className="text-[10px] text-slate-400 uppercase tracking-[0.2em] max-w-3xl mx-auto">
+               {language === 'en' 
+                 ? 'Discover insights on luxury weddings, corporate events, and premium guest engagement across Delhi NCR, Mumbai, Udaipur, Jaipur, Goa, and other premier destinations.' 
+                 : 'दिल्ली एनसीआर, मुंबई, उदयपुर, जयपुर, गोवा और अन्य प्रमुख गंतव्यों में लक्जरी शादियों, कॉर्पोरेट कार्यक्रमों और प्रीमियम अतिथि जुड़ाव पर अंतर्दृष्टि प्राप्त करें।'}
+            </p>
+        </div>
       </div>
     </section>
   );

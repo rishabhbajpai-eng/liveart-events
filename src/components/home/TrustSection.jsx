@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { ShieldCheck, Heart, Sparkles } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
+import roiImage from '../../assets/emotional-roi-new.jpg';
 
 export const TrustSection = () => {
   const { t } = useLanguage();
@@ -47,7 +48,7 @@ export const TrustSection = () => {
             whileHover={{ rotate: 0, scale: 1.05 }}
             className="aspect-square rounded-[40px] lg:rounded-[60px] overflow-hidden rotate-3 shadow-2xl border-8 border-white/5"
           >
-            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1000" alt="Happy Guests" className="w-full h-full object-cover" />
+            <img src={roiImage} alt="LiveArt Emotional ROI" className="w-full h-full object-cover" />
           </motion.div>
           <motion.div 
              initial={{ opacity: 0, scale: 0.8 }}

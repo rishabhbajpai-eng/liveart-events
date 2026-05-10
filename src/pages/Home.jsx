@@ -17,7 +17,8 @@ import {
   LossAversionSection,
   ExperiencePackages,
   RefinedHostsSection,
-  DecisionControlSection
+  DecisionControlSection,
+  CitiesSection
 } from '../components/HomeSections';
 import { motion } from 'motion/react';
 
@@ -52,6 +53,7 @@ const Home = ({ onSelectOccasion, selectedOccasion }) => {
       <ExclusivityScarcity />
       <SectionCTA />
       <DecisionControlSection />
+      <CitiesSection />
       <BlogPreview />
       <InquirySection />
     </motion.div>
