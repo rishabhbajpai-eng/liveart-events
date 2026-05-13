@@ -8,6 +8,7 @@ import { ArrowRight, Calendar, Clock } from 'lucide-react';
 export const BlogPreview = () => {
   const { t } = useLanguage();
   const posts = BLOG_POSTS.slice(0, 3);
+  if (posts.length === 0) return null;
 
   return (
     <section className="py-24 bg-paper relative overflow-hidden">
