@@ -8,7 +8,8 @@ export const CitiesSection = () => {
   const cities = [
     'Delhi NCR', 'Mumbai', 'Udaipur', 'Jaipur', 
     'Goa', 'Bangalore', 'Hyderabad', 'Chandigarh', 
-    'Kolkata', 'Chennai', 'Agra', 'Pune'
+    'Kolkata', 'Chennai', 'Agra', 'Pune',
+    'Khajuraho', 'Orchha', 'Varanasi', 'Mussoorie'
   ];
 
   return (
