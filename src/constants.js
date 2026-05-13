@@ -60,6 +60,12 @@ import tarotCard1 from './assets/stations/tarot_card_1.jpg';
 import tarotCard2 from './assets/stations/tarot_card_2.jpg';
 import tarotCard3 from './assets/stations/tarot_card_3.jpg';
 
+import mehendiArt1 from './assets/stations/mehendi_art_1.jpg';
+import mehendiArt2 from './assets/stations/mehendi_art_2.jpg';
+import mehendiArt3 from './assets/stations/mehendi_art_3.jpg';
+import mehendiArt4 from './assets/stations/mehendi_art_4.jpg';
+import mehendiArt5 from './assets/stations/mehendi_art_5.jpg';
+
 import thappaMehendi1 from './assets/stations/thappa_mehendi_1.jpg';
 import thappaMehendi2 from './assets/stations/thappa_mehendi_2.jpg';
 import thappaMehendi3 from './assets/stations/thappa_mehendi_3.jpg';
@@ -357,8 +363,8 @@ export const STATIONS = [
     nameHi: 'मेहंदी',
     description: 'Turn your mehendi into a lively, interactive celebration your guests truly enjoy and remember.',
     descriptionHi: 'अपनी मेहंदी को एक जीवंत, संवादात्मक उत्सव में बदलें जिसका आपके मेहमान वास्तव में आनंद लें।',
-    image: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=2000&auto=format&fit=crop',
-    gallery: ['https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=2000&auto=format&fit=crop'],
+    image: mehendiArt1,
+    gallery: [mehendiArt1, mehendiArt2, mehendiArt3, mehendiArt4, mehendiArt5],
     category: 'beauty',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-henna-tattoo-on-a-womans-hand-34497-large.mp4',
     popularFor: ['wedding']
