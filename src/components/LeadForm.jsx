@@ -14,7 +14,8 @@ export const LeadForm = () => {
     date: '',
     location: '',
     eventSize: '50-100',
-    message: ''
+    message: '',
+    botField: '' // Honeypot field
   });
 
   const handleSubmit = async (e) => {
@@ -22,16 +23,26 @@ export const LeadForm = () => {
     setIsSubmitting(true);
     
     try {
-      // NOTE: Replace this with your actual Google Apps Script Web App URL
-      const scriptURL = 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL';
+      // Honeypot validation
+      if (formData.botField) {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        return; // Silently reject bots
+      }
+
+      const scriptURL = import.meta.env.VITE_GOOGLE_SHEETS_URL;
       
       const formBody = new FormData();
       Object.keys(formData).forEach(key => {
-        formBody.append(key, formData[key]);
+        if (key !== 'botField') {
+          formBody.append(key, formData[key]);
+        }
       });
+      formBody.append('formType', 'LeadForm');
+      formBody.append('sourceUrl', window.location.href);
 
       // Sending data to Google Sheets
-      if (scriptURL !== 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL') {
+      if (scriptURL) {
         await fetch(scriptURL, {
           method: 'POST',
           body: formBody,
@@ -40,12 +51,12 @@ export const LeadForm = () => {
       } else {
         // Simulate delay if URL isn't set yet
         await new Promise(resolve => setTimeout(resolve, 1500));
-        console.warn("Please set YOUR_GOOGLE_SCRIPT_WEB_APP_URL to send data to Google Sheets.");
+        console.warn("Please set VITE_GOOGLE_SHEETS_URL in your .env to send data to Google Sheets.");
       }
 
       setIsSubmitted(true);
       setFormData({
-        name: '', email: '', phone: '', date: '', location: '', eventSize: '50-100', message: ''
+        name: '', email: '', phone: '', date: '', location: '', eventSize: '50-100', message: '', botField: ''
       });
     } catch (error) {
       console.error('Error submitting form', error);
@@ -96,6 +107,11 @@ export const LeadForm = () => {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Honeypot field (hidden from real users) */}
+          <div className="hidden" aria-hidden="true">
+            <input type="text" name="botField" tabIndex="-1" value={formData.botField} onChange={(e) => setFormData({...formData, botField: e.target.value})} />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative">
               <label className="text-[10px] font-black uppercase tracking-widest text-charcoal/40 mb-2 block ml-1">{t('Full Name', 'पूरा नाम')}</label>
@@ -135,6 +151,8 @@ export const LeadForm = () => {
                 <input 
                   required
                   type="tel"
+                  pattern="^\+?[0-9\s\-\(\)]{10,15}$"
+                  title="Please enter a valid phone number (e.g. +91 9876543210)"
                   placeholder="+91 88532 99951"
                   className="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:border-purple focus:bg-white transition-all text-charcoal font-medium"
                   value={formData.phone}

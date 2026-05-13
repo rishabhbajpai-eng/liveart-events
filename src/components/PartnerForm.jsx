@@ -14,15 +14,55 @@ export const PartnerForm = () => {
     website: '',
     instagram: '',
     experience: '1-3 years',
-    message: ''
+    message: '',
+    botField: '' // Honeypot field
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate submission
-    setTimeout(() => {
+    setIsSubmitting(true);
+    
+    try {
+      // Honeypot validation
+      if (formData.botField) {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        return;
+      }
+
+      const scriptURL = import.meta.env.VITE_GOOGLE_SHEETS_URL;
+      
+      const formBody = new FormData();
+      Object.keys(formData).forEach(key => {
+        if (key !== 'botField') {
+          formBody.append(key, formData[key]);
+        }
+      });
+      formBody.append('formType', 'PartnerForm');
+      formBody.append('sourceUrl', window.location.href);
+
+      if (scriptURL) {
+        await fetch(scriptURL, {
+          method: 'POST',
+          body: formBody,
+          mode: 'no-cors'
+        });
+      } else {
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        console.warn("Please set VITE_GOOGLE_SHEETS_URL in your .env to send data to Google Sheets.");
+      }
+
       setIsSubmitted(true);
-    }, 1000);
+      setFormData({
+        name: '', email: '', phone: '', agency: '', website: '', instagram: '', experience: '1-3 years', message: '', botField: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form', error);
+      alert('There was an error submitting your request. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -66,6 +106,11 @@ export const PartnerForm = () => {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Honeypot field (hidden from real users) */}
+          <div className="hidden" aria-hidden="true">
+            <input type="text" name="botField" tabIndex="-1" value={formData.botField} onChange={(e) => setFormData({...formData, botField: e.target.value})} />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative">
               <label className="text-[10px] font-black uppercase tracking-widest text-charcoal/40 mb-2 block ml-1">{t('Principal Designer', 'प्रिंसिपल डिज़ाइनर')}</label>
@@ -105,6 +150,8 @@ export const PartnerForm = () => {
                 <input 
                   required
                   type="tel"
+                  pattern="^\+?[0-9\s\-\(\)]{10,15}$"
+                  title="Please enter a valid phone number (e.g. +91 9876543210)"
                   placeholder="+91 88532 99951"
                   className="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:border-teal focus:bg-white transition-all text-charcoal font-medium"
                   value={formData.phone}
@@ -180,17 +227,22 @@ export const PartnerForm = () => {
 
           <button 
             type="submit"
-            className="w-full py-6 bg-charcoal text-white rounded-2xl font-black text-lg uppercase tracking-[0.2em] relative overflow-hidden group hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] transition-all active:scale-[0.98]"
+            disabled={isSubmitting}
+            className="w-full py-6 bg-charcoal text-white rounded-2xl font-black text-lg uppercase tracking-[0.2em] relative overflow-hidden group hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] transition-all active:scale-[0.98] disabled:opacity-70 disabled:pointer-events-none"
           >
             <span className="relative z-10 flex items-center justify-center gap-3">
-              {t('Apply Now', 'अभी आवेदन करें')}
-              <Send className="w-5 h-5 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
+              {isSubmitting ? t('Sending...', 'भेजा जा रहा है...') : t('Apply Now', 'अभी आवेदन करें')}
+              {!isSubmitting && <Send className="w-5 h-5 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />}
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-purple via-charcoal to-purple opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-0"></div>
-            <div className="absolute inset-0 bg-charcoal translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-75"></div>
-            <span className="absolute inset-0 z-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white font-black text-lg uppercase tracking-[0.2em]">
-              {t('Send Application', 'आवेदन भेजें')}
-            </span>
+            {!isSubmitting && (
+              <>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple via-charcoal to-purple opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-0"></div>
+                <div className="absolute inset-0 bg-charcoal translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-75"></div>
+                <span className="absolute inset-0 z-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white font-black text-lg uppercase tracking-[0.2em]">
+                  {t('Send Application', 'आवेदन भेजें')}
+                </span>
+              </>
+            )}
           </button>
         </form>
 
