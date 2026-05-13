@@ -2,19 +2,39 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# LiveArt Events - Masterpiece Experiences
 
-This contains everything you need to run your app locally.
+LiveArt Events is a premium interactive entertainment company specializing in activity stalls, interactive games, and kids' entertainment for weddings, corporate events, and birthdays.
 
-View your app in AI Studio: https://ai.studio/apps/fb567f20-ae6f-445b-ada5-6f40a18a85cc
+## ✨ Features
+- **Occasion-Based Experiences**: Specialized sections for Weddings, Birthdays, and Corporate events.
+- **Interactive Stations**: Catalog of high-end entertainment stations.
+- **Multilingual Support**: English and Hindi support.
+- **Enterprise SEO & AEO**: Fully optimized for Google and AI search engines (LLMs).
+- **Google Sheets Integration**: Real-time lead capturing from inquiry forms.
 
-## Run Locally
+## 🚀 Deployment
 
-**Prerequisites:**  Node.js
+The site is built with **React + Vite** and deployed on **Vercel**.
 
+### Google Sheets Integration
+The contact and partner forms are connected directly to a Google Sheet via a Google Apps Script webhook.
+For setup instructions, see: [Google Sheets Setup Guide](./Google_Sheets_Setup_Guide.md)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Environment Variables
+To ensure the forms work in production, set the following in your Vercel Dashboard:
+- `VITE_GOOGLE_SHEETS_URL`: The URL of your deployed Google Apps Script web app.
+
+## 🛠️ Local Development
+
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+2. **Setup environment**:
+   Create a `.env` file based on `.env.example`.
+3. **Run the app**:
+   ```bash
+   npm run dev
+   ```
+

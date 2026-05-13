@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Send, CheckCircle2, User, Mail, Phone, Calendar, MapPin, Sparkles, Loader2 } from 'lucide-react';
+import { Send, CheckCircle2, User, Mail, Phone, Calendar, MapPin, Sparkles, Loader2, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { submitToGoogleSheets } from '../utils/formSubmission';
 
 export const LeadForm = () => {
   const { t } = useLanguage();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,54 +24,31 @@ export const LeadForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError(null);
     
-    try {
-      // Honeypot validation
-      if (formData.botField) {
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-        return; // Silently reject bots
-      }
+    const payload = {
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      eventType: formData.eventType,
+      eventDate: formData.date,
+      city: formData.location,
+      budget: formData.budget,
+      message: formData.message
+    };
 
-      const scriptURL = import.meta.env.VITE_GOOGLE_SHEETS_URL;
-      
-      const payload = {
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
-        eventType: formData.eventType,
-        eventDate: formData.date,
-        city: formData.location,
-        budget: formData.budget,
-        message: formData.message
-      };
+    const result = await submitToGoogleSheets(payload, formData.botField);
 
-      // Sending data to Google Sheets
-      if (scriptURL) {
-        await fetch(scriptURL, {
-          method: 'POST',
-          body: JSON.stringify(payload),
-          headers: {
-            'Content-Type': 'text/plain;charset=utf-8'
-          },
-          mode: 'no-cors'
-        });
-      } else {
-        // Simulate delay if URL isn't set yet
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        console.warn("Please set VITE_GOOGLE_SHEETS_URL in your .env to send data to Google Sheets.");
-      }
-
+    if (result.success) {
       setIsSubmitted(true);
       setFormData({
         name: '', email: '', phone: '', date: '', location: '', eventType: 'Wedding', budget: '', message: '', botField: ''
       });
-    } catch (error) {
-      console.error('Error submitting form', error);
-      alert('There was an error submitting your request. Please try again.');
-    } finally {
-      setIsSubmitting(false);
+    } else {
+      setSubmitError(t('Something went wrong. Please try again.', 'कुछ गलत हो गया। कृपया पुन: प्रयास करें।'));
     }
+    
+    setIsSubmitting(false);
   };
 
   if (isSubmitted) {
@@ -269,6 +248,17 @@ export const LeadForm = () => {
                </>
             )}
           </button>
+
+          {submitError && (
+            <motion.div 
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-4 p-4 bg-red-50 border border-red-100 rounded-2xl flex items-center gap-3 text-red-600 text-sm font-medium"
+            >
+              <AlertCircle className="w-5 h-5 flex-shrink-0" />
+              {submitError}
+            </motion.div>
+          )}
         </form>
 
         <p className="text-center text-[10px] text-charcoal/30 mt-8 font-bold uppercase tracking-widest">

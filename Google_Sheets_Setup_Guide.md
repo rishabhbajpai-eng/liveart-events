@@ -6,8 +6,8 @@ Follow these steps exactly to connect your website forms to your Google Sheet:
 1. Go to [Google Sheets](https://sheets.google.com) and create a **Blank spreadsheet**.
 2. Name the spreadsheet (e.g., `LiveArt Events Leads`).
 3. Make sure the first tab is named exactly `Sheet1`.
-4. Create the following headers in Row 1 (A to I):
-   `Timestamp` | `Name` | `Phone` | `Email` | `EventType` | `EventDate` | `City` | `Budget` | `Message`
+4. Create the following headers in Row 1 (A to J):
+   `Timestamp` | `Name` | `Phone` | `Email` | `EventType` | `EventDate` | `City` | `Budget` | `Message` | `Source URL`
 
 ## Step 2: Add the Apps Script Code
 1. In your Google Sheet menu, click **Extensions > Apps Script**.
@@ -28,7 +28,8 @@ function doPost(e) {
     data.eventDate,
     data.city,
     data.budget,
-    data.message
+    data.message,
+    data.source || "Unknown"
   ]);
 
   // Send email notification to liveartpartyevents@gmail.com
@@ -43,6 +44,7 @@ function doPost(e) {
   body += `City: ${data.city}\n`;
   body += `Budget: ${data.budget}\n`;
   body += `Message: ${data.message}\n`;
+  body += `Source: ${data.source || "Unknown"}\n`;
   body += `\nTimestamp: ${new Date()}`;
 
   try {

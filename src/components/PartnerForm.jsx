@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Send, CheckCircle2, User, Mail, Phone, Globe, Briefcase, Sparkles, Instagram } from 'lucide-react';
+import { Send, CheckCircle2, User, Mail, Phone, Globe, Briefcase, Sparkles, Instagram, Loader2, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { submitToGoogleSheets } from '../utils/formSubmission';
 
 export const PartnerForm = () => {
   const { t } = useLanguage();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,52 +24,31 @@ export const PartnerForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError(null);
     
-    try {
-      // Honeypot validation
-      if (formData.botField) {
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-        return;
-      }
+    const payload = {
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      eventType: `Partner App: ${formData.agency}`,
+      eventDate: `Experience: ${formData.experience}`,
+      city: `Website: ${formData.website || "N/A"}`,
+      budget: `Insta: ${formData.instagram}`,
+      message: formData.message
+    };
 
-      const scriptURL = import.meta.env.VITE_GOOGLE_SHEETS_URL;
-      
-      const payload = {
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
-        eventType: `Partner App: ${formData.agency}`,
-        eventDate: `Experience: ${formData.experience}`,
-        city: `Website: ${formData.website || "N/A"}`,
-        budget: `Insta: ${formData.instagram}`,
-        message: formData.message
-      };
+    const result = await submitToGoogleSheets(payload, formData.botField);
 
-      if (scriptURL) {
-        await fetch(scriptURL, {
-          method: 'POST',
-          body: JSON.stringify(payload),
-          headers: {
-            'Content-Type': 'text/plain;charset=utf-8'
-          },
-          mode: 'no-cors'
-        });
-      } else {
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        console.warn("Please set VITE_GOOGLE_SHEETS_URL in your .env to send data to Google Sheets.");
-      }
-
+    if (result.success) {
       setIsSubmitted(true);
       setFormData({
         name: '', email: '', phone: '', agency: '', website: '', instagram: '', experience: '1-3 years', message: '', botField: ''
       });
-    } catch (error) {
-      console.error('Error submitting form', error);
-      alert('There was an error submitting your request. Please try again.');
-    } finally {
-      setIsSubmitting(false);
+    } else {
+      setSubmitError(t('Something went wrong. Please try again.', 'कुछ गलत हो गया। कृपया पुन: प्रयास करें।'));
     }
+    
+    setIsSubmitting(false);
   };
 
   if (isSubmitted) {
@@ -236,7 +217,12 @@ export const PartnerForm = () => {
             className="w-full py-6 bg-charcoal text-white rounded-2xl font-black text-lg uppercase tracking-[0.2em] relative overflow-hidden group hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] transition-all active:scale-[0.98] disabled:opacity-70 disabled:pointer-events-none"
           >
             <span className="relative z-10 flex items-center justify-center gap-3">
-              {isSubmitting ? t('Sending...', 'भेजा जा रहा है...') : t('Apply Now', 'अभी आवेदन करें')}
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  {t('Sending...', 'भेजा जा रहा है...')}
+                </>
+              ) : t('Apply Now', 'अभी आवेदन करें')}
               {!isSubmitting && <Send className="w-5 h-5 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />}
             </span>
             {!isSubmitting && (
@@ -249,6 +235,17 @@ export const PartnerForm = () => {
               </>
             )}
           </button>
+
+          {submitError && (
+            <motion.div 
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-4 p-4 bg-red-50 border border-red-100 rounded-2xl flex items-center gap-3 text-red-600 text-sm font-medium"
+            >
+              <AlertCircle className="w-5 h-5 flex-shrink-0" />
+              {submitError}
+            </motion.div>
+          )}
         </form>
 
         <p className="text-center text-[10px] text-charcoal/30 mt-8 font-bold uppercase tracking-widest">
