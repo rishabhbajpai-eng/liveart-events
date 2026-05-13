@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Send, CheckCircle2, User, Mail, Phone, Calendar, MapPin, Sparkles } from 'lucide-react';
+import { Send, CheckCircle2, User, Mail, Phone, Calendar, MapPin, Sparkles, Loader2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+
 export const LeadForm = () => {
   const { t } = useLanguage();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,12 +17,42 @@ export const LeadForm = () => {
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate submission
-    setTimeout(() => {
+    setIsSubmitting(true);
+    
+    try {
+      // NOTE: Replace this with your actual Google Apps Script Web App URL
+      const scriptURL = 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL';
+      
+      const formBody = new FormData();
+      Object.keys(formData).forEach(key => {
+        formBody.append(key, formData[key]);
+      });
+
+      // Sending data to Google Sheets
+      if (scriptURL !== 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL') {
+        await fetch(scriptURL, {
+          method: 'POST',
+          body: formBody,
+          mode: 'no-cors'
+        });
+      } else {
+        // Simulate delay if URL isn't set yet
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        console.warn("Please set YOUR_GOOGLE_SCRIPT_WEB_APP_URL to send data to Google Sheets.");
+      }
+
       setIsSubmitted(true);
-    }, 1000);
+      setFormData({
+        name: '', email: '', phone: '', date: '', location: '', eventSize: '50-100', message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form', error);
+      alert('There was an error submitting your request. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -159,20 +191,44 @@ export const LeadForm = () => {
               ))}
             </div>
           </div>
+          <div className="relative">
+            <label className="text-[10px] font-black uppercase tracking-widest text-charcoal/40 mb-2 block ml-1">{t('Event Details', 'कार्यक्रम का विवरण')}</label>
+            <textarea 
+              rows="3"
+              placeholder="Tell us about your vision..."
+              className="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:border-purple focus:bg-white transition-all text-charcoal font-medium resize-none"
+              value={formData.message}
+              onChange={(e) => setFormData({...formData, message: e.target.value})}
+            ></textarea>
+          </div>
 
           <button 
             type="submit"
-            className="w-full py-6 bg-charcoal text-white rounded-2xl font-black text-lg uppercase tracking-[0.2em] relative overflow-hidden group hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] transition-all active:scale-[0.98]"
+            disabled={isSubmitting}
+            className="w-full py-6 bg-charcoal text-white rounded-2xl font-black text-lg uppercase tracking-[0.2em] relative overflow-hidden group hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] transition-all active:scale-[0.98] disabled:opacity-70 disabled:pointer-events-none"
           >
             <span className="relative z-10 flex items-center justify-center gap-3">
-              {t('Secure Your Date', 'अपनी तारीख सुरक्षित करें')}
-              <Send className="w-5 h-5 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
+              {isSubmitting ? (
+                 <>
+                   <Loader2 className="w-5 h-5 animate-spin" />
+                   {t('Sending...', 'भेजा जा रहा है...')}
+                 </>
+              ) : (
+                 <>
+                   {t('Secure Your Date', 'अपनी तारीख सुरक्षित करें')}
+                   <Send className="w-5 h-5 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
+                 </>
+              )}
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-purple via-teal to-purple opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-0"></div>
-            <div className="absolute inset-0 bg-charcoal translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-75"></div>
-            <span className="absolute inset-0 z-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white font-black text-lg uppercase tracking-[0.2em]">
-              {t('Send Inquiry', 'पूछताछ भेजें')}
-            </span>
+            {!isSubmitting && (
+               <>
+                 <div className="absolute inset-0 bg-gradient-to-r from-purple via-teal to-purple opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-0"></div>
+                 <div className="absolute inset-0 bg-charcoal translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-75"></div>
+                 <span className="absolute inset-0 z-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white font-black text-lg uppercase tracking-[0.2em]">
+                   {t('Send Inquiry', 'पूछताछ भेजें')}
+                 </span>
+               </>
+            )}
           </button>
         </form>
 

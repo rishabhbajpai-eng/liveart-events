@@ -1,14 +1,18 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { useLanguage } from '../../context/LanguageContext';
+import moment1 from '../../assets/real-moments/moment-1.png';
+import moment2 from '../../assets/real-moments/moment-2.png';
+import moment3 from '../../assets/real-moments/moment-3.png';
+import moment4 from '../../assets/real-moments/moment-4.png';
 
 export const VisualProofGallery = () => {
   const { t } = useLanguage();
   const images = [
-    "https://images.unsplash.com/photo-1519671482749-fd09be45bc36?q=80&w=2000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1541250848049-b4f7141dca3f?q=80&w=2000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2000&auto=format&fit=crop"
+    moment1,
+    moment2,
+    moment3,
+    moment4
   ];
 
   return (
