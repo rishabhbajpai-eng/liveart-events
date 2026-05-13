@@ -3,6 +3,7 @@ import {
   OccasionSelector, 
   TrustSection, 
   TheArtistWithin, 
+  BlogPreview, 
   InquirySection, 
   ExperienceMarquee,
   ProcessSection,
@@ -53,6 +54,7 @@ const Home = ({ onSelectOccasion, selectedOccasion }) => {
       <SectionCTA />
       <DecisionControlSection />
       <CitiesSection />
+      <BlogPreview />
       <InquirySection />
     </motion.div>
   );

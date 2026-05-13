@@ -868,4 +868,97 @@ export const OCCASIONS = [
   }
 ];
 
+export const BLOG_POSTS = [
+  {
+    id: 'luxury-perfume-stall-haldi',
+    title: 'Luxury Perfume Stall for Haldi Function – The Wedding Trend Every Guest Remembers in 2026',
+    titleHi: 'हल्दी समारोह के लिए लक्जरी परफ्यूम स्टॉल - 2026 में शादी का वह चलन जो हर मेहमान को याद रहेगा',
+    date: '2026-05-13',
+    category: 'Wedding',
+    categoryHi: 'शादी',
+    summary: 'Indian weddings have always been about emotions. But in 2026, modern couples are adding something beautifully unique to these emotional celebrations: A luxury perfume stall.',
+    summaryHi: 'भारतीय शादियाँ हमेशा भावनाओं के बारे में रही हैं। लेकिन 2026 में, आधुनिक जोड़े इन भावनात्मक उत्सवों में कुछ खूबसूरती से अनोखा जोड़ रहे हैं: एक लक्जरी परफ्यूम स्टॉल।',
+    image: perfumeBar1,
+    readTime: '8 min read',
+    fullContent: `
+      <h2>Luxury Perfume Stall for Haldi Function – The Wedding Trend Every Guest Remembers in 2026</h2>
+      <p>Indian weddings have always been about emotions. The sound of laughter during the Haldi ceremony, the fragrance of fresh marigolds in the air, cousins dancing barefoot on the lawn, and grandparents quietly smiling while watching generations celebrate together — these are the moments that make weddings unforgettable.</p>
+      
+      <p>But in 2026, modern couples are adding something beautifully unique to these emotional celebrations.</p>
+      
+      <h3>A luxury perfume stall.</h3>
+      
+      <p>What once sounded like a premium luxury idea has now become one of the most searched and trending wedding experiences in India. From celebrity weddings to intimate family Haldi ceremonies, perfume stalls are becoming a symbol of thoughtful hospitality, elegance, and personalization.</p>
+      
+      <p>Because fragrance is not just about smell.</p>
+      
+      <p><strong>Fragrance is memory.</strong></p>
+      
+      <p>A single scent can remind someone of childhood summers, their grandmother’s puja room, fresh mogra flowers in the courtyard, or the comforting scent of sandalwood worn by their grandfather during family functions.</p>
+      
+      <p>And that is exactly why perfume stalls are creating such emotional impact at Indian weddings.</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 40px 0;">
+        <img src="/src/assets/stations/perfume_bar_1.jpg" alt="Luxury Perfume Stall" style="border-radius: 20px; width: 100%; height: 300px; object-fit: cover;" />
+        <img src="/src/assets/stations/perfume_bar_3.jpg" alt="Perfume Bar Experience" style="border-radius: 20px; width: 100%; height: 300px; object-fit: cover;" />
+      </div>
+
+      <h3>Why Perfume Stalls Are Trending in Haldi Functions in 2026</h3>
+      <p>Modern weddings are no longer only about decoration and food. Couples want guests to feel emotionally connected to the celebration.</p>
+      <p>A perfume stall creates a luxury experience while also feeling deeply personal.</p>
+      <p>Guests walk toward a beautifully designed fragrance counter decorated with flowers, glass bottles, brass trays, and aesthetic displays. Soft fragrances float through the venue while fragrance experts help guests choose scents according to their personality, mood, and age group.</p>
+      <p>It instantly becomes an experience people talk about.</p>
+      <p>Especially during Haldi ceremonies where the atmosphere is already vibrant, floral, and emotionally warm, fragrance blends naturally into the environment.</p>
+
+      <p>By bringing a <a href="/stations?id=perfume-bar">Luxury Perfume Bar</a> to your Haldi, you aren't just giving a gift; you're giving an experience that lingers long after the wedding is over. It's about letting your guests create their own signature scent, a fragrance that will forever remind them of the laughter and love shared on your special day.</p>
+    `,
+    fullContentHi: `
+      <h2>हल्दी समारोह के लिए लक्जरी परफ्यूम स्टॉल - 2026 में शादी का वह चलन जो हर मेहमान को याद रहेगा</h2>
+      <p>भारतीय शादियाँ हमेशा भावनाओं के बारे में रही हैं। हल्दी समारोह के दौरान हंसी की आवाज़, हवा में ताजे गेंदे के फूलों की सुगंध, लॉन पर नंगे पैर नाचते चचेरे भाई-बहन, और दादा-दादी पीढ़ियों को एक साथ जश्न मनाते हुए देखते हुए चुपचाप मुस्कुराते हुए - ये वे पल हैं जो शादियों को अविस्मरणीय बनाते हैं।</p>
+      
+      <p>लेकिन 2026 में, आधुनिक जोड़े इन भावनात्मक उत्सवों में कुछ खूबसूरती से अनोखा जोड़ रहे हैं।</p>
+      
+      <h3>एक लक्जरी परफ्यूम स्टॉल।</h3>
+      
+      <p>जो कभी एक प्रीमियम लक्जरी विचार लगता था, वह अब भारत में सबसे अधिक खोजे जाने वाले और ट्रेंडिंग वेडिंग अनुभवों में से एक बन गया है। सेलिब्रिटी शादियों से लेकर अंतरंग पारिवारिक हल्दी समारोहों तक, परफ्यूम स्टॉल विचारशील आतिथ्य, भव्यता और वैयक्तिककरण का प्रतीक बन रहे हैं।</p>
+      
+      <p>क्योंकि खुशबू सिर्फ सूंघने के बारे में नहीं है।</p>
+      
+      <p><strong>खुशबू याद है।</strong></p>
+      
+      <p>एक अकेली खुशबू किसी को बचपन की गर्मियों, उनकी दादी के पूजा कक्ष, आंगन में ताजे मोगरा के फूलों, या पारिवारिक कार्यों के दौरान उनके दादा द्वारा पहने गए चंदन की आरामदायक खुशबू की याद दिला सकती है।</p>
+      
+      <p>और यही कारण है कि भारतीय शादियों में परफ्यूम स्टॉल इतना भावनात्मक प्रभाव पैदा कर रहे हैं।</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 40px 0;">
+        <img src="/src/assets/stations/perfume_bar_1.jpg" alt="Luxury Perfume Stall" style="border-radius: 20px; width: 100%; height: 300px; object-fit: cover;" />
+        <img src="/src/assets/stations/perfume_bar_3.jpg" alt="Perfume Bar Experience" style="border-radius: 20px; width: 100%; height: 300px; object-fit: cover;" />
+      </div>
+
+      <h3>2026 में हल्दी समारोहों में परफ्यूम स्टॉल क्यों ट्रेंड कर रहे हैं?</h3>
+      <p>आधुनिक शादियाँ अब केवल सजावट और भोजन के बारे में नहीं रह गई हैं। जोड़े चाहते हैं कि मेहमान उत्सव से भावनात्मक रूप से जुड़ा हुआ महसूस करें।</p>
+      <p>एक परफ्यूम स्टॉल गहराई से व्यक्तिगत महसूस करते हुए एक लक्जरी अनुभव बनाता है।</p>
+      <p>मेहमान फूलों, कांच की बोतलों, पीतल की ट्रे और सौंदर्यपूर्ण प्रदर्शनों से सजे एक खूबसूरती से डिजाइन किए गए सुगंध काउंटर की ओर चलते हैं। पूरे आयोजन स्थल में हल्की सुगंध तैरती है जबकि सुगंध विशेषज्ञ मेहमानों को उनके व्यक्तित्व, मनोदशा और आयु वर्ग के अनुसार सुगंध चुनने में मदद करते हैं।</p>
+      <p>यह तुरंत एक ऐसा अनुभव बन जाता है जिसके बारे में लोग बात करते हैं।</p>
+      <p>विशेष रूप से हल्दी समारोहों के दौरान जहां माहौल पहले से ही जीवंत, पुष्प और भावनात्मक रूप से गर्म होता है, सुगंध स्वाभाविक रूप से वातावरण में मिल जाती है।</p>
+
+      <p>अपनी हल्दी में <a href="/stations?id=perfume-bar">लक्जरी परफ्यूम बार</a> लाकर, आप केवल उपहार नहीं दे रहे हैं; आप एक ऐसा अनुभव दे रहे हैं जो शादी खत्म होने के बहुत बाद तक बना रहता है। यह आपके मेहमानों को अपनी खुद की सिग्नेचर खुशबू बनाने देने के बारे में है, एक ऐसी खुशबू जो उन्हें हमेशा आपके विशेष दिन पर साझा की गई हंसी और प्यार की याद दिलाएगी।</p>
+    `
+  },
+  {
+    id: 'interactive-guest-experience-2026',
+    title: 'Beyond Decoration – The Rise of Interactive Guest Experiences in 2026',
+    titleHi: 'सजावट से परे - 2026 में इंटरैक्टिव अतिथि अनुभवों का उदय',
+    date: '2026-05-10',
+    category: 'Trends',
+    categoryHi: 'ट्रेंड्स',
+    summary: 'Why the modern Indian wedding is shifting from looking beautiful to feeling alive through immersive activity stations.',
+    summaryHi: 'क्यों आधुनिक भारतीय शादी खूबसूरत दिखने से बदलकर इमर्सिव एक्टिविटी स्टेशन्स के माध्यम से जीवंत महसूस करने की ओर बढ़ रही है।',
+    image: mehendiArt1,
+    readTime: '6 min read',
+    fullContent: `<h2>Beyond Decoration – The Rise of Interactive Guest Experiences in 2026</h2><p>Content coming soon...</p>`,
+    fullContentHi: `<h2>सजावट से परे - 2026 में इंटरैक्टिव अतिथि अनुभवों का उदय</h2><p>सामग्री जल्द ही आ रही है...</p>`
+  }
+];
+
 

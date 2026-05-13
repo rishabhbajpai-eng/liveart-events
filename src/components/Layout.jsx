@@ -17,6 +17,7 @@ export const Navbar = () => {
     { name: t('Inspiration', 'प्रेरणा'), href: '/inspiration' },
     { name: t('Gallery', 'गैलरी'), href: '/gallery' },
     { name: t('Partner', 'पार्टनर'), href: '/partner' },
+    { name: t('Blog', 'ब्लॉग'), href: '/blog' },
 
   ];
 
@@ -165,6 +166,7 @@ export const Footer = () => {
             <li><Link to="/packages" className="hover:text-paper transition-colors">{t('Package Builder', 'पैकेज बिल्डर')}</Link></li>
             <li><Link to="/gallery" className="hover:text-paper transition-colors">{t('Gallery', 'गैलरी')}</Link></li>
             <li><Link to="/partner" className="hover:text-paper transition-colors">{t('Referral Program', 'रेफरल प्रोग्राम')}</Link></li>
+            <li><Link to="/blog" className="hover:text-paper transition-colors">{t('Blog', 'ब्लॉग')}</Link></li>
 
           </ul>
         </div>

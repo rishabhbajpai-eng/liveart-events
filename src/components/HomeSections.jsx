@@ -3,6 +3,7 @@ export * from './home/Hero';
 export * from './home/OccasionSelector';
 export * from './home/TrustSection';
 export * from './home/TheArtistWithin';
+export * from './home/BlogPreview';
 export * from './home/InquirySection';
 export * from './home/ExperienceMarquee';
 export * from './home/ProcessSection';
