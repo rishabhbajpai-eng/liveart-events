@@ -33,19 +33,24 @@ export const PartnerForm = () => {
 
       const scriptURL = import.meta.env.VITE_GOOGLE_SHEETS_URL;
       
-      const formBody = new FormData();
-      Object.keys(formData).forEach(key => {
-        if (key !== 'botField') {
-          formBody.append(key, formData[key]);
-        }
-      });
-      formBody.append('formType', 'PartnerForm');
-      formBody.append('sourceUrl', window.location.href);
+      const payload = {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        eventType: `Partner App: ${formData.agency}`,
+        eventDate: `Experience: ${formData.experience}`,
+        city: `Website: ${formData.website || "N/A"}`,
+        budget: `Insta: ${formData.instagram}`,
+        message: formData.message
+      };
 
       if (scriptURL) {
         await fetch(scriptURL, {
           method: 'POST',
-          body: formBody,
+          body: JSON.stringify(payload),
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+          },
           mode: 'no-cors'
         });
       } else {

@@ -13,7 +13,8 @@ export const LeadForm = () => {
     phone: '',
     date: '',
     location: '',
-    eventSize: '50-100',
+    eventType: 'Wedding',
+    budget: '',
     message: '',
     botField: '' // Honeypot field
   });
@@ -32,20 +33,25 @@ export const LeadForm = () => {
 
       const scriptURL = import.meta.env.VITE_GOOGLE_SHEETS_URL;
       
-      const formBody = new FormData();
-      Object.keys(formData).forEach(key => {
-        if (key !== 'botField') {
-          formBody.append(key, formData[key]);
-        }
-      });
-      formBody.append('formType', 'LeadForm');
-      formBody.append('sourceUrl', window.location.href);
+      const payload = {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        eventType: formData.eventType,
+        eventDate: formData.date,
+        city: formData.location,
+        budget: formData.budget,
+        message: formData.message
+      };
 
       // Sending data to Google Sheets
       if (scriptURL) {
         await fetch(scriptURL, {
           method: 'POST',
-          body: formBody,
+          body: JSON.stringify(payload),
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+          },
           mode: 'no-cors'
         });
       } else {
@@ -56,7 +62,7 @@ export const LeadForm = () => {
 
       setIsSubmitted(true);
       setFormData({
-        name: '', email: '', phone: '', date: '', location: '', eventSize: '50-100', message: '', botField: ''
+        name: '', email: '', phone: '', date: '', location: '', eventType: 'Wedding', budget: '', message: '', botField: ''
       });
     } catch (error) {
       console.error('Error submitting form', error);
@@ -176,7 +182,7 @@ export const LeadForm = () => {
           </div>
 
           <div className="relative">
-            <label className="text-[10px] font-black uppercase tracking-widest text-charcoal/40 mb-2 block ml-1">{t('Event Location', 'कार्यक्रम का स्थान')}</label>
+            <label className="text-[10px] font-black uppercase tracking-widest text-charcoal/40 mb-2 block ml-1">{t('City', 'शहर')}</label>
             <div className="relative">
               <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-charcoal/20 w-5 h-5" />
               <input 
@@ -190,23 +196,38 @@ export const LeadForm = () => {
             </div>
           </div>
 
-          <div className="relative">
-            <label className="text-[10px] font-black uppercase tracking-widest text-charcoal/40 mb-2 block ml-1">{t('Guest Count', 'मेहमानों की संख्या')}</label>
-            <div className="grid grid-cols-3 gap-3">
-              {['< 50', '50-200', '200+'].map((size) => (
-                <button
-                  key={size}
-                  type="button"
-                  onClick={() => setFormData({...formData, eventSize: size})}
-                  className={`py-3 rounded-xl border-2 font-bold text-xs transition-all ${
-                    formData.eventSize === size 
-                      ? 'border-purple bg-purple/5 text-charcoal' 
-                      : 'border-gray-100 text-charcoal/40 hover:border-purple/30'
-                  }`}
-                >
-                  {size}
-                </button>
-              ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="relative">
+              <label className="text-[10px] font-black uppercase tracking-widest text-charcoal/40 mb-2 block ml-1">{t('Event Type', 'कार्यक्रम का प्रकार')}</label>
+              <div className="grid grid-cols-2 gap-3">
+                {['Wedding', 'Birthday', 'Corporate', 'Other'].map((type) => (
+                  <button
+                    key={type}
+                    type="button"
+                    onClick={() => setFormData({...formData, eventType: type})}
+                    className={`py-3 rounded-xl border-2 font-bold text-xs transition-all ${
+                      formData.eventType === type 
+                        ? 'border-purple bg-purple/5 text-charcoal' 
+                        : 'border-gray-100 text-charcoal/40 hover:border-purple/30'
+                    }`}
+                  >
+                    {type}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="relative">
+              <label className="text-[10px] font-black uppercase tracking-widest text-charcoal/40 mb-2 block ml-1">{t('Budget', 'बजट')}</label>
+              <div className="relative">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-charcoal/40 font-bold w-5 h-5">₹</span>
+                <input 
+                  type="text"
+                  placeholder="Estimated Budget"
+                  className="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:border-purple focus:bg-white transition-all text-charcoal font-medium"
+                  value={formData.budget}
+                  onChange={(e) => setFormData({...formData, budget: e.target.value})}
+                />
+              </div>
             </div>
           </div>
           <div className="relative">
