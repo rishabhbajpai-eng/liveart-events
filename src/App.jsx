@@ -11,8 +11,6 @@ import Packages from './pages/Packages';
 import Gallery from './pages/Gallery';
 import Inspiration from './pages/Inspiration';
 import Partner from './pages/Partner';
-import Blog from './pages/Blog';
-import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
 import { AnimatePresence, motion } from 'motion/react';
 
@@ -92,14 +90,7 @@ function AppContent() {
               path="/partner" 
               element={<Partner />} 
             />
-            <Route 
-              path="/blog" 
-              element={<Blog />} 
-            />
-            <Route 
-              path="/blog/:id" 
-              element={<BlogDetail />} 
-            />
+
             <Route 
               path="/contact" 
               element={<Contact />} 
