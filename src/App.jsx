@@ -1,7 +1,7 @@
 import { LanguageProvider } from './context/LanguageProvider';
 import { useState, useEffect } from 'react';
 import Lenis from 'lenis';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar, Footer, ContactFAB } from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import { CustomCursor } from './components/CustomCursor';
