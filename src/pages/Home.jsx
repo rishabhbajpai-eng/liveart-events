@@ -46,8 +46,6 @@ const Home = ({ onSelectOccasion, selectedOccasion }) => {
       <TrustSection />
       <VisualProofGallery />
       <SectionCTA />
-      <SocialProof />
-      <SectionCTA />
       <TheArtistWithin />
       <SectionCTA />
       <ExclusivityScarcity />
@@ -55,6 +53,8 @@ const Home = ({ onSelectOccasion, selectedOccasion }) => {
       <DecisionControlSection />
       <CitiesSection />
       <BlogPreview />
+      <SocialProof />
+      <SectionCTA />
       <InquirySection />
     </motion.div>
   );
