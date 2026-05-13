@@ -108,6 +108,12 @@ import sunglasses2 from './assets/stations/sunglasses_2.jpg';
 import sunglasses3 from './assets/stations/sunglasses_3.jpg';
 import sunglasses4 from './assets/stations/sunglasses_4.jpg';
 
+import sunglassesCreative1 from './assets/stations/sunglasses_creative_1.jpg';
+import sunglassesCreative2 from './assets/stations/sunglasses_creative_2.jpg';
+import sunglassesCreative3 from './assets/stations/sunglasses_creative_3.jpg';
+import sunglassesCreative4 from './assets/stations/sunglasses_creative_4.jpg';
+import sunglassesCreative5 from './assets/stations/sunglasses_creative_5.jpg';
+
 import moneyBank1 from './assets/stations/money_bank_1.jpg';
 import moneyBank2 from './assets/stations/money_bank_2.jpg';
 import moneyBank3 from './assets/stations/money_bank_3.jpg';
@@ -308,8 +314,8 @@ export const STATIONS = [
     nameHi: 'रचनात्मक धूप का चश्मा',
     description: 'High-fashion props that transform your guests into the star of every photo and the life of the party.',
     descriptionHi: 'हाई-फैशन प्रॉप्स जो आपके मेहमानों को हर फोटो का स्टार और पार्टी की जान बना देते हैं।',
-    image: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=2000&auto=format&fit=crop',
-    gallery: ['https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=2000&auto=format&fit=crop'],
+    image: sunglassesCreative1,
+    gallery: [sunglassesCreative1, sunglassesCreative2, sunglassesCreative3, sunglassesCreative4, sunglassesCreative5],
     category: 'lifestyle',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-wearing-sunglasses-34493-large.mp4',
     popularFor: ['wedding']
