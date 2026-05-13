@@ -87,6 +87,11 @@ import nailArt2 from './assets/stations/nail_art_2.jpg';
 import nailArt3 from './assets/stations/nail_art_3.jpg';
 import nailArt4 from './assets/stations/nail_art_4.jpg';
 import nailArt5 from './assets/stations/nail_art_5.jpg';
+
+import aromaCandle1 from './assets/stations/aroma_candle_1.jpg';
+import aromaCandle2 from './assets/stations/aroma_candle_2.jpg';
+import aromaCandle3 from './assets/stations/aroma_candle_3.jpg';
+
 import gelCandle1 from './assets/stations/gel_candle_1.jpg';
 import gelCandle2 from './assets/stations/gel_candle_2.jpg';
 import gelCandle3 from './assets/stations/gel_candle_3.png';
@@ -327,8 +332,8 @@ export const STATIONS = [
     nameHi: 'सुगंधित मोमबत्ती बनाना',
     description: 'A multisensory experience where guests craft a glow that fills their homes with your celebration.',
     descriptionHi: 'एक बहु-संवेदी अनुभव जहाँ मेहमान एक ऐसी चमक बनाते हैं जो उनके घरों को आपके उत्सव से भर देती है।',
-    image: 'https://images.unsplash.com/photo-1602873145311-482bc5265be4?q=80&w=2000&auto=format&fit=crop',
-    gallery: ['https://images.unsplash.com/photo-1602873145311-482bc5265be4?q=80&w=2000&auto=format&fit=crop'],
+    image: aromaCandle1,
+    gallery: [aromaCandle1, aromaCandle2, aromaCandle3],
     category: 'craft',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-burning-candle-on-a-table-34495-large.mp4',
     popularFor: ['wedding']
