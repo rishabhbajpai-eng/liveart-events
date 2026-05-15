@@ -899,9 +899,8 @@ export const BLOG_POSTS = [
         <img src="${perfumeStallHero}" alt="Luxury Perfume Stall Experience" class="w-full rounded-[3rem] shadow-2xl" />
 
         <section class="space-y-6">
-          <h2 class="text-3xl font-display font-bold text-charcoal">Why Perfume Stalls Are Becoming a Huge Wedding Trend in 2026</h2>
+          <h2 class="text-3xl font-display font-bold text-charcoal">The Emotional Connection</h2>
           <p>Indian weddings have changed a lot in the last few years. Earlier, weddings were mostly about decoration and rituals. Now couples want their guests to experience something personal and memorable.</p>
-          <p>People want moments. Experiences. Something that feels different from every other wedding they attend.</p>
           <p>The moment guests walk near a perfume stall, they slow down naturally. Some start trying floral fragrances. Some laugh while testing oud perfumes. Some elder family members suddenly recognize an old sandalwood fragrance they haven’t smelled in years.</p>
         </section>
 
@@ -925,33 +924,6 @@ export const BLOG_POSTS = [
           <div class="p-8 border-l-4 border-purple bg-purple/5 italic text-xl text-charcoal/80">
             "These scents carry nostalgia. And weddings are honestly built on nostalgia."
           </div>
-        </section>
-
-        <section class="space-y-6">
-          <h2 class="text-3xl font-display font-bold text-charcoal">Why Haldi Functions Are Perfect for Perfume Stalls</h2>
-          <p>Out of all wedding functions, Haldi feels the most alive. It’s playful. It’s emotional. Nobody is trying too hard to look perfect.</p>
-          <p>Fresh floral perfumes during daytime functions feel refreshing instead of overpowering. Traditional attars match the cultural vibe perfectly. And aesthetically, perfume stalls look stunning with Haldi decor themes involving marigolds, brass decor, and garden setups.</p>
-        </section>
-
-        <img src="${perfumeStallExperience}" alt="Haldi Wedding Experience" class="w-full rounded-[3rem] shadow-2xl" />
-
-        <section class="space-y-6">
-          <h2 class="text-3xl font-display font-bold text-charcoal">Personalized Fragrance Experiences Guests Love</h2>
-          <p>One of the most loved parts of perfume stalls is personalization. Modern wedding perfume stalls now include:</p>
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0">
-            <li class="flex items-center gap-4 bg-paper p-4 rounded-2xl border border-charcoal/5 shadow-sm">
-              <span class="text-2xl">✨</span> Signature wedding fragrances
-            </li>
-            <li class="flex items-center gap-4 bg-paper p-4 rounded-2xl border border-charcoal/5 shadow-sm">
-              <span class="text-2xl">🌸</span> Customized scent recommendations
-            </li>
-            <li class="flex items-center gap-4 bg-paper p-4 rounded-2xl border border-charcoal/5 shadow-sm">
-              <span class="text-2xl">🎁</span> Mini perfume giveaways
-            </li>
-            <li class="flex items-center gap-4 bg-paper p-4 rounded-2xl border border-charcoal/5 shadow-sm">
-              <span class="text-2xl">🏺</span> Personalized attar experiences
-            </li>
-          </ul>
         </section>
 
         <footer class="pt-12 border-t border-charcoal/10">
@@ -978,9 +950,8 @@ export const BLOG_POSTS = [
         <img src="${perfumeStallHero}" alt="लक्जरी परफ्यूम स्टॉल का अनुभव" class="w-full rounded-[3rem] shadow-2xl" />
 
         <section class="space-y-6">
-          <h2 class="text-3xl font-display font-bold text-charcoal">2026 में परफ्यूम स्टॉल शादी का एक बड़ा चलन क्यों बन रहे हैं</h2>
+          <h2 class="text-3xl font-display font-bold text-charcoal">भावनात्मक जुड़ाव</h2>
           <p>पिछले कुछ वर्षों में भारतीय शादियाँ बहुत बदल गई हैं। पहले शादियाँ ज्यादातर सजावट और रस्मों के बारे में होती थीं। अब जोड़े चाहते हैं कि उनके मेहमान कुछ व्यक्तिगत और यादगार अनुभव करें।</p>
-          <p>लोगों को पल चाहिए। अनुभव चाहिए। कुछ ऐसा जो उनके द्वारा अटेंड की जाने वाली हर दूसरी शादी से अलग महसूस हो।</p>
         </section>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-cream p-12 rounded-[3rem] text-right">
@@ -1014,8 +985,127 @@ export const BLOG_POSTS = [
         </footer>
       </div>
     `
+  },
+  {
+    id: 'why-perfume-stalls-trending-2026',
+    title: 'Why Perfume Stalls Are Trending in Haldi Functions in 2026',
+    titleHi: '2026 में हल्दी समारोहों में परफ्यूम स्टॉल क्यों ट्रेंड कर रहे हैं?',
+    date: '2026-05-14',
+    category: 'Wedding',
+    categoryHi: 'शादी',
+    summary: 'Modern weddings are no longer only about decoration and food. Couples want guests to feel emotionally connected to the celebration.',
+    summaryHi: 'आधुनिक शादियाँ अब केवल सजावट और भोजन के बारे में नहीं रह गई हैं। जोड़े चाहते हैं कि मेहमान उत्सव से भावनात्मक रूप से जुड़ा हुआ महसूस करें।',
+    image: perfumeStallTrending,
+    readTime: '3 min read',
+    fullContent: `
+      <div class="space-y-8">
+        <p>Modern weddings are no longer only about decoration and food. Couples want guests to feel emotionally connected to the celebration.</p>
+        <p>A perfume stall creates a luxury experience while also feeling deeply personal.</p>
+        
+        <img src="${perfumeStallTrending}" alt="Trending Perfume Stall" class="rounded-[2.5rem] shadow-2xl w-full h-[500px] object-cover my-12" />
+
+        <p>Guests walk toward a beautifully designed fragrance counter decorated with flowers, glass bottles, brass trays, and aesthetic displays. Soft fragrances float through the venue while fragrance experts help guests choose scents according to their personality, mood, and age group.</p>
+        
+        <p>It instantly becomes an experience people talk about.</p>
+        
+        <p>Especially during Haldi ceremonies where the atmosphere is already vibrant, floral, and emotionally warm, fragrance blends naturally into the environment.</p>
+
+        <div class="mt-16 p-8 bg-purple/5 rounded-3xl border border-purple/10">
+          <p class="text-charcoal/60 text-sm mb-4">Interested in more wedding trends?</p>
+          <a href="/blog/luxury-perfume-stall-haldi-2026" class="text-purple font-black uppercase tracking-widest text-sm flex items-center gap-2 group">
+            Read: Luxury Perfume Stall Guide
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    `,
+    fullContentHi: `
+      <div class="space-y-8 text-right">
+        <p>आधुनिक शादियाँ अब केवल सजावट और भोजन के बारे में नहीं रह गई हैं। जोड़े चाहते हैं कि मेहमान उत्सव से भावनात्मक रूप से जुड़ा हुआ महसूस करें।</p>
+        <p>एक परफ्यूम स्टॉल गहराई से व्यक्तिगत महसूस करते हुए एक लक्जरी अनुभव बनाता है।</p>
+        
+        <img src="${perfumeStallTrending}" alt="ट्रेंडिंग परफ्यूम स्टॉल" class="rounded-[2.5rem] shadow-2xl w-full h-[500px] object-cover my-12" />
+
+        <p>मेहमान फूलों, कांच की बोतलों, पीतल की ट्रे और सौंदर्यपूर्ण प्रदर्शनों से सचे एक खूबसूरती से डिजाइन किए गए सुगंध काउंटर की ओर चलते हैं। पूरे आयोजन स्थल में हल्की सुगंध तैरती है जबकि सुगंध विशेषज्ञ मेहमानों को उनके व्यक्तित्व, मनोदशा और आयु वर्ग के अनुसार सुगंध चुनने में मदद करते हैं।</p>
+        
+        <p>यह तुरंत एक ऐसा अनुभव बन जाता है जिसके बारे में लोग बात करते हैं।</p>
+      </div>
+    `
+  },
+  {
+    id: 'top-5-wedding-activities',
+    title: '5 Super Fun Interactive Activity Stations for your Big Fat Indian Wedding!',
+    titleHi: 'Kyun interactive stations hain aaj kal ki Shaadiyon ki jaan?',
+    date: '2026-05-10',
+    category: 'Wedding',
+    categoryHi: 'शादी',
+    summary: 'Why the modern Indian wedding is shifting from looking beautiful to feeling alive through immersive activity stations.',
+    summaryHi: 'Doston, woh din gaye jab shaadi sirf khaane aur stage tak limit thi. Aaj kal sabse zaroori hai Guest Experience.',
+    image: mehendiArt1,
+    readTime: '6 min read',
+    fullContent: `
+      <div class="space-y-8">
+        <h2>Why interactive stations are the soul of modern weddings?</h2>
+        <p>Gone are the days when weddings were limited to food and stage. Today, it's all about <strong>Guest Experience</strong>. Everyone wants their wedding to be unique and memorable. Our DIY activity stations do exactly that!</p>
+        
+        <h3>1. Magic of Fragrances: Perfume Bar</h3>
+        <p>Imagine your guests entering the Mehendi or Sangeet and finding a range of exotic fragrances. Our <a href="/stations?id=perfume-bar">Perfume Bar</a> is not just about good smells, it's about the experience of creating your own unique fragrance.</p>
+        
+        <h3>2. Royal Vibe: Attar Bar</h3>
+        <p>If you like a traditional touch, our <a href="/stations?id=attar-bar">Attar Bar</a> is a nostalgic trip. Exotic oils in beautiful bottles make perfect souvenirs for guests.</p>
+        
+        <h3>3. Creativity Burst: Live Art & Caricatures</h3>
+        <p>Live entertainment is common, but interactive live art is something else. Whether it's <strong>Live Caricatures</strong> or <strong>Thappa Mehendi</strong>, these stations keep guests engaged.</p>
+        
+        <h3>4. Eco-Friendly Souvenirs: Jute Bag Block Printing</h3>
+        <p>Sustainability is trending. Our <a href="/stations?id=jute-print">Jute Bag Block Printing</a> station lets guests design their own bags using wooden blocks.</p>
+        
+        <h3>5. Childhood Memories: 90s Candy Stall</h3>
+        <p>Nothing beats nostalgia! Our <a href="/stations?id=90s-candy">90s Candy Nostalgia</a> stall is always the busiest. From Peppermint to Orange candies, it takes everyone back to their childhood.</p>
+      </div>
+    `,
+    fullContentHi: `
+      <div class="space-y-8 text-right">
+        <h2>Kyun interactive stations hain aaj kal ki Shaadiyon ki jaan?</h2>
+        <p>Doston, woh din gaye jab shaadi sirf khaane aur stage tak limit thi. Aaj kal sabse zaroori hai <strong>Guest Experience</strong>. Har koi chahta hai ki unki shaadi "hatke" aur "yaadgaar" ho.</p>
+        
+        <h3>1. Khushbuon ka Jadoo: Perfume Bar</h3>
+        <p>Sochiye aapke guests Mehendi ya Sangeet mein enter karte hain aur unhe milti hai exotic fragrances ki ek range. Hamara <a href="/stations?id=perfume-bar">Perfume Bar</a> sirf acchi khushbu ke baare mein nahi hai, balki apna khud ka unique fragrance banane ke experience ke baare mein hai।</p>
+      </div>
+    `
+  },
+  {
+    id: 'planning-the-perfect-kids-birthday',
+    title: 'How to Plan the Ultimate Kids Birthday Craft Party in Style!',
+    titleHi: 'Kids Birthday Party ka dhamaal: Perfect Craft Party kaise plan karein?',
+    date: '2024-03-20',
+    category: 'Birthday',
+    categoryHi: 'Birthday',
+    summary: 'A step-by-step guide to keeping little hands busy and hearts happy with our popular craft stations.',
+    summaryHi: 'Bachon ki party mein masti aur creativity ka dose! Dekhiye hamare popular craft stations kaise banate hain har birthday ko super hit.',
+    image: birthdayCollageImg,
+    readTime: '15 min read',
+    fullContent: `
+      <div class="space-y-8">
+        <h2>The Secret to a Tantrum-Free, Creative Kids Birthday</h2>
+        <p>Planning a kids' birthday party can be stressful. Our craft stations ensure that every child goes home with a sense of achievement.</p>
+        
+        <h3>1. The Slime Craze: Slime Making Station</h3>
+        <p>Our <a href="/stations?id=slime-making">Slime Making</a> station is a supervised, mess-free way for kids to learn about textures and colors.</p>
+        
+        <h3>2. Glowing Joy: Lighting Jar Station</h3>
+        <p>Kids get to decorate mason jars with fairy lights, creating their very own nightlights.</p>
+      </div>
+    `,
+    fullContentHi: `
+      <div class="space-y-8 text-right">
+        <h2>Bachon ki Birthday Party ko banayein Creative aur Dhamaal-bhara!</h2>
+        <p>Hamare craft stations se bachon ko sirf maza hi nahi aata, balki unhe kuch naya banane ki khushi bhi milti hai।</p>
+      </div>
+    `
   }
 ];
+
 
 
 
