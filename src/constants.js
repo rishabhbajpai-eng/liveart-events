@@ -875,125 +875,143 @@ export const OCCASIONS = [
 export const BLOG_POSTS = [
   {
     id: 'luxury-perfume-stall-haldi-2026',
-    title: 'Luxury Perfume Stall for Haldi Function – The Wedding Trend Every Guest Remembers in 2026',
-    titleHi: 'हल्दी समारोह के लिए लक्जरी परफ्यूम स्टॉल - 2026 में शादी का वह चलन जो हर मेहमान को याद रहेगा',
-    date: '2026-05-14',
-    category: 'Wedding',
-    categoryHi: 'शादी',
-    summary: 'Indian weddings have always been about emotions. But in 2026, modern couples are adding something beautifully unique to these emotional celebrations: A luxury perfume stall.',
-    summaryHi: 'भारतीय शादियाँ हमेशा भावनाओं के बारे में रही हैं। लेकिन 2026 में, आधुनिक जोड़े इन भावनात्मक उत्सवों में कुछ खूबसूरती से अनोखा जोड़ रहे हैं: एक लक्जरी परफ्यूम स्टॉल।',
+    title: 'Luxury Perfume Stall for Haldi Functions – The Wedding Experience Guests Secretly Fall in Love With',
+    titleHi: 'हल्दी समारोहों के लिए लक्जरी परफ्यूम स्टॉल - वह शादी का अनुभव जिससे मेहमानों को गुपचुप तरीके से प्यार हो जाता है',
+    date: '2026-05-15',
+    category: 'Wedding Guide',
+    categoryHi: 'वेडिंग गाइड',
+    summary: 'There’s always that one moment in every Indian wedding people remember forever. Discover why luxury perfume stalls are becoming the most emotional and loved experience in 2026.',
+    summaryHi: 'हर भारतीय शादी में हमेशा एक ऐसा पल होता है जिसे लोग हमेशा याद रखते हैं। जानें कि क्यों लक्जरी परफ्यूम स्टॉल 2026 में सबसे भावनात्मक और पसंदीदा अनुभव बन रहे हैं।',
     image: perfumeStallHero,
-    readTime: '5 min read',
+    readTime: '8 min read',
     fullContent: `
-      <div class="space-y-8">
-        <p>Indian weddings have always been about emotions. The sound of laughter during the Haldi ceremony, the fragrance of fresh marigolds in the air, cousins dancing barefoot on the lawn, and grandparents quietly smiling while watching generations celebrate together — these are the moments that make weddings unforgettable.</p>
-        
-        <p>But in 2026, modern couples are adding something beautifully unique to these emotional celebrations.</p>
-        
-        <h3 class="text-2xl font-display font-bold text-charcoal">A luxury perfume stall.</h3>
-        
-        <p>What once sounded like a premium luxury idea has now become one of the most searched and trending wedding experiences in India. From celebrity weddings to intimate family Haldi ceremonies, perfume stalls are becoming a symbol of thoughtful hospitality, elegance, and personalization.</p>
+      <div class="space-y-12">
+        <section class="prose prose-xl prose-charcoal">
+          <p class="lead">There’s always that one moment in every Indian wedding people remember forever. Sometimes it’s not the grand stage. Not the expensive outfits. Not even the food. Sometimes it’s something unexpectedly simple.</p>
+          
+          <p>Like the fragrance of fresh mogra flowers floating in the air while cousins dance around the bride during Haldi. Or the soft smell of chandan attar when dada ji walks into the function smiling quietly, watching the family celebrate together.</p>
+          
+          <p class="text-3xl font-display italic text-purple mt-8">That feeling stays.</p>
+          
+          <p>And maybe that’s why perfume stalls are becoming one of the most loved wedding experiences in India right now. Not because they look luxurious, but because they make people feel something.</p>
+        </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
-          <img src="${perfumeStallBottles}" alt="Luxury Perfume Bottles" class="rounded-[2rem] shadow-xl w-full h-[400px] object-cover" />
-          <div class="flex flex-col justify-center space-y-6">
-            <p>Because fragrance is not just about smell.</p>
-            <p class="text-3xl font-display italic text-purple">Fragrance is memory.</p>
-            <p>A single scent can remind someone of childhood summers, their grandmother’s puja room, fresh mogra flowers in the courtyard, or the comforting scent of sandalwood worn by their grandfather during family functions.</p>
+        <img src="${perfumeStallHero}" alt="Luxury Perfume Stall Experience" class="w-full rounded-[3rem] shadow-2xl" />
+
+        <section class="space-y-6">
+          <h2 class="text-3xl font-display font-bold text-charcoal">Why Perfume Stalls Are Becoming a Huge Wedding Trend in 2026</h2>
+          <p>Indian weddings have changed a lot in the last few years. Earlier, weddings were mostly about decoration and rituals. Now couples want their guests to experience something personal and memorable.</p>
+          <p>People want moments. Experiences. Something that feels different from every other wedding they attend.</p>
+          <p>The moment guests walk near a perfume stall, they slow down naturally. Some start trying floral fragrances. Some laugh while testing oud perfumes. Some elder family members suddenly recognize an old sandalwood fragrance they haven’t smelled in years.</p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-cream p-12 rounded-[3rem]">
+          <div>
+            <h3 class="text-2xl font-display font-bold text-charcoal mb-6">Fragrances That Connect With Every Generation</h3>
+            <p class="mb-6">Young guests usually move toward fresh floral scents. Women often love fragrances like:</p>
+            <ul class="grid grid-cols-2 gap-4 list-none p-0">
+              <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-purple"></span> Mogra</li>
+              <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-purple"></span> Rose</li>
+              <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-purple"></span> Jasmine</li>
+              <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-purple"></span> Lavender</li>
+              <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-purple"></span> Rajnigandha</li>
+            </ul>
           </div>
+          <img src="${perfumeStallBottles}" alt="Fragrance Collection" class="rounded-[2rem] shadow-xl" />
         </div>
 
-        <img src="${perfumeStallExperience}" alt="Guest Experience" class="rounded-[2.5rem] shadow-2xl w-full h-[500px] object-cover my-12" />
+        <section class="space-y-6">
+          <p>But what makes the experience even more emotional is watching elder guests react to traditional fragrances. Especially dada ji. The moment someone opens a premium chandan attar bottle, elder family members instantly recognize it. Sometimes they smile quietly. Sometimes they start telling stories about old weddings from their time.</p>
+          <div class="p-8 border-l-4 border-purple bg-purple/5 italic text-xl text-charcoal/80">
+            "These scents carry nostalgia. And weddings are honestly built on nostalgia."
+          </div>
+        </section>
 
-        <p>And that is exactly why perfume stalls are creating such emotional impact at Indian weddings.</p>
+        <section class="space-y-6">
+          <h2 class="text-3xl font-display font-bold text-charcoal">Why Haldi Functions Are Perfect for Perfume Stalls</h2>
+          <p>Out of all wedding functions, Haldi feels the most alive. It’s playful. It’s emotional. Nobody is trying too hard to look perfect.</p>
+          <p>Fresh floral perfumes during daytime functions feel refreshing instead of overpowering. Traditional attars match the cultural vibe perfectly. And aesthetically, perfume stalls look stunning with Haldi decor themes involving marigolds, brass decor, and garden setups.</p>
+        </section>
 
-        <div class="mt-16 p-8 bg-cream rounded-3xl border border-charcoal/5">
-          <p class="text-charcoal/60 text-sm mb-4">Want to bring this experience to your wedding?</p>
-          <a href="/stations?id=perfume-bar" class="text-purple font-black uppercase tracking-widest text-sm flex items-center gap-2 group">
-            Explore our Luxury Perfume Bar 
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
+        <img src="${perfumeStallExperience}" alt="Haldi Wedding Experience" class="w-full rounded-[3rem] shadow-2xl" />
+
+        <section class="space-y-6">
+          <h2 class="text-3xl font-display font-bold text-charcoal">Personalized Fragrance Experiences Guests Love</h2>
+          <p>One of the most loved parts of perfume stalls is personalization. Modern wedding perfume stalls now include:</p>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0">
+            <li class="flex items-center gap-4 bg-paper p-4 rounded-2xl border border-charcoal/5 shadow-sm">
+              <span class="text-2xl">✨</span> Signature wedding fragrances
+            </li>
+            <li class="flex items-center gap-4 bg-paper p-4 rounded-2xl border border-charcoal/5 shadow-sm">
+              <span class="text-2xl">🌸</span> Customized scent recommendations
+            </li>
+            <li class="flex items-center gap-4 bg-paper p-4 rounded-2xl border border-charcoal/5 shadow-sm">
+              <span class="text-2xl">🎁</span> Mini perfume giveaways
+            </li>
+            <li class="flex items-center gap-4 bg-paper p-4 rounded-2xl border border-charcoal/5 shadow-sm">
+              <span class="text-2xl">🏺</span> Personalized attar experiences
+            </li>
+          </ul>
+        </section>
+
+        <footer class="pt-12 border-t border-charcoal/10">
+          <p class="text-2xl font-display italic text-charcoal/80 mb-8">Maybe that’s the real beauty of weddings. Not perfection. Not luxury. It’s the feeling people carry home afterward.</p>
+          <div class="bg-charcoal text-paper p-12 rounded-[3rem] text-center">
+             <h3 class="text-2xl font-display font-bold mb-6">Want to create this memory for your guests?</h3>
+             <a href="/stations?id=perfume-bar" class="inline-block bg-purple text-paper px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-paper hover:text-charcoal transition-all">Explore our Perfume Bar Station</a>
+          </div>
+        </footer>
       </div>
     `,
     fullContentHi: `
-      <div class="space-y-8 text-right">
-        <p>भारतीय शादियाँ हमेशा भावनाओं के बारे में रही हैं। हल्दी समारोह के दौरान हंसी की आवाज़, ताजे गेंदे के फूलों की सुगंध, लॉन पर नंगे पैर नाचते चचेरे भाई-बहन, और दादा-दादी को पीढ़ियों को एक साथ जश्न मनाते हुए देख चुपचाप मुस्कुराते हुए - ये वे पल हैं जो शादियों को अविस्मरणीय बनाते हैं।</p>
-        
-        <p>लेकिन 2026 में, आधुनिक जोड़े इन भावनात्मक उत्सवों में कुछ खूबसूरती से अनोखा जोड़ रहे हैं।</p>
-        
-        <h3 class="text-2xl font-display font-bold text-charcoal">एक लक्जरी परफ्यूम स्टॉल।</h3>
-        
-        <p>जो कभी एक प्रीमियम लक्जरी विचार लगता था, वह अब भारत में सबसे अधिक खोजे जाने वाले और ट्रेंडिंग वेडिंग अनुभवों में से एक बन गया है। सेलिब्रिटी शादियों से लेकर अंतरंग पारिवारिक हल्दी समारोहों तक, परफ्यूम स्टॉल विचारशील आतिथ्य, भव्यता और वैयक्तिककरण का प्रतीक बन रहे हैं।</p>
+      <div class="space-y-12 text-right">
+        <section class="prose prose-xl prose-charcoal ml-auto">
+          <p class="lead">हर भारतीय शादी में हमेशा एक ऐसा पल होता है जिसे लोग हमेशा याद रखते हैं। कभी-कभी यह भव्य मंच नहीं होता। न ही महंगे कपड़े। यहाँ तक कि खाना भी नहीं। कभी-कभी यह कुछ अप्रत्याशित रूप से सरल होता है।</p>
+          
+          <p>जैसे हल्दी के दौरान दुल्हन के इर्द-गिर्द चचेरे भाई-बहनों के नाचते समय हवा में तैरते ताजे मोगरे के फूलों की खुशबू। या चंदन के अत्तर की हल्की महक जब दादा जी चुपचाप मुस्कुराते हुए समारोह में आते हैं, परिवार को एक साथ जश्न मनाते हुए देखते हैं।</p>
+          
+          <p class="text-3xl font-display italic text-purple mt-8">वह एहसास ठहर जाता है।</p>
+          
+          <p>और शायद इसीलिए परफ्यूम स्टॉल अभी भारत में सबसे पसंदीदा शादी के अनुभवों में से एक बन रहे हैं। इसलिए नहीं कि वे आलीशान दिखते हैं, बल्कि इसलिए कि वे लोगों को कुछ महसूस कराते हैं।</p>
+        </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
-          <img src="${perfumeStallBottles}" alt="लक्जरी परफ्यूम बोतलें" class="rounded-[2rem] shadow-xl w-full h-[400px] object-cover" />
-          <div class="flex flex-col justify-center space-y-6">
-            <p>क्योंकि खुशबू सिर्फ सूंघने के बारे में नहीं है।</p>
-            <p class="text-3xl font-display italic text-purple">खुशबू याद है।</p>
-            <p>एक अकेली खुशबू किसी को बचपन की गर्मियों, उनकी दादी के पूजा कक्ष, आंगन में ताजे मोगरा के फूलों, या पारिवारिक कार्यों के दौरान उनके दादा द्वारा पहने गए चंदन की आरामदायक खुशबू की याद दिला सकती है।</p>
+        <img src="${perfumeStallHero}" alt="लक्जरी परफ्यूम स्टॉल का अनुभव" class="w-full rounded-[3rem] shadow-2xl" />
+
+        <section class="space-y-6">
+          <h2 class="text-3xl font-display font-bold text-charcoal">2026 में परफ्यूम स्टॉल शादी का एक बड़ा चलन क्यों बन रहे हैं</h2>
+          <p>पिछले कुछ वर्षों में भारतीय शादियाँ बहुत बदल गई हैं। पहले शादियाँ ज्यादातर सजावट और रस्मों के बारे में होती थीं। अब जोड़े चाहते हैं कि उनके मेहमान कुछ व्यक्तिगत और यादगार अनुभव करें।</p>
+          <p>लोगों को पल चाहिए। अनुभव चाहिए। कुछ ऐसा जो उनके द्वारा अटेंड की जाने वाली हर दूसरी शादी से अलग महसूस हो।</p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-cream p-12 rounded-[3rem] text-right">
+          <img src="${perfumeStallBottles}" alt="सुगंध संग्रह" class="rounded-[2rem] shadow-xl" />
+          <div>
+            <h3 class="text-2xl font-display font-bold text-charcoal mb-6">खुशबू जो हर पीढ़ी को जोड़ती है</h3>
+            <p class="mb-6">युवा मेहमान आमतौर पर ताज़ा फूलों की सुगंध की ओर बढ़ते हैं। महिलाओं को अक्सर ये खुशबू पसंद आती है:</p>
+            <ul class="grid grid-cols-2 gap-4 list-none p-0">
+              <li class="flex items-center justify-end gap-3">मोगरा <span class="w-2 h-2 rounded-full bg-purple"></span></li>
+              <li class="flex items-center justify-end gap-3">गुलाब <span class="w-2 h-2 rounded-full bg-purple"></span></li>
+              <li class="flex items-center justify-end gap-3">चमेली <span class="w-2 h-2 rounded-full bg-purple"></span></li>
+              <li class="flex items-center justify-end gap-3">लैवेंडर <span class="w-2 h-2 rounded-full bg-purple"></span></li>
+              <li class="flex items-center justify-end gap-3">रजनीगंधा <span class="w-2 h-2 rounded-full bg-purple"></span></li>
+            </ul>
           </div>
         </div>
 
-        <img src="${perfumeStallExperience}" alt="अतिथि अनुभव" class="rounded-[2.5rem] shadow-2xl w-full h-[500px] object-cover my-12" />
+        <section class="space-y-6">
+          <p>लेकिन जो इस अनुभव को और भी भावनात्मक बनाता है, वह है पारंपरिक खुशबू पर बुजुर्ग मेहमानों की प्रतिक्रिया देखना। खासकर दादा जी। जिस क्षण कोई प्रीमियम चंदन अत्तर की बोतल खोलता है, परिवार के बड़े सदस्य उसे तुरंत पहचान लेते हैं।</p>
+          <div class="p-8 border-r-4 border-purple bg-purple/5 italic text-xl text-charcoal/80">
+            "ये सुगंध पुरानी यादें संजोए हुए हैं। और शादियाँ ईमानदारी से पुरानी यादों पर ही बनी होती हैं।"
+          </div>
+        </section>
 
-        <p>और यही कारण है कि भारतीय शादियों में परफ्यूम स्टॉल इतना भावनात्मक प्रभाव पैदा कर रहे हैं।</p>
-
-        <div class="mt-16 p-8 bg-cream rounded-3xl border border-charcoal/5 text-right">
-          <p class="text-charcoal/60 text-sm mb-4">क्या आप इस अनुभव को अपनी शादी में लाना चाहते हैं?</p>
-          <a href="/stations?id=perfume-bar" class="text-purple font-black uppercase tracking-widest text-sm flex items-center justify-end gap-2 group">
-            हमारे लक्जरी परफ्यूम बार का अन्वेषण करें
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-1 transition-transform rotate-180"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-    `
-  },
-  {
-    id: 'why-perfume-stalls-trending-2026',
-    title: 'Why Perfume Stalls Are Trending in Haldi Functions in 2026',
-    titleHi: '2026 में हल्दी समारोहों में परफ्यूम स्टॉल क्यों ट्रेंड कर रहे हैं?',
-    date: '2026-05-14',
-    category: 'Wedding',
-    categoryHi: 'शादी',
-    summary: 'Modern weddings are no longer only about decoration and food. Couples want guests to feel emotionally connected to the celebration.',
-    summaryHi: 'आधुनिक शादियाँ अब केवल सजावट और भोजन के बारे में नहीं रह गई हैं। जोड़े चाहते हैं कि मेहमान उत्सव से भावनात्मक रूप से जुड़ा हुआ महसूस करें।',
-    image: perfumeStallTrending,
-    readTime: '3 min read',
-    fullContent: `
-      <div class="space-y-8">
-        <p>Modern weddings are no longer only about decoration and food. Couples want guests to feel emotionally connected to the celebration.</p>
-        <p>A perfume stall creates a luxury experience while also feeling deeply personal.</p>
-        
-        <img src="${perfumeStallTrending}" alt="Trending Perfume Stall" class="rounded-[2.5rem] shadow-2xl w-full h-[500px] object-cover my-12" />
-
-        <p>Guests walk toward a beautifully designed fragrance counter decorated with flowers, glass bottles, brass trays, and aesthetic displays. Soft fragrances float through the venue while fragrance experts help guests choose scents according to their personality, mood, and age group.</p>
-        
-        <p>It instantly becomes an experience people talk about.</p>
-        
-        <p>Especially during Haldi ceremonies where the atmosphere is already vibrant, floral, and emotionally warm, fragrance blends naturally into the environment.</p>
-
-        <div class="mt-16 p-8 bg-purple/5 rounded-3xl border border-purple/10">
-          <p class="text-charcoal/60 text-sm mb-4">Interested in more wedding trends?</p>
-          <a href="/blog/luxury-perfume-stall-haldi-2026" class="text-purple font-black uppercase tracking-widest text-sm flex items-center gap-2 group">
-            Read: Luxury Perfume Stall Guide
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-    `,
-    fullContentHi: `
-      <div class="space-y-8 text-right">
-        <p>आधुनिक शादियाँ अब केवल सजावट और भोजन के बारे में नहीं रह गई हैं। जोड़े चाहते हैं कि मेहमान उत्सव से भावनात्मक रूप से जुड़ा हुआ महसूस करें।</p>
-        <p>एक परफ्यूम स्टॉल गहराई से व्यक्तिगत महसूस करते हुए एक लक्जरी अनुभव बनाता है।</p>
-        
-        <img src="${perfumeStallTrending}" alt="ट्रेंडिंग परफ्यूम स्टॉल" class="rounded-[2.5rem] shadow-2xl w-full h-[500px] object-cover my-12" />
-
-        <p>मेहमान फूलों, कांच की बोतलों, पीतल की ट्रे और सौंदर्यपूर्ण प्रदर्शनों से सचे एक खूबसूरती से डिजाइन किए गए सुगंध काउंटर की ओर चलते हैं। पूरे आयोजन स्थल में हल्की सुगंध तैरती है जबकि सुगंध विशेषज्ञ मेहमानों को उनके व्यक्तित्व, मनोदशा और आयु वर्ग के अनुसार सुगंध चुनने में मदद करते हैं।</p>
-        
-        <p>यह तुरंत एक ऐसा अनुभव बन जाता है जिसके बारे में लोग बात करते हैं।</p>
-        
-        <p>विशेष रूप से हल्दी समारोहों के दौरान जहां माहौल पहले से ही जीवंत, पुष्प और भावनात्मक रूप से गर्म होता है, सुगंध स्वाभाविक रूप से वातावरण में मिल जाती है।</p>
+        <footer class="pt-12 border-t border-charcoal/10">
+          <p class="text-2xl font-display italic text-charcoal/80 mb-8">शायद यही शादियों की असली खूबसूरती है। पूर्णता नहीं। विलासिता नहीं। यह वह एहसास है जिसे लोग बाद में अपने साथ घर ले जाते हैं।</p>
+          <div class="bg-charcoal text-paper p-12 rounded-[3rem] text-center">
+             <h3 class="text-2xl font-display font-bold mb-6">क्या आप अपने मेहमानों के लिए यह याद बनाना चाहते हैं?</h3>
+             <a href="/stations?id=perfume-bar" class="inline-block bg-purple text-paper px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-paper hover:text-charcoal transition-all">हमारे परफ्यूम बार स्टेशन का अन्वेषण करें</a>
+          </div>
+        </footer>
       </div>
     `
   }
