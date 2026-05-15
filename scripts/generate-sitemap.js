@@ -48,27 +48,29 @@ async function generate() {
     '/wedding-games'
   ];
 
+  const today = new Date().toISOString().split('T')[0];
+
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   // Static Routes
   staticRoutes.forEach(route => {
-    xml += `  <url>\n    <loc>${BASE_URL}${route}</loc>\n    <priority>${route === '' ? '1.0' : '0.8'}</priority>\n  </url>\n`;
+    xml += `  <url>\n    <loc>${BASE_URL}${route}</loc>\n    <lastmod>${today}</lastmod>\n    <priority>${route === '' ? '1.0' : '0.8'}</priority>\n  </url>\n`;
   });
 
   // Blogs
   blogIds.forEach(id => {
-    xml += `  <url>\n    <loc>${BASE_URL}/blog/${id}</loc>\n    <priority>0.7</priority>\n  </url>\n`;
+    xml += `  <url>\n    <loc>${BASE_URL}/blog/${id}</loc>\n    <lastmod>${today}</lastmod>\n    <priority>0.7</priority>\n  </url>\n`;
   });
 
   // Cities
   citySlugs.forEach(slug => {
-    xml += `  <url>\n    <loc>${BASE_URL}/city/${slug}</loc>\n    <priority>0.8</priority>\n  </url>\n`;
+    xml += `  <url>\n    <loc>${BASE_URL}/city/${slug}</loc>\n    <lastmod>${today}</lastmod>\n    <priority>0.8</priority>\n  </url>\n`;
   });
 
   // Occasions (Services)
   occasionSlugs.forEach(slug => {
-    xml += `  <url>\n    <loc>${BASE_URL}/services/${slug}</loc>\n    <priority>0.8</priority>\n  </url>\n`;
+    xml += `  <url>\n    <loc>${BASE_URL}/services/${slug}</loc>\n    <lastmod>${today}</lastmod>\n    <priority>0.8</priority>\n  </url>\n`;
   });
 
   xml += '</urlset>';
