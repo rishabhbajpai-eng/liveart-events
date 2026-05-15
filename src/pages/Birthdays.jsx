@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { SectionCTA } from '../components/HomeSections';
+import { Helmet } from 'react-helmet-async';
+import SafeImage from '../components/shared/SafeImage';
 
 const OccasionSection = ({ title, description, activities, image, reverse }) => {
   return (
@@ -12,7 +14,7 @@ const OccasionSection = ({ title, description, activities, image, reverse }) => 
         transition={{ duration: 0.8 }}
         className="w-full lg:w-1/2 aspect-square lg:aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl relative group"
       >
-        <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 saturate-[1.1]" />
+        <SafeImage src={image} alt={title} className="w-full h-full" />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent"></div>
         <div className="absolute bottom-10 left-10 text-paper font-display text-4xl">{title}</div>
       </motion.div>
@@ -87,6 +89,11 @@ export default function Birthdays() {
       transition={{ duration: 0.5 }}
       className="bg-paper min-h-screen pt-32 pb-20"
     >
+      <Helmet>
+        <title>{t('Interactive Birthday Party Entertainment & Activities | LiveArt Events', 'इंटरएक्टिव बर्थडे पार्टी एंटरटेनमेंट और गतिविधियां | लाइवआर्ट इवेंट्स')}</title>
+        <meta name="description" content={t('Unique birthday experiences for kids and adults. Immersive treasure hunts, creative art stations, and thematic interactive fun for birthdays in India.', 'बच्चों और वयस्कों के लिए अद्वितीय जन्मदिन के अनुभव। भारत में जन्मदिन के लिए इमर्सिव ट्रेजर हंट, रचनात्मक कला स्टेशन और विषय-आधारित इंटरैक्टिव मस्ती।')} />
+        <link rel="canonical" href="https://liveartevents.in/birthdays" />
+      </Helmet>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-4xl mx-auto mb-20">
           <motion.div 

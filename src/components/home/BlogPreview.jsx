@@ -1,9 +1,9 @@
-import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { BLOG_POSTS } from '../../constants';
 import { useLanguage } from '../../context/LanguageContext';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import SafeImage from '../shared/SafeImage';
 
 export const BlogPreview = () => {
   const { t } = useLanguage();
@@ -65,12 +65,10 @@ export const BlogPreview = () => {
             >
               <Link to={`/blog/${post.id}`}>
                 <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 shadow-2xl bg-cream">
-                  <motion.img 
+                  <SafeImage 
                     src={post.image} 
                     alt={post.title}
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full"
                   />
                   
                   {/* Category Tag */}

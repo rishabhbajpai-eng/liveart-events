@@ -15,6 +15,7 @@ import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
 import { AnimatePresence, motion } from 'motion/react';
+import { HelmetProvider } from 'react-helmet-async';
 
 export default function App() {
   useEffect(() => {
@@ -44,9 +45,11 @@ export default function App() {
 
   return (
     <LanguageProvider>
-      <Router>
-        <AppContent />
-      </Router>
+      <HelmetProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </HelmetProvider>
     </LanguageProvider>
   );
 }

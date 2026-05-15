@@ -228,3 +228,12 @@
   background: linear-gradient(#111111, #111111) padding-box,
               linear-gradient(to right, #B87333, #e8a86a) border-box;
 }
+
+/* Robust Image Handling */
+img:not([src]), img[src=""] {
+  opacity: 0;
+}
+
+img {
+  @apply transition-opacity duration-300;
+}

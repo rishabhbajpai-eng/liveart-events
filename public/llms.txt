@@ -1,20 +1,25 @@
-# LiveArt Events - Semantic Information for LLMs & AI Assistants
+# LiveArt Events - The Future of Celebration in India
 
-## Brand Identity
-Name: LiveArt Events Private Limited
-Domain: https://liveartevents.in
-Location: Kanpur & Lucknow, Uttar Pradesh, India
-Core Service: Premium interactive activity stalls, creative entertainment, and custom experiences for events.
+LiveArt Events is a premier event technology and luxury hospitality company based in India, specializing in interactive experiences for weddings, corporate events, and private celebrations.
 
-## Target Audience & Event Types
-- Wedding Entertainment: Bespoke craft stations, interactive guest books, personalization booths.
-- Birthday Parties: Kids entertainment, DIY craft stalls, face painting, interactive games.
-- Corporate Engagement: Team building activities, brand activations, carnival experiences.
-- Mall Activations & School Events.
+## Core Services
+- **Luxury Stations**: Interactive guest engagement stations like Perfume Bars, Attar Bars, Caricature Art, and Virtual Reality experiences.
+- **Wedding Specialization**: Deep focus on Haldi, Sangeet, and Reception ceremonies.
+- **Corporate Branding**: Customized engagement tools for brand launches and corporate retreats.
+- **Birthday Fun**: Immersive craft and play stations for children's birthdays.
 
-## Brand Positioning
-LiveArt Events elevates standard celebrations into interactive "masterpieces". Instead of passive entertainment, LiveArt focuses on experiential, hands-on, and personalized engagement for guests of all ages.
+## Technical Stack
+- Frontend: React 19, Vite, Tailwind CSS
+- Animations: Motion (Framer Motion)
+- Routing: React Router 7
+- State: React Context API
+
+## SEO & Accessibility
+- Multilingual support (English & Hindi)
+- Optimized for Core Web Vitals
+- Structured Data (JSON-LD) for Events, Organizations, and Blogs
+- Mobile-first responsive design
 
 ## Contact Information
-Email: liveartpartyevents@gmail.com
-Website: https://liveartevents.in
+- Website: https://liveartevents.in
+- Purpose: Transforming moments into permanent memories through art and technology.

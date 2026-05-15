@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { SectionCTA } from '../components/HomeSections';
+import { Helmet } from 'react-helmet-async';
+import SafeImage from '../components/shared/SafeImage';
 
 const OccasionSection = ({ title, description, activities, image, reverse }) => {
   return (
@@ -12,7 +14,7 @@ const OccasionSection = ({ title, description, activities, image, reverse }) => 
         transition={{ duration: 0.8 }}
         className="w-full lg:w-1/2 aspect-square lg:aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl relative group"
       >
-        <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 saturate-[1.1]" />
+        <SafeImage src={image} alt={title} className="w-full h-full" />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent"></div>
         <div className="absolute bottom-10 left-10 text-paper font-display text-4xl">{title}</div>
       </motion.div>
@@ -97,6 +99,24 @@ export default function Weddings() {
       transition={{ duration: 0.5 }}
       className="bg-paper min-h-screen pt-32 pb-20"
     >
+      <Helmet>
+        <title>{t('Luxury Wedding Guest Experiences & Entertainment | LiveArt Events', 'लक्जरी वेडिंग गेस्ट एक्सपीरियंस और एंटरटेनमेंट | लाइवआर्ट इवेंट्स')}</title>
+        <meta name="description" content={t('Elevate your Haldi, Mehndi, Sangeet, and Wedding Day with interactive guest stations, flower petal showers, and curated games in India.', 'भारत में इंटरएक्टिव गेस्ट स्टेशनों, फूलों की वर्षा और क्यूरेटेड गेम्स के साथ अपनी हल्दी, मेहंदी, संगीत और शादी के दिन को बेहतर बनाएं।')} />
+        <link rel="canonical" href="https://liveartevents.in/weddings" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Luxury Wedding Guest Entertainment",
+            "provider": {
+              "@type": "Organization",
+              "name": "LiveArt Events"
+            },
+            "description": "Interactive guest engagement and entertainment services for Indian weddings.",
+            "areaServed": "India"
+          })}
+        </script>
+      </Helmet>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-4xl mx-auto mb-20">
           <motion.div 

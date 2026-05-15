@@ -1,15 +1,21 @@
-import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { BLOG_POSTS } from '../constants';
 import { useLanguage } from '../context/LanguageContext';
-import { Calendar, Clock, ArrowRight, Search, ChevronRight } from 'lucide-react';
+import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
+import SafeImage from '../components/shared/SafeImage';
 
 const Blog = () => {
   const { t } = useLanguage();
 
   return (
     <div className="pt-32 pb-24 bg-paper min-h-screen">
+      <Helmet>
+        <title>{t('Journal & Insights | LiveArt Events', 'जर्नल और अंतर्दृष्टि | लाइवआर्ट इवेंट्स')}</title>
+        <meta name="description" content={t('Exploring the art of hospitality, the science of memories, and the future of celebration in modern India.', 'आधुनिक भारत में आतिथ्य की कला, यादों के विज्ञान और उत्सव के भविष्य की खोज।')} />
+        <link rel="canonical" href="https://liveartevents.in/blog" />
+      </Helmet>
       {/* Hero Section */}
       <section className="px-4 mb-20">
         <div className="max-w-7xl mx-auto text-center">
@@ -54,10 +60,10 @@ const Blog = () => {
               className="relative group rounded-[3rem] overflow-hidden bg-cream shadow-2xl aspect-[21/9] flex items-center"
             >
               <div className="absolute inset-0">
-                <img 
+                <SafeImage 
                   src={BLOG_POSTS[0].image} 
                   alt={BLOG_POSTS[0].title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  className="w-full h-full transition-transform duration-1000 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/40 to-transparent" />
               </div>
@@ -114,10 +120,10 @@ const Blog = () => {
                 >
                   <Link to={`/blog/${post.id}`}>
                     <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden mb-8 shadow-xl bg-cream">
-                      <img 
+                      <SafeImage 
                         src={post.image} 
                         alt={post.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="w-full h-full transition-transform duration-700 group-hover:scale-110"
                       />
                       <div className="absolute top-6 left-6">
                         <span className="glass-pill px-4 py-2 rounded-xl text-[10px] font-black text-paper uppercase tracking-widest border border-white/20 backdrop-blur-md">

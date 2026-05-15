@@ -21,7 +21,7 @@ export const submitToGoogleSheets = async (payload, botField) => {
 
   // 3. Submit data
   try {
-    const response = await fetch(GOOGLE_SHEETS_URL, {
+    await fetch(GOOGLE_SHEETS_URL, {
       method: 'POST',
       body: JSON.stringify({
         ...payload,

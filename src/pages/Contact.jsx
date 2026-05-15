@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { LeadForm } from '../components/LeadForm';
 import { useLanguage } from '../context/LanguageContext';
 import { Sparkles, Phone, Mail } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -13,6 +14,27 @@ const Contact = () => {
       exit={{ opacity: 0 }}
       className="pt-32 pb-20 bg-paper min-h-screen"
     >
+      <Helmet>
+        <title>{t('Contact Us | LiveArt Events Experience Designers', 'संपर्क करें | लाइवआर्ट इवेंट्स एक्सपीरियंस डिजाइनर्स')}</title>
+        <meta name="description" content={t('Get in touch with our team of experience designers. Let’s collaborate to make your next celebration truly unforgettable.', 'अनुभव डिजाइनरों की हमारी टीम के साथ संपर्क करें। आइए आपके अगले उत्सव को वास्तव में अविस्मरणीय बनाने के लिए सहयोग करें।')} />
+        <link rel="canonical" href="https://liveartevents.in/contact" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "LiveArt Events",
+              "telephone": "+91 88532 99951",
+              "email": "hello@liveartevents.in",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "India"
+              }
+            }
+          })}
+        </script>
+      </Helmet>
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <motion.div

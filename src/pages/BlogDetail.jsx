@@ -1,14 +1,14 @@
-import React from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { BLOG_POSTS } from '../constants';
 import { useLanguage } from '../context/LanguageContext';
-import { ArrowLeft, Calendar, Clock, Share2, Facebook, Twitter, Link as LinkIcon } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, Clock, Facebook, Twitter, Link as LinkIcon } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
+import SafeImage from '../components/shared/SafeImage';
 
 const BlogDetail = () => {
   const { id } = useParams();
   const { t } = useLanguage();
-  const navigate = useNavigate();
   const post = BLOG_POSTS.find(p => p.id === id);
 
   if (!post) {
@@ -24,15 +24,62 @@ const BlogDetail = () => {
 
   return (
     <div className="bg-paper min-h-screen">
+      <Helmet>
+        <title>{t(`${post.title} | LiveArt Events Journal`, `${post.titleHi} | लाइवआर्ट इवेंट्स जर्नल`)}</title>
+        <meta name="description" content={t(post.summary, post.summaryHi)} />
+        <meta property="og:title" content={t(post.title, post.titleHi)} />
+        <meta property="og:description" content={t(post.summary, post.summaryHi)} />
+        <meta property="og:image" content={post.image} />
+        <meta property="og:type" content="article" />
+        <link rel="canonical" href={`https://liveartevents.in/blog/${post.id}`} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": post.title,
+            "image": post.image,
+            "datePublished": post.date,
+            "author": {
+              "@type": "Organization",
+              "name": "LiveArt Events"
+            },
+            "description": post.summary
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://liveartevents.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Journal",
+                "item": "https://liveartevents.in/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": post.title,
+                "item": `https://liveartevents.in/blog/${post.id}`
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
+
       {/* Article Hero */}
       <section className="relative h-[80vh] min-h-[600px] w-full overflow-hidden">
-        <motion.img 
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5, ease: 'easeOut' }}
+        <SafeImage 
           src={post.image} 
           alt={post.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent" />
         
@@ -116,7 +163,7 @@ const BlogDetail = () => {
             {BLOG_POSTS.filter(p => p.id !== id).slice(0, 3).map((p) => (
               <Link key={p.id} to={`/blog/${p.id}`} className="group">
                 <div className="aspect-video rounded-2xl overflow-hidden mb-4">
-                  <img src={p.image} alt={p.title} className="w-full h-full object-cover transition-transform group-hover:scale-105" />
+                  <SafeImage src={p.image} alt={p.title} className="w-full h-full transition-transform group-hover:scale-105" />
                 </div>
                 <h4 className="text-xl font-display font-bold text-charcoal group-hover:text-purple transition-colors line-clamp-2">
                   {t(p.title, p.titleHi)}
