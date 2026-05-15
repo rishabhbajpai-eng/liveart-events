@@ -5,6 +5,7 @@ import { CITIES, OCCASIONS } from '../constants';
 import { useLanguage } from '../context/LanguageContext';
 import { MapPin, MessageCircle, ShieldCheck, Zap } from 'lucide-react';
 import { LeadForm } from '../components/LeadForm';
+import { Helmet } from 'react-helmet-async';
 
 const CityPage = () => {
   const { citySlug } = useParams();
@@ -28,6 +29,14 @@ const CityPage = () => {
       exit={{ opacity: 0 }}
       className="bg-cream min-h-screen"
     >
+      <Helmet>
+        <title>{t(`${city.title} | LiveArt Events`, `${city.name} में लक्जरी वेडिंग एक्सपीरियंस | लाइवआर्ट इवेंट्स`)}</title>
+        <meta name="description" content={t(city.description, city.description)} />
+        <link rel="canonical" href={`https://liveartevents.in/city/${city.slug}`} />
+        <meta property="og:title" content={city.title} />
+        <meta property="og:description" content={city.description} />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* City Hero */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden bg-charcoal text-paper">
         <div className="la-monogram opacity-[0.05]">{city.name.toUpperCase()}</div>

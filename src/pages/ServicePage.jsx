@@ -6,6 +6,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { StationCatalogue } from '../components/HomeSections';
 import { MessageCircle } from 'lucide-react';
 import { LeadForm } from '../components/LeadForm';
+import { Helmet } from 'react-helmet-async';
 
 const ServicePage = () => {
   const { serviceSlug } = useParams();
@@ -39,6 +40,15 @@ const ServicePage = () => {
       exit={{ opacity: 0 }}
       className="bg-cream min-h-screen"
     >
+      <Helmet>
+        <title>{t(`${occasion.name} | LiveArt Events`, `${occasion.nameHi} | लाइवआर्ट इवेंट्स`)}</title>
+        <meta name="description" content={t(occasion.description, occasion.description)} />
+        <link rel="canonical" href={`https://liveartevents.in/services/${occasion.slug}`} />
+        <meta property="og:title" content={occasion.name} />
+        <meta property="og:description" content={occasion.description} />
+        <meta property="og:image" content={occasion.image} />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* Service Hero */}
       <section className="relative pt-40 pb-24 px-4 overflow-hidden bg-charcoal text-paper">
         <div className="la-monogram opacity-[0.05]">{occasion.name.toUpperCase()}</div>
