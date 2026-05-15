@@ -899,8 +899,9 @@ export const BLOG_POSTS = [
         <img src="${perfumeStallHero}" alt="Luxury Perfume Stall Experience" class="w-full rounded-[3rem] shadow-2xl" />
 
         <section class="space-y-6">
-          <h2 class="text-3xl font-display font-bold text-charcoal">The Emotional Connection</h2>
+          <h2 class="text-3xl font-display font-bold text-charcoal">Why Perfume Stalls Are Becoming a Huge Wedding Trend in 2026</h2>
           <p>Indian weddings have changed a lot in the last few years. Earlier, weddings were mostly about decoration and rituals. Now couples want their guests to experience something personal and memorable.</p>
+          <p>People want moments. Experiences. Something that feels different from every other wedding they attend.</p>
           <p>The moment guests walk near a perfume stall, they slow down naturally. Some start trying floral fragrances. Some laugh while testing oud perfumes. Some elder family members suddenly recognize an old sandalwood fragrance they haven’t smelled in years.</p>
         </section>
 
@@ -924,6 +925,33 @@ export const BLOG_POSTS = [
           <div class="p-8 border-l-4 border-purple bg-purple/5 italic text-xl text-charcoal/80">
             "These scents carry nostalgia. And weddings are honestly built on nostalgia."
           </div>
+        </section>
+
+        <section class="space-y-6">
+          <h2 class="text-3xl font-display font-bold text-charcoal">Why Haldi Functions Are Perfect for Perfume Stalls</h2>
+          <p>Out of all wedding functions, Haldi feels the most alive. It’s playful. It’s emotional. Nobody is trying too hard to look perfect.</p>
+          <p>Fresh floral perfumes during daytime functions feel refreshing instead of overpowering. Traditional attars match the cultural vibe perfectly. And aesthetically, perfume stalls look stunning with Haldi decor themes involving marigolds, brass decor, and garden setups.</p>
+        </section>
+
+        <img src="${perfumeStallExperience}" alt="Haldi Wedding Experience" class="w-full rounded-[3rem] shadow-2xl" />
+
+        <section class="space-y-6">
+          <h2 class="text-3xl font-display font-bold text-charcoal">Personalized Fragrance Experiences Guests Love</h2>
+          <p>One of the most loved parts of perfume stalls is personalization. Modern wedding perfume stalls now include:</p>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0">
+            <li class="flex items-center gap-4 bg-paper p-4 rounded-2xl border border-charcoal/5 shadow-sm">
+              <span class="text-2xl">✨</span> Signature wedding fragrances
+            </li>
+            <li class="flex items-center gap-4 bg-paper p-4 rounded-2xl border border-charcoal/5 shadow-sm">
+              <span class="text-2xl">🌸</span> Customized scent recommendations
+            </li>
+            <li class="flex items-center gap-4 bg-paper p-4 rounded-2xl border border-charcoal/5 shadow-sm">
+              <span class="text-2xl">🎁</span> Mini perfume giveaways
+            </li>
+            <li class="flex items-center gap-4 bg-paper p-4 rounded-2xl border border-charcoal/5 shadow-sm">
+              <span class="text-2xl">🏺</span> Personalized attar experiences
+            </li>
+          </ul>
         </section>
 
         <footer class="pt-12 border-t border-charcoal/10">
@@ -950,8 +978,9 @@ export const BLOG_POSTS = [
         <img src="${perfumeStallHero}" alt="लक्जरी परफ्यूम स्टॉल का अनुभव" class="w-full rounded-[3rem] shadow-2xl" />
 
         <section class="space-y-6">
-          <h2 class="text-3xl font-display font-bold text-charcoal">भावनात्मक जुड़ाव</h2>
+          <h2 class="text-3xl font-display font-bold text-charcoal">2026 में परफ्यूम स्टॉल शादी का एक बड़ा चलन क्यों बन रहे हैं</h2>
           <p>पिछले कुछ वर्षों में भारतीय शादियाँ बहुत बदल गई हैं। पहले शादियाँ ज्यादातर सजावट और रस्मों के बारे में होती थीं। अब जोड़े चाहते हैं कि उनके मेहमान कुछ व्यक्तिगत और यादगार अनुभव करें।</p>
+          <p>लोगों को पल चाहिए। अनुभव चाहिए। कुछ ऐसा जो उनके द्वारा अटेंड की जाने वाली हर दूसरी शादी से अलग महसूस हो।</p>
         </section>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-cream p-12 rounded-[3rem] text-right">
@@ -1029,6 +1058,8 @@ export const BLOG_POSTS = [
         <p>मेहमान फूलों, कांच की बोतलों, पीतल की ट्रे और सौंदर्यपूर्ण प्रदर्शनों से सचे एक खूबसूरती से डिजाइन किए गए सुगंध काउंटर की ओर चलते हैं। पूरे आयोजन स्थल में हल्की सुगंध तैरती है जबकि सुगंध विशेषज्ञ मेहमानों को उनके व्यक्तित्व, मनोदशा और आयु वर्ग के अनुसार सुगंध चुनने में मदद करते हैं।</p>
         
         <p>यह तुरंत एक ऐसा अनुभव बन जाता है जिसके बारे में लोग बात करते हैं।</p>
+        
+        <p>विशेष रूप से हल्दी समारोहों के दौरान जहां माहौल पहले से ही जीवंत, पुष्प और भावनात्मक रूप से गर्म होता है, सुगंध स्वाभाविक रूप से वातावरण में मिल जाती है।</p>
       </div>
     `
   },
@@ -1049,28 +1080,44 @@ export const BLOG_POSTS = [
         <p>Gone are the days when weddings were limited to food and stage. Today, it's all about <strong>Guest Experience</strong>. Everyone wants their wedding to be unique and memorable. Our DIY activity stations do exactly that!</p>
         
         <h3>1. Magic of Fragrances: Perfume Bar</h3>
-        <p>Imagine your guests entering the Mehendi or Sangeet and finding a range of exotic fragrances. Our <a href="/stations?id=perfume-bar">Perfume Bar</a> is not just about good smells, it's about the experience of creating your own unique fragrance.</p>
+        <p>Imagine your guests entering the Mehendi or Sangeet and finding a range of exotic fragrances. Our <a href="/stations?id=perfume-bar">Perfume Bar</a> is not just about good smells, it's about the experience of creating your own unique fragrance. Guests interact, asking each other "Which blend did you make?" — it's a perfect conversation starter!</p>
         
         <h3>2. Royal Vibe: Attar Bar</h3>
-        <p>If you like a traditional touch, our <a href="/stations?id=attar-bar">Attar Bar</a> is a nostalgic trip. Exotic oils in beautiful bottles make perfect souvenirs for guests.</p>
+        <p>If you like a traditional touch, our <a href="/stations?id=attar-bar">Attar Bar</a> is a nostalgic trip. Exotic oils in beautiful bottles make perfect souvenirs for guests that they will cherish for months.</p>
         
         <h3>3. Creativity Burst: Live Art & Caricatures</h3>
-        <p>Live entertainment is common, but interactive live art is something else. Whether it's <strong>Live Caricatures</strong> or <strong>Thappa Mehendi</strong>, these stations keep guests engaged.</p>
+        <p>Live entertainment is common, but interactive live art is something else. Whether it's <strong>Live Caricatures</strong> or <strong>Thappa Mehendi</strong>, these stations keep guests engaged and bring smiles to their faces.</p>
         
         <h3>4. Eco-Friendly Souvenirs: Jute Bag Block Printing</h3>
-        <p>Sustainability is trending. Our <a href="/stations?id=jute-print">Jute Bag Block Printing</a> station lets guests design their own bags using wooden blocks.</p>
+        <p>Sustainability is trending. Our <a href="/stations?id=jute-print">Jute Bag Block Printing</a> station lets guests design their own bags using wooden blocks. It's a hands-on activity that results in a useful gift.</p>
         
         <h3>5. Childhood Memories: 90s Candy Stall</h3>
         <p>Nothing beats nostalgia! Our <a href="/stations?id=90s-candy">90s Candy Nostalgia</a> stall is always the busiest. From Peppermint to Orange candies, it takes everyone back to their childhood.</p>
+        
+        <p>So why wait? Make your event an <strong>interactive world</strong>. Check out our other <a href="/stations">Activity Stations</a> and pick your favorite!</p>
       </div>
     `,
     fullContentHi: `
       <div class="space-y-8 text-right">
         <h2>Kyun interactive stations hain aaj kal ki Shaadiyon ki jaan?</h2>
-        <p>Doston, woh din gaye jab shaadi sirf khaane aur stage tak limit thi. Aaj kal sabse zaroori hai <strong>Guest Experience</strong>. Har koi chahta hai ki unki shaadi "hatke" aur "yaadgaar" ho.</p>
+        <p>Doston, woh din gaye jab shaadi sirf khaane aur stage tak limit thi. Aaj kal sabse zaroori hai <strong>Guest Experience</strong>. Har koi chahta hai ki unki shaadi "hatke" aur "यादगार" ho. Hamare DIY activity stations wahi karte hain! Humne dekha hai kaise ek simple <strong>Perfume Bar</strong> ya <strong>Bangle Stall</strong> poore mahaul ko badal deta hai.</p>
         
         <h3>1. Khushbuon ka Jadoo: Perfume Bar</h3>
-        <p>Sochiye aapke guests Mehendi ya Sangeet mein enter karte hain aur unhe milti hai exotic fragrances ki ek range. Hamara <a href="/stations?id=perfume-bar">Perfume Bar</a> sirf acchi khushbu ke baare mein nahi hai, balki apna khud ka unique fragrance banane ke experience ke baare mein hai।</p>
+        <p>Sochiye aapke guests Mehendi ya Sangeet mein enter karte hain aur unhe milti hai exotic fragrances ki ek range. Hamara <a href="/stations?id=perfume-bar">Perfume Bar</a> sirf acchi khushbu ke baare mein nahi hai, balki apna khud ka unique fragrance banane ke experience ke baare mein hai. Guests aapas mein baatein karte hain, "Tumne kaunsa blend banaya?" — yeh ek best conversation starter hai!</p>
+        
+        <h3>2. Shahi Andaaz: Attar Bar</h3>
+        <p>Agar aapko thoda traditional touch pasand hai, toh hamara <a href="/stations?id=attar-bar">Attar Bar</a> ek nostalgic trip hai. Sundar bottles mein concentrated oils guests ke liye ek perfect souvenir bante hain jo woh mahino tak yaad rakhenge.</p>
+        
+        <h3>3. Creativity ka Dhamaal: Live Art & Caricatures</h3>
+        <p>Live entertainment toh sab de dete hain, par interactive live art kuch aur hi hai. Chahe woh <strong>Live Caricature</strong> ho ya <strong>Thappa Mehendi</strong>, yeh stations guests ko engage rakhte hain aur unke chehre par smile late hain.</p>
+        
+        <h3>4. Eco-Friendly Souvenirs: Jute Bag Block Printing</h3>
+        <p>Sustainability aaj kal trend mein hai. Hamara <a href="/stations?id=jute-print">Jute Bag Block Printing</a> station guests ko mauka deta hai wooden blocks se apne bags khud design karne ka. Yeh ek hands-on activity hai jo ek useful gift mein khatam hoti hai.</p>
+        
+        <h3>5. Bachpan ki Yaadein: 90s Candy Stall</h3>
+        <p>Nostalgia se badhkar kuch nahi! Hamara <a href="/stations?id=90s-candy">90s Candy Nostalgia</a> stall reception mein sabse busy rehta hai. Peppermint se lekar Orange candies tak, yeh har kisi ko unke bachpan mein le jata hai।</p>
+        
+        <p>Toh der kis baat ki? Apne event ko ek <strong>interactive world</strong> banayein. Hamare baaki <a href="/stations">Activity Stations</a> dekhiye aur apna favourite pick kijiye!</p>
       </div>
     `
   },
@@ -1081,26 +1128,54 @@ export const BLOG_POSTS = [
     date: '2024-03-20',
     category: 'Birthday',
     categoryHi: 'Birthday',
-    summary: 'A step-by-step guide to keeping little hands busy and hearts happy with our popular craft stations.',
-    summaryHi: 'Bachon ki party mein masti aur creativity ka dose! Dekhiye hamare popular craft stations kaise banate hain har birthday ko super hit.',
-    image: birthdayCollageImg,
+    summary: 'A step-by-step guide to keeping little hands busy and hearts happy with our popular craft stations. Full of masti and creativity!',
+    summaryHi: 'Bachon ki party mein masti aur creativity ka dose! Dekhiye hamare popular craft stations kaise banate hain har birthday ko super hit. Ekdum asaan tips!',
+    image: slimeMaking1,
     readTime: '15 min read',
     fullContent: `
       <div class="space-y-8">
         <h2>The Secret to a Tantrum-Free, Creative Kids Birthday</h2>
-        <p>Planning a kids' birthday party can be stressful. Our craft stations ensure that every child goes home with a sense of achievement.</p>
+        <p>Planning a kids' birthday party can be stressful. How do you keep 20 energetic kids busy without them getting bored? The answer is <strong>Structured Creativity</strong>. Instead of just a clown or a bouncy castle, give them something to create. Our craft stations ensure that every child goes home with not just a return gift, but a sense of achievement.</p>
         
         <h3>1. The Slime Craze: Slime Making Station</h3>
-        <p>Our <a href="/stations?id=slime-making">Slime Making</a> station is a supervised, mess-free way for kids to learn about textures and colors.</p>
+        <p>Ask any kid today what they want at their party, and the answer is invariably <strong>Slime!</strong> Our <a href="/stations?id=slime-making">Slime Making</a> station is a supervised, mess-free (mostly!) way for kids to learn about textures and colors. They love stretching it, poking it, and taking it home in their personalized jars.</p>
         
         <h3>2. Glowing Joy: Lighting Jar Station</h3>
-        <p>Kids get to decorate mason jars with fairy lights, creating their very own nightlights.</p>
+        <p>For a magic-themed or evening party, the <a href="/stations?id=lighting-jar">Lighting Jar</a> station is a hit. Kids get to decorate mason jars with fairy lights, creating their very own nightlights. It’s magical, functional, and looks great on their bedside tables.</p>
+        
+        <h3>3. Personalized Art: Name Plates & Mug Art</h3>
+        <p>Kids love seeing their names on things. Our <a href="/stations?id=name-plates">Name Plates</a> and <a href="/stations?id=mug-art">Mug Art</a> stations allow them to paint and personalize their personal belongings. It teaches them patience and gives them a gift they’ll actually use every day.</p>
+        
+        <h3>4. Messy Fun with Purpose: Pottery Plant Station</h3>
+        <p>Connect kids with nature through our <a href="/stations?id=pottery-plant">Pottery Plant</a> station. They get to paint a pot and then plant a seedling. It’s an educational experience that teaches them about growth and responsibility, all while having fun at the party.</p>
+        
+        <h3>5. Fun with Physics: Spin Art</h3>
+        <p>Our <a href="/stations?id=spin-art">Spin Art</a> station uses a rotating canvas to create dynamic, abstract designs. It’s fast-paced, exciting, and every single painting is a unique masterpiece. Even the youngest kids can do this and feel like professional artists.</p>
+        
+        <p>Remember, a great kids' party is one where the children are actively participating, not just watching. Ready to plan yours? Check out our <a href="/stations?category=kids">Kids Activity Catalogue</a> or <a href="/packages">Build a Package</a> today!</p>
       </div>
     `,
     fullContentHi: `
       <div class="space-y-8 text-right">
         <h2>Bachon ki Birthday Party ko banayein Creative aur Dhamaal-bhara!</h2>
-        <p>Hamare craft stations se bachon ko sirf maza hi nahi aata, balki unhe kuch naya banane ki khushi bhi milti hai।</p>
+        <p>Doston, bachon ki party plan karna koi asaan kaam nahi hai. 20 sharaarati bachon ko kaise busy rakhein? Iska answer hai <strong>Structured Creativity</strong>. Hamare craft stations se bachon ko sirf maza hi nahi aata, balki unhe kuch naya banane ki khushi bhi milti hai।</p>
+        
+        <h3>1. Sabka Favourite: Slime Making Station</h3>
+        <p>Aaj kal har bache ko <strong>Slime</strong> chahiye! Hamara <a href="/stations?id=slime-making">Slime Making</a> station bachon ko mauka deta hai apni pasand ka slime banane ka. Woh ise stretch karte hain, khelte hain aur apne ghar le jaate hain. Masti hi masti!</p>
+        
+        <h3>2. Chamakta Jadoo: Lighting Jar Station</h3>
+        <p>Agar party raat ki hai ya "Magic" theme hai, toh hamara <a href="/stations?id=lighting-jar">Lighting Jar</a> station best hai. Bachon ko fairy lights ke saath mason jars decorate karne mein bahut maza aata hai. Yeh unke room ke liye ek best nightlight banti hai.</p>
+        
+        <h3>3. Apni Pehchaan: Name Plates & Mug Art</h3>
+        <p>Bachon ko apna naam har jagah dekhna pasand hai. Hamare <a href="/stations?id=name-plates">Name Plates</a> aur <a href="/stations?id=mug-art">Mug Art</a> stations unhe apni cheezein personalise karne ka mauka dete hain. Yeh unकी creativity ko badhava deta hai।</p>
+        
+        <h3>4. Mitti se Judi Masti: Pottery Plant Station</h3>
+        <p>Bachon ko nature se jodne ke liye hamara <a href="/stations?id=pottery-plant">Pottery Plant</a> station ek best tareeka hai. Woh mitti ke pot ko paint karte hain aur usme nanha sa pauda lagate hain. Yeh sirf fun nahi, ek sikhne wala experience bhi hai.</p>
+        
+        <h3>5. Speed aur Colors: Spin Art</h3>
+        <p>Hamara <a href="/stations?id=spin-art">Spin Art</a> station bachon ka fav hai! Rotating canvas par colors daalkar ek amazing abstract painting banti hai. Yeh fast hai, exciting hai aur har bache ko ek artist feel karata hai।</p>
+        
+        <p>Toh is saal, party ko sirf games tak mat rakhiye, unhe kuch creative karne ka mauka dijiye. Dekhiye hamare special <a href="/stations?category=kids">Kids Activity Catalogue</a> ko ya aaj hi apna <a href="/packages">Package banayein</a>!</p>
       </div>
     `
   }
