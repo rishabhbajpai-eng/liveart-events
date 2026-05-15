@@ -163,11 +163,12 @@ export const Footer = () => {
           <h4 className="font-display text-xl mb-8 text-purple uppercase tracking-widest">{t('Quick Links', 'त्वरित लिंक')}</h4>
           <ul className="space-y-4 text-paper/50 font-medium">
             <li><Link to="/stations" className="hover:text-paper transition-colors">{t('Activity Stations', 'गतिविधि स्टेशन्स')}</Link></li>
+            <li><Link to="/weddings" className="hover:text-paper transition-colors">{t('Weddings', 'शादियाँ')}</Link></li>
+            <li><Link to="/birthdays" className="hover:text-paper transition-colors">{t('Birthdays', 'जन्मदिन')}</Link></li>
             <li><Link to="/packages" className="hover:text-paper transition-colors">{t('Package Builder', 'पैकेज बिल्डर')}</Link></li>
             <li><Link to="/gallery" className="hover:text-paper transition-colors">{t('Gallery', 'गैलरी')}</Link></li>
             <li><Link to="/partner" className="hover:text-paper transition-colors">{t('Referral Program', 'रेफरल प्रोग्राम')}</Link></li>
             <li><Link to="/blog" className="hover:text-paper transition-colors">{t('Blog', 'ब्लॉग')}</Link></li>
-
           </ul>
         </div>
 

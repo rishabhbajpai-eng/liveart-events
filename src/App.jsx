@@ -14,6 +14,12 @@ import Partner from './pages/Partner';
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
+import About from './pages/About';
+import Birthdays from './pages/Birthdays';
+import Weddings from './pages/Weddings';
+import WeddingGames from './pages/WeddingGames';
+import ServicePage from './pages/ServicePage';
+import CityPage from './pages/CityPage';
 import { AnimatePresence, motion } from 'motion/react';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from 'sonner';
@@ -109,6 +115,30 @@ function AppContent() {
             <Route 
               path="/contact" 
               element={<Contact />} 
+            />
+            <Route 
+              path="/about" 
+              element={<About />} 
+            />
+            <Route 
+              path="/birthdays" 
+              element={<Birthdays />} 
+            />
+            <Route 
+              path="/weddings" 
+              element={<Weddings />} 
+            />
+            <Route 
+              path="/wedding-games" 
+              element={<WeddingGames />} 
+            />
+            <Route 
+              path="/services/:serviceSlug" 
+              element={<ServicePage />} 
+            />
+            <Route 
+              path="/city/:citySlug" 
+              element={<CityPage />} 
             />
           </Routes>
         </AnimatePresence>

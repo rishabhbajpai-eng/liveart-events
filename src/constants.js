@@ -815,7 +815,110 @@ export const STATIONS = [
   }
 ];
 
+
+export const CITIES = [
+  {
+    slug: 'delhi-ncr',
+    name: 'Delhi NCR',
+    nameHi: 'दिल्ली एनसीआर',
+    title: 'Luxury Wedding Guest Experiences in Delhi NCR',
+    description: 'Transforming weddings in Delhi, Gurgaon, and Noida with premium interactive entertainment and guest engagement stations.'
+  },
+  {
+    slug: 'mumbai',
+    name: 'Mumbai',
+    nameHi: 'मुंबई',
+    title: 'Premium Wedding Entertainment Services in Mumbai',
+    description: 'Bringing world-class guest engagement and luxury activity stations to the most exclusive weddings in Mumbai.'
+  },
+  {
+    slug: 'udaipur',
+    name: 'Udaipur',
+    nameHi: 'उदयपुर',
+    title: 'Destination Wedding Guest Experiences in Udaipur',
+    description: 'Elevating destination weddings in the City of Lakes with curated interactive stations and artistic entertainment.'
+  },
+  {
+    slug: 'jaipur',
+    name: 'Jaipur',
+    nameHi: 'जयपुर',
+    title: 'Royal Wedding Entertainment in Jaipur',
+    description: 'Adding a touch of interactive luxury to the Pink City’s grandest wedding celebrations.'
+  },
+  {
+    slug: 'goa',
+    name: 'Goa',
+    nameHi: 'गोवा',
+    title: 'Exclusive Beach Wedding Experiences in Goa',
+    description: 'Fun, engaging, and premium guest activity stations for unforgettable destination weddings in Goa.'
+  },
+  {
+    slug: 'bangalore',
+    name: 'Bangalore',
+    nameHi: 'बेंगलुरु',
+    title: 'Creative Wedding Guest Engagement in Bangalore',
+    description: 'Innovative and interactive entertainment services for modern weddings in the Silicon Valley of India.'
+  },
+  {
+    slug: 'hyderabad',
+    name: 'Hyderabad',
+    nameHi: 'हैदराबाद',
+    title: 'Grand Wedding Entertainment in Hyderabad',
+    description: 'Premium guest engagement stations for the majestic weddings of the City of Pearls.'
+  },
+  {
+    slug: 'chandigarh',
+    name: 'Chandigarh',
+    nameHi: 'चंडीगढ़',
+    title: 'Luxury Wedding Experiences in Chandigarh',
+    description: 'Vibrant and interactive guest engagement services for the most stylish weddings in Chandigarh.'
+  },
+  {
+    slug: 'kolkata',
+    name: 'Kolkata',
+    nameHi: 'कोलकाता',
+    title: 'Artistic Wedding Entertainment in Kolkata',
+    description: 'Blending cultural heritage with modern guest engagement for grand celebrations in the City of Joy.'
+  },
+  {
+    slug: 'chennai',
+    name: 'Chennai',
+    nameHi: 'चेन्नई',
+    title: 'Premium Wedding Guest Experiences in Chennai',
+    description: 'Elegant and interactive activity stations for luxury weddings in Chennai.'
+  },
+  {
+    slug: 'agra',
+    name: 'Agra',
+    nameHi: 'आगरा',
+    title: 'Royal Wedding Entertainment in Agra',
+    description: 'Making your celebration in the City of Taj unforgettable with premium guest engagement services.'
+  },
+  {
+    slug: 'pune',
+    name: 'Pune',
+    nameHi: 'पुणे',
+    title: 'Modern Wedding Guest Experiences in Pune',
+    description: 'Interactive and engaging activity stations for contemporary wedding celebrations in Pune.'
+  },
+  {
+    slug: 'varanasi',
+    name: 'Varanasi',
+    nameHi: 'वाराणसी',
+    title: 'Cultural Wedding Entertainment in Varanasi',
+    description: 'Traditional and interactive guest experiences in the spiritual heart of India.'
+  },
+  {
+    slug: 'mussoorie',
+    name: 'Mussoorie',
+    nameHi: 'मसूरी',
+    title: 'Hill Station Wedding Guest Experiences in Mussoorie',
+    description: 'Breathtaking guest engagement and activity stations for destination weddings in the Queen of Hills.'
+  }
+];
+
 export const PACKAGES = [
+
   {
     id: 'starter',
     name: 'Starter Spark',

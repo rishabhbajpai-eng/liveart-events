@@ -38,7 +38,7 @@ export const OccasionSelector = ({ onSelect, activeOccasion }) => {
               key={occasion.id} 
               onClick={() => {
                 onSelect(occasion.id);
-                navigate('/stations');
+                navigate(`/${occasion.id}s`);
               }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

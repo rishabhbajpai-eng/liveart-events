@@ -1,16 +1,13 @@
 import { motion } from 'motion/react';
 import { useLanguage } from '../../context/LanguageContext';
 import { MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { CITIES } from '../../constants';
 
 export const CitiesSection = () => {
   const { t } = useLanguage();
   
-  const cities = [
-    'Delhi NCR', 'Mumbai', 'Udaipur', 'Jaipur', 
-    'Goa', 'Bangalore', 'Hyderabad', 'Chandigarh', 
-    'Kolkata', 'Chennai', 'Agra', 'Pune',
-    'Khajuraho', 'Orchha', 'Varanasi', 'Mussoorie'
-  ];
+  const citiesList = CITIES;
 
   return (
     <section className="py-24 bg-paper border-t border-charcoal/5 relative overflow-hidden">
@@ -35,19 +32,24 @@ export const CitiesSection = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
-          {cities.map((city, index) => (
+          {citiesList.map((city, index) => (
             <motion.div
-              key={city}
+              key={city.slug}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="group relative bg-white border border-charcoal/5 p-6 rounded-2xl hover:border-gold/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 cursor-default overflow-hidden text-center"
+              className="group relative"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <h3 className="relative z-10 text-xl font-display text-charcoal group-hover:text-primary transition-colors duration-300">
-                {city}
-              </h3>
+              <Link
+                to={`/city/${city.slug}`}
+                className="block bg-white border border-charcoal/5 p-6 rounded-2xl hover:border-gold/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden text-center"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <h3 className="relative z-10 text-xl font-display text-charcoal group-hover:text-primary transition-colors duration-300">
+                  {t(city.name, city.nameHi)}
+                </h3>
+              </Link>
             </motion.div>
           ))}
         </div>
