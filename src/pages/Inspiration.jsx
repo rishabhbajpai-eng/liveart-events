@@ -9,6 +9,7 @@ const Inspiration = () => {
   const [activeBoard, setActiveBoard] = useState('All');
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState('');
+  const [visibleCount, setVisibleCount] = useState(15);
 
   const triggerNotification = (message) => {
     setNotificationMessage(message);
@@ -52,6 +53,8 @@ const Inspiration = () => {
         (activeBoard === 'corporate' && s.category === 'entertainment') ||
         (activeBoard === 'lifestyle' && s.category === 'lifestyle')
       );
+
+  const displayedPins = filteredPins.slice(0, visibleCount);
 
   return (
     <motion.div
@@ -135,7 +138,7 @@ const Inspiration = () => {
             {boards.map((board) => (
               <button
                 key={board.id}
-                onClick={() => setActiveBoard(board.id)}
+                onClick={() => { setActiveBoard(board.id); setVisibleCount(15); }}
                 className={`relative px-2 py-1 text-sm font-black uppercase tracking-widest transition-colors whitespace-nowrap ${
                   activeBoard === board.id ? 'text-charcoal' : 'text-charcoal/40 hover:text-charcoal'
                 }`}
@@ -157,7 +160,7 @@ const Inspiration = () => {
       <section className="max-w-[1600px] mx-auto px-4 py-12">
         <div className="columns-2 sm:columns-3 lg:columns-4 xl:columns-5 gap-6 space-y-6">
           <AnimatePresence mode="popLayout">
-            {filteredPins.map((pin, index) => (
+            {displayedPins.map((pin, index) => (
               <motion.div
                 key={pin.id}
                 layout
@@ -235,14 +238,17 @@ const Inspiration = () => {
       </section>
 
       {/* Load More Stylized */}
-      <div className="py-20 text-center">
-         <motion.button 
-          whileHover={{ scale: 1.05 }}
-          className="bg-charcoal text-paper px-10 py-4 rounded-full font-black text-lg shadow-2xl uppercase tracking-widest"
-         >
-           {t('Load More Inspiration', 'और अधिक प्रेरणा लोड करें')}
-         </motion.button>
-      </div>
+      {visibleCount < filteredPins.length && (
+        <div className="py-20 text-center">
+           <motion.button 
+            whileHover={{ scale: 1.05 }}
+            onClick={() => setVisibleCount(prev => prev + 15)}
+            className="bg-charcoal text-paper px-10 py-4 rounded-full font-black text-lg shadow-2xl uppercase tracking-widest"
+           >
+             {t('Load More Inspiration', 'और अधिक प्रेरणा लोड करें')}
+           </motion.button>
+        </div>
+      )}
       
       {/* Notification Toast */}
       <AnimatePresence>

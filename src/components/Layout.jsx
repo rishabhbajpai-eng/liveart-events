@@ -154,8 +154,8 @@ export const Footer = () => {
             >
               <Instagram size={24} />
             </motion.a>
-            <motion.a whileHover={{ scale: 1.2, color: '#00ced1' }} href="#" className="text-paper/40 transition-colors"><MessageCircle size={24} /></motion.a>
-            <motion.a whileHover={{ scale: 1.2, color: '#00ced1' }} href="#" className="text-paper/40 transition-colors"><Phone size={24} /></motion.a>
+            <motion.a whileHover={{ scale: 1.2, color: '#00ced1' }} href="https://wa.me/918853299951" target="_blank" rel="noopener noreferrer" className="text-paper/40 transition-colors"><MessageCircle size={24} /></motion.a>
+            <motion.a whileHover={{ scale: 1.2, color: '#00ced1' }} href="tel:+918853299951" className="text-paper/40 transition-colors"><Phone size={24} /></motion.a>
           </div>
         </div>
         

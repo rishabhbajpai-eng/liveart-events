@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
@@ -184,13 +184,13 @@ export const StationCatalogue = ({ selectedOccasion }) => {
                 <p className="font-semibold text-center sm:text-left">
                   {t('Love this station? Add it to your custom package!', 'यह स्टेशन पसंद आया? इसे अपने कस्टम पैकेज में जोड़ें!')}
                 </p>
-                <a 
-                  href="#packages" 
+                <Link 
+                  to="/packages" 
                   onClick={() => setVideoModal({ ...videoModal, isOpen: false })}
                   className="bg-white text-primary px-6 py-3 rounded-xl font-bold uppercase tracking-wider text-sm hover:scale-105 transition-transform"
                 >
                   {t('Build Package', 'पैकेज बनाएं')}
-                </a>
+                </Link>
               </div>
             </motion.div>
           </motion.div>

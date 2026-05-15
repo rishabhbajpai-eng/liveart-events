@@ -1,7 +1,7 @@
 import { LanguageProvider } from './context/LanguageProvider';
 import { useState, useEffect } from 'react';
 import Lenis from 'lenis';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar, Footer, ContactFAB } from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import { CustomCursor } from './components/CustomCursor';
@@ -63,6 +63,7 @@ export default function App() {
 
 function AppContent() {
   const [selectedOccasion, setSelectedOccasion] = useState(null);
+  const location = useLocation();
 
   return (
     <motion.div 
@@ -78,7 +79,7 @@ function AppContent() {
       
       <main className="flex-grow relative">
         <AnimatePresence mode="wait">
-          <Routes>
+          <Routes location={location} key={location.pathname}>
             <Route 
               path="/" 
               element={<Home onSelectOccasion={setSelectedOccasion} selectedOccasion={selectedOccasion} />} 
