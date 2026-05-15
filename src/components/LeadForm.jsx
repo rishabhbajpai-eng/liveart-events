@@ -16,7 +16,7 @@ import {
   MessageSquare,
   ArrowRight
 } from 'lucide-react';
-import { toast, Toaster } from 'sonner';
+import { toast } from 'sonner';
 import { useLanguage } from '../context/LanguageContext';
 import { submitToGoogleSheets } from '../utils/formSubmission';
 
@@ -145,7 +145,6 @@ export const LeadForm = () => {
 
   return (
     <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl border border-gray-100 relative luxe-shadow">
-      <Toaster position="top-center" richColors />
       
       {/* Premium Header Decoration */}
       <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-purple via-teal to-purple opacity-70"></div>

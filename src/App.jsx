@@ -16,6 +16,7 @@ import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
 import { AnimatePresence, motion } from 'motion/react';
 import { HelmetProvider } from 'react-helmet-async';
+import { Toaster } from 'sonner';
 
 export default function App() {
   useEffect(() => {
@@ -66,6 +67,7 @@ function AppContent() {
     >
       <ScrollToTop />
       <CustomCursor />
+      <Toaster position="top-center" richColors />
       <Navbar />
       
       <main className="flex-grow relative">

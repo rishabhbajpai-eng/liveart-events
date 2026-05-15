@@ -6,6 +6,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { ArrowLeft, ArrowRight, Calendar, Clock, Facebook, Twitter, Link as LinkIcon } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import SafeImage from '../components/shared/SafeImage';
+import { toast } from 'sonner';
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -29,6 +30,23 @@ const BlogDetail = () => {
       return () => container.removeEventListener('click', handleLinkClick);
     }
   }, [navigate, post]);
+  
+  const handleShare = (platform) => {
+    const url = window.location.href;
+    const title = t(post.title, post.titleHi);
+    
+    if (platform === 'facebook') {
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'noopener,noreferrer');
+    } else if (platform === 'twitter') {
+      window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank', 'noopener,noreferrer');
+    } else if (platform === 'copy') {
+      navigator.clipboard.writeText(url).then(() => {
+        toast.success(t('Link copied to clipboard!', 'लिंक क्लिपबोर्ड पर कॉपी हो गया!'));
+      }).catch(() => {
+        toast.error(t('Failed to copy link.', 'लिंक कॉपी करने में विफल।'));
+      });
+    }
+  };
 
   if (!post) {
     return (
@@ -156,9 +174,18 @@ const BlogDetail = () => {
             <div className="flex items-center gap-4">
               <span className="text-xs font-black uppercase tracking-widest text-charcoal/40">{t('Share this story', 'यह कहानी साझा करें')}</span>
               <div className="flex gap-4">
-                {[Facebook, Twitter, LinkIcon].map((Icon, i) => (
-                  <button key={i} className="w-10 h-10 rounded-full border border-charcoal/10 flex items-center justify-center text-charcoal/60 hover:bg-purple hover:text-paper hover:border-purple transition-all">
-                    <Icon size={18} />
+                {[
+                  { Icon: Facebook, name: 'facebook' },
+                  { Icon: Twitter, name: 'twitter' },
+                  { Icon: LinkIcon, name: 'copy' }
+                ].map(({ Icon, name }) => (
+                  <button 
+                    key={name} 
+                    onClick={() => handleShare(name)}
+                    className="w-10 h-10 rounded-full border border-charcoal/10 flex items-center justify-center text-charcoal/60 hover:bg-purple hover:text-paper hover:border-purple transition-all group"
+                    title={t(`Share on ${name}`, `${name} पर साझा करें`)}
+                  >
+                    <Icon size={18} className="group-hover:scale-110 transition-transform" />
                   </button>
                 ))}
               </div>
