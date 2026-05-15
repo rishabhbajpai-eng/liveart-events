@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://liveartevents.in/sitemap.xml
+Sitemap: https://www.liveartevents.in/sitemap.xml

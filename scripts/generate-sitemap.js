@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const BASE_URL = 'https://liveartevents.in';
+const BASE_URL = 'https://www.liveartevents.in';
 
 function extractIds(content, arrayName) {
   const arrayRegex = new RegExp(`export const ${arrayName} = \\[([\\s\\S]*?)\\];`, 'm');
@@ -74,7 +74,14 @@ async function generate() {
   xml += '</urlset>';
 
   fs.writeFileSync(path.resolve('public/sitemap.xml'), xml);
-  console.log(`Sitemap generated successfully in public/sitemap.xml with ${staticRoutes.length + blogIds.length + citySlugs.length + occasionSlugs.length} URLs.`);
+  
+  // Also write to dist/ if it exists, because this script runs post-build
+  const distPath = path.resolve('dist/sitemap.xml');
+  if (fs.existsSync(path.resolve('dist'))) {
+    fs.writeFileSync(distPath, xml);
+  }
+  
+  console.log(`Sitemap generated successfully with ${staticRoutes.length + blogIds.length + citySlugs.length + occasionSlugs.length} URLs.`);
 }
 
 generate();
