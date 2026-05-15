@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { BLOG_POSTS } from '../constants';
 import { useLanguage } from '../context/LanguageContext';
@@ -9,7 +9,26 @@ import SafeImage from '../components/shared/SafeImage';
 const BlogDetail = () => {
   const { id } = useParams();
   const { t } = useLanguage();
+  const navigate = useNavigate();
   const post = BLOG_POSTS.find(p => p.id === id);
+
+  // Intercept clicks on links within dangerouslySetInnerHTML
+  useEffect(() => {
+    const handleLinkClick = (e) => {
+      const target = e.target.closest('a');
+      if (target && target.getAttribute('href')?.startsWith('/')) {
+        e.preventDefault();
+        navigate(target.getAttribute('href'));
+        window.scrollTo(0, 0);
+      }
+    };
+
+    const container = document.getElementById('blog-content-container');
+    if (container) {
+      container.addEventListener('click', handleLinkClick);
+      return () => container.removeEventListener('click', handleLinkClick);
+    }
+  }, [navigate, post]);
 
   if (!post) {
     return (
@@ -127,6 +146,7 @@ const BlogDetail = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
+            id="blog-content-container"
             className="prose prose-xl prose-charcoal prose-headings:font-display prose-headings:font-bold prose-p:text-charcoal/70 prose-p:leading-relaxed prose-img:rounded-[2rem] prose-a:text-purple prose-a:no-underline hover:prose-a:underline"
             dangerouslySetInnerHTML={{ __html: t(post.fullContent, post.fullContentHi) }}
           />

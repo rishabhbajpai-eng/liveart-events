@@ -120,7 +120,7 @@ export const StationCatalogue = ({ selectedOccasion }) => {
         <div className="columns-1 md:columns-2 lg:columns-3 gap-6 lg:gap-8 space-y-6 lg:space-y-8">
           <AnimatePresence mode="popLayout">
             {filteredStations.map((station, idx) => (
-              <div key={station.id} className="break-inside-avoid shadow-xl hover:shadow-2xl transition-shadow duration-500 rounded-none bg-cream border border-copper/10">
+              <div id={station.id} key={station.id} className="break-inside-avoid shadow-xl hover:shadow-2xl transition-shadow duration-500 rounded-none bg-cream border border-copper/10">
                 <StationCard
                   station={station}
                   t={t}
