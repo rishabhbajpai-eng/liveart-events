@@ -19,7 +19,6 @@ const BlogDetail = () => {
       if (target && target.getAttribute('href')?.startsWith('/')) {
         e.preventDefault();
         navigate(target.getAttribute('href'));
-        window.scrollTo(0, 0);
       }
     };
 

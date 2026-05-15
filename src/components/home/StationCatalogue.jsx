@@ -21,10 +21,11 @@ export const StationCatalogue = ({ selectedOccasion }) => {
       setTimeout(() => {
         const element = document.getElementById(stationId);
         if (element) {
+          setActiveCategory('all');
           element.scrollIntoView({ behavior: 'smooth', block: 'center' });
           setExpandedId(stationId);
         }
-      }, 800); // Wait for the page/catalogue to render
+      }, 1200); // Wait for the page/catalogue to render
     }
   }, [searchParams]);
 
@@ -36,7 +37,7 @@ export const StationCatalogue = ({ selectedOccasion }) => {
 
   // Show all stations by default; filter by occasion if set, then by selected category
   const occasionFiltered = selectedOccasion
-    ? STATIONS.filter(s => s.popularFor?.includes(selectedOccasion))
+    ? STATIONS.filter(s => s.popularFor?.includes(selectedOccasion) || s.id === searchParams.get('id'))
     : STATIONS;
 
   const filteredStations = (activeCategory === 'all'
